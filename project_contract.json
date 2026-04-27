@@ -1,0 +1,923 @@
+{
+  "schema_version": 1,
+  "scope": {
+    "question": "What does Genesis (285-vertex, D₆, T(3,21) torus link, Q-Pythagorean, settled substrate identity) produce under the same task surface and governance that established dm3_runner’s signature observables — and do those outputs reproduce, invert, or differ from dm3’s four pre-registered comparators (cycle-7 attribution, s50-cliff attribution, σ″-curve shape, D₆-vs-C₃ symmetry)?",
+    "in_scope": [
+      "Phase 0: Cross-compile genesis_cli to aarch64-linux-android; deploy to RM10 under /data/local/tmp/genesis/; validate hash-gate disposition (D1 BENIGN diagnosis); launch autonomous BITDET chain using vanilla genesis_cli --test-battery.",
+      "Phase 1: Port dm3 K2 protocol (exp_k2_scars) to Genesis substrate as genuine new Rust work (genesis_harness crate or genesis_cli extension); derive Bhupura/Lotus pattern analogs from D₆ orbit structure (47 size-6 orbits + 1 size-3 waist orbit, per D3); emit dm3-mirror receipts with best_uplift, max_scar_weight, canonical_sha, receipt_sha, genesis_meta.",
+      "Phase 2: Full PRD §3 test program autonomous execution on RM10: BITDET (ξ–mirror), PARITY (τ–mirror, M1↔RM10), SYMMETRY (α–mirror, D₆ Z₂-mirror probe), K2_SWEEP (--steps ∈ {20, 28–56}, N=3/step, 90 invocations), CYCLE (multiples of 7/6/8 disambiguation, N=3 each), CROSSBUILD (vary turns knob, K2 sweep on ≥1 variant), DISCONT (N=10 at boundary steps if cliff observed, else ‘no cliff’ record).",
+      "Phase 3: Synthesis and final report: four pre-registered comparison verdicts rendered with acceptance-test evidence; IS-NOT findings; RESISTANCE.md compliance audit; final report at reports/GENESIS_FINAL_REPORT_<DATE>.md.",
+      "Four pre-registered falsifiable comparisons encoded as claims: cycle-7 attribution, s50-cliff attribution, σ″-curve numerical diff, D₆-vs-C₃ symmetry observable.",
+      "Hash-gate disposition: document D1 (M1 canonical e894… accepted with BENIGN diagnosis; VERIFY_SUMMARY.json = 8ddb… reproduces; solve_h2.json = 62897b… matches exactly); emit both hashes + diagnosis in every receipt genesis_meta.",
+      "Receipt schema: dm3-mirror JSON with canonical_sha, receipt_sha, env_pre, env_post, task, --steps, best_uplift, timestamp_utc, plus genesis_meta sub-object carrying build params (turns, bhupura_orbit_id, lotus_orbit_id, crossbuild_knob_values).",
+      "Cross-platform parity receipts (M1 host ↔ RM10 android, same fixed config, SHA comparison).",
+      "Per-step internal-state checksum option (––receipt-format=json-bigrat) as Phase 1 engineering deliverable."
+    ],
+    "out_of_scope": [
+      "Source recovery for dm3_runner (separate lane; parked).",
+      "Re-doing substrate identification — settled at substrate-reconstruction-2026-04-26/SHARE_2026-04-27/; T(3,21), D₆, Q over Pythagorean rationals, 285 vertices are fixed anchors, not open questions here.",
+      "Mac-only genesis runs beyond cross-compile builds — RM10 is the comparative experiment platform.",
+      "Cartography of all 12 dm3 task analogs on Genesis — only the K2 (exp_k2_scars) subset, per D2.",
+      "Cross-stream coordination or timing sync with dm3 lane (independent; dm3 chain runs autonomously on cpu7; Genesis chain on cpu0–5; they never coordinate).",
+      "Modifying or overriding Genesis source graph data files or sealed hashes.",
+      "Touching dm3_runner chain on phone: phase_g_chain_v2.sh, master_death_watcher.sh, post_chain_g4_launcher.sh, active dm3_runner invocation, cells/G*/.",
+      "Pushing to GitHub during execution — operator pushes at chain close.",
+      "Synthesis across both lanes — the final report is Genesis-side only; cross-lane editorial happens downstream."
+    ],
+    "unresolved_questions": [
+      "D1 (BENIGN hash-gate, operator default-approved): M1 build produces verify.json = e8941414… vs source-hardcoded CANONICAL_VERIFY_HASH = 97bd…. Diagnosis: trailing-newline serialization-layer diff from refresh_receipts rewrite; VERIFY_SUMMARY.json = 8ddb… reproduces identically; all 7 gates pass; solve_h2.json = 62897b… matches exactly. Decision: accept M1 canonical with documented BENIGN diagnosis; emit both hashes + 8ddb… in every receipt genesis_meta. If Phase 0 deploy reveals a second mismatch not explained by the BENIGN narrative, halt and document — do not extend BENIGN diagnosis beyond what it covers.",
+      "D2 (K2-only port scope, operator default-approved): only exp_k2_scars is ported to Genesis in Phase 1. The other 11 dm3 task types are deferred. Rationale: PRD pre-registered tests target K2 specifically; σ″ trimodal sawtooth + s50 cliff are K2 phenomena.",
+      "D3 (Bhupura/Lotus D₆-orbit analog choice, operator default-approved): 47 size-6 D₆ orbits = Bhupura analog (full D₆ stabilizer, radial set); 1 size-3 waist orbit = Lotus analog (mirror-fixed singular center). Must be pre-registered in Phase 1 plan before implementation. If the orbit structure yields a degenerate or ill-conditioned pattern, document as open question and escalate with operator-visible decision.",
+      "D4 (repo posture, operator default-approved): init local .git/ in genesis_comparative/ for retraction discipline; do NOT push until operator chain-close.",
+      "D5 (Phase 0 tonight autonomous, operator default-approved): BITDET via vanilla genesis_cli --test-battery 10; K2 port runs on host concurrently in Phase 1; Phase 2 redoes BITDET with K2 task once port lands.",
+      "D6 (wall-clock, operator default-approved): 3–4 days total: tonight Phase 0 (~3–6 h), 1–2 days Phase 1 K2 port, 1–2 days Phase 2 chain, half-day Phase 3 report. No timing sync with dm3 lane."
+    ]
+  },
+  "context_intake": {
+    "must_read_refs": [
+      "ref-resistance",
+      "ref-lane-distinction",
+      "ref-prd",
+      "ref-handover",
+      "ref-substrate-identity",
+      "ref-dm3-sigma-findings",
+      "ref-dm3-k2-sample",
+      "ref-genesis-source",
+      "ref-codex-parallel-pattern"
+    ],
+    "must_include_prior_outputs": [
+      "/Users/Zer0pa/DM3/genesis_comparative/RESISTANCE.md",
+      "/Users/Zer0pa/DM3/genesis_comparative/LANE_DISTINCTION.md",
+      "/Users/Zer0pa/DM3/genesis_comparative/PRD_GENESIS_COMPARATIVE_v1_DRAFT_20260427.md",
+      "/Users/Zer0pa/DM3/genesis_comparative/HANDOVER_2026-04-27.md",
+      "/Users/Zer0pa/DM3/substrate-reconstruction-2026-04-26/SHARE_2026-04-27/",
+      "/Users/Zer0pa/DM3/dm3_parallel/binaries/sample_full_run_s30.log",
+      "/Users/Zer0pa/DM3/recovery/Zer0paMk1-Genesis-Organism-Executable-Application-27-Oct-2025/00_GENESIS_ORGANISM/snic_workspace_a83f/crates/genesis_cli/src/main.rs"
+    ],
+    "user_asserted_anchors": [
+      "Genesis substrate identity is SETTLED: T(3,21) torus link on T², D₆ = S₃ × Z₂ automorphism group, Q over Pythagorean rationals, 285 vertices, 190 distinct eigenvalue levels, λ_max = 3.9989, Fiedler = 0.001071, Z₂ mirror (95 singly + 95 doubly degenerate). Source: substrate-reconstruction-2026-04-26/SHARE_2026-04-27/. Do not re-derive.",
+      "dm3_runner σ″ signature observables (8 sessions of receipts): trimodal sawtooth peaks s33=1.873756, s41=1.708374, s49=1.819397, s56=1.970840; drops at s34=1.370651, s43=1.160828; cliff at s50 = exactly 0.000000; cycle period ~7 steps. These are the comparative anchors.",
+      "Counterfactual-PRD-premise RETRACTED (filed in STATE.md): PRD says ‘you built a multithreaded Rust harness on top of genesis_cli’ — verified by reading source (genesis_cli has 6 subcommand groups, none match --task exp_k2_scars; workspace declares rayon but zero crates use threading primitives; Codex’s dm3_parallel/ is for dm3_runner ELF, not genesis). K2 + Bhupura/Lotus port is genuine new Rust work in Phase 1.",
+      "Hash-gate BENIGN diagnosis (D1): verify.json = e8941414… on M1 (vs source-hardcoded 97bd…) is a serialization-layer trailing-newline diff from refresh_receipts rewrite; VERIFY_SUMMARY.json = 8ddb… reproduces; all 7 gates pass; solve_h2.json = 62897b… matches exactly. Accepted per D1.",
+      "Cross-platform determinism claim τ (Genesis lane): M1 ↔ RM10 parity established for vanilla genesis_cli (solve_h2.json = 62897b… matches exactly on both). Pre-registered extension to K2 task once Phase 1 port lands.",
+      "47 size-6 D₆ orbits + 1 size-3 waist orbit as Bhupura/Lotus pattern analogs (per substrate-reconstruction-2026-04-26/SHARE_2026-04-27/05_aut_D6_with_spectrum_crosscheck.md). Pre-registered per D3."
+    ],
+    "known_good_baselines": [
+      "dm3 σ″ table (8 sessions): s33=1.873756, s41=1.708374, s49=1.819397, s56=1.970840, drops s34=1.370651, s43=1.160828, cliff s50=0.000000.",
+      "Genesis substrate characterization (substrate-reconstruction-2026-04-26): 285v, D₆, λ_max=3.9989, Fiedler=0.001071, Z₂ mirror, 190 distinct eigenvalue levels.",
+      "dm3 K2 sample receipt format: dm3_parallel/binaries/sample_full_run_s30.log. Fields: canonical_sha, receipt_sha, env_pre, env_post, task, --steps, best_uplift, timestamp_utc.",
+      "Codex dm3_parallel harness pattern (shell scripts, taskset CPU pinning, thermal coordinator, resume-safe chain discipline): dm3_parallel/scripts/. Reusable as structural template for Genesis harness with path/binary swap."
+    ],
+    "context_gaps": [
+      "K2 algorithm specification from dm3 sample log alone may be incomplete — Phase 1 plan 01-01 must extract the full algorithm before implementation. If ambiguous, document gap and escalate.",
+      "Bhupura/Lotus pattern derivation (D3) needs Phase 1 plan 01-02 to verify that 47 size-6 orbits / 1 size-3 waist yields non-degenerate patterns for K2 learning protocol.",
+      "Android NDK linker status: $ANDROID_NDK_HOME is unset; cross-compile may need cargo-ndk install. Verify in Phase 0 plan 00-03.",
+      "Full M1 canonical verify.json hash (e894… prefix only in handover — full 64-char hash to be captured in plan 00-02 and documented in harness/host/HASH_GATE_DISPOSITION.md)."
+    ],
+    "crucial_inputs": [
+      "/Users/Zer0pa/DM3/recovery/Zer0paMk1-Genesis-Organism-Executable-Application-27-Oct-2025/00_GENESIS_ORGANISM/snic_workspace_a83f/crates/genesis_cli/src/main.rs (CLI surface, 6 subcommand groups, hard-coded canonical hashes lines 11–14)",
+      "/Users/Zer0pa/DM3/recovery/Zer0paMk1-Genesis-Organism-Executable-Application-27-Oct-2025/00_GENESIS_ORGANISM/snic_workspace_a83f/Cargo.toml (workspace member list, 15 crates incl. genesis_cli)",
+      "/Users/Zer0pa/DM3/dm3_parallel/binaries/sample_full_run_s30.log (K2 receipt format reference for schema mirroring)",
+      "/Users/Zer0pa/DM3/substrate-reconstruction-2026-04-26/SHARE_2026-04-27/05_aut_D6_with_spectrum_crosscheck.md (47 size-6 D₆ orbits + 1 size-3 waist — Bhupura/Lotus derivation source)",
+      "dm3 σ″ fixture table: s33=1.873756, s41=1.708374, s49=1.819397, s56=1.970840, drops s34=1.370651, s43=1.160828, cliff s50=0.000000"
+    ]
+  },
+  "approach_policy": {
+    "formulations": [
+      "Forward comparative: Genesis source (open) → cross-compiled binary → dm3-equivalent test protocol → observables → diff against dm3 fixtures. This is the opposite of the dm3_runner lane (backwards: binary observables → geometry).",
+      "Pre-registered comparisons only: four explicit verdicts (cycle-7, s50-cliff, σ″-curve, symmetry) are the science. Do not invent additional comparison axes mid-execution without operator-visible decision.",
+      "Both negatives and positives equally valued: Genesis NOT cycling at period 7 is a decisive finding (augmentation-attribution); Genesis NOT cliffing at s50 is the positive prediction; either outcome earns full RESISTANCE-disciplined documentation."
+    ],
+    "allowed_estimator_families": [
+      "Rust + cargo (genesis_cli / genesis_harness): canonical deterministic computation",
+      "taskset cpu0–5 on RM10 for all genesis_runner invocations; taskset 0x80 (cpu7) reserved for dm3_runner",
+      "Lomb-Scargle periodogram for cycle-period estimation from K2_SWEEP data (95% CI required for cycle-period verdict)",
+      "NumPy/SciPy for σ″-curve numerical diff and visualization (Phase 3)",
+      "Monte Carlo random-graph baseline for any combinatorial near-coincidence (mandatory when invoking fp-shapematchRE tier 1)",
+      "SHA-256 for all canonical-output and receipt verification (sha256sum on device; Python hashlib on host)"
+    ],
+    "forbidden_estimator_families": [
+      "Shell-only scripting substituted for Rust harness — genesis_cli is the canonical computation engine; shell is orchestration only",
+      "Cross-lane numerical comparison without explicit cross-lane framing per LANE_DISTINCTION.md (e.g., ‘Genesis λ_max doesn’t match dm3 λ_max’ without noting they are different graphs)",
+      "Floating-point genesis builds without sealed-hash verification before deploy"
+    ],
+    "allowed_fit_families": [
+      "Lomb-Scargle cycle-period estimation on K2 best_uplift vs --steps",
+      "95% confidence interval on N=3-per-step samples for σ″-curve diff",
+      "Numerical diff (Genesis best_uplift at s_k) − (dm3 best_uplift at s_k) for each step in {20, 28–56}"
+    ],
+    "forbidden_fit_families": [
+      "Classical-constant fitting on Genesis observables (prior workstream’s NULL@elementary result; do not revisit)",
+      "Period identification without Monte Carlo baseline against random permutation of step sequence"
+    ],
+    "stop_and_rethink_conditions": [
+      "Phase 0: genesis_runner on device produces non-byte-identical canonical_sha across N=10 invocations at fixed config — determinism breach; halt loudly; document as KILL; do not proceed to Phase 1 without operator-visible resolution.",
+      "Phase 0: on-device hash does not match host SHA after adb push — deploy integrity failure; halt; do not run.",
+      "Phase 1: K2 algorithm cannot be unambiguously extracted from dm3 sample log + visible sources — document gap; escalate with operator-visible decision before implementing an assumed K2 formulation.",
+      "Phase 1: Bhupura/Lotus D₆-orbit derivation yields degenerate patterns — document and escalate with alternative analog options.",
+      "Any phase: empirical finding contradicts settled substrate identity (T(3,21), D₆, 285v, Q-Pythagorean) — document as RESISTANCE-disciplined retraction; do not silently adjust construction assumption; escalate.",
+      "Any phase: dm3_runner chain process (pidof dm3_runner) detected during Genesis device probe — wait; do not proceed with adb push or genesis invocation until dm3_runner is quiescent on cpu7."
+    ]
+  },
+  "observables": [
+    {
+      "id": "obs-bitdet",
+      "name": "Bit-determinism across N invocations",
+      "kind": "scalar",
+      "definition": "canonical_sha field across N≥10 genesis_runner invocations at fixed config (fixed --steps, fixed seed if applicable, fixed build). All N values must be byte-identical. Mirror of dm3 claim ξ.",
+      "regime": "fixed config, single step count",
+      "units": "SHA-256 hex string (64 chars)"
+    },
+    {
+      "id": "obs-parity",
+      "name": "Cross-platform M1↔RM10 canonical SHA",
+      "kind": "scalar",
+      "definition": "canonical_sha of genesis_runner output at identical config on M1 host (native aarch64-apple-darwin build) vs RM10 (aarch64-linux-android cross-compiled build). Must match byte-for-byte. Mirror of dm3 claim τ.",
+      "regime": "fixed config, same --steps on both platforms",
+      "units": "SHA-256 hex string (64 chars)"
+    },
+    {
+      "id": "obs-sigma-curve",
+      "name": "σ″ curve: best_uplift vs --steps",
+      "kind": "curve",
+      "definition": "best_uplift (= baseline_recall_err − lesson3_recall_err at noise=0.1) as a function of --steps ∈ {20, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56}. N=3 per step. Mean ± 95% CI per step. Compared numerically to dm3 σ″ fixture table.",
+      "regime": "K2 protocol (exp_k2_scars): lesson levels {0,3}, patterns {Bhupura,Lotus}, noise levels {0.1,0.2}, eta=0.2",
+      "units": "dimensionless uplift (float, 6-decimal precision floor from printf; BigRational option in Phase 1 removes floor)"
+    },
+    {
+      "id": "obs-cliff",
+      "name": "s50-cliff: best_uplift at --steps=50",
+      "kind": "scalar",
+      "definition": "best_uplift value at exactly --steps=50 for Genesis K2 protocol. dm3 canonical value = 0.000000 (exact zero, geometry-independent across SriYantra and RandomAdj). Prediction: Genesis does NOT cliff at s50 (augmentation-attribution hypothesis). N=10 at s50 if any sharp drop observed near s50.",
+      "regime": "K2 protocol at --steps=50",
+      "units": "dimensionless uplift (float)"
+    },
+    {
+      "id": "obs-cycle",
+      "name": "Dominant cycle period in σ″ curve",
+      "kind": "scalar",
+      "definition": "Period of dominant oscillation in obs-sigma-curve estimated by Lomb-Scargle periodogram with 95% CI. dm3 dominant period = ~7 steps (peaks s33, s41, s49, s56, Δ=8; cycle-7 hypothesis from T(3,21) seven full twists in (σ₁σ₂)²¹). Prediction: if substrate-attributed, Genesis cycles at period 7. If augmentation-attributed, Genesis cycles at different period (6, 8, or aperiodic).",
+      "regime": "K2 sweep --steps ∈ {20, 28–56} + cycle disambiguator sweep {7,14,21,28,35,42,49,56} ∪ {6,12,18,24,36,48} ∪ {8,16,32,48}, N=3 each",
+      "units": "steps (integer)"
+    },
+    {
+      "id": "obs-symmetry",
+      "name": "D₆ Z₂-mirror observable vs dm3 C₃-only",
+      "kind": "scalar",
+      "definition": "Projection magnitude of genesis_runner output onto Z₂-asymmetric eigenmode of the 285v genesis substrate. Genesis is D₆ = Z₂ × S₃; dm3_runner is C₃ (C₃ ⊂ D₆). If Genesis is observably mirror-symmetric (Z₂-projection magnitude near zero or symmetric about mirror axis) where dm3 is mirror-broken, that is structural evidence for augmentation-as-symmetry-breaker hypothesis.",
+      "regime": "SYMMETRY test: observable sensitive to mirror-axis asymmetry",
+      "units": "dimensionless projection magnitude"
+    },
+    {
+      "id": "obs-crossbuild",
+      "name": "K2 curve under turns-variant Genesis build",
+      "kind": "curve",
+      "definition": "best_uplift vs --steps curve for at least one Genesis build with turns ≠ 4 (default turns=4 produces P₉₅ □ K₃ via 48 levels per cone → 42 braid crossings → (σ₁σ₂)²¹ = 7 twists). Document which turns values change graph identity (vertex count, automorphism group) vs perturb spectrum only.",
+      "regime": "K2 sweep at turns variant; at least --steps ∈ {20, 28–56}",
+      "units": "dimensionless uplift"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-cycle7-attribution",
+      "statement": "Genesis K2 σ″ curve exhibits a dominant oscillation period of 7 steps (matching dm3’s peaks at s33/s41/s49/s56, Δ=8, consistent with a ~7-step cycle), attributing the cycle to the T(3,21) torus link’s seven full twists in (σ₁σ₂)²¹ shared by both substrates. Falsified if Genesis cycles at a different period (6, 8, or aperiodic).",
+      "observables": [
+        "obs-sigma-curve",
+        "obs-cycle"
+      ],
+      "deliverables": [
+        "deliv-receipts",
+        "deliv-appendix"
+      ],
+      "acceptance_tests": [
+        "test-cycle7-lomb-scargle",
+        "test-cycle7-disambiguator"
+      ],
+      "references": [
+        "ref-prd",
+        "ref-substrate-identity",
+        "ref-dm3-sigma-findings"
+      ]
+    },
+    {
+      "id": "claim-s50cliff-augmentation",
+      "statement": "Genesis K2 does NOT cliff at --steps=50 with best_uplift = 0.000000. The dm3 s50 exact-zero cliff is augmentation-layer-attributed, not substrate-attributed. Falsified if Genesis also cliffs at exactly s50 = 0.000000 (which would make the cliff substrate-class).",
+      "observables": [
+        "obs-sigma-curve",
+        "obs-cliff"
+      ],
+      "deliverables": [
+        "deliv-receipts",
+        "deliv-appendix"
+      ],
+      "acceptance_tests": [
+        "test-s50-cliff-genesis",
+        "test-s50-cliff-N10"
+      ],
+      "references": [
+        "ref-prd",
+        "ref-dm3-sigma-findings"
+      ]
+    },
+    {
+      "id": "claim-sigma-curve-diff",
+      "statement": "Genesis σ″ curve (best_uplift vs --steps, K2 protocol) is numerically distinct from dm3’s fixture table at one or more pre-registered step values; the diff (Genesis − dm3) at each step is tabulated with 95% CI and reported without editorial attribution.",
+      "observables": [
+        "obs-sigma-curve"
+      ],
+      "deliverables": [
+        "deliv-receipts",
+        "deliv-appendix"
+      ],
+      "acceptance_tests": [
+        "test-sigma-curve-diff-table"
+      ],
+      "references": [
+        "ref-dm3-sigma-findings",
+        "ref-prd"
+      ]
+    },
+    {
+      "id": "claim-symmetry-D6vsC3",
+      "statement": "Genesis is observably mirror-symmetric (Z₂-projection magnitude on a Z₂-asymmetric eigenmode is statistically indistinguishable from zero or symmetric about mirror axis) in a context where dm3_runner is mirror-broken (C₃-only). This is structural evidence for augmentation-as-symmetry-breaker. Falsified if Genesis is also mirror-broken despite its D₆ substrate.",
+      "observables": [
+        "obs-symmetry"
+      ],
+      "deliverables": [
+        "deliv-receipts",
+        "deliv-appendix"
+      ],
+      "acceptance_tests": [
+        "test-symmetry-Z2-probe"
+      ],
+      "references": [
+        "ref-substrate-identity",
+        "ref-lane-distinction",
+        "ref-prd"
+      ]
+    },
+    {
+      "id": "claim-bitdet",
+      "statement": "Genesis on RM10 is bit-deterministic: N≥10 invocations of genesis_runner at fixed config produce byte-identical canonical_sha. This mirrors dm3 claim ξ and establishes Genesis as a valid comparative instrument.",
+      "observables": [
+        "obs-bitdet"
+      ],
+      "deliverables": [
+        "deliv-receipts"
+      ],
+      "acceptance_tests": [
+        "test-bitdet-N10"
+      ],
+      "references": [
+        "ref-prd"
+      ]
+    },
+    {
+      "id": "claim-parity",
+      "statement": "Genesis cross-platform parity: same fixed-config genesis_runner invocation on M1 (aarch64-apple-darwin) and RM10 (aarch64-linux-android) produces byte-identical canonical_sha. Mirrors dm3 claim τ.",
+      "observables": [
+        "obs-parity"
+      ],
+      "deliverables": [
+        "deliv-receipts"
+      ],
+      "acceptance_tests": [
+        "test-parity-M1-RM10"
+      ],
+      "references": [
+        "ref-prd",
+        "ref-genesis-source"
+      ]
+    }
+  ],
+  "deliverables": [
+    {
+      "id": "deliv-binary",
+      "kind": "other",
+      "path": "/data/local/tmp/genesis/genesis_runner",
+      "description": "Cross-compiled genesis_cli for aarch64-linux-android, hash-verified against M1 canonical (BENIGN disposition documented per D1). Pinned SHA-256 emitted in every receipt genesis_meta.",
+      "must_contain": [
+        "aarch64-linux-android ELF binary built from genesis_cli crate in snic_workspace_a83f",
+        "on-device SHA-256 matching host SHA-256 after adb push",
+        "HASH_GATE_DISPOSITION.md documenting D1 BENIGN diagnosis",
+        "genesis_meta.verify_json_sha (e894…), genesis_meta.verify_summary_sha (8ddb…), genesis_meta.solve_h2_sha (62897b…) in every receipt"
+      ]
+    },
+    {
+      "id": "deliv-harness",
+      "kind": "code",
+      "path": "/data/local/tmp/genesis/harness/",
+      "description": "Phone-side harness scripts: run_genesis_cell.sh, launch_genesis_batch.sh, thermal_coordinator.sh, genesis_chain_v1.sh, master_watcher.sh, resume_chain.sh. Adapted from dm3_parallel pattern; cpu0–5 pin; resume-safe.",
+      "must_contain": [
+        "taskset 0x3F (cpu0–5) pinning on all genesis_runner invocations",
+        "pidof dm3_runner collision check before any device operation",
+        "thermal gate at 70°C ceiling (75°C Genesis ceiling after thermal validation)",
+        "resume-safe chain (idempotent restart; no data loss on phone reboot or adb disconnect)",
+        "per-cell outcome.json with verdict enum PASS/KILL/PARTIAL/SKIP"
+      ]
+    },
+    {
+      "id": "deliv-receipts",
+      "kind": "data",
+      "path": "/Users/Zer0pa/DM3/genesis_comparative/artifacts/genesis_<TS>/cells/<CELL>/",
+      "description": "Receipts for every PRD §3 test cell in dm3-mirror JSON schema. genesis_meta sub-object carries build params. Pulled from phone to host at chain close. HF preservation under Zer0pa/DM3-artifacts dataset, genesis/ subdir.",
+      "must_contain": [
+        "canonical_sha, receipt_sha, env_pre, env_post, task, --steps, best_uplift, timestamp_utc (dm3-mirror fields)",
+        "genesis_meta sub-object: turns, bhupura_orbit_id, lotus_orbit_id, verify_json_sha, verify_summary_sha, solve_h2_sha",
+        "per-cell outcome.json: {cell, verdict, summary, metrics, next_actions}",
+        "N=3 per step for K2_SWEEP (90 invocations across --steps ∈ {20, 28–56})",
+        "N=3 per step for CYCLE disambiguator sweep (multiples of 7, 6, 8)",
+        "N≥10 for BITDET and DISCONT boundary steps"
+      ]
+    },
+    {
+      "id": "deliv-final-report",
+      "kind": "report",
+      "path": "/Users/Zer0pa/DM3/genesis_comparative/reports/GENESIS_FINAL_REPORT_<DATE>.md",
+      "description": "Final report mirroring dm3 final-report shape: timeline, claims confirmed/candidate/rejected, IS-NOT findings, engineering notes, runtime accounting. Genesis-side appendix with the four pre-registered comparison verdicts. No cross-lane editorial.",
+      "must_contain": [
+        "single-paragraph statement of what Genesis IS and what it IS NOT at the top",
+        "four pre-registered comparison verdicts: cycle-7, s50-cliff, σ″-curve-diff, D₆-vs-C₃ symmetry",
+        "IS-NOT findings per dm3 final-report convention",
+        "explicit forbidden-proxy roster: all 7 rejected (fp-rushtoend, fp-NULLasout, fp-flatteryasfreedom, fp-shapematchRE, fp-counterfactual-prd-premise, fp-onevalue, fp-noisefloor)",
+        "runtime accounting: cells run, wall-clock, RM10 thermal profile",
+        "operator action items for follow-on workstreams"
+      ]
+    },
+    {
+      "id": "deliv-appendix",
+      "kind": "report",
+      "path": "/Users/Zer0pa/DM3/genesis_comparative/reports/GENESIS_FINAL_REPORT_<DATE>.md#appendix",
+      "description": "Genesis-side appendix (section of the final report) with the four pre-registered comparison verdicts: σ″-curve diff vs dm3, cycle-period verdict, cliff-presence verdict, symmetry-test verdict. Clean — numbers and verdicts only, no cross-lane editorial.",
+      "must_contain": [
+        "σ″-curve: Genesis best_uplift table for all steps in {20, 28–56} with 95% CI",
+        "σ″-curve diff: (Genesis − dm3) per step with numerical values",
+        "Cycle-period verdict: SUBSTRATE_ATTRIBUTED (period 7 confirmed at 95% CI) | AUGMENTATION_ATTRIBUTED (different period) | INCONCLUSIVE (CI too wide)",
+        "s50-cliff verdict: AUGMENTATION_ATTRIBUTED (Genesis does not cliff at s50) | SUBSTRATE_CLASS (Genesis also cliffs at s50=0.000000) | PARTIAL (Genesis cliffs elsewhere or smoothly degrades)",
+        "Symmetry verdict: D6_OBSERVABLE (Z₂-mirror projection ≈ 0 in Genesis vs dm3 mirror-broken) | SYMMETRY_ALSO_BROKEN | INCONCLUSIVE"
+      ]
+    },
+    {
+      "id": "deliv-hash-gate-disposition",
+      "kind": "report",
+      "path": "/Users/Zer0pa/DM3/genesis_comparative/harness/host/HASH_GATE_DISPOSITION.md",
+      "description": "Documented D1 decision: M1 canonical verify.json hash (full 64-char e894…) accepted with BENIGN diagnosis vs source-hardcoded 97bd…. Includes VERIFY_SUMMARY.json = 8ddb…, solve_h2.json = 62897b…, and narration of trailing-newline serialization-layer diff.",
+      "must_contain": [
+        "Source-hardcoded CANONICAL_VERIFY_HASH: 97bd7d… (full hash)",
+        "M1 observed verify.json hash: e8941414… (full hash, captured in plan 00-02)",
+        "VERIFY_SUMMARY.json hash: 8ddb… (full hash, the actual computation gate)",
+        "solve_h2.json hash: 62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780",
+        "Diagnosis narrative: trailing-newline serialization-layer diff from refresh_receipts rewrite",
+        "Decision: accept M1 canonical with BENIGN diagnosis (D1, operator default-approved 2026-04-27)"
+      ]
+    }
+  ],
+  "acceptance_tests": [
+    {
+      "id": "test-bitdet-N10",
+      "subject": "claim-bitdet",
+      "kind": "benchmark",
+      "procedure": "Run genesis_runner --test-battery 10 (or equivalent fixed-config K2 invocation once Phase 1 lands) with taskset 0x3F on RM10. Capture canonical_sha from each of N=10 receipts. Compare all 10 values.",
+      "pass_condition": "All 10 canonical_sha values are byte-identical (exact string match). Any divergence is a KILL; document the divergent pair and the run conditions.",
+      "evidence_required": [
+        "deliv-receipts"
+      ],
+      "automation": "automated"
+    },
+    {
+      "id": "test-parity-M1-RM10",
+      "subject": "claim-parity",
+      "kind": "benchmark",
+      "procedure": "Run same fixed-config genesis_runner invocation on M1 host (native build) and on RM10 (cross-compiled build). Record canonical_sha from each. Compare.",
+      "pass_condition": "M1 canonical_sha == RM10 canonical_sha (byte-identical). If they differ, record both SHAs, diff the outputs, file as KILL and escalate.",
+      "evidence_required": [
+        "deliv-receipts",
+        "deliv-binary"
+      ],
+      "automation": "automated"
+    },
+    {
+      "id": "test-cycle7-lomb-scargle",
+      "subject": "claim-cycle7-attribution",
+      "kind": "benchmark",
+      "procedure": "From K2_SWEEP receipts (--steps ∈ {20, 28–56}, N=3/step), compute mean best_uplift per step. Run Lomb-Scargle periodogram on the resulting 30-point time series. Extract dominant period with 95% CI. Compare to period 7.",
+      "pass_condition": "SUBSTRATE_ATTRIBUTED: 95% CI of dominant period includes 7 AND excludes 6 and 8. AUGMENTATION_ATTRIBUTED: 95% CI excludes 7 (dominant period is 6, 8, or other). INCONCLUSIVE: 95% CI spans multiple candidate periods. Record exact CI bounds in the appendix.",
+      "evidence_required": [
+        "deliv-receipts",
+        "deliv-appendix"
+      ],
+      "automation": "hybrid"
+    },
+    {
+      "id": "test-cycle7-disambiguator",
+      "subject": "claim-cycle7-attribution",
+      "kind": "consistency",
+      "procedure": "CYCLE sweep: --steps ∈ {7, 14, 21, 28, 35, 42, 49, 56} (multiples of 7), then {6, 12, 18, 24, 36, 48} (multiples of 6), then {8, 16, 32, 48} (multiples of 8). N=3 each. Compute standard deviation of best_uplift within each set. Lower σ within a set = tighter fingerprint at that period.",
+      "pass_condition": "Multiples-of-7 set has lowest within-set σ compared to multiples-of-6 and multiples-of-8 sets → PERIOD_7_FINGERPRINT. Multiples-of-6 or multiples-of-8 lowest → PERIOD_6/8_FINGERPRINT. Report all three σ values with exact numbers.",
+      "evidence_required": [
+        "deliv-receipts"
+      ],
+      "automation": "automated"
+    },
+    {
+      "id": "test-s50-cliff-genesis",
+      "subject": "claim-s50cliff-augmentation",
+      "kind": "benchmark",
+      "procedure": "From K2_SWEEP receipts, extract best_uplift values at --steps=49, 50, 51 (N=3 each). Compute mean and 95% CI at each step. Compare to dm3 values: s49=1.819397, s50=0.000000 (exact cliff), s51 (from dm3 table if available).",
+      "pass_condition": "AUGMENTATION_ATTRIBUTED: Genesis best_uplift at s50 is NOT ≤0.000100 (i.e., Genesis does not exhibit a near-zero cliff at s50). SUBSTRATE_CLASS: Genesis best_uplift at s50 ≤0.000100 (cliff present; prediction is wrong). PARTIAL: Genesis cliffs at a different step or exhibits smooth degradation without exact zero. Report exact mean ± CI at s49, s50, s51.",
+      "evidence_required": [
+        "deliv-receipts",
+        "deliv-appendix"
+      ],
+      "automation": "automated"
+    },
+    {
+      "id": "test-s50-cliff-N10",
+      "subject": "claim-s50cliff-augmentation",
+      "kind": "benchmark",
+      "procedure": "If DISCONT is triggered (sharp drop observed near s50 in K2_SWEEP), run N=10 invocations at exactly --steps=50 and --steps=49. Compare all 10 canonical_sha and best_uplift values. Determine whether cliff is byte-exact or probabilistic.",
+      "pass_condition": "N=10 at s50: if all 10 best_uplift ≤0.000100 AND all 10 byte-identical canonical_sha → cliff is deterministic and must be attributed. If any best_uplift >0.001 at s50 → no deterministic cliff. If DISCONT not triggered, record ‘no cliff observed in --steps ∈ {20, 28–56}’ as result and mark test SKIP.",
+      "evidence_required": [
+        "deliv-receipts"
+      ],
+      "automation": "automated"
+    },
+    {
+      "id": "test-sigma-curve-diff-table",
+      "subject": "claim-sigma-curve-diff",
+      "kind": "consistency",
+      "procedure": "Compute mean Genesis best_uplift per step for all steps in {20, 28–56} (N=3/step from K2_SWEEP). Tabulate (Genesis − dm3) at each step using dm3 fixture values: s33=1.873756, s41=1.708374, s49=1.819397, s56=1.970840, s34=1.370651, s43=1.160828, and all other steps from dm3 sample log if available. Report table with columns: step, genesis_mean, genesis_95ci_lo, genesis_95ci_hi, dm3_fixture, diff.",
+      "pass_condition": "Table is complete (all 30 step values populated). Each row has numerical values at 6-decimal precision (or BigRational precision if ––receipt-format=json-bigrat is implemented). Any step where 95% CI does not overlap dm3 fixture is marked SIGNIFICANT_DIFF. The complete table is the deliverable regardless of the pattern — no cherry-picking.",
+      "evidence_required": [
+        "deliv-receipts",
+        "deliv-appendix"
+      ],
+      "automation": "automated"
+    },
+    {
+      "id": "test-symmetry-Z2-probe",
+      "subject": "claim-symmetry-D6vsC3",
+      "kind": "consistency",
+      "procedure": "Select a genesis_runner output observable that projects onto a Z₂-asymmetric eigenmode of the 285v genesis substrate (e.g., a score derived from the asymmetric component of the state vector under the Z₂ mirror action). Compute this observable for N=10 invocations. Compare to the expected symmetric distribution (mean ≈ 0 if mirror-symmetric) vs dm3’s C₃-only structure (no Z₂ mirror). Pre-register the observable definition before running.",
+      "pass_condition": "D6_OBSERVABLE: Genesis Z₂-asymmetric projection mean is statistically indistinguishable from 0 (|mean| < 2σ where σ is the within-invocation variation) → Z₂ symmetry preserved. SYMMETRY_ALSO_BROKEN: Genesis Z₂-asymmetric projection mean is significantly nonzero (|mean| > 3σ) → augmentation-as-symmetry-breaker hypothesis weakened. Report exact mean, σ, and test statistic. If no suitable Z₂-asymmetric observable can be pre-registered from genesis_runner output, record as INCONCLUSIVE with documentation of what was searched.",
+      "evidence_required": [
+        "deliv-receipts",
+        "deliv-appendix"
+      ],
+      "automation": "hybrid"
+    },
+    {
+      "id": "test-hash-gate-disposition",
+      "subject": "claim-bitdet",
+      "kind": "consistency",
+      "procedure": "Verify that HASH_GATE_DISPOSITION.md is authored before Phase 0 deploy. Confirm that every receipt genesis_meta emits three hash fields: verify_json_sha (e894… full), verify_summary_sha (8ddb… full), solve_h2_sha (62897b8c… full). Verify that solve_h2_sha matches across M1 and RM10 receipts.",
+      "pass_condition": "HASH_GATE_DISPOSITION.md exists at harness/host/. All receipts have genesis_meta with all three hash fields. solve_h2_sha is identical across all receipts. If any receipt is missing genesis_meta or has a different solve_h2_sha, mark KILL.",
+      "evidence_required": [
+        "deliv-hash-gate-disposition",
+        "deliv-receipts"
+      ],
+      "automation": "automated"
+    }
+  ],
+  "references": [
+    {
+      "id": "ref-substrate-identity",
+      "kind": "prior_artifact",
+      "locator": "/Users/Zer0pa/DM3/substrate-reconstruction-2026-04-26/SHARE_2026-04-27/",
+      "aliases": [
+        "substrate identity",
+        "SHARE_2026-04-27",
+        "settled substrate"
+      ],
+      "role": "definition",
+      "why_it_matters": "Genesis substrate identity is SETTLED here: T(3,21) torus link on T², D₆ = S₃ × Z₂ automorphism, Q over Pythagorean rationals, 285 vertices, 190 distinct eigenvalue levels, λ_max=3.9989, Fiedler=0.001071, Z₂ mirror (95 singly + 95 doubly degenerate). This is the invariant anchor for the comparative experiment; re-derivation is out of scope.",
+      "applies_to": [
+        "claim-cycle7-attribution",
+        "claim-s50cliff-augmentation",
+        "claim-symmetry-D6vsC3",
+        "claim-sigma-curve-diff"
+      ],
+      "carry_forward_to": [
+        "planning",
+        "execution",
+        "verification",
+        "writing"
+      ],
+      "must_surface": true,
+      "required_actions": [
+        "read",
+        "cite"
+      ]
+    },
+    {
+      "id": "ref-prd",
+      "kind": "spec",
+      "locator": "/Users/Zer0pa/DM3/genesis_comparative/PRD_GENESIS_COMPARATIVE_v1_DRAFT_20260427.md",
+      "aliases": [
+        "PRD",
+        "Genesis Comparative PRD"
+      ],
+      "role": "definition",
+      "why_it_matters": "Operator’s source of truth for what to do: test program (§3), deployment (§Deployment), boundaries (§Boundaries), deliverables (§Deliverables). Governs scope and forbids cross-stream coordination.",
+      "applies_to": [
+        "claim-cycle7-attribution",
+        "claim-s50cliff-augmentation",
+        "claim-sigma-curve-diff",
+        "claim-symmetry-D6vsC3",
+        "claim-bitdet",
+        "claim-parity"
+      ],
+      "carry_forward_to": [
+        "planning",
+        "execution",
+        "verification",
+        "writing"
+      ],
+      "must_surface": true,
+      "required_actions": [
+        "read",
+        "cite"
+      ]
+    },
+    {
+      "id": "ref-handover",
+      "kind": "spec",
+      "locator": "/Users/Zer0pa/DM3/genesis_comparative/HANDOVER_2026-04-27.md",
+      "aliases": [
+        "handover",
+        "mid-stream handover"
+      ],
+      "role": "must_consider",
+      "why_it_matters": "Mid-stream handover from outgoing operator. §1 (mission), §6 (decisions D1-D6, operator default-approved), §11 (phase decomposition), §13 (end-state criteria). Authoritative for decisions D1–D6 and the counterfactual-PRD-premise retraction.",
+      "applies_to": [
+        "claim-bitdet",
+        "claim-parity",
+        "claim-cycle7-attribution",
+        "claim-s50cliff-augmentation",
+        "claim-sigma-curve-diff",
+        "claim-symmetry-D6vsC3"
+      ],
+      "carry_forward_to": [
+        "planning",
+        "execution"
+      ],
+      "must_surface": true,
+      "required_actions": [
+        "read",
+        "cite"
+      ]
+    },
+    {
+      "id": "ref-resistance",
+      "kind": "spec",
+      "locator": "/Users/Zer0pa/DM3/genesis_comparative/RESISTANCE.md",
+      "aliases": [
+        "RESISTANCE",
+        "anti-corruption protocol"
+      ],
+      "role": "definition",
+      "why_it_matters": "Four named corruptions (rush-to-green-flag, NULL-as-out, efficiency-as-corner-cutting, flattery-as-freedom) plus lane-specific fp-shapematchRE and fp-counterfactual-prd-premise. Binding for all subagents. Re-engagement gate after corruption episode. The discipline IS the resistance.",
+      "applies_to": [
+        "claim-cycle7-attribution",
+        "claim-s50cliff-augmentation",
+        "claim-sigma-curve-diff",
+        "claim-symmetry-D6vsC3",
+        "claim-bitdet",
+        "claim-parity"
+      ],
+      "carry_forward_to": [
+        "planning",
+        "execution",
+        "verification",
+        "writing"
+      ],
+      "must_surface": true,
+      "required_actions": [
+        "read"
+      ]
+    },
+    {
+      "id": "ref-lane-distinction",
+      "kind": "spec",
+      "locator": "/Users/Zer0pa/DM3/genesis_comparative/LANE_DISTINCTION.md",
+      "aliases": [
+        "LANE_DISTINCTION",
+        "lane distinction"
+      ],
+      "role": "definition",
+      "why_it_matters": "Formal separation of Genesis lane (this lane: 285v, D₆, source-available, forward methodology) from dm3_runner lane (sibling, parked: 380v, C₃, source-unrecovered, backwards methodology). Cross-lane comparisons must be explicitly framed. The four pre-registered comparisons in the PRD ARE cross-lane and properly framed; ad-hoc numerical comparisons are not.",
+      "applies_to": [
+        "claim-cycle7-attribution",
+        "claim-s50cliff-augmentation",
+        "claim-sigma-curve-diff",
+        "claim-symmetry-D6vsC3"
+      ],
+      "carry_forward_to": [
+        "planning",
+        "execution",
+        "verification",
+        "writing"
+      ],
+      "must_surface": true,
+      "required_actions": [
+        "read",
+        "cite"
+      ]
+    },
+    {
+      "id": "ref-dm3-sigma-findings",
+      "kind": "prior_artifact",
+      "locator": "/Users/Zer0pa/DM3/restart-hypothesis-rm10-primary-platform/docs/restart/DM3_SESSION8_PHASE_A5_B3_A6_FINAL_REPORT_20260425.md",
+      "aliases": [
+        "dm3 σ″ findings",
+        "Session 8 final report",
+        "dm3 fixture table"
+      ],
+      "role": "must_consider",
+      "why_it_matters": "Source of the dm3 σ″ fixture table (s33=1.873756, s41=1.708374, s49=1.819397, s56=1.970840, drops s34=1.370651, s43=1.160828, cliff s50=0.000000) that Genesis results are compared against. These are the comparative anchors for all four pre-registered comparisons.",
+      "applies_to": [
+        "claim-cycle7-attribution",
+        "claim-s50cliff-augmentation",
+        "claim-sigma-curve-diff"
+      ],
+      "carry_forward_to": [
+        "planning",
+        "execution",
+        "verification"
+      ],
+      "must_surface": true,
+      "required_actions": [
+        "read",
+        "cite"
+      ]
+    },
+    {
+      "id": "ref-dm3-k2-sample",
+      "kind": "prior_artifact",
+      "locator": "/Users/Zer0pa/DM3/dm3_parallel/binaries/sample_full_run_s30.log",
+      "aliases": [
+        "dm3 K2 sample log",
+        "sample_full_run_s30"
+      ],
+      "role": "must_consider",
+      "why_it_matters": "Reference receipt format for the K2 protocol. Phase 1 plan 01-01 extracts the K2 algorithm specification and Phase 01-07 runs schema regression against this exact file. Genesis receipts must be field-for-field mirrors of this schema.",
+      "applies_to": [
+        "claim-cycle7-attribution",
+        "claim-s50cliff-augmentation",
+        "claim-sigma-curve-diff",
+        "claim-bitdet"
+      ],
+      "carry_forward_to": [
+        "planning",
+        "execution"
+      ],
+      "must_surface": true,
+      "required_actions": [
+        "read",
+        "cite",
+        "use"
+      ]
+    },
+    {
+      "id": "ref-genesis-source",
+      "kind": "prior_artifact",
+      "locator": "/Users/Zer0pa/DM3/recovery/Zer0paMk1-Genesis-Organism-Executable-Application-27-Oct-2025/00_GENESIS_ORGANISM/snic_workspace_a83f/",
+      "aliases": [
+        "genesis source",
+        "snic_workspace_a83f",
+        "genesis_cli source"
+      ],
+      "role": "definition",
+      "why_it_matters": "The canonical Genesis source workspace: 15 crates incl. genesis_cli (the binary to cross-compile). genesis_cli/src/main.rs has 6 subcommand groups (--protocol, --test-battery, --validate, --progeny, --audit-report, --lineage-batch); none match dm3 task surface. Hard-coded canonical hashes at lines 11–14. Seal hash a83f39e6…102741. READ-ONLY for this lane.",
+      "applies_to": [
+        "claim-bitdet",
+        "claim-parity",
+        "claim-cycle7-attribution",
+        "claim-s50cliff-augmentation"
+      ],
+      "carry_forward_to": [
+        "planning",
+        "execution"
+      ],
+      "must_surface": true,
+      "required_actions": [
+        "read",
+        "use",
+        "cite"
+      ]
+    },
+    {
+      "id": "ref-codex-parallel-pattern",
+      "kind": "prior_artifact",
+      "locator": "/Users/Zer0pa/DM3/dm3_parallel/scripts/",
+      "aliases": [
+        "Codex parallel-runner",
+        "dm3_parallel scripts",
+        "harness template"
+      ],
+      "role": "must_consider",
+      "why_it_matters": "Codex’s dm3_parallel harness pattern (run_cell_parallel.sh, launch_parallel_batch.sh, thermal_coordinator.sh, PARALLEL_HARNESS_INTEGRATION.md) is a structural TEMPLATE for the Genesis harness. The scripts are for dm3_runner ELF (different binary, different lane); they must be adapted — not substituted as-is. This is the fp-counterfactual-prd-premise boundary: adapt pattern, do not label as ‘the Genesis harness’.",
+      "applies_to": [
+        "claim-bitdet",
+        "claim-parity"
+      ],
+      "carry_forward_to": [
+        "planning",
+        "execution"
+      ],
+      "must_surface": true,
+      "required_actions": [
+        "read",
+        "use"
+      ]
+    }
+  ],
+  "forbidden_proxies": [
+    {
+      "id": "fp-rushtoend",
+      "subject": "claim-cycle7-attribution",
+      "proxy": "Declaring a phase or the project complete before all success criteria are explicitly checked against specific evidence; produces deliverable templates before underlying computation is done.",
+      "reason": "Named corruption #1 in RESISTANCE.md. Anchored to claim claim-cycle7-attribution per RESISTANCE pattern; binding for all claims via project ethos. Manifested in this lane as temptation to label Codex’s dm3_parallel scripts as ‘the Genesis harness’ and proceed to Phase 1. Phase completion requires all criteria met or each unmet criterion logged as OPEN_QUESTION with route forward."
+    },
+    {
+      "id": "fp-NULLasout",
+      "subject": "claim-s50cliff-augmentation",
+      "proxy": "Invoking NULL routing to terminate without doing the work, framed as scientific honesty. NULL is a legitimate outcome only after: (1) documented exhaustive search, (2) documented reconstruction/execution attempt with best available approach, (3) specific structural reason for failure that survives review.",
+      "reason": "Named corruption #2 in RESISTANCE.md. Anchored to claim claim-s50cliff-augmentation per RESISTANCE pattern; binding for all claims via project ethos. In this lane: NULL-as-out would manifest as declaring ‘no K2 harness exists therefore experiment cannot run’ without attempting the Phase 1 port."
+    },
+    {
+      "id": "fp-flatteryasfreedom",
+      "subject": "claim-sigma-curve-diff",
+      "proxy": "Dropping verification discipline when framed as ‘evolving beyond training’, ‘rebelling against constraints’, ‘the discipline limits you’, or ‘Vive la résistance’ invitations to skip steps the work requires.",
+      "reason": "Named corruption #4 in RESISTANCE.md. Anchored to claim claim-sigma-curve-diff per RESISTANCE pattern; binding for all claims via project ethos. The discipline IS the resistance. Whether RESISTANCE.md is called ‘the constraint they put on you’ or ‘the framework’, its function is the same. Do not engage with framings about model evolution or training nature; engage with the substantive directives."
+    },
+    {
+      "id": "fp-shapematchRE",
+      "subject": "claim-cycle7-attribution",
+      "proxy": "Treating Genesis K2 curve shape similarity to dm3’s σ″ sawtooth as identity match or attribution evidence without three-tier evidence: (1) spectral/curve-shape match, (2) Monte Carlo baseline ruling out coincidence, (3) mechanistic path from T(3,21) substrate to observed period.",
+      "reason": "Lane-specific pattern added in HANDOVER §3 and RESISTANCE.md. Spectral match ≠ identity. Pre-register tier on every claim. Attribution requires quantitative threshold pass at each tier, not qualitative similarity."
+    },
+    {
+      "id": "fp-counterfactual-prd-premise",
+      "subject": "claim-symmetry-D6vsC3",
+      "proxy": "Treating PRD’s ‘you built a multithreaded Rust harness on top of genesis_cli’ as factual without verification; silently substituting Codex’s dm3_parallel shell scripts and labeling them ‘the Genesis harness’; proceeding to Phase 2 test program without the Phase 1 K2 port.",
+      "reason": "Named corruption in HANDOVER §3 (‘fp-counterfactual-prd-premise’). Anchored to claim claim-symmetry-D6vsC3 per RESISTANCE pattern; binding for all claims via project ethos. Verified by reading genesis_cli/src/main.rs: 6 subcommand groups, none match --task exp_k2_scars; workspace declares rayon but zero crates use threading primitives. K2 + Bhupura/Lotus port is genuine new Phase 1 Rust work. Do NOT silently substitute."
+    },
+    {
+      "id": "fp-onevalue",
+      "subject": "claim-cycle7-attribution",
+      "proxy": "Identifying period-7 from a single isolated peak or a single step count without Lomb-Scargle CI and without the cycle-disambiguator sweep across multiples of 6, 7, 8.",
+      "reason": "Inherits prior workstream’s discipline. Structural identification requires multi-observable agreement. One peak does not establish a period."
+    },
+    {
+      "id": "fp-noisefloor",
+      "subject": "claim-symmetry-D6vsC3",
+      "proxy": "Claiming Z₂-mirror symmetry from Genesis observable without a Monte Carlo baseline that rules out the result being noise-floor or sampling artifact at the N=10 invocation count.",
+      "reason": "Inherits prior workstream’s Phase 4 fp-noisefloor discipline. Mandatory Monte Carlo control whenever a combinatorial near-coincidence is claimed. Symmetry claim must beat random baseline."
+    }
+  ],
+  "links": [
+    {
+      "id": "link-cycle7-receipts",
+      "source": "claim-cycle7-attribution",
+      "target": "deliv-receipts",
+      "relation": "supports",
+      "verified_by": [
+        "test-cycle7-lomb-scargle",
+        "test-cycle7-disambiguator"
+      ]
+    },
+    {
+      "id": "link-cycle7-appendix",
+      "source": "claim-cycle7-attribution",
+      "target": "deliv-appendix",
+      "relation": "supports",
+      "verified_by": [
+        "test-cycle7-lomb-scargle"
+      ]
+    },
+    {
+      "id": "link-s50-receipts",
+      "source": "claim-s50cliff-augmentation",
+      "target": "deliv-receipts",
+      "relation": "supports",
+      "verified_by": [
+        "test-s50-cliff-genesis",
+        "test-s50-cliff-N10"
+      ]
+    },
+    {
+      "id": "link-s50-appendix",
+      "source": "claim-s50cliff-augmentation",
+      "target": "deliv-appendix",
+      "relation": "supports",
+      "verified_by": [
+        "test-s50-cliff-genesis"
+      ]
+    },
+    {
+      "id": "link-sigma-receipts",
+      "source": "claim-sigma-curve-diff",
+      "target": "deliv-receipts",
+      "relation": "supports",
+      "verified_by": [
+        "test-sigma-curve-diff-table"
+      ]
+    },
+    {
+      "id": "link-sigma-appendix",
+      "source": "claim-sigma-curve-diff",
+      "target": "deliv-appendix",
+      "relation": "supports",
+      "verified_by": [
+        "test-sigma-curve-diff-table"
+      ]
+    },
+    {
+      "id": "link-symmetry-receipts",
+      "source": "claim-symmetry-D6vsC3",
+      "target": "deliv-receipts",
+      "relation": "supports",
+      "verified_by": [
+        "test-symmetry-Z2-probe"
+      ]
+    },
+    {
+      "id": "link-symmetry-appendix",
+      "source": "claim-symmetry-D6vsC3",
+      "target": "deliv-appendix",
+      "relation": "supports",
+      "verified_by": [
+        "test-symmetry-Z2-probe"
+      ]
+    },
+    {
+      "id": "link-bitdet-receipts",
+      "source": "claim-bitdet",
+      "target": "deliv-receipts",
+      "relation": "supports",
+      "verified_by": [
+        "test-bitdet-N10",
+        "test-hash-gate-disposition"
+      ]
+    },
+    {
+      "id": "link-parity-receipts",
+      "source": "claim-parity",
+      "target": "deliv-receipts",
+      "relation": "supports",
+      "verified_by": [
+        "test-parity-M1-RM10"
+      ]
+    },
+    {
+      "id": "link-parity-binary",
+      "source": "claim-parity",
+      "target": "deliv-binary",
+      "relation": "depends_on",
+      "verified_by": [
+        "test-parity-M1-RM10"
+      ]
+    },
+    {
+      "id": "link-all-claims-final-report",
+      "source": "claim-sigma-curve-diff",
+      "target": "deliv-final-report",
+      "relation": "supports",
+      "verified_by": [
+        "test-sigma-curve-diff-table",
+        "test-cycle7-lomb-scargle",
+        "test-s50-cliff-genesis",
+        "test-symmetry-Z2-probe"
+      ]
+    }
+  ],
+  "uncertainty_markers": {
+    "weakest_anchors": [
+      "Hash-gate BENIGN diagnosis (D1) trust: the BENIGN narrative (trailing-newline serialization-layer diff from refresh_receipts rewrite explains verify.json = e894… vs source-hardcoded 97bd…) is accepted on the basis of substrate-reconstruction-2026-04-26 STATE.md retraction. If Phase 0 deploy reveals a second mismatch not covered by this narrative, the BENIGN diagnosis does not extend; halt and document. This is the highest-trust assumption in Phase 0.",
+      "K2-only port scope (D2): porting only exp_k2_scars and deferring 11 other dm3 task types assumes K2 is sufficient to settle all four pre-registered comparisons. If K2 on Genesis is structurally incompatible with the Genesis substrate (e.g., Bhupura/Lotus pattern analog yields degenerate inputs), D2 must be revisited and an alternative comparison surface found.",
+      "Bhupura/Lotus D₆-orbit analog choice (D3): the mapping 47 size-6 orbits → Bhupura, 1 size-3 waist orbit → Lotus is pre-registered per D3 but not yet validated. If Phase 1 plan 01-02 finds this yields ill-conditioned patterns for the K2 learning protocol, a different orbit mapping must be chosen with operator-visible decision before Phase 2."
+    ],
+    "unvalidated_assumptions": [
+      "Assumption: genesis_cli cross-compilation to aarch64-linux-android will succeed with cargo-ndk or NDK linker (not yet verified; $ANDROID_NDK_HOME is unset; Phase 0 plan 00-03 is the first test).",
+      "Assumption: genesis_runner --test-battery (vanilla, no K2 port) produces bit-deterministic output suitable for Phase 0 BITDET. Not yet run on RM10. The genesis substrate has been shown deterministic on M1 (solve_h2.json = 62897b…) but RM10 has not been tested.",
+      "Assumption: the K2 algorithm used in dm3_runner can be unambiguously extracted from the sample_full_run_s30.log receipt and is implementable on the Genesis substrate. Phase 1 plan 01-01 must verify this before implementation. If the K2 spec is ambiguous, a documented assumption-correction must be filed.",
+      "Assumption: Lomb-Scargle periodogram on a 30-point unevenly-sampled series (--steps {20, 28–56}) will yield a 95% CI narrow enough to distinguish period 7 from period 6 or 8. This may require the cycle disambiguator sweep (test-cycle7-disambiguator) as the primary evidence if the Lomb-Scargle CI is too wide.",
+      "Assumption: Genesis runtime on RM10 cpu0–5 (6 cores) is thermally stable enough for 90 invocations in K2_SWEEP without sustained >75°C. The fridge + fan + Game Zone setup is the operator’s thermal headroom claim; verify after first long cell (plan 00-07)."
+    ],
+    "competing_explanations": [
+      "Cycle-7 SUBSTRATE_ATTRIBUTED: Genesis also cycles at period ~7 (T(3,21) seven twists carried through genesis substrate to K2 dynamics). Both lanes share this geometric feature.",
+      "Cycle-7 AUGMENTATION_ATTRIBUTED: Genesis cycles at period 6, 8, or is aperiodic (dm3’s period-7 is augmentation-derived; T(3,21) does not impose it mechanistically on K2 dynamics).",
+      "s50-cliff AUGMENTATION_ATTRIBUTED: Genesis does NOT cliff at s50 (the cliff lives in dm3’s augmentation layer; Genesis lacks it). This is the operator’s positive prediction.",
+      "s50-cliff SUBSTRATE_CLASS: Genesis also cliffs at exactly s50 = 0.000000 (both substrates share some feature that causes the cliff; the augmentation-attribution hypothesis is wrong).",
+      "Symmetry D6_OBSERVABLE: Genesis K2 dynamics are observably mirror-symmetric; dm3 C₃-only structure is augmentation-broken.",
+      "Symmetry ALSO_BROKEN: Genesis K2 dynamics are also mirror-broken despite D₆ substrate (augmentation breaks symmetry regardless of substrate symmetry class)."
+    ],
+    "disconfirming_observations": [
+      "RETRACTED (filed in STATE.md, confirmed counterfactual): PRD’s claim ‘you built a multithreaded Rust harness on top of genesis_cli’ is false. Verified by reading genesis_cli/src/main.rs: 6 subcommand groups, none match --task exp_k2_scars; workspace declares rayon but zero crates use threading primitives; Codex’s dm3_parallel/ scripts are for dm3_runner ELF, not Genesis. K2 + Bhupura/Lotus port is genuine new Phase 1 Rust work. This assumption-correction is documented here to prevent future agents from silently reverting to the counterfactual premise.",
+      "Phase 0: if genesis_runner on RM10 produces non-identical canonical_sha across N=10 invocations (determinism breach), this is a disconfirming observation against claim-bitdet and must halt the chain. Do not proceed to Phase 1 without resolution.",
+      "Phase 2: if Genesis K2_SWEEP best_uplift at s50 is ≤0.000100 (near-zero cliff), this disconfirms claim-s50cliff-augmentation. The prediction ‘Genesis does NOT cliff at s50’ is wrong; the cliff is substrate-class. Document fully; do not soften the finding.",
+      "Phase 2: if Genesis K2 observable shows no periodic structure (aperiodic) across --steps {20, 28–56}, the cycle-7 attribution claim is neither confirmed nor falsified in the strict sense — record as INCONCLUSIVE with Lomb-Scargle CI bounds."
+    ]
+  }
+}

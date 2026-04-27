@@ -1,0 +1,37 @@
+# Genesis chain manifest — Phase 0 (snic_rust pipeline; BITDET sweep)
+# Format: <CELL_ID> [--task TASK] [--steps N] [--test-battery N] [--instances N]
+# One cell per non-empty non-comment line.
+#
+# Phase 0 (THIS PHASE): chain-launch + bit-determinism via snic_rust pipeline.
+# Each cell runs the 4-step Genesis pipeline (build-2d -> lift-3d -> solve-h2 -> verify)
+# on 6 parallel instances, looping --test-battery iterations per instance.
+# Per-iter the script captures sha256 of artifacts/verify.json and enforces
+# byte-identity across iters within an instance + across instances within a cell.
+#
+# Expected canonical hashes (source-hardcoded, reproduced cleanly on RM10):
+#   verify.json  = 97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+#   solve_h2.json = 62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780
+#
+# PASS: every iter of every instance produces matching canonical_sha = 97bd7d...
+# Each pipeline iter ~3-4s wall; 6 instances run in parallel.
+#
+BITDET_01 --test-battery 10  --instances 6
+BITDET_02 --test-battery 50  --instances 6
+BITDET_03 --test-battery 200 --instances 6
+#
+# Long-running BITDET for autonomous-overnight chain operation while operator unplugs.
+# Each iter ~35ms wall on RM10 SD8Gen3; per-cell wall ~ N_iters * 35ms (single-instance,
+# but parallel across 6 instances). Total below: ~5500 + 27500 + 27500 = ~60500s
+# of single-instance work, divided by 6 cores -> ~3 hours wall. Each iter cross-checks
+# verify.json hash across all 6 instances to canonical = 97bd7d...
+#
+BITDET_5K  --test-battery 5000   --instances 6
+BITDET_50K --test-battery 50000  --instances 6
+BITDET_500K --test-battery 500000 --instances 6
+#
+# Phase 1+ cells (require K2 task port to snic_rust; deferred to host-side work):
+#   K2_S30_01 --task exp_k2_scars --steps 30 --instances 6
+#   PARITY_M1RM10 (host-coordinated; not a phone cell)
+#   SYMMETRY_D6Z2 --task ... (D6 mirror probe; needs K2 port)
+#   CYCLE_PROBE --task exp_k2_scars --steps 7 --instances 6  (and 14, 21, ...)
+#   CROSSBUILD_TURNS5 (vary turns knob in CONFIG; needs CONFIG variant + redeploy)
