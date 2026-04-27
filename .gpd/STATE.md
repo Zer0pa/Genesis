@@ -9,7 +9,8 @@ See: .gpd/PROJECT.md
 
 ## Current Position
 
-**Current Phase:** 0 — COMPLETE; autonomous chain running
+**Current Phase:** 1 — K2 port LANDED on host; awaiting phone reconnect to deploy
+**Phase 0 status:** COMPLETE; autonomous chain running on phone
 **Current Phase Name:** Foundation, cross-compile, deploy, first cell
 **Total Phases:** 4
 **Current Plan:** Autonomous chain operating; phase 1 K2 port begins host-side
@@ -48,6 +49,34 @@ None yet.
 - Hard-coded canonical hashes in `genesis_cli/src/main.rs`: `CANONICAL_VERIFY_HASH = 97bd7d…`, `CANONICAL_SOLVE_HASH = 62897b…`
 - M1 build state (per substrate-reconstruction-2026-04-26 STATE.md retraction): verify.json hashes to `e8941414...` not `97bd...` (BENIGN serialization-layer trailing-newline diff); `solve_h2.json` matches `62897b...` exactly; VERIFY_SUMMARY.json reproduces at `8ddb...`; all 7 gates pass
 - Codex's prior work at `dm3_parallel/scripts/` — shell-orchestration pattern for parallel dm3_runner ELF, **not Rust harness on top of genesis_cli**; pattern reused as template for Genesis (paths/binary swapped). Codex verdict: `PARALLEL_RUNNER_VALIDATION_REPORT.md` = BLOCKED (device unavailable at Codex run time).
+
+### Phase 1 K2 port (host-side, 2026-04-28)
+
+K2 protocol implemented as 5th subcommand `k2-scars` of `io_cli` (binary `snic_rust`).
+
+- New module: `crates/io_cli/src/k2_scars.rs` (506 lines)
+- main.rs updated (270 lines, +75 lines for K2Scars enum variant + dispatch)
+- Cargo.toml: workspace-deps num/num_rational/num_traits added (no new external crates)
+- Substrate fixture: `genesis_comparative/inputs/substrate_285v.json` (285v, 567 edges, 48 D₆ orbits, Bhupura/Lotus pattern indices baked in)
+- Algorithm: Hebbian scar weights (S += eta·p_centered⊗p_centered on edge support); modified row-stochastic dynamics x_{t+1} = α·P_mod·x_t + (1-α)·p_noisy with α=164/165; deterministic Bernoulli noise via sha256(cfg_hash || lesson || noise_idx || pattern || vertex); recall_err = Hamming distance after rounding to {0,1} at threshold 1/2.
+- All numeric work via num_rational::BigRational (no f32/f64 in math path; floats only for printf). POLICY_CHECK: PASS.
+- Build: M1 host clean, no warnings (workspace `#![deny(warnings)]` honored).
+- Cross-compile aarch64-android: PASS. New `snic_rust` SHA-256 = `e21208a69064a11677cb700e3b68c0fba3aab1e08ed784f71d8e954a523e5ff1` (replaces `7abbf04a…` on phone redeploy).
+- K2 task BITDET (M1 host): two consecutive `k2-scars --steps 30` runs produce byte-identical `artifacts/k2_summary.json` SHA = `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`.
+
+**Phase 1 K2 result (M1 host, --steps 30):**
+```
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+KPI_K2_SUMMARY duration_sec=4.770 max_scar_weight=1.200000 best_uplift=3.000000
+```
+
+**Curious-numbers finding to interrogate in Phase 2 sweep:**
+- Genesis K2 at --steps 30 yields **uniform |scar|=1.2 across all 567 edges** + **perfect recall (avg_recall_err=0.0)** + **best_uplift=3.0** (= baseline of 3.0 fully erased).
+- Compare to dm3 at --steps 30 (per `dm3_parallel/binaries/sample_full_run_s30.log`): max_scar=0.868061, best_uplift=1.644524, varied scars across edges (max_abs_delta=0.2 at L=3, mean=0.083, only 1892/4560 edges changed).
+- Mathematical origin of Genesis uniform-scar: rank-1 effect of disjoint Bhupura(282)+Lotus(3) patterns; both pattern outer products contribute to the same edge-weight magnitude regardless of which class the edge connects. This is a property of the D3 pattern choice (47 size-6 orbits union vs 1 size-3 waist) — possibly degenerate K2 dynamics for Phase 2 sweep purposes; alternative orbit choices may give richer dynamics. Pre-register as a Phase 2 finding to interrogate in K2_SWEEP cell verdict.
+- Cross-lane attribution open: this difference may be (a) substrate-attributable (D₆ vs C₃; 285v vs 380v) — supporting cycle-7/s50-cliff substrate-attribution; OR (b) pattern-choice-attributable (D3 orbit picks make Genesis K2 trivially recoverable) — confound in the cross-lane comparison. Phase 2 K2_SWEEP over --steps ∈ {20, 28..56} will tell whether the value is constant (degenerate) or varies (real substrate effect).
 
 ### Phase 0 plan checklist
 
