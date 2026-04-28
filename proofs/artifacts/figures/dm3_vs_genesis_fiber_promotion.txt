@@ -1,0 +1,114 @@
+Cross-lane geometry comparison: K_3 → K_4 fiber promotion
+==========================================================
+
+Figure: dm3_vs_genesis_fiber_promotion.png  (642,082 bytes; SHA-1 fe8aeb96...)
+Generated: 2026-04-28
+Source script: /Users/Zer0pa/DM3/DM3 v Genesis Geometry/comparison/  (build script in
+    Genesis Geometry bundle's 04_visualization/ + DM3 Geometry bundle's 08_3D_MODELS/)
+
+Layout (six panels, three rows logically):
+
+Top-left   — Genesis substrate full helical column.
+             P_95 □ K_3,  285 vertices / 567 edges / 96 faces,  Aut = D_6 (order 12).
+             Source: vertices.csv (rational coordinates, exact-rational helical lift)
+             + substrate_285v_fixture.json edge list.
+
+Top-middle — DM3 loaded fixture full helical column.
+             P_95 □ K_4,  380 vertices / 946 edges,  Aut = C_2 × S_4 (order 48).
+             Source: DM3 v Genesis Geometry/DM3 Geometry/08_3D_MODELS/coords_p95_k4_helical.json
+             (z-axis rescaled to match Genesis aspect ratio for side-by-side viewing).
+
+Top-right  — Genesis xy-projection (top view).
+             Three-strand rotational interleaving — visual signature of the
+             T(3,21) torus link / Z_3 voltage cover. D_6 symmetry visible.
+
+Bottom-left — Single Genesis station inset.
+             K_3 fiber: 3 nodes, 3 ring edges (one triangle), with 6 path edges
+             going to the two neighbour stations (above and below).
+
+Bottom-middle — Single DM3 station inset.
+             K_4 fiber: 4 nodes, 6 ring edges (one tetrahedron), with 8 path
+             edges going to the two neighbour stations.
+
+Bottom-right — K_3 → K_4 fiber-promotion arithmetic.
+             V = 95 · n          : 95·3 = 285  →  95·4 = 380   (+95 vertices)
+             E = 94·n + 95·C(n,2): 94·3 + 95·3 = 567  →  94·4 + 95·6 = 946   (+379 edges)
+             Spectrum: λ(P_95 □ K_n) = λ_p(P_95) + μ_q(K_n)
+                       Genesis  λ_max = 3.999      Fiedler ≈ 0.001071
+                       DM3 K_4  λ_max = 7.998906   Fiedler ≈ 0.001093
+             Aut group: D_6 (order 12)  →  C_2 × S_4 (order 48)
+                        ↑ same path base P_95   ↑ fiber promoted
+
+What the figure proves
+======================
+
+The Genesis substrate (P_95 □ K_3) is bit-identical to DM3's internal-default
+skeleton — the graph that Dm3State::initialize → build_helix_meru →
+build_dual_meru constructs when no fixture is loaded. The DM3 loaded fixture
+(P_95 □ K_4, what dm3_runner consumes from SriYantraAdj_v1.bin) is one
+discrete K_3 → K_4 complete-graph fiber promotion away. Same 95-station path
+base, same upstream Rust pipeline (yantra_2d → lift_3d → yantra_3d_dual);
+source-built mesh authority byte-identical at:
+
+    dual_meru_mesh.ply       SHA-1 = 7ee17457b7daeec565bb1e06982b8a1facd8169f
+    dual_meru_yantra_2d.svg  SHA-1 = a1dbf572167960b9bd348d392d3405b1114db1ef
+
+The same files appear identically in both the Genesis Geometry bundle
+(02_3d_models/dual_meru_mesh_rational.ply, dual_meru_yantra_2d.svg) and the
+DM3 Geometry bundle (09_SOURCE_BUILT_MESH/dual_meru_mesh.ply,
+dual_meru_mesh.svg). Independently verified by shasum.
+
+What the figure does NOT prove
+==============================
+
+- DM3's runtime identity. R8 (Tier-3 live runtime trace under live dm3_runner
+  execution) remains OPEN_TIER3_BLOCKED. The figure shows what dm3_runner's
+  loaded fixture IS, statically. Whether the binary actually walks that
+  adjacency at runtime is a separate authority gate, tracked in the
+  dm3-runner-reconstruction-2026-04-27 lane on the DM3 side.
+
+- Why Genesis K2 is flat at best_uplift = 3.000000. The pattern-degenerate
+  alternative reading (rank-1 effect of disjoint Bhupura(282)+Lotus(3) outer
+  products under D3) is on the record in project_contract.json
+  uncertainty_markers and remains an open structural question.
+
+- Equivalence between Genesis substrate and a recognized graph in the standard
+  catalogues. The Z_3 voltage cover of P_95 / T(3,21) torus link
+  identification is a positive identification within a recognized family
+  (voltage covers of trees over cyclic groups, arXiv 2206.05583), recorded as
+  NEAR_MATCH in the falsification harness because no previously-named specific
+  graph in the standard catalogues is the same instance.
+
+Falsification path
+==================
+
+If anyone reproduces the Genesis pipeline (cargo run --release -p io_cli
+build-2d/lift-3d/solve-h2/verify per REPRODUCIBILITY.md) and obtains a
+verify.json or solve_h2.json hash that does not match the source-hardcoded
+canonical, the byte-identity claim is partially falsified at the affected
+scale.
+
+If anyone reproduces the DM3 substrate-reconstruction pipeline
+(/Users/Zer0pa/DM3/dm3-runner-reconstruction-2026-04-27/, scripts in
+03_RECONSTRUCTION_SCRIPTS/) and obtains an adjacency that is not isomorphic
+to P_95 □ K_4 for the loaded fixture or not isomorphic to P_95 □ K_3 for the
+internal default skeleton, the cross-lane geometric identity claim is
+falsified.
+
+The figure is a visual receipt for a claim the falsification path is open to
+testing. It is not the claim itself.
+
+References
+==========
+
+- LANE_DISTINCTION.md (this repo)              — formal Genesis/dm3_runner separation
+- README.md §"Sibling Lane — DM3" (this repo)  — prose statement of the
+                                                 K_3 → K_4 relationship
+- /Users/Zer0pa/DM3/DM3 v Genesis Geometry/   — the local geometry bundle
+                                                 (DM3 Geometry + Genesis
+                                                 Geometry sub-bundles, plus
+                                                 this comparison figure)
+- /Users/Zer0pa/DM3/dm3-runner-reconstruction-2026-04-27/  — DM3 static
+                                                 reconstruction lane
+                                                 (R1–R7 closed at Tier-2;
+                                                 R8 open)
