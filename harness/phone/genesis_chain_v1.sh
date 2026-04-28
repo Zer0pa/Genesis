@@ -11,7 +11,7 @@
 #   Phase 0 example:
 #     BITDET_01 --test-battery 10
 #   Phase 1+ example:
-#     K2_S30_01 --task exp_k2_scars --steps 30 --instances 6
+#     K2_S30 --task k2-scars --steps 30 --instances 6 --test-battery 3
 #   Blank lines and lines starting with '#' are ignored.
 set -eu
 
