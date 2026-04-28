@@ -1,2 +1,33 @@
 # No artifacts/ at repo root yet (will be populated as receipts pull from phone).
 # Keep it; do not ignore.
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor temporaries
+*.swp
+*.bak
+
+# Rust build artifacts
+target/
+
+# GPD state backup
+.gpd/state.json.bak
+
+# Planning / session scratch (not research artifacts)
+_planning/
+_session/
+
+# Node (if any tooling is added)
+node_modules/
+
+# Cargo cache (local mirror; large, not needed in repo)
+.cargo/registry/
+.cargo/git/
+
+# Harness phone-side logs (receipts are JSON; raw logs are ephemeral)
+harness/phone/*.log

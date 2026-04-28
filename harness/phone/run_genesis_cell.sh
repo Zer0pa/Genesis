@@ -149,10 +149,34 @@ prev_solve=""
 iter_count=0
 
 if [ -n "$TASK" ]; then
-  # Phase 1+ path: K2 task mode (not yet implemented in snic_rust)
-  printf "TASK mode '%s' not implemented in snic_rust pipeline; Phase 1 K2 port required\n" \
-    "$TASK" > "$LOG" 2>&1
-  run_status=99
+  # Phase 1+ path: K2 task mode via snic_rust k2-scars (or any subcommand)
+  # Loops TEST_BATTERY iters; cross-iter byte-identity check on artifacts/k2_summary.json.
+  # canonical_sha = sha256(artifacts/k2_summary.json) — the K2 protocol's deterministic output.
+  SUBSTRATE="/data/local/tmp/genesis/inputs/substrate_285v.json"
+  prev_summary=""
+  for iter in $(seq 1 "$TEST_BATTERY"); do
+    iter_count="$iter"
+    rm -f "$WD/artifacts"/*.json
+    # shellcheck disable=SC2086
+    (cd "$WD" && $RUN_PREFIX "$BINARY" "$TASK" --substrate "$SUBSTRATE" --steps "$STEPS" --config configs/CONFIG.json) \
+      >> "$LOG" 2>&1 || { run_status=$?; printf "FAIL %s iter=%d status=%d\n" "$TASK" "$iter" "$run_status" >> "$LOG"; break; }
+    iter_summary_hash="$(sha256sum "$WD/artifacts/k2_summary.json" | awk '{print $1}')"
+    printf "iter=%d k2_summary=%s\n" "$iter" "$iter_summary_hash" >> "$LOG"
+    if [ -z "$prev_summary" ]; then
+      prev_summary="$iter_summary_hash"
+    else
+      if [ "$iter_summary_hash" != "$prev_summary" ]; then
+        bitdet_pass=0
+        printf "K2-BITDET-BREACH iter=%d: hash diverged from iter=1\n" "$iter" >> "$LOG"
+        run_status=20
+        break
+      fi
+    fi
+  done
+  verify_hash="$iter_summary_hash"
+  # Extract KPI fields from log for receipt
+  best_uplift="$(grep "KPI_K2_SUMMARY" "$LOG" | tail -1 | grep -oE 'best_uplift=[0-9]+(\.[0-9]+)?' | head -1 | cut -d= -f2)"
+  max_scar_weight="$(grep "KPI_K2_SUMMARY" "$LOG" | tail -1 | grep -oE 'max_scar_weight=[0-9]+(\.[0-9]+)?' | head -1 | cut -d= -f2)"
 else
   # Phase 0 path: snic_rust pipeline N times with cross-iter byte-identity check
   for iter in $(seq 1 "$TEST_BATTERY"); do
@@ -256,8 +280,10 @@ fi
 verdict="FAIL"
 if [ "$run_status" = "0" ]; then
   if [ -n "$TASK" ]; then
-    # Phase 1+: require best_uplift present
-    [ -n "$best_uplift" ] && verdict="PASS"
+    # Phase 1+ K2 task: require best_uplift present + cross-iter byte-identity
+    if [ -n "$best_uplift" ] && [ "$bitdet_pass" = "1" ]; then
+      verdict="PASS"
+    fi
   else
     # Phase 0 pipeline: all iters succeeded + cross-iter byte-identity holds
     if [ -n "$canonical_sha" ] && [ "$bitdet_pass" = "1" ]; then

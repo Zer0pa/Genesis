@@ -46,12 +46,14 @@ _log() {
 
 _log "thermal_coordinator started parent_pid=$PARENT_PID ceiling=${CEILING_C}C poll=${POLL_INTERVAL}s"
 
-# Read max temp across all CPU thermal zones
+# Read max temp (integer Celsius) across CPU thermal zones.
+# /sys/class/thermal/thermal_zone*/temp is in milli-Celsius; pure-shell integer
+# comparison (busybox awk's `var=value` post-script form doesn't reliably set
+# awk variables across iters; that was the cause of blank "temp=C" log lines).
 _max_temp_c() {
-  _max="0"
+  _max_milli=0
   for _tp in /sys/class/thermal/thermal_zone*/temp; do
     [ -r "$_tp" ] || continue
-    # Only CPU-domain zones (mirrors dm3 pattern)
     _zone_dir="$(dirname "$_tp")"
     _type_file="$_zone_dir/type"
     if [ -r "$_type_file" ]; then
@@ -62,19 +64,27 @@ _max_temp_c() {
       esac
     fi
     _tr="$(cat "$_tp" 2>/dev/null || printf "0")"
-    _tc="$(awk "BEGIN { printf \"%.3f\", $_tr / 1000 }")"
-    _max="$(awk "BEGIN { print ($_tc + 0 > _max + 0) ? _tc : _max }" \
-      _tc="$_tc" _max="$_max")"
+    # Strip leading sign / non-digits; default to 0 if unparseable.
+    _tr_clean="${_tr#-}"
+    _tr_clean="${_tr_clean%%[!0-9]*}"
+    [ -z "$_tr_clean" ] && _tr_clean=0
+    if [ "$_tr_clean" -gt "$_max_milli" ]; then
+      _max_milli="$_tr_clean"
+    fi
   done
-  printf "%s" "$_max"
+  # Integer milli-C to integer C
+  printf "%d" "$((_max_milli / 1000))"
 }
 
-# Send signal to all running genesis_runner processes
+# Send signal to all running snic_rust processes (Genesis pipeline binary).
+# (Earlier name 'genesis_runner' referred to the cross-compiled genesis_cli
+# meta-orchestrator which we retracted as fp-shapematch; the actual deployed
+# binary is snic_rust.)
 _signal_genesis() {
   _sig="$1"
-  _pids="$(pidof genesis_runner 2>/dev/null || true)"
+  _pids="$(pidof snic_rust 2>/dev/null || true)"
   if [ -n "$_pids" ]; then
-    _log "sending SIG${_sig} to genesis_runner pids: $_pids"
+    _log "sending SIG${_sig} to snic_rust pids: $_pids"
     for _p in $_pids; do
       kill "-${_sig}" "$_p" 2>/dev/null || true
     done
@@ -99,7 +109,11 @@ while true; do
   temp="$(_max_temp_c)"
   _log "poll temp=${temp}C throttle_active=${throttle_active}"
 
-  over="$(awk "BEGIN { print ($temp + 0 >= $CEILING_C + 0) ? 1 : 0 }")"
+  if [ "$temp" -ge "$CEILING_C" ]; then
+    over=1
+  else
+    over=0
+  fi
 
   if [ "$over" = "1" ]; then
     if [ "$throttle_active" = "0" ]; then
@@ -110,7 +124,11 @@ while true; do
       sleep 30
       temp_after="$(_max_temp_c)"
       _log "post-cooldown temp=${temp_after}C"
-      still_over="$(awk "BEGIN { print ($temp_after + 0 >= $CEILING_C + 0) ? 1 : 0 }")"
+      if [ "$temp_after" -ge "$CEILING_C" ]; then
+        still_over=1
+      else
+        still_over=0
+      fi
       if [ "$still_over" = "1" ]; then
         _log "THERMAL KILL: still over ${CEILING_C}C after cooldown (${temp_after}C)"
         printf "%s thermal_kill temp_after=%s ceiling=%s\n" \

@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use or cite this experiment, please use the metadata in this file."
+type: software
+title: "Genesis Comparative Experiment"
+abstract: >
+  Genesis Comparative is a deterministic-computation research experiment that
+  cross-compiles and characterises the Genesis organism (a pure-geometry Rust
+  codebase built on a T(3,21) torus-link substrate with D₆ symmetry over a
+  Q-Pythagorean number field) and runs it through the same task surface and
+  governance framework used to establish dm3_runner's signature observables.
+  The experiment covers Phase 0 (BITDET replication, canonical hash matches),
+  Phase 1 (K2 Hebbian-scar port with rational arithmetic), Phase 2 (autonomous
+  K2 sweep on RedMagic 10 Pro), and Phase 3 (synthesis against four
+  pre-registered cross-lane comparisons). All numeric work uses
+  BigRational arithmetic; no floating-point in any math path.
+authors:
+  - name: "Zer0pa (Pty) Ltd"
+    email: architects@zer0pa.ai
+license: LicenseRef-Zer0pa-SAL-7.0
+repository-code: "https://github.com/Zer0pa/Genesis"
+version: "0.1.0"
+date-released: "2026-04-28"
+identifiers:
+  - type: other
+    value: "substrate-sha:a83f39e6"
+    description: "Genesis source workspace substrate hash (snic_workspace_a83f prefix)"
+  - type: other
+    value: "binary-sha256:e21208a69064a11677cb700e3b68c0fba3aab1e08ed784f71d8e954a523e5ff1"
+    description: "Phase 1 snic_rust binary SHA-256 (5 subcommands incl. k2-scars)"
+keywords:
+  - deterministic-computation
+  - rational-arithmetic
+  - associative-memory
+  - scar-formation
+  - T(3,21)-torus-link
+  - D6-symmetry
