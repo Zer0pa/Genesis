@@ -31,3 +31,12 @@ node_modules/
 
 # Harness phone-side logs (receipts are JSON; raw logs are ephemeral)
 harness/phone/*.log
+
+# Receipt working-directory leftovers (per-iter intermediate artifacts; not proofs)
+proofs/artifacts/cells/*/*/wd/
+
+# BITDET_5K stdout.log: 15MB per instance × 6 = 90MB of repeated pipeline dump.
+# Receipt JSON + canonical_stdout.sha256 carry the determinism evidence; the
+# stdout.log is ephemeral. Keep all other cells' stdout.log (smaller, contains
+# KPI lines for σ″-curve extraction).
+proofs/artifacts/cells/BITDET_5K/*/stdout.log

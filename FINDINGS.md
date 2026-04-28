@@ -4,11 +4,19 @@
 
 ---
 
-## Current Status (as of 2026-04-28)
+## Current Status (as of 2026-04-28, post-Phase-2)
 
-Phase 0 is complete on RM10: cross-compiled `snic_rust` deploys produce source-canonical `verify.json` and `solve_h2.json` byte-exact, with cross-iter byte-identity confirmed in cells BITDET_01/02/03 (1 560 cross-checked `verify.json` hashes; long-running BITDET_5K / BITDET_50K / BITDET_500K cells in flight, receipts pending pull). Phase 1 K2 port lands on the M1 host with byte-identical `k2_summary.json` across two consecutive runs and gives `best_uplift = 3.000000` at `--steps 30`. Phase 2 K2_SWEEP (`--steps ∈ {20, 28..56}`, N=3 per step) is running autonomously on RM10; live observation confirms cells K2_S20 and K2_S28 PASS with `best_uplift = 3.000000` and K2-task BITDET. Phase 3 synthesis is pending Phase 2 receipts.
+Phase 0 is complete on RM10. Phase 1 K2 port complete on M1 host. **Phase 2 K2_SWEEP + CYCLE-PROBE chain has run end-to-end on RM10 (39 cells, all PASS, all `unique_canonical_sha_count=1`)**. Receipts pulled to [`proofs/artifacts/cells/`](proofs/artifacts/cells/); σ″-curve aggregated to [`proofs/artifacts/sigma_curve.tsv`](proofs/artifacts/sigma_curve.tsv).
 
-The four pre-registered comparisons (`claim-cycle7-attribution`, `claim-s50cliff-augmentation`, `claim-sigma-curve-diff`, `claim-symmetry-D6vsC3`) carry one EARLY-SIGNAL verdict (σ″-curve-shape diff) and three PENDING (cycle-7, s50-cliff, symmetry). EARLY-SIGNAL is treated as live, not settled.
+**Phase 2 result: σ″-curve is FLAT at `best_uplift = 3.000000` across all 30 steps in {20, 28..56}**, with a non-trivial pre-convergence transient at very low steps (S6=4.0, S8=3.5, S7/S12+=3.0). All four pre-registered comparisons settle one way or another against the dm3 sample.
+
+A Phase 2.5 chain is running now to characterize the pre-convergence transient (PRECONV_S1..S25 cells filling in the low-step region) and extend cross-time K2-task BITDET (BITDET_K2_S6 / S30 / S56 with --test-battery 100 / 60 / 30). Phase 3 synthesis runs after Phase 2.5 completes.
+
+Pre-registered comparisons:
+- `claim-cycle7-attribution` — **AUGMENTATION-ATTRIBUTED** (Genesis K2 has no period structure; flat σ″ across {20, 28..56}; cycle-7/6/8 disambiguator ≥ S12 all = 3.0).
+- `claim-s50cliff-augmentation` — **CONFIRMED** (operator's positive prediction: Genesis does NOT cliff at s50; K2_S50 = 3.000000 same as K2_S49 / K2_S51).
+- `claim-sigma-curve-diff` — **CONFIRMED** (Genesis flat at 3.0 across [20, 28..56]; dm3 trimodal sawtooth varies 1.16–1.97 over same range; structurally differs).
+- `claim-symmetry-D6vsC3` — **PENDING** (no Z₂-asymmetric observable yet implemented; deferred to Phase 3 prep).
 
 ---
 
@@ -158,20 +166,37 @@ This finding is honestly framed as PRE-PHASE-2 information: a result requiring c
 
 ---
 
-## Phase 2 — Autonomous K2 Sweep (Running on RM10)
+## Phase 2 — Autonomous K2 Sweep (COMPLETE)
 
-Manifest: 30 K2_SWEEP cells (`--steps ∈ {20, 28, 29, …, 56}`) plus 9 cycle-probe cells (multiples of 7, 6, 8 disambiguator). Each cell: 6 instances × 3 iters × 8 inner pipelines = 144 K2 task invocations per cell. 39 cells total in the chain manifest.
+Manifest: 30 K2_SWEEP cells (`--steps ∈ {20, 28..56}`) + 9 CYCLE-probe cells (multiples of 7, 6, 8 disambiguator). 39 cells total. Wall: ~33 min (chain start 00:48:14Z to clean exit 01:21:37Z, 2026-04-28). Master died after manifest exhaustion; watcher detected, invoked `resume_chain.sh`, new master saw all cells idempotent-SKIP, exited cleanly. All 39 outcome.json files = `verdict: PASS`, `failures: 0`, `unique_canonical_sha_count: 1`.
 
-Live observations (pre-disconnect, from the chain log):
+### σ″-curve over `--steps`: FLAT at 3.000000
 
-| Cell | `--steps` | `best_uplift` | K2 task BITDET (per cell) | Verdict |
-|---|---|---|---|---|
-| K2_S20 | 20 | 3.000000 | 18 byte-identical `k2_summary.json` SHAs (3 iters × 6 instances) | PASS |
-| K2_S28 | 28 | 3.000000 | 18 byte-identical `k2_summary.json` SHAs | PASS |
+Aggregated from per-cell receipts in [`proofs/artifacts/sigma_curve.tsv`](proofs/artifacts/sigma_curve.tsv). All 30 K2_SWEEP cells (steps 20, 28..56) returned `best_uplift = 3.000000` and `max_scar_weight = 1.200000` exactly. Per-cell wall scales linearly with `--steps` (4.6s @ S20 → 31.8s @ S56), confirming dynamics is doing real work but converging to the same attractor regardless of step count beyond ~12.
 
-Phase 2 currently running offline (operator unplugged for autonomous execution). On reconnect, receipts pull to `proofs/artifacts/cells/K2_*/`.
+| --steps range | best_uplift (n cells) | max_scar | Verdict count |
+|---|---|---|---|
+| 20, 28–56 | 3.000000 (30 of 30) | 1.200000 | PASS (30) |
 
-**The two live observations are consistent with the degenerate-K2 reading.** They are not yet sufficient to settle Phase 2 — the discriminator is the full curve over all 30 step values, including specifically the s49 / s50 / s51 neighborhood and the cycle-multiple step values.
+### CYCLE-probe disambiguator: pre-convergence transient at very low steps
+
+The cycle-probe cells (multiples of 7, 6, 8 to disambiguate periodicity hypotheses) accidentally captured a **pre-convergence transient region** at the very lowest step values:
+
+| Cell | --steps | best_uplift | Notes |
+|---|---|---|---|
+| K2_CYC6_S6 | 6 | **4.000000** | Transient (dynamics hasn't converged) |
+| K2_CYC7_S7 | 7 | 3.000000 | Already converged |
+| K2_CYC8_S8 | 8 | **3.500000** | Transient |
+| K2_CYC6_S12 | 12 | 3.000000 | Steady state |
+| K2_CYC7_S14 | 14 | 3.000000 | Steady state |
+| K2_CYC8_S16 | 16 | 3.000000 | Steady state |
+| K2_CYC6_S18 | 18 | 3.000000 | Steady state |
+| K2_CYC7_S21 | 21 | 3.000000 | Steady state |
+| K2_CYC6_S24 | 24 | 3.000000 | Steady state |
+
+By step ~12, the consensus dynamics has settled to the steady-state attractor at `best_uplift = 3.0`. Below that, the system is in transient. **Phase 2.5 PRECONV_S1..S25 cells are now running to characterize this transient region in detail** (currently in flight on RM10).
+
+K2-task BITDET preserved on phone for every cell: `unique_canonical_sha_count = 1` over 6 instances × 3 iters per cell = 18 byte-identical `k2_summary.json` SHAs across all 39 cells = **702 cross-checked K2-task hashes, zero divergence**.
 
 ---
 
@@ -212,14 +237,16 @@ The σ″-curve shape determines all four pre-registered comparison outcomes —
 
 ## What This Means for the Four Pre-Registered Comparisons
 
-| # | Comparison | Current verdict | Anchor / discriminator |
+| # | Comparison | Verdict (post-Phase-2) | Evidence |
 |---|---|---|---|
-| 1 | **Cycle-7 attribution** (`claim-cycle7-attribution`) | **PENDING** | Phase 2 K2_SWEEP receipts (Lomb-Scargle on 30-point series) + CYCLE-probe receipts (multiples of 7 vs 6 vs 8). If σ″ is flat at 3.0, cycle period is undefined → AUGMENTATION_ATTRIBUTED (no period 7 to be substrate-attributed); if σ″ varies, Lomb-Scargle 95% CI determines the verdict. |
-| 2 | **s50-cliff attribution** (`claim-s50cliff-augmentation`) | **PENDING** | Phase 2 K2_SWEEP receipts at s49/s50/s51 (N=3 each); N=10 boundary drill if any sharp drop. If `best_uplift @ s50 > 0.000100` → AUGMENTATION_ATTRIBUTED (operator's positive prediction confirmed); if `best_uplift @ s50 ≤ 0.000100` → SUBSTRATE_CLASS (prediction wrong). Live signal: K2_S20 and K2_S28 both at 3.0 — if pattern holds at s50, prediction confirmed. |
-| 3 | **σ″-curve shape diff** (`claim-sigma-curve-diff`) | **EARLY-SIGNAL** | Per-step diff table emitted with all 30 step values; SIGNIFICANT_DIFF flag where Genesis 95% CI does not overlap dm3 fixture. Live signal: Genesis at 3.0 constant on K2_S20/K2_S28; dm3 varies between 1.16 and 1.97 over s30-s56; curves structurally differ. |
-| 4 | **D₆-vs-C₃ symmetry** (`claim-symmetry-D6vsC3`) | **PENDING** | Phase 2 SYMMETRY cell — requires explicit Z₂-asymmetric observable design (not yet implemented). Monte Carlo baseline mandatory per `fp-noisefloor`. |
+| 1 | **Cycle-7 attribution** (`claim-cycle7-attribution`) | **AUGMENTATION-ATTRIBUTED** | σ″ is flat at 3.0 across {20, 28..56} (30 cells, all = 3.000000); cycle-7/6/8 disambiguator at S12+ all = 3.000000; no period structure on Genesis K2 to attribute to T(3,21)'s seven twists. dm3's cycle-7 sawtooth lives in the augmentation layer, not the substrate. |
+| 2 | **s50-cliff attribution** (`claim-s50cliff-augmentation`) | **CONFIRMED** | `best_uplift @ s49 = 3.000000`, `s50 = 3.000000`, `s51 = 3.000000` — Genesis does NOT cliff at s50 (operator's positive prediction). The s50 cliff in dm3 is augmentation-attributed. |
+| 3 | **σ″-curve shape diff** (`claim-sigma-curve-diff`) | **CONFIRMED** | Genesis: flat at 3.000000 over [20, 28..56] (30 cells, σ = 0). dm3: trimodal sawtooth varying 1.160828 → 1.970840 over s30..s56 with cliff at s50=0.000000. The curves structurally differ at the most basic level (constant vs varied with cliff). |
+| 4 | **D₆-vs-C₃ symmetry** (`claim-symmetry-D6vsC3`) | **PENDING** | No Z₂-asymmetric observable implemented yet. Phase 3 prep work; Genesis K2 receipts already capture symmetry-relevant data via the orbit decomposition baked into the substrate fixture, but the explicit cross-lane symmetry comparison cell is not yet in the chain manifest. |
 
-The EARLY-SIGNAL on comparison #3 is a curious-numbers finding, not a settled verdict. Phase 2 K2_SWEEP across `--steps ∈ {20, 28..56}` is the primary discriminator: either `best_uplift` remains constant at 3.0 (degenerate; one structural signature answers all four) or it varies (curve-by-curve analysis required).
+**Three of four pre-registered comparisons settle in Phase 2.** The conclusion converges: the dm3 σ″ trimodal sawtooth + s50 cliff are augmentation-layer phenomena, not substrate-encoded. Genesis substrate (D₆, T(3,21), 285v) does not exhibit those phenomena under the operator-approved D3 pattern choice.
+
+Honest caveat (the curious-numbers framing remains): Genesis's flat 3.0 result is **consistent with two distinct readings** — (a) the substrate is so symmetric that K2 is trivially recoverable here, OR (b) the disjoint Bhupura(282)+Lotus(3) pattern algebra forces rank-1 dynamics that flatten the curve. The pre-convergence transient (S6=4.0, S8=3.5, then 3.0 by S12) is real dynamics — substrate response IS happening at low steps. PRECONV_S1..S25 (running now) characterizes the transient. Alternative pattern K2 (Phase 4 host work) discriminates (a) vs (b) more sharply by changing the pattern algebra.
 
 ---
 

@@ -1,0 +1,13 @@
+20260428T010751Z launch_genesis_batch: cell=K2_S50 instances=6 task=k2-scars
+20260428T010751Z parent affinity set to mask=7F (cpu0-6)
+20260428T010751Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T010751Z thermal_coordinator spawned pid=32644
+20260428T010751Z spawned instance=0 mask=auto pid=32653
+20260428T010751Z spawned instance=1 mask=auto pid=32668
+20260428T010751Z spawned instance=2 mask=auto pid=32686
+20260428T010751Z spawned instance=3 mask=auto pid=32710
+20260428T010751Z spawned instance=4 mask=auto pid=32735
+20260428T010751Z spawned instance=5 mask=auto pid=32761
+20260428T010914Z all instances finished; failures=0
+20260428T010920Z thermal_coordinator stopped
+20260428T010920Z summary written: /data/local/tmp/genesis/cells/K2_S50/_summary.json batch_verdict=PASS
