@@ -1,6 +1,6 @@
 # Reproducibility
 
-**Status:** always-in-beta. Phase 0 + Phase 1 canonical; Phase 2 sweep in progress on RM10.
+**Status:** always-in-beta. Phase 0 + Phase 1 canonical; Phase 2/2.5 receipts are in-repo; Phase 3 prep is live on RM10.
 
 ---
 

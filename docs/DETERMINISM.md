@@ -213,7 +213,7 @@ extends `main.rs` dispatch but does not modify the upstream 4-step pipeline crat
 
 ## Hardware/Thermal Invariance (Claim ξ)
 
-Phase 0 BITDET cells accumulated 1560 + 30000 cross-checked `verify.json` hashes across
+Phase 0 BITDET cells accumulated 31,560 cross-checked `verify.json` hashes across
 varied thermal and scheduling conditions:
 
 | Cell | Iterations × Instances | Total hashes | Result |
@@ -241,13 +241,13 @@ varied thermal and scheduling conditions:
 | Property | Status | Evidence |
 |---|---|---|
 | 4-step pipeline canonical match (M1 + RM10) | VERIFIED | `97bd7d...` and `62897b...` on both platforms; BITDET_01-03 + 5K cells |
-| Cross-iter byte-identity (snic_rust direct) | VERIFIED | 1560 + 30000 cross-checked hashes; `bitdet_pass=1` all cells |
+| Cross-iter byte-identity (snic_rust direct) | VERIFIED | 31,560 cross-checked hashes; `bitdet_pass=1` all cells |
 | Cross-instance byte-identity (6 parallel) | VERIFIED | `unique_canonical_sha_count = 1` for every completed cell |
 | Cross-platform parity at pipeline level (M1 ↔ RM10) | VERIFIED | Both produce `97bd7d...` + `62897b...` (STATE.md §Phase 0) |
 | K2 task BITDET (M1 host) | VERIFIED | Two consecutive `k2-scars --steps 30` runs: `k2_summary.json` SHA `0b5442f9...` byte-identical |
-| K2 task BITDET (phone, RM10) | PENDING | Phase 2 K2_SWEEP running on phone; receipts pull on reconnect |
+| K2 task BITDET (phone, RM10) | VERIFIED PER-CELL | 56 Phase 2/2.5 K2-task cells in `proofs/artifacts/cells/`, each with `unique_canonical_sha_count = 1` |
 | Cross-platform parity at K2 level (M1 ↔ RM10) | PENDING | Requires explicit `k2_summary.json` SHA comparison across platforms; not yet automated |
-| Cross-thermal invariance at K2 level | PENDING | Falls out of phone K2_SWEEP if all 30 cells produce identical `k2_summary.json` SHA across thermal range |
+| Cross-thermal invariance at K2 level | VERIFIED PER-CELL | All Phase 2/2.5 K2 cells preserve `unique_canonical_sha_count = 1`; step-dependent outputs are expected to have different hashes across cells |
 | Cross-time invariance (long-horizon, >24 hr) | PENDING | Requires multi-day re-execution evidence |
 
 ---

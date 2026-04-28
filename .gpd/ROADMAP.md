@@ -10,9 +10,9 @@ Run Genesis (open-source Rust organism, 285v, D₆ symmetry, T(3,21) torus link,
 
 ## Phases
 
-- [ ] **Phase 0: Foundation, cross-compile, deploy, first cell** — host-side build + phone-side chain skeleton; vanilla `genesis_cli --test-battery` BITDET cell autonomous on RM10.
-- [ ] **Phase 1: K2 + Bhupura/Lotus port** — port dm3 K2 protocol (`exp_k2_scars`) to Genesis substrate; D₆-orbit-derived Bhupura/Lotus pattern analogs; per-step internal-state checksum + BigRational receipt option.
-- [ ] **Phase 2: Full PRD test program autonomous execution** — chain executes BITDET, PARITY, SYMMETRY, K2_SWEEP, CYCLE, CROSSBUILD, DISCONT end-to-end on RM10.
+- [x] **Phase 0: Foundation, cross-compile, deploy, first cell** — host-side build + phone-side chain skeleton; BITDET cells autonomous on RM10.
+- [x] **Phase 1: K2 + Bhupura/Lotus port** — port dm3 K2 protocol (`exp_k2_scars`) to Genesis substrate; D₆-orbit-derived Bhupura/Lotus pattern analogs.
+- [x] **Phase 2: Full PRD test program autonomous execution** — K2_SWEEP, CYCLE, PRECONV, and BITDET_K2 receipts in repo; SYMMETRY remains pending as Phase 3/4 observable-design work.
 - [ ] **Phase 3: Synthesis and final report** — final report mirroring dm3 shape; appendix with the four pre-registered comparison verdicts.
 
 ## Phase Details

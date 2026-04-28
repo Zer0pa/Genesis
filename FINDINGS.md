@@ -1,16 +1,16 @@
 # Findings — Genesis Comparative Experiment
 
-*Authoritative records: [`.gpd/STATE.md`](.gpd/STATE.md), [`project_contract.json`](project_contract.json), [`proofs/manifests/CURRENT_AUTHORITY_PACKET.md`](proofs/manifests/CURRENT_AUTHORITY_PACKET.md). This file is the narrative reading of those records as of 2026-04-28; it evolves with each phase.*
+*Authoritative records: [`proofs/manifests/CURRENT_AUTHORITY_PACKET.md`](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [`proofs/artifacts/cells/`](proofs/artifacts/cells/), [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv), [`project_contract.json`](project_contract.json). [`.gpd/STATE.md`](.gpd/STATE.md) remains the historical GPD decision/retraction ledger.*
 
 ---
 
-## Current Status (as of 2026-04-28, post-Phase-2)
+## Current Status (as of 2026-04-28, post-Phase-2.5)
 
-Phase 0 is complete on RM10. Phase 1 K2 port complete on M1 host. **Phase 2 K2_SWEEP + CYCLE-PROBE chain has run end-to-end on RM10 (39 cells, all PASS, all `unique_canonical_sha_count=1`)**. Receipts pulled to [`proofs/artifacts/cells/`](proofs/artifacts/cells/); σ″-curve aggregated to [`proofs/artifacts/sigma_curve.tsv`](proofs/artifacts/sigma_curve.tsv).
+Phase 0 is complete on RM10. Phase 1 K2 port complete on M1 host and deployed to RM10. **Phase 2 K2_SWEEP + CYCLE-PROBE and Phase 2.5 PRECONV/BITDET_K2 chains have run end-to-end on RM10 (60 cells, all PASS, all `unique_canonical_sha_count=1`)**. Receipts are in [`proofs/artifacts/cells/`](proofs/artifacts/cells/); σ″-curve aggregation is in [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv) with figure summary in [`proofs/artifacts/figures/`](proofs/artifacts/figures/).
 
-**Phase 2 result: σ″-curve is FLAT at `best_uplift = 3.000000` across all 30 steps in {20, 28..56}**, with a non-trivial pre-convergence transient at very low steps (S6=4.0, S8=3.5, S7/S12+=3.0). All four pre-registered comparisons settle one way or another against the dm3 sample.
+**Phase 2 result: σ″-curve is FLAT at `best_uplift = 3.000000` across all 30 steps in {20, 28..56}**. **Phase 2.5 result: the pre-convergence transient is non-trivial, peaking at S2 = 6.5 and settling to 3.0 by S10.** Three of the four pre-registered comparisons now have receipt-backed verdicts against the dm3 sample; the explicit D6-vs-C3 symmetry observable remains pending.
 
-A Phase 2.5 chain is running now to characterize the pre-convergence transient (PRECONV_S1..S25 cells filling in the low-step region) and extend cross-time K2-task BITDET (BITDET_K2_S6 / S30 / S56 with --test-battery 100 / 60 / 30). Phase 3 synthesis runs after Phase 2.5 completes.
+A Phase 3 prep chain is running now on RM10 to extend cross-time K2-task BITDET at S1..S9 plus S30/S56. Those receipts are intentionally not in this commit; they will be appended by the chain-operator agent after completion.
 
 Pre-registered comparisons:
 - `claim-cycle7-attribution` — **AUGMENTATION-ATTRIBUTED** (Genesis K2 has no period structure; flat σ″ across {20, 28..56}; cycle-7/6/8 disambiguator ≥ S12 all = 3.0).
@@ -39,24 +39,17 @@ as the substrate's reproducible reference (in `crates/genesis_cli/src/main.rs`).
 
 Per-instance, the `snic_rust` pipeline runs `N` times per cell (`--test-battery N` semantics implemented as a pipeline-loop wrapper in [`harness/phone/run_genesis_cell.sh`](harness/phone/run_genesis_cell.sh)). Every iter produces `verify.json` whose SHA-256 equals `97bd7d…`. No drift across iters.
 
-Cells confirmed PASS (per [`.gpd/STATE.md`](.gpd/STATE.md) plan 00-07):
+Cells confirmed PASS in [`proofs/artifacts/cells/`](proofs/artifacts/cells/):
 
 | Cell | Iters per instance | Instances (cores) | Total runs | Unique canonical SHA | Verdict |
 |---|---|---|---|---|---|
 | BITDET_01 | 10 | 6 | 60 | 1 (= `97bd7d…`) | PASS |
 | BITDET_02 | 50 | 6 | 300 | 1 (= `97bd7d…`) | PASS |
 | BITDET_03 | 200 | 6 | 1 200 | 1 (= `97bd7d…`) | PASS |
-| **Total settled (in-repo)** | | | **1 560** | **1** | **PASS** |
+| BITDET_5K | 5 000 | 6 | 30 000 | 1 (= `97bd7d…`) | PASS |
+| **Total settled (in-repo)** | | | **31 560** | **1** | **PASS** |
 
-In flight, receipts pending pull on RM10 reconnect:
-
-| Cell | Iters per instance | Instances (cores) | Total runs (projected) | Status |
-|---|---|---|---|---|
-| BITDET_5K | 5 000 | 6 | 30 000 | Live PASS in chain log; receipts on phone, pending pull |
-| BITDET_50K | 50 000 | 6 | 300 000 | Operator-trimmed (replaced by K2_SWEEP); 14 500 iters/instance partial discarded on chain restart |
-| BITDET_500K | 500 000 | 6 | 3 000 000 | Operator-trimmed (replaced by K2_SWEEP) |
-
-**Settled count is 1 560 cross-replicate canonical-hash matches with zero divergence.** BITDET_5K extends to 30 000 once receipts are pulled and verified; BITDET_50K/500K were operator-trimmed mid-session (per CHANGELOG) to advance to Phase 2 K2 cells. Operating envelope across the settled cells: 44–60 °C thermal range, kernel scheduler distributing 6 instances across an active subset of cpu0–6 dynamically (Qualcomm `core_ctl` pauses 1–2 cores at any moment), cell wall-clock spanning minutes.
+**Settled count is 31,560 cross-replicate canonical-hash matches with zero divergence.** BITDET_50K/500K were operator-trimmed mid-session to advance to Phase 2 K2 cells; no claim is made from discarded partials. Operating envelope across the settled cells: 44–60 C thermal range, kernel scheduler distributing 6 instances across an active subset of cpu0–6 dynamically (Qualcomm `core_ctl` pauses 1–2 cores at any moment), cell wall-clock spanning minutes.
 
 ### 3. Cross-platform parity (claim τ at the canonical-pipeline level)
 
@@ -194,15 +187,29 @@ The cycle-probe cells (multiples of 7, 6, 8 to disambiguate periodicity hypothes
 | K2_CYC7_S21 | 21 | 3.000000 | Steady state |
 | K2_CYC6_S24 | 24 | 3.000000 | Steady state |
 
-By step ~12, the consensus dynamics has settled to the steady-state attractor at `best_uplift = 3.0`. Below that, the system is in transient. **Phase 2.5 PRECONV_S1..S25 cells are now running to characterize this transient region in detail** (currently in flight on RM10).
+By step ~12, the consensus dynamics has settled to the steady-state attractor at `best_uplift = 3.0`. Below that, the system is in transient. Phase 2.5 fills that region with PRECONV cells at S1..S5 and sparse S9..S25, showing a peak at S2 = 6.5 and settlement by S10.
 
 K2-task BITDET preserved on phone for every cell: `unique_canonical_sha_count = 1` over 6 instances × 3 iters per cell = 18 byte-identical `k2_summary.json` SHAs across all 39 cells = **702 cross-checked K2-task hashes, zero divergence**.
 
 ---
 
+## Phase 2.5 — Pre-Convergence and K2 BITDET Extension (COMPLETE)
+
+Phase 2.5 adds 14 PRECONV cells and 3 BITDET_K2 cells:
+
+| Region | Cells | Result |
+|---|---|---|
+| PRECONV S1..S5 | 5 | S1=5.5, S2=6.5, S3=4.0, S4=3.5, S5=4.0 |
+| PRECONV sparse fill | 9 | S9=3.5; S10, S11, S13, S15, S17, S19, S22, S25 all 3.0 |
+| BITDET_K2 | 3 | S6, S30, S56 all PASS with `unique_canonical_sha_count = 1` |
+
+Together with Phase 2, the in-repo proof surface is now **60 cells, all PASS**. The full table is [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv); the headline figure is [`proofs/artifacts/figures/sigma_curve.png`](proofs/artifacts/figures/sigma_curve.png).
+
+---
+
 ## Phase 3 — Synthesis (Pending)
 
-Phase 3 reads Phase 2 receipts, plots the σ″-curve over `--steps` (`best_uplift` y-axis, `--steps` x-axis), runs the four acceptance tests, and produces a final report at `reports/GENESIS_FINAL_REPORT_<DATE>.md` per [PRD §Deliverables](PRD_GENESIS_COMPARATIVE_v1_DRAFT_20260427.md). The Genesis-side appendix carries the four pre-registered comparison verdicts numerically; cross-lane editorial happens downstream and is not in scope for this lane (per [`LANE_DISTINCTION.md`](LANE_DISTINCTION.md)).
+Phase 3 reads Phase 2/2.5 receipts, the live Phase 3 prep receipts once pulled, and the σ″-curve over `--steps` (`best_uplift` y-axis, `--steps` x-axis), then produces a final report at `reports/GENESIS_FINAL_REPORT_<DATE>.md` per [PRD §Deliverables](PRD_GENESIS_COMPARATIVE_v1_DRAFT_20260427.md). The Genesis-side appendix carries the four pre-registered comparison verdicts numerically; cross-lane editorial happens downstream and is not in scope for this lane (per [`LANE_DISTINCTION.md`](LANE_DISTINCTION.md)).
 
 The σ″-curve shape determines all four pre-registered comparison outcomes — see [§What This Means for the Four Pre-Registered Comparisons](#what-this-means-for-the-four-pre-registered-comparisons) below.
 
@@ -212,26 +219,25 @@ The σ″-curve shape determines all four pre-registered comparison outcomes —
 
 - **Substrate identity.** T(3,21) torus link on T², D₆ = S₃ × Z₂ symmetry, 285 vertices, 567 edges, 48 D₆ orbits (47 size-6 + 1 size-3 waist), Q over Pythagorean rationals. Settled by `substrate-reconstruction-2026-04-26` lane (read-only authority for this lane). Source: [`docs/SUBSTRATE.md`](docs/SUBSTRATE.md) and [`README.md`](README.md).
 - **Cross-platform parity at canonical-pipeline level.** M1 ↔ RM10 byte-exact at `solve_h2.json = 62897b…`; M1-side `verify.json` BENIGN-diagnosed at `e8941414…` per D1; RM10-side `verify.json = 97bd7d…` byte-exact to source-hardcoded canonical.
-- **Hardware/thermal/time invariance at small-to-moderate scale.** 1 560 cross-replicate canonical-hash matches across BITDET_01 (60 runs), BITDET_02 (300 runs), BITDET_03 (1 200 runs); zero divergence; `unique_canonical_sha_count = 1` per cell. Operating envelope: 44–60 °C thermal range; dynamic CPU subset under `core_ctl`.
+- **Hardware/thermal/time invariance at small-to-moderate scale.** 31,560 cross-replicate canonical-hash matches across BITDET_01 (60 runs), BITDET_02 (300 runs), BITDET_03 (1,200 runs), BITDET_5K (30,000 runs); zero divergence; `unique_canonical_sha_count = 1` per cell. Operating envelope: 44–60 C thermal range; dynamic CPU subset under `core_ctl`.
 - **All 7 internal verification gates pass** on every Phase 0 invocation.
 - **K2 task BITDET on M1 host.** Two-run identity at `k2_summary.json = 0b5442f9…`.
-- **K2 task BITDET on RM10 (per-cell, live observation).** Cells K2_S20 and K2_S28 confirmed (18 byte-identical `k2_summary.json` SHAs each). Full-cell receipts pending pull.
+- **K2 task BITDET on RM10 (per-cell).** All 56 K2-task receipt cells in Phase 2/2.5 have `unique_canonical_sha_count = 1`.
 - **Phase 1 K2 implementation source-clean.** All math via BigRational; no f32/f64 in math path; workspace `#![deny(warnings)]`; POLICY_CHECK pass; cross-compile clean to RM10.
 
-## What's EARLY-SIGNAL
+## What's Settled by Phase 2/2.5
 
-- **Genesis K2 produces uniform `|scar| = 1.2` + perfect recall + `best_uplift = 3.0`** on the operator-approved D3 pattern choice at `--steps 30` (M1 host); same `best_uplift = 3.0` confirmed at K2_S20 and K2_S28 on RM10 (live observations from Phase 2). If this constancy holds across the full Phase 2 sweep, it answers all four pre-registered comparisons with one structural signature: Genesis K2 has no cycle, no cliff, flat σ″ at 3.0; differs structurally from dm3's trimodal sawtooth with cliff at s50.
-- The two live Phase 2 observations are consistent with this prediction but are not yet sufficient to settle the verdict (the curve's discriminating points — s49, s50, s51, multiples of 7, multiples of 6 — have not yet returned receipts).
+- **Genesis K2 produces uniform `|scar| = 1.2` + perfect recall + `best_uplift = 3.0`** on the operator-approved D3 pattern choice at the steady-state region.
+- **The steady-state σ″ curve is flat at 3.0** across S20 and S28..S56, including S49/S50/S51.
+- **The low-step region is dynamic, not trivial:** S1=5.5, S2=6.5, S3=4.0, S4=3.5, S5=4.0, S6=4.0, S8/S9=3.5, S10+=3.0.
 
 ## What's Pending
 
-- **Phase 2 K2_SWEEP receipts.** Chain running autonomously on RM10; pull on reconnect to `proofs/artifacts/cells/K2_*/`.
-- **Phase 2 CYCLE-probe receipts.** Multiples of 7, 6, 8 disambiguator cells; pull on reconnect.
-- **Phase 3 synthesis.** σ″-curve plot, acceptance-test results, four pre-registered comparison verdicts, final report.
+- **Phase 3 prep receipts.** Chain running autonomously on RM10; pull and append after completion.
+- **Phase 3 synthesis.** Final report with acceptance-test results, four pre-registered comparison verdicts, and follow-on workstream decisions.
 - **Phase 4+ alternative-pattern K2.** Conditional on Phase 2 confirming the degeneracy reading: pre-registered alternative orbit pairings (e.g., partitioning the 47 size-6 orbits differently, or using non-disjoint pattern supports) become the second-pass design.
-- **Cross-platform parity at K2-task level.** M1 vs RM10 explicit byte-comparison of `k2_summary.json` after RM10 K2 receipts pull.
+- **Cross-platform parity at K2-task level.** M1 vs RM10 explicit byte-comparison of `k2_summary.json`.
 - **Z₂-asymmetric observable for the SYMMETRY pre-registered comparison.** Not yet designed; required before Phase 2 SYMMETRY cell can run.
-- **In-flight long BITDET cell** (BITDET_5K = 30 000 projected). Live PASS in chain log; receipts pending pull; will extend the cross-replicate proof surface once verified in `proofs/artifacts/`.
 
 ---
 
@@ -246,17 +252,17 @@ The σ″-curve shape determines all four pre-registered comparison outcomes —
 
 **Three of four pre-registered comparisons settle in Phase 2.** The conclusion converges: the dm3 σ″ trimodal sawtooth + s50 cliff are augmentation-layer phenomena, not substrate-encoded. Genesis substrate (D₆, T(3,21), 285v) does not exhibit those phenomena under the operator-approved D3 pattern choice.
 
-Honest caveat (the curious-numbers framing remains): Genesis's flat 3.0 result is **consistent with two distinct readings** — (a) the substrate is so symmetric that K2 is trivially recoverable here, OR (b) the disjoint Bhupura(282)+Lotus(3) pattern algebra forces rank-1 dynamics that flatten the curve. The pre-convergence transient (S6=4.0, S8=3.5, then 3.0 by S12) is real dynamics — substrate response IS happening at low steps. PRECONV_S1..S25 (running now) characterizes the transient. Alternative pattern K2 (Phase 4 host work) discriminates (a) vs (b) more sharply by changing the pattern algebra.
+Honest caveat (the curious-numbers framing remains): Genesis's flat 3.0 steady-state result is **consistent with two distinct readings** — (a) the substrate is so symmetric that K2 is trivially recoverable here, OR (b) the disjoint Bhupura(282)+Lotus(3) pattern algebra forces rank-1 dynamics that flatten the curve. The pre-convergence transient (S1=5.5, S2=6.5, S3=4.0, S4=3.5, S5/S6=4.0, S8/S9=3.5, then 3.0 by S10) is real dynamics. Alternative pattern K2 (Phase 4 host work) discriminates (a) vs (b) more sharply by changing the pattern algebra.
 
 ---
 
 ## What This Means Commercially
 
-The proof-surface-driven wedge: Genesis demonstrates that **pure-rational deterministic computation is feasible for non-trivial systems** — associative memory, scar-weight learning, dynamics on a 285-vertex graph with non-trivial automorphism structure, on commodity Android hardware. The 1 560 cross-replicate canonical-hash matches at BITDET_01..03 prove byte-identity as a structural property of the discipline, not as an aspirational target. The cross-platform parity at `solve_h2.json` proves the result is encoded in the source, not in any platform's IEEE-754 quirks.
+The proof-surface-driven wedge: Genesis demonstrates that **pure-rational deterministic computation is feasible for non-trivial systems** — associative memory, scar-weight learning, dynamics on a 285-vertex graph with non-trivial automorphism structure, on commodity Android hardware. The 31,560 cross-replicate canonical-hash matches at BITDET_01..03 + BITDET_5K prove byte-identity as a structural property of the discipline, not as an aspirational target. The cross-platform parity at `solve_h2.json` proves the result is encoded in the source, not in any platform's IEEE-754 quirks.
 
 For the Zer0pa portfolio: this validates the discipline (rational arithmetic + POLICY_CHECK + canonical-hash gates) as a viable route to deterministic-by-construction computation. Each portfolio lane that adopts the discipline inherits the property. Each lane's mathematical content (whatever the substrate) becomes the IP — the encoding becomes a proof artifact.
 
-This is "always-in-beta" per the Zer0pa Live Project Ethos: Phase 0 alone is shippable as a determinism reference; Phase 2/3 finishes the comparative-experiment narrative; future phases (alternative patterns, K2 task BITDET at scale, K2 cross-platform parity, Z₂-asymmetric SYMMETRY observable) extend the proof surface.
+This is "always-in-beta" per the Zer0pa Live Project Ethos: Phase 0 ships as a determinism reference; Phase 2/2.5 ships the first comparative σ″ verdicts; future phases (Phase 3 prep receipts, alternative patterns, K2 task BITDET at scale, K2 cross-platform parity, Z₂-asymmetric SYMMETRY observable) extend the proof surface.
 
 The honest framing: Genesis is **one research artifact in the Zer0pa portfolio**, not a productized service or a unified platform. The four pre-registered comparisons are scoped to the Genesis lane; cross-lane editorializing about portfolio significance is downstream work, out of scope here per [`LANE_DISTINCTION.md`](LANE_DISTINCTION.md).
 
@@ -266,17 +272,17 @@ The honest framing: Genesis is **one research artifact in the Zer0pa portfolio**
 
 Any single receipt with `canonical_sha != 97bd7d…` (Phase 0) breaks the determinism claim — not just for that cell but as a whole. Aggregate across the chain: any cell with `unique_canonical_sha_count > 1` is a substantive finding to interrogate; any cell with `verdict != PASS` halts the chain pending operator-visible disposition (per the chain harness's stop-on-out-of-family-mismatch protocol — see [`harness/host/HASH_GATE_DISPOSITION.md`](harness/host/HASH_GATE_DISPOSITION.md)).
 
-Phase 2 K2 task BITDET: any single iter of any single instance producing `k2_summary.json` SHA different from the others within the same cell breaks K2 task BITDET. Phase 0 has zero such breaches in 1 560 settled hashes. Phase 2 has zero in K2_S20 + K2_S28 live observations (18 byte-identical SHAs per cell).
+Phase 2/2.5 K2 task BITDET: any single iter of any single instance producing `k2_summary.json` SHA different from the others within the same cell breaks K2 task BITDET. Phase 0 has zero such breaches in 31,560 settled hashes. Phase 2/2.5 has zero such breaches across 56 K2-task receipt cells.
 
-The in-flight long BITDET cell (BITDET_5K) extends the proof surface; if it returns a divergent hash on receipt pull, the Phase 0 determinism claim is partially falsified at the affected scale and a substantive finding is filed.
+The in-flight Phase 3 prep chain extends the K2 proof surface; if it returns a divergent hash on receipt pull, K2 task BITDET is partially falsified at the affected step/scale and a substantive finding is filed.
 
 ---
 
 ## What Could Falsify the Substrate-Attribution Reading
 
-If Phase 2 K2_SWEEP shows `best_uplift` VARYING across `--steps` (i.e., the curve is NOT flat at 3.0), then the substrate-attribution reading "Genesis K2 dynamics is structurally trivial under D3 pattern choice" is wrong — there is real dynamics structure on the substrate, and the cycle-7 / s50-cliff / σ″-shape comparisons must be evaluated on the actual curve, not on the constant-3.0 hypothesis.
+If a future alternative-pattern K2 sweep shows `best_uplift` VARYING across `--steps`, then the Phase 2 D3-pattern interpretation "Genesis K2 dynamics is structurally trivial under D3 pattern choice" is not portable to that pattern family; the cycle-7 / s50-cliff / σ″-shape comparisons must be evaluated on the new curve, not on the constant-3.0 D3 result.
 
-If Phase 2 K2_SWEEP shows `best_uplift` CONSTANT at 3.0 across all 30 step values, then under the operator-approved D3 pattern choice the Genesis K2 dynamics is degenerate; alternative pattern choices (pre-registered as `Research-Deferred — Investigation Underway` per [README §Upcoming Workstreams](README.md)) become the next investigation surface to find non-trivial dynamics on the same substrate.
+Phase 2 K2_SWEEP did show `best_uplift` CONSTANT at 3.0 across all 30 steady-state step values; under the operator-approved D3 pattern choice the Genesis K2 dynamics is flat after convergence. Alternative pattern choices (pre-registered as `Research-Deferred — Investigation Underway` per [README §Upcoming Workstreams](README.md)) become the next investigation surface to find richer dynamics on the same substrate.
 
 Either outcome is publishable. The falsification surface is well-defined per acceptance tests `test-cycle7-lomb-scargle`, `test-cycle7-disambiguator`, `test-s50-cliff-genesis`, `test-s50-cliff-N10`, `test-sigma-curve-diff-table`, `test-symmetry-Z2-probe` ([`project_contract.json`](project_contract.json)).
 
@@ -286,10 +292,9 @@ Either outcome is publishable. The falsification surface is well-defined per acc
 
 In order of decision-relevance:
 
-1. **K2_SWEEP cells K2_S29..K2_S56** — do they all return `best_uplift = 3.0`? (Discriminates degenerate vs varied.)
-2. **K2_SWEEP cell K2_S50 specifically** — does Genesis cliff at s50? (Direct test of `claim-s50cliff-augmentation`.)
-3. **CYCLE-probe cells** — do period-7 multiples cluster differently from period-6 or period-8 multiples? (Direct test of `claim-cycle7-attribution`.)
-4. **Long BITDET cell BITDET_5K** — receipts pull confirms `unique_canonical_sha_count = 1` over 30 000 invocations? (Extends the determinism proof surface to the 30K-replicate scale beyond the 1 560 settled.)
-5. **K2 task cross-platform parity (M1 vs RM10)** — once RM10 K2 receipts are pulled, byte-compare the `k2_summary.json` SHAs at matching `--steps` values. (Extends `claim-parity` to the K2 task level.)
+1. **Phase 3 prep BITDET_K2_S1..S9_BIG** — do 100 iters × 6 instances per step preserve `unique_canonical_sha_count = 1` across the transient peak region?
+2. **Phase 3 prep BITDET_K2_S30_BIG and S56_BIG** — do the canonical steady-state points preserve K2 byte-identity at higher cross-time scale?
+3. **K2 task cross-platform parity (M1 vs RM10)** — byte-compare `k2_summary.json` SHAs at matching `--steps` values. (Extends `claim-parity` to the K2 task level.)
+4. **Z2-asymmetric SYMMETRY observable** — design and pre-register before any cell; comparison #4 remains PENDING until this is run.
 
-On phone reconnect, this document is updated with the actual receipt numbers and the four pre-registered comparison verdicts move from PENDING / EARLY-SIGNAL toward CONFIRMED / FALSIFIED / INCONCLUSIVE per the acceptance-test outcomes.
+On phone reconnect, append the Phase 3 prep receipts and update the authority packet. Do not rewrite existing PASS receipts; retractions stay additive.
