@@ -928,15 +928,15 @@
     }
   },
   "position": {
-    "current_phase": "0",
-    "current_phase_name": "Foundation, cross-compile, deploy, first cell",
+    "current_phase": "3-prep",
+    "current_phase_name": "Live receipt extension and synthesis prep",
     "total_phases": 4,
     "current_plan": null,
     "total_plans_in_phase": null,
-    "status": "Ready to plan",
-    "last_activity": "2026-04-27",
-    "last_activity_desc": "GPD project skeleton created (PROJECT.md, ROADMAP.md, STATE.md); RESISTANCE.md + LANE_DISTINCTION.md inheritance from substrate-reconstruction-2026-04-26 confirmed; RM10 connected (`FY25013101C8 device`); aarch64-linux-android target installed; ready for /gpd:plan-phase",
-    "progress_percent": 0,
+    "status": "Phase 0/2/2.5 proof surface in repo; Phase 3 prep chain live on RM10",
+    "last_activity": "2026-04-28",
+    "last_activity_desc": "60 Phase 0/2/2.5 cells in proofs/artifacts/cells, all PASS and all unique_canonical_sha_count=1; sigma_curve_full.tsv and sigma_curve.png added; Phase 3 prep BITDET_K2 extension running on RM10.",
+    "progress_percent": 75,
     "paused_at": null
   },
   "active_calculations": [],
@@ -1054,12 +1054,12 @@
   "propagated_uncertainties": [],
   "pending_todos": [],
   "blockers": [
-    "RM10 thermal margin (cpu6) requires fan + Game Zone on; operator handles physical setup",
-    "RM10 device offline (2026-04-28): 'adb devices' returns empty list. Handover (2026-04-27) claimed online; state has changed. Plans 00-06 (deploy), 00-07 (BITDET launch), 00-08 (autonomous chain confirm) BLOCKED on device reconnect. All host-side plans 00-01..00-05 complete. No retry attempted to avoid adb-spam (collision-discipline)."
+    "Phase 3 prep receipts are still live on RM10; do not modify harness/phone/cells.txt, signal the phone chain, or claim those receipts until pulled.",
+    "Z2-asymmetric observable for the D6-vs-C3 symmetry comparison is not designed yet; comparison #4 remains PENDING."
   ],
   "session": {
-    "last_date": "2026-04-27",
-    "stopped_at": "Project initialized; Phase 0 ready to plan",
+    "last_date": "2026-04-28",
+    "stopped_at": "Phase 2/2.5 proof surface in repo; Phase 3 prep chain live on RM10; GitHub inspection branch being prepared.",
     "resume_file": null
   },
   "_version": 1,

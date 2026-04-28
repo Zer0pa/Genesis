@@ -1,0 +1,1767 @@
+20260427T225041Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260427T225041Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260427T225041Z START cell=BITDET_01 task=<vanilla> steps=<none> instances=6
+20260427T225041Z START cell=BITDET_01 task=<vanilla> steps=<none> instances=6
+20260427T225041Z launch_genesis_batch: cell=BITDET_01 instances=6 task=<vanilla>
+20260427T225041Z parent affinity set to mask=7F (cpu0-6)
+20260427T225041Z WARNING: dm3_runner running (pid=28095); Genesis namespace is independent; continuing
+20260427T225041Z thermal_coordinator spawned pid=28197
+20260427T225041Z spawned instance=0 mask=auto pid=28207
+20260427T225041Z spawned instance=1 mask=auto pid=28224
+20260427T225041Z spawned instance=2 mask=auto pid=28250
+20260427T225041Z spawned instance=3 mask=auto pid=28275
+20260427T225041Z spawned instance=4 mask=auto pid=28302
+20260427T225041Z spawned instance=5 mask=auto pid=28331
+cell=BITDET_01 instance=0 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_01 instance=2 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_01 instance=1 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_01 instance=4 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_01 instance=3 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_01 instance=5 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+20260427T225043Z all instances finished; failures=0
+20260427T225048Z thermal_coordinator stopped
+20260427T225048Z summary written: /data/local/tmp/genesis/cells/BITDET_01/_summary.json batch_verdict=PASS
+{
+  "cell": "BITDET_01",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 0,
+  "task": "null",
+  "steps": "null",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260427T225048Z"
+}
+20260427T225048Z DONE cell=BITDET_01 verdict=PASS
+20260427T225048Z DONE cell=BITDET_01 verdict=PASS
+20260427T225048Z START cell=BITDET_02 task=<vanilla> steps=<none> instances=6
+20260427T225048Z START cell=BITDET_02 task=<vanilla> steps=<none> instances=6
+20260427T225048Z launch_genesis_batch: cell=BITDET_02 instances=6 task=<vanilla>
+20260427T225048Z parent affinity set to mask=7F (cpu0-6)
+20260427T225048Z WARNING: dm3_runner running (pid=28095); Genesis namespace is independent; continuing
+20260427T225048Z thermal_coordinator spawned pid=30197
+20260427T225049Z spawned instance=0 mask=auto pid=30208
+20260427T225049Z spawned instance=1 mask=auto pid=30224
+20260427T225049Z spawned instance=2 mask=auto pid=30244
+20260427T225049Z spawned instance=3 mask=auto pid=30271
+20260427T225049Z spawned instance=4 mask=auto pid=30295
+20260427T225049Z spawned instance=5 mask=auto pid=30326
+cell=BITDET_02 instance=1 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_02 instance=2 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_02 instance=0 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_02 instance=4 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_02 instance=5 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_02 instance=3 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+20260427T225055Z all instances finished; failures=0
+20260427T225057Z thermal_coordinator stopped
+20260427T225057Z summary written: /data/local/tmp/genesis/cells/BITDET_02/_summary.json batch_verdict=PASS
+{
+  "cell": "BITDET_02",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 0,
+  "task": "null",
+  "steps": "null",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260427T225057Z"
+}
+20260427T225057Z DONE cell=BITDET_02 verdict=PASS
+20260427T225057Z DONE cell=BITDET_02 verdict=PASS
+20260427T225057Z START cell=BITDET_03 task=<vanilla> steps=<none> instances=6
+20260427T225057Z START cell=BITDET_03 task=<vanilla> steps=<none> instances=6
+20260427T225057Z launch_genesis_batch: cell=BITDET_03 instances=6 task=<vanilla>
+20260427T225057Z parent affinity set to mask=7F (cpu0-6)
+20260427T225057Z WARNING: dm3_runner running (pid=28095); Genesis namespace is independent; continuing
+20260427T225058Z thermal_coordinator spawned pid=8886
+20260427T225058Z spawned instance=0 mask=auto pid=8895
+20260427T225058Z spawned instance=1 mask=auto pid=8918
+20260427T225058Z spawned instance=2 mask=auto pid=8940
+20260427T225058Z spawned instance=3 mask=auto pid=8965
+20260427T225058Z spawned instance=4 mask=auto pid=9010
+20260427T225058Z spawned instance=5 mask=auto pid=9081
+cell=BITDET_03 instance=2 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_03 instance=0 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_03 instance=5 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_03 instance=4 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_03 instance=1 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_03 instance=3 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+20260427T225124Z all instances finished; failures=0
+20260427T225127Z thermal_coordinator stopped
+20260427T225127Z summary written: /data/local/tmp/genesis/cells/BITDET_03/_summary.json batch_verdict=PASS
+{
+  "cell": "BITDET_03",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 0,
+  "task": "null",
+  "steps": "null",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260427T225127Z"
+}
+20260427T225127Z DONE cell=BITDET_03 verdict=PASS
+20260427T225127Z DONE cell=BITDET_03 verdict=PASS
+20260427T225127Z genesis_chain_v1 finished all manifest cells
+20260427T225127Z genesis_chain_v1 finished all manifest cells
+20260427T225147Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260427T225147Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260427T225148Z SKIP cell=BITDET_01: outcome.json exists (verdict=PASS)
+20260427T225148Z SKIP cell=BITDET_01: outcome.json exists (verdict=PASS)
+20260427T225148Z SKIP cell=BITDET_02: outcome.json exists (verdict=PASS)
+20260427T225148Z SKIP cell=BITDET_02: outcome.json exists (verdict=PASS)
+20260427T225148Z SKIP cell=BITDET_03: outcome.json exists (verdict=PASS)
+20260427T225148Z SKIP cell=BITDET_03: outcome.json exists (verdict=PASS)
+20260427T225148Z genesis_chain_v1 finished all manifest cells
+20260427T225148Z genesis_chain_v1 finished all manifest cells
+20260427T225157Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260427T225157Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260427T225157Z SKIP cell=BITDET_01: outcome.json exists (verdict=PASS)
+20260427T225157Z SKIP cell=BITDET_01: outcome.json exists (verdict=PASS)
+20260427T225157Z SKIP cell=BITDET_02: outcome.json exists (verdict=PASS)
+20260427T225157Z SKIP cell=BITDET_02: outcome.json exists (verdict=PASS)
+20260427T225157Z SKIP cell=BITDET_03: outcome.json exists (verdict=PASS)
+20260427T225157Z SKIP cell=BITDET_03: outcome.json exists (verdict=PASS)
+20260427T225157Z genesis_chain_v1 finished all manifest cells
+20260427T225157Z genesis_chain_v1 finished all manifest cells
+20260427T225250Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260427T225250Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260427T225250Z SKIP cell=BITDET_01: outcome.json exists (verdict=PASS)
+20260427T225250Z SKIP cell=BITDET_01: outcome.json exists (verdict=PASS)
+20260427T225250Z SKIP cell=BITDET_02: outcome.json exists (verdict=PASS)
+20260427T225250Z SKIP cell=BITDET_02: outcome.json exists (verdict=PASS)
+20260427T225250Z SKIP cell=BITDET_03: outcome.json exists (verdict=PASS)
+20260427T225250Z SKIP cell=BITDET_03: outcome.json exists (verdict=PASS)
+20260427T225250Z START cell=BITDET_5K task=<vanilla> steps=<none> instances=6
+20260427T225250Z START cell=BITDET_5K task=<vanilla> steps=<none> instances=6
+20260427T225250Z launch_genesis_batch: cell=BITDET_5K instances=6 task=<vanilla>
+20260427T225250Z parent affinity set to mask=7F (cpu0-6)
+20260427T225250Z WARNING: dm3_runner running (pid=28095); Genesis namespace is independent; continuing
+20260427T225250Z thermal_coordinator spawned pid=15337
+20260427T225250Z spawned instance=0 mask=auto pid=15346
+20260427T225250Z spawned instance=1 mask=auto pid=15359
+20260427T225250Z spawned instance=2 mask=auto pid=15378
+20260427T225250Z spawned instance=3 mask=auto pid=15404
+20260427T225250Z spawned instance=4 mask=auto pid=15433
+20260427T225250Z spawned instance=5 mask=auto pid=15470
+cell=BITDET_5K instance=4 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_5K instance=0 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_5K instance=3 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_5K instance=2 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_5K instance=5 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_5K instance=1 verdict=PASS canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+20260427T230326Z all instances finished; failures=0
+20260427T230330Z thermal_coordinator stopped
+20260427T230330Z summary written: /data/local/tmp/genesis/cells/BITDET_5K/_summary.json batch_verdict=PASS
+{
+  "cell": "BITDET_5K",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 0,
+  "task": "null",
+  "steps": "null",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260427T230330Z"
+}
+20260427T230330Z DONE cell=BITDET_5K verdict=PASS
+20260427T230330Z DONE cell=BITDET_5K verdict=PASS
+20260427T230330Z START cell=BITDET_50K task=<vanilla> steps=<none> instances=6
+20260427T230330Z START cell=BITDET_50K task=<vanilla> steps=<none> instances=6
+20260427T230330Z launch_genesis_batch: cell=BITDET_50K instances=6 task=<vanilla>
+20260427T230330Z parent affinity set to mask=7F (cpu0-6)
+20260427T230330Z WARNING: dm3_runner running (pid=28095); Genesis namespace is independent; continuing
+20260427T230330Z thermal_coordinator spawned pid=22522
+20260427T230330Z spawned instance=0 mask=auto pid=22531
+20260427T230330Z spawned instance=1 mask=auto pid=22546
+20260427T230330Z spawned instance=2 mask=auto pid=22565
+20260427T230330Z spawned instance=3 mask=auto pid=22589
+20260427T230330Z spawned instance=4 mask=auto pid=22610
+20260427T230330Z spawned instance=5 mask=auto pid=22641
+cell=BITDET_50K instance=2 verdict=FAIL canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_50K instance=5 verdict=FAIL canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_50K instance=4 verdict=FAIL canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_50K instance=0 verdict=FAIL canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+cell=BITDET_50K instance=1 verdict=FAIL canonical_sha=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89
+20260428T004658Z instance pid=22531 exited non-zero
+20260428T004658Z instance pid=22546 exited non-zero
+20260428T004658Z instance pid=22565 exited non-zero
+20260428T004814Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260428T004814Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260428T004814Z START cell=K2_S20 task=k2-scars steps=20 instances=6
+20260428T004814Z START cell=K2_S20 task=k2-scars steps=20 instances=6
+20260428T004814Z launch_genesis_batch: cell=K2_S20 instances=6 task=k2-scars
+20260428T004814Z parent affinity set to mask=7F (cpu0-6)
+20260428T004814Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T004814Z thermal_coordinator spawned pid=14222
+20260428T004814Z spawned instance=0 mask=auto pid=14232
+20260428T004814Z spawned instance=1 mask=auto pid=14248
+20260428T004814Z spawned instance=2 mask=auto pid=14265
+20260428T004815Z spawned instance=3 mask=auto pid=14289
+20260428T004815Z spawned instance=4 mask=auto pid=14326
+20260428T004815Z spawned instance=5 mask=auto pid=14360
+cell=K2_S20 instance=0 verdict=PASS canonical_sha=74fa0b8a7082b76370db8cf05f0baf520534e5def11edfccd698f26ad914e432
+cell=K2_S20 instance=2 verdict=PASS canonical_sha=74fa0b8a7082b76370db8cf05f0baf520534e5def11edfccd698f26ad914e432
+cell=K2_S20 instance=4 verdict=PASS canonical_sha=74fa0b8a7082b76370db8cf05f0baf520534e5def11edfccd698f26ad914e432
+cell=K2_S20 instance=1 verdict=PASS canonical_sha=74fa0b8a7082b76370db8cf05f0baf520534e5def11edfccd698f26ad914e432
+cell=K2_S20 instance=5 verdict=PASS canonical_sha=74fa0b8a7082b76370db8cf05f0baf520534e5def11edfccd698f26ad914e432
+cell=K2_S20 instance=3 verdict=PASS canonical_sha=74fa0b8a7082b76370db8cf05f0baf520534e5def11edfccd698f26ad914e432
+20260428T004830Z all instances finished; failures=0
+20260428T004836Z thermal_coordinator stopped
+20260428T004836Z summary written: /data/local/tmp/genesis/cells/K2_S20/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S20",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "20",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T004836Z"
+}
+20260428T004836Z DONE cell=K2_S20 verdict=PASS
+20260428T004836Z DONE cell=K2_S20 verdict=PASS
+20260428T004836Z START cell=K2_S28 task=k2-scars steps=28 instances=6
+20260428T004836Z START cell=K2_S28 task=k2-scars steps=28 instances=6
+20260428T004836Z launch_genesis_batch: cell=K2_S28 instances=6 task=k2-scars
+20260428T004836Z parent affinity set to mask=7F (cpu0-6)
+20260428T004836Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T004836Z thermal_coordinator spawned pid=15890
+20260428T004836Z spawned instance=0 mask=auto pid=15900
+20260428T004836Z spawned instance=1 mask=auto pid=15916
+20260428T004836Z spawned instance=2 mask=auto pid=15937
+20260428T004836Z spawned instance=3 mask=auto pid=15976
+20260428T004836Z spawned instance=4 mask=auto pid=16030
+20260428T004836Z spawned instance=5 mask=auto pid=16061
+cell=K2_S28 instance=5 verdict=PASS canonical_sha=ac6ef92d98cde3d97727245a1f4ebe5e0613608056f416e5ee7f340218919ff1
+cell=K2_S28 instance=4 verdict=PASS canonical_sha=ac6ef92d98cde3d97727245a1f4ebe5e0613608056f416e5ee7f340218919ff1
+cell=K2_S28 instance=0 verdict=PASS canonical_sha=ac6ef92d98cde3d97727245a1f4ebe5e0613608056f416e5ee7f340218919ff1
+cell=K2_S28 instance=1 verdict=PASS canonical_sha=ac6ef92d98cde3d97727245a1f4ebe5e0613608056f416e5ee7f340218919ff1
+cell=K2_S28 instance=2 verdict=PASS canonical_sha=ac6ef92d98cde3d97727245a1f4ebe5e0613608056f416e5ee7f340218919ff1
+cell=K2_S28 instance=3 verdict=PASS canonical_sha=ac6ef92d98cde3d97727245a1f4ebe5e0613608056f416e5ee7f340218919ff1
+20260428T004903Z all instances finished; failures=0
+20260428T004905Z thermal_coordinator stopped
+20260428T004905Z summary written: /data/local/tmp/genesis/cells/K2_S28/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S28",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "28",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T004905Z"
+}
+20260428T004905Z DONE cell=K2_S28 verdict=PASS
+20260428T004905Z DONE cell=K2_S28 verdict=PASS
+20260428T004905Z START cell=K2_S29 task=k2-scars steps=29 instances=6
+20260428T004905Z START cell=K2_S29 task=k2-scars steps=29 instances=6
+20260428T004905Z launch_genesis_batch: cell=K2_S29 instances=6 task=k2-scars
+20260428T004905Z parent affinity set to mask=7F (cpu0-6)
+20260428T004905Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T004905Z thermal_coordinator spawned pid=20196
+20260428T004905Z spawned instance=0 mask=auto pid=20214
+20260428T004905Z spawned instance=1 mask=auto pid=20237
+20260428T004905Z spawned instance=2 mask=auto pid=20267
+20260428T004905Z spawned instance=3 mask=auto pid=20300
+20260428T004906Z spawned instance=4 mask=auto pid=20329
+20260428T004906Z spawned instance=5 mask=auto pid=20365
+cell=K2_S29 instance=1 verdict=PASS canonical_sha=b08c565dc7ee5d5d56e7c2a4c9833de00375317ec58a44bf8043866dd0641ae3
+cell=K2_S29 instance=2 verdict=PASS canonical_sha=b08c565dc7ee5d5d56e7c2a4c9833de00375317ec58a44bf8043866dd0641ae3
+cell=K2_S29 instance=0 verdict=PASS canonical_sha=b08c565dc7ee5d5d56e7c2a4c9833de00375317ec58a44bf8043866dd0641ae3
+cell=K2_S29 instance=4 verdict=PASS canonical_sha=b08c565dc7ee5d5d56e7c2a4c9833de00375317ec58a44bf8043866dd0641ae3
+cell=K2_S29 instance=5 verdict=PASS canonical_sha=b08c565dc7ee5d5d56e7c2a4c9833de00375317ec58a44bf8043866dd0641ae3
+cell=K2_S29 instance=3 verdict=PASS canonical_sha=b08c565dc7ee5d5d56e7c2a4c9833de00375317ec58a44bf8043866dd0641ae3
+20260428T004937Z all instances finished; failures=0
+20260428T004942Z thermal_coordinator stopped
+20260428T004942Z summary written: /data/local/tmp/genesis/cells/K2_S29/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S29",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "29",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T004942Z"
+}
+20260428T004942Z DONE cell=K2_S29 verdict=PASS
+20260428T004942Z DONE cell=K2_S29 verdict=PASS
+20260428T004942Z START cell=K2_S30 task=k2-scars steps=30 instances=6
+20260428T004942Z START cell=K2_S30 task=k2-scars steps=30 instances=6
+20260428T004942Z launch_genesis_batch: cell=K2_S30 instances=6 task=k2-scars
+20260428T004942Z parent affinity set to mask=7F (cpu0-6)
+20260428T004942Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T004942Z thermal_coordinator spawned pid=22924
+20260428T004942Z spawned instance=0 mask=auto pid=22933
+20260428T004942Z spawned instance=1 mask=auto pid=22948
+20260428T004943Z spawned instance=2 mask=auto pid=22966
+20260428T004943Z spawned instance=3 mask=auto pid=22989
+20260428T004943Z spawned instance=4 mask=auto pid=23012
+20260428T004943Z spawned instance=5 mask=auto pid=23038
+cell=K2_S30 instance=1 verdict=PASS canonical_sha=0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372
+cell=K2_S30 instance=0 verdict=PASS canonical_sha=0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372
+cell=K2_S30 instance=4 verdict=PASS canonical_sha=0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372
+cell=K2_S30 instance=5 verdict=PASS canonical_sha=0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372
+cell=K2_S30 instance=3 verdict=PASS canonical_sha=0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372
+cell=K2_S30 instance=2 verdict=PASS canonical_sha=0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372
+20260428T005012Z all instances finished; failures=0
+20260428T005017Z thermal_coordinator stopped
+20260428T005017Z summary written: /data/local/tmp/genesis/cells/K2_S30/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S30",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "30",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005017Z"
+}
+20260428T005017Z DONE cell=K2_S30 verdict=PASS
+20260428T005017Z DONE cell=K2_S30 verdict=PASS
+20260428T005017Z START cell=K2_S31 task=k2-scars steps=31 instances=6
+20260428T005017Z START cell=K2_S31 task=k2-scars steps=31 instances=6
+20260428T005017Z launch_genesis_batch: cell=K2_S31 instances=6 task=k2-scars
+20260428T005017Z parent affinity set to mask=7F (cpu0-6)
+20260428T005017Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005017Z thermal_coordinator spawned pid=27574
+20260428T005017Z spawned instance=0 mask=auto pid=27584
+20260428T005018Z spawned instance=1 mask=auto pid=27597
+20260428T005018Z spawned instance=2 mask=auto pid=27621
+20260428T005018Z spawned instance=3 mask=auto pid=27665
+20260428T005018Z spawned instance=4 mask=auto pid=27707
+20260428T005018Z spawned instance=5 mask=auto pid=27738
+cell=K2_S31 instance=1 verdict=PASS canonical_sha=b35b7f98c8cbd8b5beb5783aa27b47c5c51a8ae86ce570abf6c8c96f7f7cf799
+cell=K2_S31 instance=4 verdict=PASS canonical_sha=b35b7f98c8cbd8b5beb5783aa27b47c5c51a8ae86ce570abf6c8c96f7f7cf799
+cell=K2_S31 instance=3 verdict=PASS canonical_sha=b35b7f98c8cbd8b5beb5783aa27b47c5c51a8ae86ce570abf6c8c96f7f7cf799
+cell=K2_S31 instance=2 verdict=PASS canonical_sha=b35b7f98c8cbd8b5beb5783aa27b47c5c51a8ae86ce570abf6c8c96f7f7cf799
+cell=K2_S31 instance=5 verdict=PASS canonical_sha=b35b7f98c8cbd8b5beb5783aa27b47c5c51a8ae86ce570abf6c8c96f7f7cf799
+cell=K2_S31 instance=0 verdict=PASS canonical_sha=b35b7f98c8cbd8b5beb5783aa27b47c5c51a8ae86ce570abf6c8c96f7f7cf799
+20260428T005046Z all instances finished; failures=0
+20260428T005052Z thermal_coordinator stopped
+20260428T005053Z summary written: /data/local/tmp/genesis/cells/K2_S31/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S31",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "31",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005052Z"
+}
+20260428T005053Z DONE cell=K2_S31 verdict=PASS
+20260428T005053Z DONE cell=K2_S31 verdict=PASS
+20260428T005053Z START cell=K2_S32 task=k2-scars steps=32 instances=6
+20260428T005053Z START cell=K2_S32 task=k2-scars steps=32 instances=6
+20260428T005053Z launch_genesis_batch: cell=K2_S32 instances=6 task=k2-scars
+20260428T005053Z parent affinity set to mask=7F (cpu0-6)
+20260428T005053Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005053Z thermal_coordinator spawned pid=29717
+20260428T005053Z spawned instance=0 mask=auto pid=29726
+20260428T005053Z spawned instance=1 mask=auto pid=29740
+20260428T005053Z spawned instance=2 mask=auto pid=29762
+20260428T005053Z spawned instance=3 mask=auto pid=29786
+20260428T005053Z spawned instance=4 mask=auto pid=29810
+20260428T005053Z spawned instance=5 mask=auto pid=29831
+cell=K2_S32 instance=2 verdict=PASS canonical_sha=c04c34b9f9f4c521c0780196111c0c56f983b6d75e68dacf01ada0fe2fa7d60a
+cell=K2_S32 instance=3 verdict=PASS canonical_sha=c04c34b9f9f4c521c0780196111c0c56f983b6d75e68dacf01ada0fe2fa7d60a
+cell=K2_S32 instance=4 verdict=PASS canonical_sha=c04c34b9f9f4c521c0780196111c0c56f983b6d75e68dacf01ada0fe2fa7d60a
+cell=K2_S32 instance=0 verdict=PASS canonical_sha=c04c34b9f9f4c521c0780196111c0c56f983b6d75e68dacf01ada0fe2fa7d60a
+cell=K2_S32 instance=1 verdict=PASS canonical_sha=c04c34b9f9f4c521c0780196111c0c56f983b6d75e68dacf01ada0fe2fa7d60a
+cell=K2_S32 instance=5 verdict=PASS canonical_sha=c04c34b9f9f4c521c0780196111c0c56f983b6d75e68dacf01ada0fe2fa7d60a
+20260428T005126Z all instances finished; failures=0
+20260428T005129Z thermal_coordinator stopped
+20260428T005129Z summary written: /data/local/tmp/genesis/cells/K2_S32/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S32",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "32",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005129Z"
+}
+20260428T005129Z DONE cell=K2_S32 verdict=PASS
+20260428T005129Z DONE cell=K2_S32 verdict=PASS
+20260428T005129Z START cell=K2_S33 task=k2-scars steps=33 instances=6
+20260428T005129Z START cell=K2_S33 task=k2-scars steps=33 instances=6
+20260428T005129Z launch_genesis_batch: cell=K2_S33 instances=6 task=k2-scars
+20260428T005129Z parent affinity set to mask=7F (cpu0-6)
+20260428T005129Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005129Z thermal_coordinator spawned pid=2133
+20260428T005129Z spawned instance=0 mask=auto pid=2146
+20260428T005129Z spawned instance=1 mask=auto pid=2162
+20260428T005129Z spawned instance=2 mask=auto pid=2182
+20260428T005129Z spawned instance=3 mask=auto pid=2212
+20260428T005129Z spawned instance=4 mask=auto pid=2244
+20260428T005129Z spawned instance=5 mask=auto pid=2276
+cell=K2_S33 instance=0 verdict=PASS canonical_sha=c5602a4b0400b940214503fa3790fde1c8e169a41d3e9cce896dfa255fa99e84
+cell=K2_S33 instance=5 verdict=PASS canonical_sha=c5602a4b0400b940214503fa3790fde1c8e169a41d3e9cce896dfa255fa99e84
+cell=K2_S33 instance=3 verdict=PASS canonical_sha=c5602a4b0400b940214503fa3790fde1c8e169a41d3e9cce896dfa255fa99e84
+cell=K2_S33 instance=4 verdict=PASS canonical_sha=c5602a4b0400b940214503fa3790fde1c8e169a41d3e9cce896dfa255fa99e84
+cell=K2_S33 instance=1 verdict=PASS canonical_sha=c5602a4b0400b940214503fa3790fde1c8e169a41d3e9cce896dfa255fa99e84
+cell=K2_S33 instance=2 verdict=PASS canonical_sha=c5602a4b0400b940214503fa3790fde1c8e169a41d3e9cce896dfa255fa99e84
+20260428T005207Z all instances finished; failures=0
+20260428T005211Z thermal_coordinator stopped
+20260428T005212Z summary written: /data/local/tmp/genesis/cells/K2_S33/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S33",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "33",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005211Z"
+}
+20260428T005212Z DONE cell=K2_S33 verdict=PASS
+20260428T005212Z DONE cell=K2_S33 verdict=PASS
+20260428T005212Z START cell=K2_S34 task=k2-scars steps=34 instances=6
+20260428T005212Z START cell=K2_S34 task=k2-scars steps=34 instances=6
+20260428T005212Z launch_genesis_batch: cell=K2_S34 instances=6 task=k2-scars
+20260428T005212Z parent affinity set to mask=7F (cpu0-6)
+20260428T005212Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005212Z thermal_coordinator spawned pid=7777
+20260428T005212Z spawned instance=0 mask=auto pid=7815
+20260428T005212Z spawned instance=1 mask=auto pid=7847
+20260428T005212Z spawned instance=2 mask=auto pid=7874
+20260428T005212Z spawned instance=3 mask=auto pid=7895
+20260428T005212Z spawned instance=4 mask=auto pid=7935
+20260428T005212Z spawned instance=5 mask=auto pid=7972
+cell=K2_S34 instance=0 verdict=PASS canonical_sha=f840f5c9e2460bf206f7e62a6bccc2bbfa7c7f3227b2bdefae30b7303e8cb233
+cell=K2_S34 instance=5 verdict=PASS canonical_sha=f840f5c9e2460bf206f7e62a6bccc2bbfa7c7f3227b2bdefae30b7303e8cb233
+cell=K2_S34 instance=2 verdict=PASS canonical_sha=f840f5c9e2460bf206f7e62a6bccc2bbfa7c7f3227b2bdefae30b7303e8cb233
+cell=K2_S34 instance=3 verdict=PASS canonical_sha=f840f5c9e2460bf206f7e62a6bccc2bbfa7c7f3227b2bdefae30b7303e8cb233
+cell=K2_S34 instance=1 verdict=PASS canonical_sha=f840f5c9e2460bf206f7e62a6bccc2bbfa7c7f3227b2bdefae30b7303e8cb233
+cell=K2_S34 instance=4 verdict=PASS canonical_sha=f840f5c9e2460bf206f7e62a6bccc2bbfa7c7f3227b2bdefae30b7303e8cb233
+20260428T005248Z all instances finished; failures=0
+20260428T005250Z thermal_coordinator stopped
+20260428T005250Z summary written: /data/local/tmp/genesis/cells/K2_S34/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S34",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "34",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005250Z"
+}
+20260428T005251Z DONE cell=K2_S34 verdict=PASS
+20260428T005251Z DONE cell=K2_S34 verdict=PASS
+20260428T005251Z START cell=K2_S35 task=k2-scars steps=35 instances=6
+20260428T005251Z START cell=K2_S35 task=k2-scars steps=35 instances=6
+20260428T005251Z launch_genesis_batch: cell=K2_S35 instances=6 task=k2-scars
+20260428T005251Z parent affinity set to mask=7F (cpu0-6)
+20260428T005251Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005251Z thermal_coordinator spawned pid=12425
+20260428T005251Z spawned instance=0 mask=auto pid=12434
+20260428T005251Z spawned instance=1 mask=auto pid=12451
+20260428T005251Z spawned instance=2 mask=auto pid=12471
+20260428T005251Z spawned instance=3 mask=auto pid=12492
+20260428T005251Z spawned instance=4 mask=auto pid=12516
+20260428T005251Z spawned instance=5 mask=auto pid=12544
+cell=K2_S35 instance=1 verdict=PASS canonical_sha=fdac31938189187325247b11613ea4c3d0e2f98c8418b72ac061170d5d7edbad
+cell=K2_S35 instance=3 verdict=PASS canonical_sha=fdac31938189187325247b11613ea4c3d0e2f98c8418b72ac061170d5d7edbad
+cell=K2_S35 instance=4 verdict=PASS canonical_sha=fdac31938189187325247b11613ea4c3d0e2f98c8418b72ac061170d5d7edbad
+cell=K2_S35 instance=0 verdict=PASS canonical_sha=fdac31938189187325247b11613ea4c3d0e2f98c8418b72ac061170d5d7edbad
+cell=K2_S35 instance=2 verdict=PASS canonical_sha=fdac31938189187325247b11613ea4c3d0e2f98c8418b72ac061170d5d7edbad
+cell=K2_S35 instance=5 verdict=PASS canonical_sha=fdac31938189187325247b11613ea4c3d0e2f98c8418b72ac061170d5d7edbad
+20260428T005331Z all instances finished; failures=0
+20260428T005333Z thermal_coordinator stopped
+20260428T005333Z summary written: /data/local/tmp/genesis/cells/K2_S35/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S35",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "35",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005333Z"
+}
+20260428T005334Z DONE cell=K2_S35 verdict=PASS
+20260428T005334Z DONE cell=K2_S35 verdict=PASS
+20260428T005334Z START cell=K2_S36 task=k2-scars steps=36 instances=6
+20260428T005334Z START cell=K2_S36 task=k2-scars steps=36 instances=6
+20260428T005334Z launch_genesis_batch: cell=K2_S36 instances=6 task=k2-scars
+20260428T005334Z parent affinity set to mask=7F (cpu0-6)
+20260428T005334Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005334Z thermal_coordinator spawned pid=14915
+20260428T005334Z spawned instance=0 mask=auto pid=14926
+20260428T005334Z spawned instance=1 mask=auto pid=14941
+20260428T005334Z spawned instance=2 mask=auto pid=14959
+20260428T005334Z spawned instance=3 mask=auto pid=14978
+20260428T005334Z spawned instance=4 mask=auto pid=15010
+20260428T005334Z spawned instance=5 mask=auto pid=15030
+cell=K2_S36 instance=1 verdict=PASS canonical_sha=4b0e34227b64a4610195ee2e5eafb1f3823d21d4d2d4635eb73d055411ce75ee
+cell=K2_S36 instance=0 verdict=PASS canonical_sha=4b0e34227b64a4610195ee2e5eafb1f3823d21d4d2d4635eb73d055411ce75ee
+cell=K2_S36 instance=4 verdict=PASS canonical_sha=4b0e34227b64a4610195ee2e5eafb1f3823d21d4d2d4635eb73d055411ce75ee
+cell=K2_S36 instance=3 verdict=PASS canonical_sha=4b0e34227b64a4610195ee2e5eafb1f3823d21d4d2d4635eb73d055411ce75ee
+cell=K2_S36 instance=5 verdict=PASS canonical_sha=4b0e34227b64a4610195ee2e5eafb1f3823d21d4d2d4635eb73d055411ce75ee
+cell=K2_S36 instance=2 verdict=PASS canonical_sha=4b0e34227b64a4610195ee2e5eafb1f3823d21d4d2d4635eb73d055411ce75ee
+20260428T005414Z all instances finished; failures=0
+20260428T005419Z thermal_coordinator stopped
+20260428T005419Z summary written: /data/local/tmp/genesis/cells/K2_S36/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S36",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "36",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005419Z"
+}
+20260428T005419Z DONE cell=K2_S36 verdict=PASS
+20260428T005419Z DONE cell=K2_S36 verdict=PASS
+20260428T005419Z START cell=K2_S37 task=k2-scars steps=37 instances=6
+20260428T005419Z START cell=K2_S37 task=k2-scars steps=37 instances=6
+20260428T005419Z launch_genesis_batch: cell=K2_S37 instances=6 task=k2-scars
+20260428T005419Z parent affinity set to mask=7F (cpu0-6)
+20260428T005419Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005419Z thermal_coordinator spawned pid=20042
+20260428T005419Z spawned instance=0 mask=auto pid=20051
+20260428T005420Z spawned instance=1 mask=auto pid=20065
+20260428T005420Z spawned instance=2 mask=auto pid=20087
+20260428T005420Z spawned instance=3 mask=auto pid=20110
+20260428T005420Z spawned instance=4 mask=auto pid=20131
+20260428T005420Z spawned instance=5 mask=auto pid=20150
+cell=K2_S37 instance=0 verdict=PASS canonical_sha=87be2f602ebdbbe61735a13823912af6ab2d9c9d1478a8e81b1cfc38aa1585c1
+cell=K2_S37 instance=3 verdict=PASS canonical_sha=87be2f602ebdbbe61735a13823912af6ab2d9c9d1478a8e81b1cfc38aa1585c1
+cell=K2_S37 instance=2 verdict=PASS canonical_sha=87be2f602ebdbbe61735a13823912af6ab2d9c9d1478a8e81b1cfc38aa1585c1
+cell=K2_S37 instance=5 verdict=PASS canonical_sha=87be2f602ebdbbe61735a13823912af6ab2d9c9d1478a8e81b1cfc38aa1585c1
+cell=K2_S37 instance=1 verdict=PASS canonical_sha=87be2f602ebdbbe61735a13823912af6ab2d9c9d1478a8e81b1cfc38aa1585c1
+cell=K2_S37 instance=4 verdict=PASS canonical_sha=87be2f602ebdbbe61735a13823912af6ab2d9c9d1478a8e81b1cfc38aa1585c1
+20260428T005502Z all instances finished; failures=0
+20260428T005506Z thermal_coordinator stopped
+20260428T005506Z summary written: /data/local/tmp/genesis/cells/K2_S37/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S37",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "37",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005506Z"
+}
+20260428T005506Z DONE cell=K2_S37 verdict=PASS
+20260428T005506Z DONE cell=K2_S37 verdict=PASS
+20260428T005506Z START cell=K2_S38 task=k2-scars steps=38 instances=6
+20260428T005506Z START cell=K2_S38 task=k2-scars steps=38 instances=6
+20260428T005506Z launch_genesis_batch: cell=K2_S38 instances=6 task=k2-scars
+20260428T005507Z parent affinity set to mask=7F (cpu0-6)
+20260428T005507Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005507Z thermal_coordinator spawned pid=24568
+20260428T005507Z spawned instance=0 mask=auto pid=24585
+20260428T005507Z spawned instance=1 mask=auto pid=24623
+20260428T005507Z spawned instance=2 mask=auto pid=24684
+20260428T005507Z spawned instance=3 mask=auto pid=24739
+20260428T005507Z spawned instance=4 mask=auto pid=24787
+20260428T005507Z spawned instance=5 mask=auto pid=24838
+cell=K2_S38 instance=1 verdict=PASS canonical_sha=7f526b0f57196e6f178fe92734f62e3caa9a71da08bda8ea545f6b2d0df554e2
+cell=K2_S38 instance=3 verdict=PASS canonical_sha=7f526b0f57196e6f178fe92734f62e3caa9a71da08bda8ea545f6b2d0df554e2
+cell=K2_S38 instance=2 verdict=PASS canonical_sha=7f526b0f57196e6f178fe92734f62e3caa9a71da08bda8ea545f6b2d0df554e2
+cell=K2_S38 instance=4 verdict=PASS canonical_sha=7f526b0f57196e6f178fe92734f62e3caa9a71da08bda8ea545f6b2d0df554e2
+cell=K2_S38 instance=5 verdict=PASS canonical_sha=7f526b0f57196e6f178fe92734f62e3caa9a71da08bda8ea545f6b2d0df554e2
+cell=K2_S38 instance=0 verdict=PASS canonical_sha=7f526b0f57196e6f178fe92734f62e3caa9a71da08bda8ea545f6b2d0df554e2
+20260428T005552Z all instances finished; failures=0
+20260428T005555Z thermal_coordinator stopped
+20260428T005555Z summary written: /data/local/tmp/genesis/cells/K2_S38/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S38",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "38",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005555Z"
+}
+20260428T005555Z DONE cell=K2_S38 verdict=PASS
+20260428T005555Z DONE cell=K2_S38 verdict=PASS
+20260428T005555Z START cell=K2_S39 task=k2-scars steps=39 instances=6
+20260428T005555Z START cell=K2_S39 task=k2-scars steps=39 instances=6
+20260428T005555Z launch_genesis_batch: cell=K2_S39 instances=6 task=k2-scars
+20260428T005555Z parent affinity set to mask=7F (cpu0-6)
+20260428T005555Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005555Z thermal_coordinator spawned pid=28203
+20260428T005555Z spawned instance=0 mask=auto pid=28212
+20260428T005555Z spawned instance=1 mask=auto pid=28227
+20260428T005555Z spawned instance=2 mask=auto pid=28252
+20260428T005555Z spawned instance=3 mask=auto pid=28277
+20260428T005555Z spawned instance=4 mask=auto pid=28299
+20260428T005555Z spawned instance=5 mask=auto pid=28325
+cell=K2_S39 instance=2 verdict=PASS canonical_sha=d1f79a09bd52f5a4a45d82f1829f8d40863f643bb79e33ab86198762f2c636eb
+cell=K2_S39 instance=1 verdict=PASS canonical_sha=d1f79a09bd52f5a4a45d82f1829f8d40863f643bb79e33ab86198762f2c636eb
+cell=K2_S39 instance=0 verdict=PASS canonical_sha=d1f79a09bd52f5a4a45d82f1829f8d40863f643bb79e33ab86198762f2c636eb
+cell=K2_S39 instance=5 verdict=PASS canonical_sha=d1f79a09bd52f5a4a45d82f1829f8d40863f643bb79e33ab86198762f2c636eb
+cell=K2_S39 instance=4 verdict=PASS canonical_sha=d1f79a09bd52f5a4a45d82f1829f8d40863f643bb79e33ab86198762f2c636eb
+cell=K2_S39 instance=3 verdict=PASS canonical_sha=d1f79a09bd52f5a4a45d82f1829f8d40863f643bb79e33ab86198762f2c636eb
+20260428T005643Z all instances finished; failures=0
+20260428T005645Z thermal_coordinator stopped
+20260428T005646Z summary written: /data/local/tmp/genesis/cells/K2_S39/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S39",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "39",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005645Z"
+}
+20260428T005646Z DONE cell=K2_S39 verdict=PASS
+20260428T005646Z DONE cell=K2_S39 verdict=PASS
+20260428T005646Z START cell=K2_S40 task=k2-scars steps=40 instances=6
+20260428T005646Z START cell=K2_S40 task=k2-scars steps=40 instances=6
+20260428T005646Z launch_genesis_batch: cell=K2_S40 instances=6 task=k2-scars
+20260428T005646Z parent affinity set to mask=7F (cpu0-6)
+20260428T005646Z WARNING: dm3_runner running (pid=10375); Genesis namespace is independent; continuing
+20260428T005646Z thermal_coordinator spawned pid=456
+20260428T005646Z spawned instance=0 mask=auto pid=466
+20260428T005646Z spawned instance=1 mask=auto pid=479
+20260428T005646Z spawned instance=2 mask=auto pid=499
+20260428T005646Z spawned instance=3 mask=auto pid=520
+20260428T005646Z spawned instance=4 mask=auto pid=541
+20260428T005646Z spawned instance=5 mask=auto pid=566
+cell=K2_S40 instance=1 verdict=PASS canonical_sha=38be38e28653af6b2d1bac6bc5caf3d9f05a01a0f4d03dc149f7a68d498ea42b
+cell=K2_S40 instance=0 verdict=PASS canonical_sha=38be38e28653af6b2d1bac6bc5caf3d9f05a01a0f4d03dc149f7a68d498ea42b
+cell=K2_S40 instance=2 verdict=PASS canonical_sha=38be38e28653af6b2d1bac6bc5caf3d9f05a01a0f4d03dc149f7a68d498ea42b
+cell=K2_S40 instance=4 verdict=PASS canonical_sha=38be38e28653af6b2d1bac6bc5caf3d9f05a01a0f4d03dc149f7a68d498ea42b
+cell=K2_S40 instance=5 verdict=PASS canonical_sha=38be38e28653af6b2d1bac6bc5caf3d9f05a01a0f4d03dc149f7a68d498ea42b
+cell=K2_S40 instance=3 verdict=PASS canonical_sha=38be38e28653af6b2d1bac6bc5caf3d9f05a01a0f4d03dc149f7a68d498ea42b
+20260428T005735Z all instances finished; failures=0
+20260428T005737Z thermal_coordinator stopped
+20260428T005737Z summary written: /data/local/tmp/genesis/cells/K2_S40/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S40",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "40",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005737Z"
+}
+20260428T005737Z DONE cell=K2_S40 verdict=PASS
+20260428T005737Z DONE cell=K2_S40 verdict=PASS
+20260428T005737Z START cell=K2_S41 task=k2-scars steps=41 instances=6
+20260428T005737Z START cell=K2_S41 task=k2-scars steps=41 instances=6
+20260428T005737Z launch_genesis_batch: cell=K2_S41 instances=6 task=k2-scars
+20260428T005737Z parent affinity set to mask=7F (cpu0-6)
+20260428T005737Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T005737Z thermal_coordinator spawned pid=10403
+20260428T005737Z spawned instance=0 mask=auto pid=10421
+20260428T005738Z spawned instance=1 mask=auto pid=10444
+20260428T005738Z spawned instance=2 mask=auto pid=10471
+20260428T005738Z spawned instance=3 mask=auto pid=10494
+20260428T005738Z spawned instance=4 mask=auto pid=10515
+20260428T005738Z spawned instance=5 mask=auto pid=10542
+cell=K2_S41 instance=1 verdict=PASS canonical_sha=84de76bb32816dd05cddc767cd20fe2e109a0fed8e8b75bec1e04fbbca6d1284
+cell=K2_S41 instance=4 verdict=PASS canonical_sha=84de76bb32816dd05cddc767cd20fe2e109a0fed8e8b75bec1e04fbbca6d1284
+cell=K2_S41 instance=2 verdict=PASS canonical_sha=84de76bb32816dd05cddc767cd20fe2e109a0fed8e8b75bec1e04fbbca6d1284
+cell=K2_S41 instance=0 verdict=PASS canonical_sha=84de76bb32816dd05cddc767cd20fe2e109a0fed8e8b75bec1e04fbbca6d1284
+cell=K2_S41 instance=3 verdict=PASS canonical_sha=84de76bb32816dd05cddc767cd20fe2e109a0fed8e8b75bec1e04fbbca6d1284
+cell=K2_S41 instance=5 verdict=PASS canonical_sha=84de76bb32816dd05cddc767cd20fe2e109a0fed8e8b75bec1e04fbbca6d1284
+20260428T005831Z all instances finished; failures=0
+20260428T005834Z thermal_coordinator stopped
+20260428T005834Z summary written: /data/local/tmp/genesis/cells/K2_S41/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S41",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "41",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005834Z"
+}
+20260428T005834Z DONE cell=K2_S41 verdict=PASS
+20260428T005834Z DONE cell=K2_S41 verdict=PASS
+20260428T005834Z START cell=K2_S42 task=k2-scars steps=42 instances=6
+20260428T005834Z START cell=K2_S42 task=k2-scars steps=42 instances=6
+20260428T005834Z launch_genesis_batch: cell=K2_S42 instances=6 task=k2-scars
+20260428T005834Z parent affinity set to mask=7F (cpu0-6)
+20260428T005834Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T005834Z thermal_coordinator spawned pid=13752
+20260428T005834Z spawned instance=0 mask=auto pid=13762
+20260428T005834Z spawned instance=1 mask=auto pid=13777
+20260428T005834Z spawned instance=2 mask=auto pid=13796
+20260428T005834Z spawned instance=3 mask=auto pid=13819
+20260428T005834Z spawned instance=4 mask=auto pid=13842
+20260428T005834Z spawned instance=5 mask=auto pid=13870
+cell=K2_S42 instance=1 verdict=PASS canonical_sha=9720ce1795bc9f00eed912621207d95570cc4b198ed6ac74cb7ad98ea4c3862e
+cell=K2_S42 instance=0 verdict=PASS canonical_sha=9720ce1795bc9f00eed912621207d95570cc4b198ed6ac74cb7ad98ea4c3862e
+cell=K2_S42 instance=2 verdict=PASS canonical_sha=9720ce1795bc9f00eed912621207d95570cc4b198ed6ac74cb7ad98ea4c3862e
+cell=K2_S42 instance=5 verdict=PASS canonical_sha=9720ce1795bc9f00eed912621207d95570cc4b198ed6ac74cb7ad98ea4c3862e
+cell=K2_S42 instance=3 verdict=PASS canonical_sha=9720ce1795bc9f00eed912621207d95570cc4b198ed6ac74cb7ad98ea4c3862e
+cell=K2_S42 instance=4 verdict=PASS canonical_sha=9720ce1795bc9f00eed912621207d95570cc4b198ed6ac74cb7ad98ea4c3862e
+20260428T005929Z all instances finished; failures=0
+20260428T005933Z thermal_coordinator stopped
+20260428T005934Z summary written: /data/local/tmp/genesis/cells/K2_S42/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S42",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "42",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T005933Z"
+}
+20260428T005934Z DONE cell=K2_S42 verdict=PASS
+20260428T005934Z DONE cell=K2_S42 verdict=PASS
+20260428T005934Z START cell=K2_S43 task=k2-scars steps=43 instances=6
+20260428T005934Z START cell=K2_S43 task=k2-scars steps=43 instances=6
+20260428T005934Z launch_genesis_batch: cell=K2_S43 instances=6 task=k2-scars
+20260428T005934Z parent affinity set to mask=7F (cpu0-6)
+20260428T005934Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T005934Z thermal_coordinator spawned pid=19542
+20260428T005934Z spawned instance=0 mask=auto pid=19553
+20260428T005934Z spawned instance=1 mask=auto pid=19569
+20260428T005934Z spawned instance=2 mask=auto pid=19589
+20260428T005934Z spawned instance=3 mask=auto pid=19612
+20260428T005934Z spawned instance=4 mask=auto pid=19635
+20260428T005934Z spawned instance=5 mask=auto pid=19654
+cell=K2_S43 instance=0 verdict=PASS canonical_sha=27de1c3c27e99904fde423b43eda7cacabb1a8e5a3ab25ec31fa89a7ae25a546
+cell=K2_S43 instance=4 verdict=PASS canonical_sha=27de1c3c27e99904fde423b43eda7cacabb1a8e5a3ab25ec31fa89a7ae25a546
+cell=K2_S43 instance=5 verdict=PASS canonical_sha=27de1c3c27e99904fde423b43eda7cacabb1a8e5a3ab25ec31fa89a7ae25a546
+cell=K2_S43 instance=1 verdict=PASS canonical_sha=27de1c3c27e99904fde423b43eda7cacabb1a8e5a3ab25ec31fa89a7ae25a546
+cell=K2_S43 instance=2 verdict=PASS canonical_sha=27de1c3c27e99904fde423b43eda7cacabb1a8e5a3ab25ec31fa89a7ae25a546
+cell=K2_S43 instance=3 verdict=PASS canonical_sha=27de1c3c27e99904fde423b43eda7cacabb1a8e5a3ab25ec31fa89a7ae25a546
+20260428T010032Z all instances finished; failures=0
+20260428T010034Z thermal_coordinator stopped
+20260428T010034Z summary written: /data/local/tmp/genesis/cells/K2_S43/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S43",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "43",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T010034Z"
+}
+20260428T010034Z DONE cell=K2_S43 verdict=PASS
+20260428T010034Z DONE cell=K2_S43 verdict=PASS
+20260428T010035Z START cell=K2_S44 task=k2-scars steps=44 instances=6
+20260428T010035Z START cell=K2_S44 task=k2-scars steps=44 instances=6
+20260428T010035Z launch_genesis_batch: cell=K2_S44 instances=6 task=k2-scars
+20260428T010035Z parent affinity set to mask=7F (cpu0-6)
+20260428T010035Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T010035Z thermal_coordinator spawned pid=24838
+20260428T010035Z spawned instance=0 mask=auto pid=24847
+20260428T010035Z spawned instance=1 mask=auto pid=24863
+20260428T010035Z spawned instance=2 mask=auto pid=24885
+20260428T010035Z spawned instance=3 mask=auto pid=24916
+20260428T010035Z spawned instance=4 mask=auto pid=24937
+20260428T010035Z spawned instance=5 mask=auto pid=24961
+cell=K2_S44 instance=1 verdict=PASS canonical_sha=a51c3078350330da1a6b2453d8747401617bbf4af8a975887667204eaf598d88
+cell=K2_S44 instance=5 verdict=PASS canonical_sha=a51c3078350330da1a6b2453d8747401617bbf4af8a975887667204eaf598d88
+cell=K2_S44 instance=0 verdict=PASS canonical_sha=a51c3078350330da1a6b2453d8747401617bbf4af8a975887667204eaf598d88
+cell=K2_S44 instance=2 verdict=PASS canonical_sha=a51c3078350330da1a6b2453d8747401617bbf4af8a975887667204eaf598d88
+cell=K2_S44 instance=3 verdict=PASS canonical_sha=a51c3078350330da1a6b2453d8747401617bbf4af8a975887667204eaf598d88
+cell=K2_S44 instance=4 verdict=PASS canonical_sha=a51c3078350330da1a6b2453d8747401617bbf4af8a975887667204eaf598d88
+20260428T010134Z all instances finished; failures=0
+20260428T010139Z thermal_coordinator stopped
+20260428T010139Z summary written: /data/local/tmp/genesis/cells/K2_S44/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S44",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "44",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T010139Z"
+}
+20260428T010139Z DONE cell=K2_S44 verdict=PASS
+20260428T010139Z DONE cell=K2_S44 verdict=PASS
+20260428T010139Z START cell=K2_S45 task=k2-scars steps=45 instances=6
+20260428T010139Z START cell=K2_S45 task=k2-scars steps=45 instances=6
+20260428T010139Z launch_genesis_batch: cell=K2_S45 instances=6 task=k2-scars
+20260428T010140Z parent affinity set to mask=7F (cpu0-6)
+20260428T010140Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T010140Z thermal_coordinator spawned pid=30489
+20260428T010140Z spawned instance=0 mask=auto pid=30498
+20260428T010140Z spawned instance=1 mask=auto pid=30512
+20260428T010140Z spawned instance=2 mask=auto pid=30531
+20260428T010140Z spawned instance=3 mask=auto pid=30555
+20260428T010140Z spawned instance=4 mask=auto pid=30575
+20260428T010140Z spawned instance=5 mask=auto pid=30598
+cell=K2_S45 instance=4 verdict=PASS canonical_sha=f4501ae07cd047948d7e1e5a93f5dcd321334395dcd4135b5c12e5eed2262ae7
+cell=K2_S45 instance=1 verdict=PASS canonical_sha=f4501ae07cd047948d7e1e5a93f5dcd321334395dcd4135b5c12e5eed2262ae7
+cell=K2_S45 instance=2 verdict=PASS canonical_sha=f4501ae07cd047948d7e1e5a93f5dcd321334395dcd4135b5c12e5eed2262ae7
+cell=K2_S45 instance=0 verdict=PASS canonical_sha=f4501ae07cd047948d7e1e5a93f5dcd321334395dcd4135b5c12e5eed2262ae7
+cell=K2_S45 instance=3 verdict=PASS canonical_sha=f4501ae07cd047948d7e1e5a93f5dcd321334395dcd4135b5c12e5eed2262ae7
+cell=K2_S45 instance=5 verdict=PASS canonical_sha=f4501ae07cd047948d7e1e5a93f5dcd321334395dcd4135b5c12e5eed2262ae7
+20260428T010242Z all instances finished; failures=0
+20260428T010248Z thermal_coordinator stopped
+20260428T010248Z summary written: /data/local/tmp/genesis/cells/K2_S45/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S45",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "45",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T010248Z"
+}
+20260428T010248Z DONE cell=K2_S45 verdict=PASS
+20260428T010248Z DONE cell=K2_S45 verdict=PASS
+20260428T010248Z START cell=K2_S46 task=k2-scars steps=46 instances=6
+20260428T010248Z START cell=K2_S46 task=k2-scars steps=46 instances=6
+20260428T010248Z launch_genesis_batch: cell=K2_S46 instances=6 task=k2-scars
+20260428T010248Z parent affinity set to mask=7F (cpu0-6)
+20260428T010248Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T010248Z thermal_coordinator spawned pid=7407
+20260428T010248Z spawned instance=0 mask=auto pid=7417
+20260428T010248Z spawned instance=1 mask=auto pid=7436
+20260428T010248Z spawned instance=2 mask=auto pid=7456
+20260428T010248Z spawned instance=3 mask=auto pid=7493
+20260428T010248Z spawned instance=4 mask=auto pid=7521
+20260428T010248Z spawned instance=5 mask=auto pid=7582
+cell=K2_S46 instance=0 verdict=PASS canonical_sha=79da0566250e86197e845abf33d886c88215a96b9a09d4545a065e28cc5c40bd
+cell=K2_S46 instance=2 verdict=PASS canonical_sha=79da0566250e86197e845abf33d886c88215a96b9a09d4545a065e28cc5c40bd
+cell=K2_S46 instance=3 verdict=PASS canonical_sha=79da0566250e86197e845abf33d886c88215a96b9a09d4545a065e28cc5c40bd
+cell=K2_S46 instance=5 verdict=PASS canonical_sha=79da0566250e86197e845abf33d886c88215a96b9a09d4545a065e28cc5c40bd
+cell=K2_S46 instance=1 verdict=PASS canonical_sha=79da0566250e86197e845abf33d886c88215a96b9a09d4545a065e28cc5c40bd
+cell=K2_S46 instance=4 verdict=PASS canonical_sha=79da0566250e86197e845abf33d886c88215a96b9a09d4545a065e28cc5c40bd
+20260428T010354Z all instances finished; failures=0
+20260428T010357Z thermal_coordinator stopped
+20260428T010358Z summary written: /data/local/tmp/genesis/cells/K2_S46/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S46",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "46",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T010358Z"
+}
+20260428T010358Z DONE cell=K2_S46 verdict=PASS
+20260428T010358Z DONE cell=K2_S46 verdict=PASS
+20260428T010358Z START cell=K2_S47 task=k2-scars steps=47 instances=6
+20260428T010358Z START cell=K2_S47 task=k2-scars steps=47 instances=6
+20260428T010358Z launch_genesis_batch: cell=K2_S47 instances=6 task=k2-scars
+20260428T010358Z parent affinity set to mask=7F (cpu0-6)
+20260428T010358Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T010358Z thermal_coordinator spawned pid=13788
+20260428T010358Z spawned instance=0 mask=auto pid=13799
+20260428T010358Z spawned instance=1 mask=auto pid=13818
+20260428T010358Z spawned instance=2 mask=auto pid=13838
+20260428T010358Z spawned instance=3 mask=auto pid=13860
+20260428T010358Z spawned instance=4 mask=auto pid=13881
+20260428T010358Z spawned instance=5 mask=auto pid=13913
+cell=K2_S47 instance=5 verdict=PASS canonical_sha=153fd3f008eacc2b1debe50a29a5382cd4c731382a281e69ddcf0296bccfb294
+cell=K2_S47 instance=3 verdict=PASS canonical_sha=153fd3f008eacc2b1debe50a29a5382cd4c731382a281e69ddcf0296bccfb294
+cell=K2_S47 instance=0 verdict=PASS canonical_sha=153fd3f008eacc2b1debe50a29a5382cd4c731382a281e69ddcf0296bccfb294
+cell=K2_S47 instance=1 verdict=PASS canonical_sha=153fd3f008eacc2b1debe50a29a5382cd4c731382a281e69ddcf0296bccfb294
+cell=K2_S47 instance=4 verdict=PASS canonical_sha=153fd3f008eacc2b1debe50a29a5382cd4c731382a281e69ddcf0296bccfb294
+cell=K2_S47 instance=2 verdict=PASS canonical_sha=153fd3f008eacc2b1debe50a29a5382cd4c731382a281e69ddcf0296bccfb294
+20260428T010507Z all instances finished; failures=0
+20260428T010512Z thermal_coordinator stopped
+20260428T010512Z summary written: /data/local/tmp/genesis/cells/K2_S47/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S47",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "47",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T010512Z"
+}
+20260428T010512Z DONE cell=K2_S47 verdict=PASS
+20260428T010512Z DONE cell=K2_S47 verdict=PASS
+20260428T010512Z START cell=K2_S48 task=k2-scars steps=48 instances=6
+20260428T010512Z START cell=K2_S48 task=k2-scars steps=48 instances=6
+20260428T010513Z launch_genesis_batch: cell=K2_S48 instances=6 task=k2-scars
+20260428T010513Z parent affinity set to mask=7F (cpu0-6)
+20260428T010513Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T010513Z thermal_coordinator spawned pid=20071
+20260428T010513Z spawned instance=0 mask=auto pid=20082
+20260428T010513Z spawned instance=1 mask=auto pid=20096
+20260428T010513Z spawned instance=2 mask=auto pid=20116
+20260428T010513Z spawned instance=3 mask=auto pid=20137
+20260428T010513Z spawned instance=4 mask=auto pid=20162
+20260428T010513Z spawned instance=5 mask=auto pid=20184
+cell=K2_S48 instance=3 verdict=PASS canonical_sha=c0dc0490d657cd048bbd7640197a1fb76bbfc3ea616a2f5afeee64a82be29a4a
+cell=K2_S48 instance=0 verdict=PASS canonical_sha=c0dc0490d657cd048bbd7640197a1fb76bbfc3ea616a2f5afeee64a82be29a4a
+cell=K2_S48 instance=1 verdict=PASS canonical_sha=c0dc0490d657cd048bbd7640197a1fb76bbfc3ea616a2f5afeee64a82be29a4a
+cell=K2_S48 instance=4 verdict=PASS canonical_sha=c0dc0490d657cd048bbd7640197a1fb76bbfc3ea616a2f5afeee64a82be29a4a
+cell=K2_S48 instance=5 verdict=PASS canonical_sha=c0dc0490d657cd048bbd7640197a1fb76bbfc3ea616a2f5afeee64a82be29a4a
+cell=K2_S48 instance=2 verdict=PASS canonical_sha=c0dc0490d657cd048bbd7640197a1fb76bbfc3ea616a2f5afeee64a82be29a4a
+20260428T010625Z all instances finished; failures=0
+20260428T010630Z thermal_coordinator stopped
+20260428T010630Z summary written: /data/local/tmp/genesis/cells/K2_S48/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S48",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "48",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T010630Z"
+}
+20260428T010630Z DONE cell=K2_S48 verdict=PASS
+20260428T010630Z DONE cell=K2_S48 verdict=PASS
+20260428T010630Z START cell=K2_S49 task=k2-scars steps=49 instances=6
+20260428T010630Z START cell=K2_S49 task=k2-scars steps=49 instances=6
+20260428T010630Z launch_genesis_batch: cell=K2_S49 instances=6 task=k2-scars
+20260428T010630Z parent affinity set to mask=7F (cpu0-6)
+20260428T010630Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T010630Z thermal_coordinator spawned pid=26795
+20260428T010630Z spawned instance=0 mask=auto pid=26819
+20260428T010630Z spawned instance=1 mask=auto pid=26844
+20260428T010630Z spawned instance=2 mask=auto pid=26861
+20260428T010630Z spawned instance=3 mask=auto pid=26880
+20260428T010630Z spawned instance=4 mask=auto pid=26903
+20260428T010630Z spawned instance=5 mask=auto pid=26927
+cell=K2_S49 instance=1 verdict=PASS canonical_sha=c92b3bee3e2f84795df21a5a54694bcfa16e4aa03046a69b0adc148510a7526d
+cell=K2_S49 instance=2 verdict=PASS canonical_sha=c92b3bee3e2f84795df21a5a54694bcfa16e4aa03046a69b0adc148510a7526d
+cell=K2_S49 instance=3 verdict=PASS canonical_sha=c92b3bee3e2f84795df21a5a54694bcfa16e4aa03046a69b0adc148510a7526d
+cell=K2_S49 instance=5 verdict=PASS canonical_sha=c92b3bee3e2f84795df21a5a54694bcfa16e4aa03046a69b0adc148510a7526d
+cell=K2_S49 instance=0 verdict=PASS canonical_sha=c92b3bee3e2f84795df21a5a54694bcfa16e4aa03046a69b0adc148510a7526d
+cell=K2_S49 instance=4 verdict=PASS canonical_sha=c92b3bee3e2f84795df21a5a54694bcfa16e4aa03046a69b0adc148510a7526d
+20260428T010748Z all instances finished; failures=0
+20260428T010750Z thermal_coordinator stopped
+20260428T010751Z summary written: /data/local/tmp/genesis/cells/K2_S49/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S49",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "49",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T010750Z"
+}
+20260428T010751Z DONE cell=K2_S49 verdict=PASS
+20260428T010751Z DONE cell=K2_S49 verdict=PASS
+20260428T010751Z START cell=K2_S50 task=k2-scars steps=50 instances=6
+20260428T010751Z START cell=K2_S50 task=k2-scars steps=50 instances=6
+20260428T010751Z launch_genesis_batch: cell=K2_S50 instances=6 task=k2-scars
+20260428T010751Z parent affinity set to mask=7F (cpu0-6)
+20260428T010751Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T010751Z thermal_coordinator spawned pid=32644
+20260428T010751Z spawned instance=0 mask=auto pid=32653
+20260428T010751Z spawned instance=1 mask=auto pid=32668
+20260428T010751Z spawned instance=2 mask=auto pid=32686
+20260428T010751Z spawned instance=3 mask=auto pid=32710
+20260428T010751Z spawned instance=4 mask=auto pid=32735
+20260428T010751Z spawned instance=5 mask=auto pid=32761
+cell=K2_S50 instance=2 verdict=PASS canonical_sha=f5cd3876868ec1b2a40a6dcd6b6e40914813f6992f2f067e9cd65beb5ce81960
+cell=K2_S50 instance=3 verdict=PASS canonical_sha=f5cd3876868ec1b2a40a6dcd6b6e40914813f6992f2f067e9cd65beb5ce81960
+cell=K2_S50 instance=4 verdict=PASS canonical_sha=f5cd3876868ec1b2a40a6dcd6b6e40914813f6992f2f067e9cd65beb5ce81960
+cell=K2_S50 instance=1 verdict=PASS canonical_sha=f5cd3876868ec1b2a40a6dcd6b6e40914813f6992f2f067e9cd65beb5ce81960
+cell=K2_S50 instance=0 verdict=PASS canonical_sha=f5cd3876868ec1b2a40a6dcd6b6e40914813f6992f2f067e9cd65beb5ce81960
+cell=K2_S50 instance=5 verdict=PASS canonical_sha=f5cd3876868ec1b2a40a6dcd6b6e40914813f6992f2f067e9cd65beb5ce81960
+20260428T010914Z all instances finished; failures=0
+20260428T010920Z thermal_coordinator stopped
+20260428T010920Z summary written: /data/local/tmp/genesis/cells/K2_S50/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S50",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "50",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T010920Z"
+}
+20260428T010920Z DONE cell=K2_S50 verdict=PASS
+20260428T010920Z DONE cell=K2_S50 verdict=PASS
+20260428T010920Z START cell=K2_S51 task=k2-scars steps=51 instances=6
+20260428T010920Z START cell=K2_S51 task=k2-scars steps=51 instances=6
+20260428T010920Z launch_genesis_batch: cell=K2_S51 instances=6 task=k2-scars
+20260428T010920Z parent affinity set to mask=7F (cpu0-6)
+20260428T010920Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T010920Z thermal_coordinator spawned pid=10430
+20260428T010920Z spawned instance=0 mask=auto pid=10440
+20260428T010920Z spawned instance=1 mask=auto pid=10456
+20260428T010920Z spawned instance=2 mask=auto pid=10476
+20260428T010920Z spawned instance=3 mask=auto pid=10500
+20260428T010920Z spawned instance=4 mask=auto pid=10522
+20260428T010920Z spawned instance=5 mask=auto pid=10545
+cell=K2_S51 instance=0 verdict=PASS canonical_sha=97d2765851ee1732ebb3d43a0105ca28db5ce70af92ca99bf7857dec4316d528
+cell=K2_S51 instance=3 verdict=PASS canonical_sha=97d2765851ee1732ebb3d43a0105ca28db5ce70af92ca99bf7857dec4316d528
+cell=K2_S51 instance=5 verdict=PASS canonical_sha=97d2765851ee1732ebb3d43a0105ca28db5ce70af92ca99bf7857dec4316d528
+cell=K2_S51 instance=1 verdict=PASS canonical_sha=97d2765851ee1732ebb3d43a0105ca28db5ce70af92ca99bf7857dec4316d528
+cell=K2_S51 instance=2 verdict=PASS canonical_sha=97d2765851ee1732ebb3d43a0105ca28db5ce70af92ca99bf7857dec4316d528
+cell=K2_S51 instance=4 verdict=PASS canonical_sha=97d2765851ee1732ebb3d43a0105ca28db5ce70af92ca99bf7857dec4316d528
+20260428T011049Z all instances finished; failures=0
+20260428T011053Z thermal_coordinator stopped
+20260428T011053Z summary written: /data/local/tmp/genesis/cells/K2_S51/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S51",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "51",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011053Z"
+}
+20260428T011053Z DONE cell=K2_S51 verdict=PASS
+20260428T011053Z DONE cell=K2_S51 verdict=PASS
+20260428T011053Z START cell=K2_S52 task=k2-scars steps=52 instances=6
+20260428T011053Z START cell=K2_S52 task=k2-scars steps=52 instances=6
+20260428T011053Z launch_genesis_batch: cell=K2_S52 instances=6 task=k2-scars
+20260428T011053Z parent affinity set to mask=7F (cpu0-6)
+20260428T011053Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T011053Z thermal_coordinator spawned pid=17743
+20260428T011053Z spawned instance=0 mask=auto pid=17753
+20260428T011053Z spawned instance=1 mask=auto pid=17772
+20260428T011053Z spawned instance=2 mask=auto pid=17793
+20260428T011053Z spawned instance=3 mask=auto pid=17838
+20260428T011053Z spawned instance=4 mask=auto pid=17898
+20260428T011053Z spawned instance=5 mask=auto pid=17942
+cell=K2_S52 instance=1 verdict=PASS canonical_sha=8a37d6a42ad2dbdd267795c8a0899f70082de6340345a76e8ea81211b833618d
+cell=K2_S52 instance=2 verdict=PASS canonical_sha=8a37d6a42ad2dbdd267795c8a0899f70082de6340345a76e8ea81211b833618d
+cell=K2_S52 instance=0 verdict=PASS canonical_sha=8a37d6a42ad2dbdd267795c8a0899f70082de6340345a76e8ea81211b833618d
+cell=K2_S52 instance=5 verdict=PASS canonical_sha=8a37d6a42ad2dbdd267795c8a0899f70082de6340345a76e8ea81211b833618d
+cell=K2_S52 instance=3 verdict=PASS canonical_sha=8a37d6a42ad2dbdd267795c8a0899f70082de6340345a76e8ea81211b833618d
+cell=K2_S52 instance=4 verdict=PASS canonical_sha=8a37d6a42ad2dbdd267795c8a0899f70082de6340345a76e8ea81211b833618d
+20260428T011225Z all instances finished; failures=0
+20260428T011231Z thermal_coordinator stopped
+20260428T011231Z summary written: /data/local/tmp/genesis/cells/K2_S52/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S52",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "52",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011231Z"
+}
+20260428T011231Z DONE cell=K2_S52 verdict=PASS
+20260428T011231Z DONE cell=K2_S52 verdict=PASS
+20260428T011232Z START cell=K2_S53 task=k2-scars steps=53 instances=6
+20260428T011232Z START cell=K2_S53 task=k2-scars steps=53 instances=6
+20260428T011232Z launch_genesis_batch: cell=K2_S53 instances=6 task=k2-scars
+20260428T011232Z parent affinity set to mask=7F (cpu0-6)
+20260428T011232Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T011232Z thermal_coordinator spawned pid=25409
+20260428T011232Z spawned instance=0 mask=auto pid=25427
+20260428T011232Z spawned instance=1 mask=auto pid=25449
+20260428T011232Z spawned instance=2 mask=auto pid=25479
+20260428T011232Z spawned instance=3 mask=auto pid=25533
+20260428T011232Z spawned instance=4 mask=auto pid=25573
+20260428T011232Z spawned instance=5 mask=auto pid=25614
+cell=K2_S53 instance=2 verdict=PASS canonical_sha=5271e319741c935f18ad990d97415b9b4cb7d31fff30b267c182defcd2aa6840
+cell=K2_S53 instance=0 verdict=PASS canonical_sha=5271e319741c935f18ad990d97415b9b4cb7d31fff30b267c182defcd2aa6840
+cell=K2_S53 instance=5 verdict=PASS canonical_sha=5271e319741c935f18ad990d97415b9b4cb7d31fff30b267c182defcd2aa6840
+cell=K2_S53 instance=4 verdict=PASS canonical_sha=5271e319741c935f18ad990d97415b9b4cb7d31fff30b267c182defcd2aa6840
+cell=K2_S53 instance=3 verdict=PASS canonical_sha=5271e319741c935f18ad990d97415b9b4cb7d31fff30b267c182defcd2aa6840
+cell=K2_S53 instance=1 verdict=PASS canonical_sha=5271e319741c935f18ad990d97415b9b4cb7d31fff30b267c182defcd2aa6840
+20260428T011401Z all instances finished; failures=0
+20260428T011403Z thermal_coordinator stopped
+20260428T011404Z summary written: /data/local/tmp/genesis/cells/K2_S53/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S53",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "53",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011403Z"
+}
+20260428T011404Z DONE cell=K2_S53 verdict=PASS
+20260428T011404Z DONE cell=K2_S53 verdict=PASS
+20260428T011404Z START cell=K2_S54 task=k2-scars steps=54 instances=6
+20260428T011404Z START cell=K2_S54 task=k2-scars steps=54 instances=6
+20260428T011404Z launch_genesis_batch: cell=K2_S54 instances=6 task=k2-scars
+20260428T011404Z parent affinity set to mask=7F (cpu0-6)
+20260428T011404Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T011404Z thermal_coordinator spawned pid=1861
+20260428T011404Z spawned instance=0 mask=auto pid=1872
+20260428T011404Z spawned instance=1 mask=auto pid=1889
+20260428T011404Z spawned instance=2 mask=auto pid=1910
+20260428T011404Z spawned instance=3 mask=auto pid=1937
+20260428T011404Z spawned instance=4 mask=auto pid=1960
+20260428T011404Z spawned instance=5 mask=auto pid=1984
+cell=K2_S54 instance=2 verdict=PASS canonical_sha=2cbeb1ce03900044ad18a5cb53e831d8e25e23b2f96e9db5c6bfe921ba5a979f
+cell=K2_S54 instance=3 verdict=PASS canonical_sha=2cbeb1ce03900044ad18a5cb53e831d8e25e23b2f96e9db5c6bfe921ba5a979f
+cell=K2_S54 instance=0 verdict=PASS canonical_sha=2cbeb1ce03900044ad18a5cb53e831d8e25e23b2f96e9db5c6bfe921ba5a979f
+cell=K2_S54 instance=4 verdict=PASS canonical_sha=2cbeb1ce03900044ad18a5cb53e831d8e25e23b2f96e9db5c6bfe921ba5a979f
+cell=K2_S54 instance=5 verdict=PASS canonical_sha=2cbeb1ce03900044ad18a5cb53e831d8e25e23b2f96e9db5c6bfe921ba5a979f
+cell=K2_S54 instance=1 verdict=PASS canonical_sha=2cbeb1ce03900044ad18a5cb53e831d8e25e23b2f96e9db5c6bfe921ba5a979f
+20260428T011538Z all instances finished; failures=0
+20260428T011540Z thermal_coordinator stopped
+20260428T011540Z summary written: /data/local/tmp/genesis/cells/K2_S54/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S54",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "54",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011540Z"
+}
+20260428T011540Z DONE cell=K2_S54 verdict=PASS
+20260428T011540Z DONE cell=K2_S54 verdict=PASS
+20260428T011540Z START cell=K2_S55 task=k2-scars steps=55 instances=6
+20260428T011540Z START cell=K2_S55 task=k2-scars steps=55 instances=6
+20260428T011540Z launch_genesis_batch: cell=K2_S55 instances=6 task=k2-scars
+20260428T011540Z parent affinity set to mask=7F (cpu0-6)
+20260428T011540Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T011540Z thermal_coordinator spawned pid=11981
+20260428T011540Z spawned instance=0 mask=auto pid=11993
+20260428T011540Z spawned instance=1 mask=auto pid=12056
+20260428T011540Z spawned instance=2 mask=auto pid=12114
+20260428T011540Z spawned instance=3 mask=auto pid=12160
+20260428T011540Z spawned instance=4 mask=auto pid=12186
+20260428T011541Z spawned instance=5 mask=auto pid=12220
+cell=K2_S55 instance=0 verdict=PASS canonical_sha=64b249b316e7af9148e419f8b05f0939fa6cb42b7c607c7f7e3d59132586cfef
+cell=K2_S55 instance=5 verdict=PASS canonical_sha=64b249b316e7af9148e419f8b05f0939fa6cb42b7c607c7f7e3d59132586cfef
+cell=K2_S55 instance=2 verdict=PASS canonical_sha=64b249b316e7af9148e419f8b05f0939fa6cb42b7c607c7f7e3d59132586cfef
+cell=K2_S55 instance=3 verdict=PASS canonical_sha=64b249b316e7af9148e419f8b05f0939fa6cb42b7c607c7f7e3d59132586cfef
+cell=K2_S55 instance=4 verdict=PASS canonical_sha=64b249b316e7af9148e419f8b05f0939fa6cb42b7c607c7f7e3d59132586cfef
+cell=K2_S55 instance=1 verdict=PASS canonical_sha=64b249b316e7af9148e419f8b05f0939fa6cb42b7c607c7f7e3d59132586cfef
+20260428T011716Z all instances finished; failures=0
+20260428T011719Z thermal_coordinator stopped
+20260428T011719Z summary written: /data/local/tmp/genesis/cells/K2_S55/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S55",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "55",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011719Z"
+}
+20260428T011719Z DONE cell=K2_S55 verdict=PASS
+20260428T011719Z DONE cell=K2_S55 verdict=PASS
+20260428T011719Z START cell=K2_S56 task=k2-scars steps=56 instances=6
+20260428T011719Z START cell=K2_S56 task=k2-scars steps=56 instances=6
+20260428T011719Z launch_genesis_batch: cell=K2_S56 instances=6 task=k2-scars
+20260428T011719Z parent affinity set to mask=7F (cpu0-6)
+20260428T011719Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T011719Z thermal_coordinator spawned pid=20781
+20260428T011719Z spawned instance=0 mask=auto pid=20796
+20260428T011719Z spawned instance=1 mask=auto pid=20815
+20260428T011719Z spawned instance=2 mask=auto pid=20891
+20260428T011720Z spawned instance=3 mask=auto pid=20923
+20260428T011720Z spawned instance=4 mask=auto pid=20962
+20260428T011720Z spawned instance=5 mask=auto pid=20989
+cell=K2_S56 instance=3 verdict=PASS canonical_sha=fccbdf3d776c1a77dd5e50486e9ddfb427bf11840b082cebbfa9115aa300e60d
+cell=K2_S56 instance=4 verdict=PASS canonical_sha=fccbdf3d776c1a77dd5e50486e9ddfb427bf11840b082cebbfa9115aa300e60d
+cell=K2_S56 instance=1 verdict=PASS canonical_sha=fccbdf3d776c1a77dd5e50486e9ddfb427bf11840b082cebbfa9115aa300e60d
+cell=K2_S56 instance=5 verdict=PASS canonical_sha=fccbdf3d776c1a77dd5e50486e9ddfb427bf11840b082cebbfa9115aa300e60d
+cell=K2_S56 instance=0 verdict=PASS canonical_sha=fccbdf3d776c1a77dd5e50486e9ddfb427bf11840b082cebbfa9115aa300e60d
+cell=K2_S56 instance=2 verdict=PASS canonical_sha=fccbdf3d776c1a77dd5e50486e9ddfb427bf11840b082cebbfa9115aa300e60d
+20260428T011902Z all instances finished; failures=0
+20260428T011904Z thermal_coordinator stopped
+20260428T011904Z summary written: /data/local/tmp/genesis/cells/K2_S56/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_S56",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "56",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011904Z"
+}
+20260428T011904Z DONE cell=K2_S56 verdict=PASS
+20260428T011904Z DONE cell=K2_S56 verdict=PASS
+20260428T011904Z START cell=K2_CYC7_S7 task=k2-scars steps=7 instances=6
+20260428T011904Z START cell=K2_CYC7_S7 task=k2-scars steps=7 instances=6
+20260428T011905Z launch_genesis_batch: cell=K2_CYC7_S7 instances=6 task=k2-scars
+20260428T011905Z parent affinity set to mask=7F (cpu0-6)
+20260428T011905Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T011905Z thermal_coordinator spawned pid=30502
+20260428T011905Z spawned instance=0 mask=auto pid=30511
+20260428T011905Z spawned instance=1 mask=auto pid=30525
+20260428T011905Z spawned instance=2 mask=auto pid=30545
+20260428T011905Z spawned instance=3 mask=auto pid=30566
+20260428T011905Z spawned instance=4 mask=auto pid=30590
+20260428T011905Z spawned instance=5 mask=auto pid=30618
+cell=K2_CYC7_S7 instance=1 verdict=PASS canonical_sha=e9bc8a8d6eb3ae574306072eb88f89729007cde4c01a7d5944aa566426bb8765
+cell=K2_CYC7_S7 instance=2 verdict=PASS canonical_sha=e9bc8a8d6eb3ae574306072eb88f89729007cde4c01a7d5944aa566426bb8765
+cell=K2_CYC7_S7 instance=0 verdict=PASS canonical_sha=e9bc8a8d6eb3ae574306072eb88f89729007cde4c01a7d5944aa566426bb8765
+cell=K2_CYC7_S7 instance=3 verdict=PASS canonical_sha=e9bc8a8d6eb3ae574306072eb88f89729007cde4c01a7d5944aa566426bb8765
+cell=K2_CYC7_S7 instance=4 verdict=PASS canonical_sha=e9bc8a8d6eb3ae574306072eb88f89729007cde4c01a7d5944aa566426bb8765
+cell=K2_CYC7_S7 instance=5 verdict=PASS canonical_sha=e9bc8a8d6eb3ae574306072eb88f89729007cde4c01a7d5944aa566426bb8765
+20260428T011909Z all instances finished; failures=0
+20260428T011911Z thermal_coordinator stopped
+20260428T011912Z summary written: /data/local/tmp/genesis/cells/K2_CYC7_S7/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_CYC7_S7",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "7",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011911Z"
+}
+20260428T011912Z DONE cell=K2_CYC7_S7 verdict=PASS
+20260428T011912Z DONE cell=K2_CYC7_S7 verdict=PASS
+20260428T011912Z START cell=K2_CYC7_S14 task=k2-scars steps=14 instances=6
+20260428T011912Z START cell=K2_CYC7_S14 task=k2-scars steps=14 instances=6
+20260428T011912Z launch_genesis_batch: cell=K2_CYC7_S14 instances=6 task=k2-scars
+20260428T011912Z parent affinity set to mask=7F (cpu0-6)
+20260428T011912Z WARNING: dm3_runner running (pid=8988); Genesis namespace is independent; continuing
+20260428T011912Z thermal_coordinator spawned pid=31591
+20260428T011912Z spawned instance=0 mask=auto pid=31628
+20260428T011912Z spawned instance=1 mask=auto pid=31655
+20260428T011912Z spawned instance=2 mask=auto pid=31679
+20260428T011912Z spawned instance=3 mask=auto pid=31703
+20260428T011912Z spawned instance=4 mask=auto pid=31730
+20260428T011912Z spawned instance=5 mask=auto pid=31757
+cell=K2_CYC7_S14 instance=1 verdict=PASS canonical_sha=05bec4a20e1a6007415e98a28d4769da36fb799046a8f55b0e68ca82d333e1e2
+cell=K2_CYC7_S14 instance=2 verdict=PASS canonical_sha=05bec4a20e1a6007415e98a28d4769da36fb799046a8f55b0e68ca82d333e1e2
+cell=K2_CYC7_S14 instance=0 verdict=PASS canonical_sha=05bec4a20e1a6007415e98a28d4769da36fb799046a8f55b0e68ca82d333e1e2
+cell=K2_CYC7_S14 instance=5 verdict=PASS canonical_sha=05bec4a20e1a6007415e98a28d4769da36fb799046a8f55b0e68ca82d333e1e2
+cell=K2_CYC7_S14 instance=3 verdict=PASS canonical_sha=05bec4a20e1a6007415e98a28d4769da36fb799046a8f55b0e68ca82d333e1e2
+cell=K2_CYC7_S14 instance=4 verdict=PASS canonical_sha=05bec4a20e1a6007415e98a28d4769da36fb799046a8f55b0e68ca82d333e1e2
+20260428T011921Z all instances finished; failures=0
+20260428T011926Z thermal_coordinator stopped
+20260428T011927Z summary written: /data/local/tmp/genesis/cells/K2_CYC7_S14/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_CYC7_S14",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "14",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011926Z"
+}
+20260428T011927Z DONE cell=K2_CYC7_S14 verdict=PASS
+20260428T011927Z DONE cell=K2_CYC7_S14 verdict=PASS
+20260428T011927Z START cell=K2_CYC7_S21 task=k2-scars steps=21 instances=6
+20260428T011927Z START cell=K2_CYC7_S21 task=k2-scars steps=21 instances=6
+20260428T011927Z launch_genesis_batch: cell=K2_CYC7_S21 instances=6 task=k2-scars
+20260428T011927Z parent affinity set to mask=7F (cpu0-6)
+20260428T011927Z thermal_coordinator spawned pid=391
+20260428T011927Z spawned instance=0 mask=auto pid=413
+20260428T011927Z spawned instance=1 mask=auto pid=434
+20260428T011927Z spawned instance=2 mask=auto pid=461
+20260428T011927Z spawned instance=3 mask=auto pid=489
+20260428T011927Z spawned instance=4 mask=auto pid=520
+20260428T011927Z spawned instance=5 mask=auto pid=553
+cell=K2_CYC7_S21 instance=0 verdict=PASS canonical_sha=0a300e4146be527bb04d9ce1b83eb4cf8e9daae1145bd82d298c7c070f62246a
+cell=K2_CYC7_S21 instance=3 verdict=PASS canonical_sha=0a300e4146be527bb04d9ce1b83eb4cf8e9daae1145bd82d298c7c070f62246a
+cell=K2_CYC7_S21 instance=1 verdict=PASS canonical_sha=0a300e4146be527bb04d9ce1b83eb4cf8e9daae1145bd82d298c7c070f62246a
+cell=K2_CYC7_S21 instance=2 verdict=PASS canonical_sha=0a300e4146be527bb04d9ce1b83eb4cf8e9daae1145bd82d298c7c070f62246a
+cell=K2_CYC7_S21 instance=4 verdict=PASS canonical_sha=0a300e4146be527bb04d9ce1b83eb4cf8e9daae1145bd82d298c7c070f62246a
+cell=K2_CYC7_S21 instance=5 verdict=PASS canonical_sha=0a300e4146be527bb04d9ce1b83eb4cf8e9daae1145bd82d298c7c070f62246a
+20260428T011943Z all instances finished; failures=0
+20260428T011948Z thermal_coordinator stopped
+20260428T011949Z summary written: /data/local/tmp/genesis/cells/K2_CYC7_S21/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_CYC7_S21",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "21",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011948Z"
+}
+20260428T011949Z DONE cell=K2_CYC7_S21 verdict=PASS
+20260428T011949Z DONE cell=K2_CYC7_S21 verdict=PASS
+20260428T011949Z START cell=K2_CYC6_S6 task=k2-scars steps=6 instances=6
+20260428T011949Z START cell=K2_CYC6_S6 task=k2-scars steps=6 instances=6
+20260428T011949Z launch_genesis_batch: cell=K2_CYC6_S6 instances=6 task=k2-scars
+20260428T011949Z parent affinity set to mask=7F (cpu0-6)
+20260428T011949Z WARNING: dm3_runner running (pid=2906); Genesis namespace is independent; continuing
+20260428T011949Z thermal_coordinator spawned pid=5588
+20260428T011949Z spawned instance=0 mask=auto pid=5611
+20260428T011949Z spawned instance=1 mask=auto pid=5639
+20260428T011949Z spawned instance=2 mask=auto pid=5767
+20260428T011949Z spawned instance=3 mask=auto pid=5817
+20260428T011949Z spawned instance=4 mask=auto pid=5844
+20260428T011949Z spawned instance=5 mask=auto pid=5879
+cell=K2_CYC6_S6 instance=1 verdict=PASS canonical_sha=b9749a5adb4dad3a4cf08f5544b4bc1fa9e6ac7cccbccfb4b0fdfa5ea162f3bb
+cell=K2_CYC6_S6 instance=0 verdict=PASS canonical_sha=b9749a5adb4dad3a4cf08f5544b4bc1fa9e6ac7cccbccfb4b0fdfa5ea162f3bb
+cell=K2_CYC6_S6 instance=2 verdict=PASS canonical_sha=b9749a5adb4dad3a4cf08f5544b4bc1fa9e6ac7cccbccfb4b0fdfa5ea162f3bb
+cell=K2_CYC6_S6 instance=3 verdict=PASS canonical_sha=b9749a5adb4dad3a4cf08f5544b4bc1fa9e6ac7cccbccfb4b0fdfa5ea162f3bb
+cell=K2_CYC6_S6 instance=4 verdict=PASS canonical_sha=b9749a5adb4dad3a4cf08f5544b4bc1fa9e6ac7cccbccfb4b0fdfa5ea162f3bb
+cell=K2_CYC6_S6 instance=5 verdict=PASS canonical_sha=b9749a5adb4dad3a4cf08f5544b4bc1fa9e6ac7cccbccfb4b0fdfa5ea162f3bb
+20260428T011952Z all instances finished; failures=0
+20260428T011955Z thermal_coordinator stopped
+20260428T011956Z summary written: /data/local/tmp/genesis/cells/K2_CYC6_S6/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_CYC6_S6",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "6",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T011955Z"
+}
+20260428T011956Z DONE cell=K2_CYC6_S6 verdict=PASS
+20260428T011956Z DONE cell=K2_CYC6_S6 verdict=PASS
+20260428T011956Z START cell=K2_CYC6_S12 task=k2-scars steps=12 instances=6
+20260428T011956Z START cell=K2_CYC6_S12 task=k2-scars steps=12 instances=6
+20260428T011956Z launch_genesis_batch: cell=K2_CYC6_S12 instances=6 task=k2-scars
+20260428T011956Z parent affinity set to mask=7F (cpu0-6)
+20260428T011956Z WARNING: dm3_runner running (pid=2906); Genesis namespace is independent; continuing
+20260428T011956Z thermal_coordinator spawned pid=7751
+20260428T011956Z spawned instance=0 mask=auto pid=7804
+20260428T011956Z spawned instance=1 mask=auto pid=7831
+20260428T011956Z spawned instance=2 mask=auto pid=7868
+20260428T011956Z spawned instance=3 mask=auto pid=7891
+20260428T011956Z spawned instance=4 mask=auto pid=7933
+20260428T011956Z spawned instance=5 mask=auto pid=7962
+cell=K2_CYC6_S12 instance=1 verdict=PASS canonical_sha=44fdc5c6e0fc239c75ba3748d3fc14839d24988dee5635b74d829f6074987916
+cell=K2_CYC6_S12 instance=3 verdict=PASS canonical_sha=44fdc5c6e0fc239c75ba3748d3fc14839d24988dee5635b74d829f6074987916
+cell=K2_CYC6_S12 instance=4 verdict=PASS canonical_sha=44fdc5c6e0fc239c75ba3748d3fc14839d24988dee5635b74d829f6074987916
+cell=K2_CYC6_S12 instance=0 verdict=PASS canonical_sha=44fdc5c6e0fc239c75ba3748d3fc14839d24988dee5635b74d829f6074987916
+cell=K2_CYC6_S12 instance=2 verdict=PASS canonical_sha=44fdc5c6e0fc239c75ba3748d3fc14839d24988dee5635b74d829f6074987916
+cell=K2_CYC6_S12 instance=5 verdict=PASS canonical_sha=44fdc5c6e0fc239c75ba3748d3fc14839d24988dee5635b74d829f6074987916
+20260428T012003Z all instances finished; failures=0
+20260428T012010Z thermal_coordinator stopped
+20260428T012010Z summary written: /data/local/tmp/genesis/cells/K2_CYC6_S12/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_CYC6_S12",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "12",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T012010Z"
+}
+20260428T012010Z DONE cell=K2_CYC6_S12 verdict=PASS
+20260428T012010Z DONE cell=K2_CYC6_S12 verdict=PASS
+20260428T012010Z START cell=K2_CYC6_S18 task=k2-scars steps=18 instances=6
+20260428T012010Z START cell=K2_CYC6_S18 task=k2-scars steps=18 instances=6
+20260428T012010Z launch_genesis_batch: cell=K2_CYC6_S18 instances=6 task=k2-scars
+20260428T012010Z parent affinity set to mask=7F (cpu0-6)
+20260428T012010Z WARNING: dm3_runner running (pid=2906); Genesis namespace is independent; continuing
+20260428T012010Z thermal_coordinator spawned pid=11354
+20260428T012010Z spawned instance=0 mask=auto pid=11367
+20260428T012010Z spawned instance=1 mask=auto pid=11394
+20260428T012010Z spawned instance=2 mask=auto pid=11419
+20260428T012010Z spawned instance=3 mask=auto pid=11446
+20260428T012011Z spawned instance=4 mask=auto pid=11492
+20260428T012011Z spawned instance=5 mask=auto pid=11523
+cell=K2_CYC6_S18 instance=1 verdict=PASS canonical_sha=f01147011f1168cae854fb351f18173dca1d22da680fc5f7ccadee54bdd04c94
+cell=K2_CYC6_S18 instance=2 verdict=PASS canonical_sha=f01147011f1168cae854fb351f18173dca1d22da680fc5f7ccadee54bdd04c94
+cell=K2_CYC6_S18 instance=3 verdict=PASS canonical_sha=f01147011f1168cae854fb351f18173dca1d22da680fc5f7ccadee54bdd04c94
+cell=K2_CYC6_S18 instance=4 verdict=PASS canonical_sha=f01147011f1168cae854fb351f18173dca1d22da680fc5f7ccadee54bdd04c94
+cell=K2_CYC6_S18 instance=0 verdict=PASS canonical_sha=f01147011f1168cae854fb351f18173dca1d22da680fc5f7ccadee54bdd04c94
+cell=K2_CYC6_S18 instance=5 verdict=PASS canonical_sha=f01147011f1168cae854fb351f18173dca1d22da680fc5f7ccadee54bdd04c94
+20260428T012024Z all instances finished; failures=0
+20260428T012026Z thermal_coordinator stopped
+20260428T012026Z summary written: /data/local/tmp/genesis/cells/K2_CYC6_S18/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_CYC6_S18",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "18",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T012026Z"
+}
+20260428T012026Z DONE cell=K2_CYC6_S18 verdict=PASS
+20260428T012026Z DONE cell=K2_CYC6_S18 verdict=PASS
+20260428T012026Z START cell=K2_CYC6_S24 task=k2-scars steps=24 instances=6
+20260428T012026Z START cell=K2_CYC6_S24 task=k2-scars steps=24 instances=6
+20260428T012026Z launch_genesis_batch: cell=K2_CYC6_S24 instances=6 task=k2-scars
+20260428T012026Z parent affinity set to mask=7F (cpu0-6)
+20260428T012026Z WARNING: dm3_runner running (pid=2906); Genesis namespace is independent; continuing
+20260428T012026Z thermal_coordinator spawned pid=12827
+20260428T012026Z spawned instance=0 mask=auto pid=12852
+20260428T012026Z spawned instance=1 mask=auto pid=12873
+20260428T012026Z spawned instance=2 mask=auto pid=12891
+20260428T012026Z spawned instance=3 mask=auto pid=12920
+20260428T012026Z spawned instance=4 mask=auto pid=12941
+20260428T012026Z spawned instance=5 mask=auto pid=12961
+cell=K2_CYC6_S24 instance=1 verdict=PASS canonical_sha=a4f5762a3d65495dabe2db72c7aa84cfbe08edfaa5335f67a2d6da8af136b28d
+cell=K2_CYC6_S24 instance=0 verdict=PASS canonical_sha=a4f5762a3d65495dabe2db72c7aa84cfbe08edfaa5335f67a2d6da8af136b28d
+cell=K2_CYC6_S24 instance=5 verdict=PASS canonical_sha=a4f5762a3d65495dabe2db72c7aa84cfbe08edfaa5335f67a2d6da8af136b28d
+cell=K2_CYC6_S24 instance=2 verdict=PASS canonical_sha=a4f5762a3d65495dabe2db72c7aa84cfbe08edfaa5335f67a2d6da8af136b28d
+cell=K2_CYC6_S24 instance=4 verdict=PASS canonical_sha=a4f5762a3d65495dabe2db72c7aa84cfbe08edfaa5335f67a2d6da8af136b28d
+cell=K2_CYC6_S24 instance=3 verdict=PASS canonical_sha=a4f5762a3d65495dabe2db72c7aa84cfbe08edfaa5335f67a2d6da8af136b28d
+20260428T012047Z all instances finished; failures=0
+20260428T012054Z thermal_coordinator stopped
+20260428T012054Z summary written: /data/local/tmp/genesis/cells/K2_CYC6_S24/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_CYC6_S24",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "24",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T012054Z"
+}
+20260428T012054Z DONE cell=K2_CYC6_S24 verdict=PASS
+20260428T012054Z DONE cell=K2_CYC6_S24 verdict=PASS
+20260428T012054Z START cell=K2_CYC8_S8 task=k2-scars steps=8 instances=6
+20260428T012054Z START cell=K2_CYC8_S8 task=k2-scars steps=8 instances=6
+20260428T012054Z launch_genesis_batch: cell=K2_CYC8_S8 instances=6 task=k2-scars
+20260428T012054Z parent affinity set to mask=7F (cpu0-6)
+20260428T012054Z WARNING: dm3_runner running (pid=2906); Genesis namespace is independent; continuing
+20260428T012055Z thermal_coordinator spawned pid=14805
+20260428T012055Z spawned instance=0 mask=auto pid=14814
+20260428T012055Z spawned instance=1 mask=auto pid=14828
+20260428T012055Z spawned instance=2 mask=auto pid=14848
+20260428T012055Z spawned instance=3 mask=auto pid=14869
+20260428T012055Z spawned instance=4 mask=auto pid=14895
+20260428T012055Z spawned instance=5 mask=auto pid=14921
+cell=K2_CYC8_S8 instance=0 verdict=PASS canonical_sha=2e3d3df5aa4ca9c47fb08afa0cb4ab4efbd54e742e7b3626502d5d992b5e7466
+cell=K2_CYC8_S8 instance=1 verdict=PASS canonical_sha=2e3d3df5aa4ca9c47fb08afa0cb4ab4efbd54e742e7b3626502d5d992b5e7466
+cell=K2_CYC8_S8 instance=4 verdict=PASS canonical_sha=2e3d3df5aa4ca9c47fb08afa0cb4ab4efbd54e742e7b3626502d5d992b5e7466
+cell=K2_CYC8_S8 instance=2 verdict=PASS canonical_sha=2e3d3df5aa4ca9c47fb08afa0cb4ab4efbd54e742e7b3626502d5d992b5e7466
+cell=K2_CYC8_S8 instance=5 verdict=PASS canonical_sha=2e3d3df5aa4ca9c47fb08afa0cb4ab4efbd54e742e7b3626502d5d992b5e7466
+cell=K2_CYC8_S8 instance=3 verdict=PASS canonical_sha=2e3d3df5aa4ca9c47fb08afa0cb4ab4efbd54e742e7b3626502d5d992b5e7466
+20260428T012059Z all instances finished; failures=0
+20260428T012102Z thermal_coordinator stopped
+20260428T012102Z summary written: /data/local/tmp/genesis/cells/K2_CYC8_S8/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_CYC8_S8",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "8",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T012102Z"
+}
+20260428T012102Z DONE cell=K2_CYC8_S8 verdict=PASS
+20260428T012102Z DONE cell=K2_CYC8_S8 verdict=PASS
+20260428T012102Z START cell=K2_CYC8_S16 task=k2-scars steps=16 instances=6
+20260428T012102Z START cell=K2_CYC8_S16 task=k2-scars steps=16 instances=6
+20260428T012102Z launch_genesis_batch: cell=K2_CYC8_S16 instances=6 task=k2-scars
+20260428T012102Z parent affinity set to mask=7F (cpu0-6)
+20260428T012102Z WARNING: dm3_runner running (pid=2906); Genesis namespace is independent; continuing
+20260428T012102Z thermal_coordinator spawned pid=15705
+20260428T012102Z spawned instance=0 mask=auto pid=15715
+20260428T012102Z spawned instance=1 mask=auto pid=15730
+20260428T012102Z spawned instance=2 mask=auto pid=15750
+20260428T012102Z spawned instance=3 mask=auto pid=15777
+20260428T012102Z spawned instance=4 mask=auto pid=15805
+20260428T012102Z spawned instance=5 mask=auto pid=15832
+cell=K2_CYC8_S16 instance=2 verdict=PASS canonical_sha=97e4c8f57dd41f3067a15ece47b77c8b700e89b958dd5c5bf03c7df203499455
+cell=K2_CYC8_S16 instance=1 verdict=PASS canonical_sha=97e4c8f57dd41f3067a15ece47b77c8b700e89b958dd5c5bf03c7df203499455
+cell=K2_CYC8_S16 instance=0 verdict=PASS canonical_sha=97e4c8f57dd41f3067a15ece47b77c8b700e89b958dd5c5bf03c7df203499455
+cell=K2_CYC8_S16 instance=4 verdict=PASS canonical_sha=97e4c8f57dd41f3067a15ece47b77c8b700e89b958dd5c5bf03c7df203499455
+cell=K2_CYC8_S16 instance=5 verdict=PASS canonical_sha=97e4c8f57dd41f3067a15ece47b77c8b700e89b958dd5c5bf03c7df203499455
+cell=K2_CYC8_S16 instance=3 verdict=PASS canonical_sha=97e4c8f57dd41f3067a15ece47b77c8b700e89b958dd5c5bf03c7df203499455
+20260428T012113Z all instances finished; failures=0
+20260428T012117Z thermal_coordinator stopped
+20260428T012118Z summary written: /data/local/tmp/genesis/cells/K2_CYC8_S16/_summary.json batch_verdict=PASS
+{
+  "cell": "K2_CYC8_S16",
+  "test_id": "chain",
+  "instances": 6,
+  "failures": 0,
+  "receipt_count": 6,
+  "unique_canonical_sha_count": 1,
+  "unique_best_uplift_count": 1,
+  "task": "k2-scars",
+  "steps": "16",
+  "batch_verdict": "PASS",
+  "timestamp_utc": "20260428T012117Z"
+}
+20260428T012118Z DONE cell=K2_CYC8_S16 verdict=PASS
+20260428T012118Z DONE cell=K2_CYC8_S16 verdict=PASS
+20260428T012118Z genesis_chain_v1 finished all manifest cells
+20260428T012118Z genesis_chain_v1 finished all manifest cells
+20260428T012120Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260428T012120Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260428T012120Z SKIP cell=K2_S20: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S20: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S28: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S28: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S29: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S29: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S30: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S30: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S31: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S31: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S32: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S32: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S33: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S33: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S34: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S34: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S35: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S35: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S36: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S36: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S37: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S37: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S38: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S38: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S39: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S39: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S40: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S40: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S41: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S41: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S42: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S42: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S43: outcome.json exists (verdict=PASS)
+20260428T012120Z SKIP cell=K2_S43: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S44: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S44: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S45: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S45: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S46: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S46: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S47: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S47: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S48: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S48: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S49: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S49: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S50: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S50: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S51: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S51: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S52: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S52: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S53: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S53: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S54: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S54: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S55: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S55: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S56: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_S56: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC7_S7: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC7_S7: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC7_S14: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC7_S14: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC7_S21: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC7_S21: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC6_S6: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC6_S6: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC6_S12: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC6_S12: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC6_S18: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC6_S18: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC6_S24: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC6_S24: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC8_S8: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC8_S8: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC8_S16: outcome.json exists (verdict=PASS)
+20260428T012121Z SKIP cell=K2_CYC8_S16: outcome.json exists (verdict=PASS)
+20260428T012121Z genesis_chain_v1 finished all manifest cells
+20260428T012121Z genesis_chain_v1 finished all manifest cells
+20260428T012135Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260428T012135Z genesis_chain_v1 starting manifest=/data/local/tmp/genesis/harness/cells.txt
+20260428T012136Z SKIP cell=K2_S20: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S20: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S28: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S28: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S29: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S29: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S30: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S30: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S31: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S31: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S32: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S32: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S33: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S33: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S34: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S34: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S35: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S35: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S36: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S36: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S37: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S37: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S38: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S38: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S39: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S39: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S40: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S40: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S41: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S41: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S42: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S42: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S43: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S43: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S44: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S44: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S45: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S45: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S46: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S46: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S47: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S47: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S48: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S48: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S49: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S49: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S50: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S50: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S51: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S51: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S52: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S52: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S53: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S53: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S54: outcome.json exists (verdict=PASS)
+20260428T012136Z SKIP cell=K2_S54: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_S55: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_S55: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_S56: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_S56: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC7_S7: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC7_S7: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC7_S14: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC7_S14: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC7_S21: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC7_S21: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC6_S6: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC6_S6: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC6_S12: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC6_S12: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC6_S18: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC6_S18: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC6_S24: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC6_S24: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC8_S8: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC8_S8: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC8_S16: outcome.json exists (verdict=PASS)
+20260428T012137Z SKIP cell=K2_CYC8_S16: outcome.json exists (verdict=PASS)
+20260428T012137Z genesis_chain_v1 finished all manifest cells
+20260428T012137Z genesis_chain_v1 finished all manifest cells

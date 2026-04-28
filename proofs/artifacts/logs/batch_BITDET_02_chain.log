@@ -1,0 +1,13 @@
+20260427T225048Z launch_genesis_batch: cell=BITDET_02 instances=6 task=<vanilla>
+20260427T225048Z parent affinity set to mask=7F (cpu0-6)
+20260427T225048Z WARNING: dm3_runner running (pid=28095); Genesis namespace is independent; continuing
+20260427T225048Z thermal_coordinator spawned pid=30197
+20260427T225048Z spawned instance=0 mask=auto pid=30208
+20260427T225049Z spawned instance=1 mask=auto pid=30224
+20260427T225049Z spawned instance=2 mask=auto pid=30244
+20260427T225049Z spawned instance=3 mask=auto pid=30271
+20260427T225049Z spawned instance=4 mask=auto pid=30295
+20260427T225049Z spawned instance=5 mask=auto pid=30326
+20260427T225055Z all instances finished; failures=0
+20260427T225057Z thermal_coordinator stopped
+20260427T225057Z summary written: /data/local/tmp/genesis/cells/BITDET_02/_summary.json batch_verdict=PASS

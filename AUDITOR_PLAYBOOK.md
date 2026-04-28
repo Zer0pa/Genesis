@@ -1,7 +1,7 @@
 # Auditor Playbook — Genesis Comparative
 
 **Version:** 2026-04-28  
-**Branch:** `inspection-2026-04-28` (commit `1198b3a`)  
+**Branch:** `inspection-2026-04-28` (inspection head carries Phase 2/2.5 receipts and σ″ figure)
 **Audience:** external auditor, investor diligence, scientific advisor, repo orchestrator  
 **Goal:** shortest honest path to verifying the central claims in under 30 minutes
 
@@ -16,7 +16,8 @@ Each item is a specific, falsifiable claim traceable to a source artifact.
 - Cross-platform parity: M1 host (`aarch64-apple-darwin`) and RM10 (`aarch64-linux-android`) builds of `snic_rust` produce the same canonical hashes byte-exact.
 - 31,560 cross-replicate canonical-hash matches across Phase 0 BITDET cells (BITDET_01: 60 invocations; BITDET_02: 300; BITDET_03: 1,200; BITDET_5K: 30,000) with zero divergences and `unique_canonical_sha_count = 1` per cell.
 - K2 task BITDET on M1 host: two consecutive `k2-scars --steps 30` runs produce byte-identical `k2_summary.json` SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`.
-- K2 task BITDET on phone (cells K2_S20, K2_S28): live observation that 18 replicates per cell produce byte-identical canonical hashes (Phase 2 K2_SWEEP receipts pull on phone reconnect for full sweep).
+- K2 task BITDET on phone: 56 Phase 2/2.5 K2-task cells all PASS with `unique_canonical_sha_count = 1` per cell.
+- σ″ curve: Genesis is flat at `best_uplift = 3.000000` across S20 and S28..S56, with pre-convergence transient peak at S2 = 6.5 and settlement to 3.0 by S10.
 - Substrate identity (T(3,21) torus link, D₆ symmetry, 285 vertices, Q-Pythagorean) is settled per `substrate-reconstruction-2026-04-26` (separate authority; not re-derived here).
 
 Source for all items above: [`proofs/manifests/CURRENT_AUTHORITY_PACKET.md`](proofs/manifests/CURRENT_AUTHORITY_PACKET.md) and [`.gpd/STATE.md`](.gpd/STATE.md).
@@ -92,26 +93,27 @@ These are the source author's reproducibility reference points, committed in the
 
 ## Step 3 — Verify Cross-Replicate Evidence (15 min)
 
-Once `proofs/artifacts/` is populated (Phase 2 receipts pulled at chain close):
+The current inspection branch includes 60 receipt cells under `proofs/artifacts/cells/`:
 
 ```bash
 cd /path/to/genesis_comparative
 
 # List all per-cell outcomes
-find proofs/artifacts -name "outcome.json" \
-  | xargs -I{} sh -c 'jq -r "{cell: .cell, verdict: .verdict, failures: .metrics.failures, unique_sha: .metrics.unique_canonical_sha_count} | tostring" {}'
+find proofs/artifacts/cells -name "outcome.json" \
+  | xargs -I{} jq -r '[.cell, .verdict, (.metrics.failures|tostring), (.metrics.unique_canonical_sha_count|tostring)] | @tsv' {}
 
 # Count cells and PASS verdicts
-find proofs/artifacts -name "outcome.json" | wc -l
-find proofs/artifacts -name "outcome.json" -exec grep -l '"verdict": "PASS"' {} \; | wc -l
+find proofs/artifacts/cells -name "outcome.json" | wc -l
+find proofs/artifacts/cells -name "outcome.json" -exec grep -l '"verdict": "PASS"' {} \; | wc -l
 
-# Cross-replicate canonical hash check — must yield exactly ONE unique line
-find proofs/artifacts -name "canonical_stdout.sha256" -exec cat {} \; | sort -u
+# Verify each cell has one canonical SHA internally
+find proofs/artifacts/cells -name "outcome.json" \
+  | xargs -I{} jq -r 'select(.metrics.unique_canonical_sha_count != 1) | .cell' {}
 ```
 
-**Expected:** every `outcome.json` has `"verdict": "PASS"`, `"failures": 0`, `"unique_canonical_sha_count": 1`. The final `sort -u` must produce exactly one line: `97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89`.
+**Expected:** 60 `outcome.json` files, 60 PASS verdicts, and the final command emits no rows. Every `outcome.json` has `"verdict": "PASS"`, `"failures": 0`, and `"unique_canonical_sha_count": 1`.
 
-**If `unique_canonical_sha_count` per cell is consistently 1 AND aggregate unique hashes across all cells = 1:** cross-replicate determinism is established at the chain level.
+**If `unique_canonical_sha_count` per cell is consistently 1:** cross-replicate determinism is established at the cell level. Do not require one aggregate hash across all cells: K2 cells at different step values legitimately produce different `k2_summary.json` hashes.
 
 **If multiple unique hashes appear:** this is a divergence. File a falsification claim with the full cell and instance identifiers of the divergent pair.
 
@@ -130,8 +132,8 @@ find proofs/artifacts -name "canonical_stdout.sha256" -exec cat {} \; | sort -u
 ## What This Audit Does NOT Establish (Public Audit Limits)
 
 - Whether the substrate is the *intended* mathematical object the source author had in mind. Settling that requires the `substrate-reconstruction-2026-04-26` proof tree, which is a separate authority at `SHARE_2026-04-27/`. This experiment treats the substrate as a settled anchor and does not re-derive it.
-- Whether the K2 protocol implementation in `crates/io_cli/src/k2_scars.rs` is the *correct* reading of the dm3 K2 algorithm. The dm3_runner source is unrecovered; the Genesis K2 port is from-scratch on the Genesis substrate per decision D2. Attribution requires Phase 2 and Phase 3 synthesis.
-- Whether the four pre-registered comparisons (cycle-7, s50-cliff, σ″-shape, D₆-vs-C₃ symmetry) yield substrate-attribution or augmentation-attribution conclusions. Phase 2 receipts and Phase 3 synthesis are required; three of the four verdict columns are currently UNTESTED.
+- Whether the K2 protocol implementation in `crates/io_cli/src/k2_scars.rs` is the *correct* reading of the dm3 K2 algorithm. The dm3_runner source is unrecovered; the Genesis K2 port is from-scratch on the Genesis substrate per decision D2.
+- Whether the D6-vs-C3 comparison is resolved. It remains PENDING until a Z2-asymmetric observable is designed, pre-registered, and run.
 - **Long-horizon determinism.** Current evidence spans hours to days. Long-duration thermal drift, silicon aging, or firmware updates are untested surfaces.
 - **Determinism against adversarial source modification.** This audit verifies the pipeline runs deterministically given the source as committed. Intentional tampering with the source is not a defended surface — it is the canonical falsification path.
 - **Commercial readiness.** This is a research artifact. No productization verdict is made here.
@@ -168,7 +170,7 @@ A: This repo (`genesis_comparative`) is the *experimental scaffolding*: the RESI
 
 **Q: Why is this an INTERNAL repo if the claim is reproducibility-by-anyone?**
 
-A: Currently INTERNAL on the Zer0pa org during Phase 2 chain execution and Phase 3 synthesis. Per the PRD §Boundaries, no external push during the active experiment. Repository visibility increases on chain close and Phase 3 sign-off. The substrate source repo is separately managed. Auditors with repo access granted for diligence purposes can inspect everything in this repo at the branch `inspection-2026-04-28`.
+A: Currently INTERNAL on the Zer0pa org as a live review window during active RM10 execution. The substrate source repo is separately managed. Auditors with repo access granted for diligence purposes can inspect everything in this repo at the branch `inspection-2026-04-28`.
 
 **Q: How do I know the receipts in `proofs/artifacts/` are not fabricated?**
 
@@ -182,9 +184,9 @@ A: Any divergence would show as `unique_canonical_sha_count > 1` in the cell's `
 
 A: It is the portfolio commercial posture: Phase 0 ships its claims now (deterministic foundation established); Phase 2/3 extend the proof surface (cycle-7, s50-cliff, σ″-shape, symmetry); future phases extend further. Each phase ships when its evidence is in. Auditors verify what is claimed at the version they audit. "Always-in-beta" is not a hedge on the Phase 0 claims; those are established. It is a statement that the proof surface is actively growing, not frozen.
 
-**Q: What is the `EARLY-SIGNAL` verdict on comparison #3 (σ″-curve shape diff)?**
+**Q: What happened to the `EARLY-SIGNAL` verdict on comparison #3 (σ″-curve shape diff)?**
 
-A: At Phase 1, host-side K2 at `--steps 30` returned `best_uplift = 3.000000` with uniform `|scar| = 1.2` across all 567 edges — structurally distinct from dm3's `max_scar=0.868`, `best_uplift=1.644`. This is a pre-registered finding (see [`.gpd/STATE.md`](.gpd/STATE.md) §"Curious-numbers finding"), not a settled verdict. Phase 2 K2_SWEEP over `--steps ∈ {20, 28..56}` determines whether this value is constant (potentially a degenerate pattern-choice artifact) or varies (real substrate dynamics). The EARLY-SIGNAL label means: there is a signal worth tracking; the interpretation is open until Phase 2 receipts land.
+A: Phase 2 settled it for the D3 pattern choice. Genesis returns `best_uplift = 3.000000` across the full steady-state sweep [S20, S56], while dm3 is a trimodal sawtooth with an exact-zero S50 cliff. Comparison #3 is now CONFIRMED as a curve-shape difference. The interpretation remains honest: flatness may be substrate-easy behavior or a D3 pattern degeneracy, so alternative D6 orbit picks remain a research-deferred follow-up.
 
 ---
 

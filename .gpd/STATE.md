@@ -5,21 +5,21 @@
 See: .gpd/PROJECT.md
 
 **Core research question:** What does Genesis do under the same task surface and the same governance that produced dm3_runner's signature observables?
-**Current focus:** Phase 0 — Foundation, cross-compile, deploy, first cell
+**Current focus:** Live inspection branch and Phase 3 prep chain
 
 ## Current Position
 
-**Current Phase:** 1 — K2 port LANDED on host; awaiting phone reconnect to deploy
-**Phase 0 status:** COMPLETE; autonomous chain running on phone
-**Current Phase Name:** Foundation, cross-compile, deploy, first cell
+**Current Phase:** 3 prep — Phase 2/2.5 receipts in repo; cross-time K2 extension running on RM10
+**Phase 0 status:** COMPLETE; BITDET_01/02/03/5K receipts verified in repo
+**Current Phase Name:** Live receipt extension and synthesis prep
 **Total Phases:** 4
-**Current Plan:** Autonomous chain operating; phase 1 K2 port begins host-side
-**Total Plans in Phase:** 8 (00-01..00-08), all functionally satisfied
-**Status:** Phase 0 chain running autonomously on RM10 (master pid=15215, watcher pid=28431). 3 BITDET cells already PASSED with 1560/1560 cross-checked verify.json hashes equal to source-canonical. Long-running cells in flight (5K + 50K + 500K iters; ~3 hr wall).
+**Current Plan:** Phase 3 prep chain operating on RM10; repository inspection branch carries Phase 2/2.5 receipts
+**Total Plans in Phase:** live manifest: BITDET_K2_S1..S9_BIG + S30_BIG + S56_BIG
+**Status:** Phase 0/2/2.5 proof surface is in repo: 60 cells, all PASS, all `unique_canonical_sha_count = 1`. Phase 3 prep chain is running on RM10; receipts will be pulled and appended by the chain-operator agent after completion.
 **Last Activity:** 2026-04-28
-**Last Activity Description:** Phase 0 deployed end-to-end on RM10. Critical pivot: cross-compiled genesis_cli ELF was a host-side meta-orchestrator (calls cargo); the actual standalone Genesis-organism pipeline is `io_cli` binary `snic_rust` exposing build-2d/lift-3d/solve-h2/verify subcommands. Cross-compiled snic_rust (host SHA 7abbf04a…), pushed to /data/local/tmp/genesis/, deployed configs/CONFIG.json + 6 harness scripts. Pipeline runs canonical on phone: verify.json = 97bd7d… (matches source-hardcoded CANONICAL_VERIFY_HASH exactly), solve_h2.json = 62897b… (matches CANONICAL_SOLVE_HASH exactly). All 7 internal gates pass (gates_ok, dep_cert, gc_invariants, lift, stab, cad_sos, egraph). Patches: bare-hex taskset masks for Toybox; --test-battery passthrough through chain→batch→cell; pipeline-loop semantics replacing genesis_cli --test-battery; parent-affinity 7F mask + auto child cores to work around Qualcomm core_ctl pause-flapping. Chain master + watcher launched via resume_chain.sh + nohup; phone autonomous; dm3_runner sibling lane (cpu7, pid 28095) untouched.
+**Last Activity Description:** Phase 2/2.5 receipts and σ″ aggregation landed on `inspection-2026-04-28`; latest proof-bearing commit `cc8dba6` adds the σ″ figure and summary table. Current branch is being prepared as an INTERNAL GitHub review surface while RM10 continues the Phase 3 prep chain.
 
-**Progress:** [██████████] 100% Phase 0 (chain autonomous; long-running BITDET cells in flight)
+**Progress:** [██████████] Phase 0/2/2.5 receipt surface ready for review; Phase 3 prep live
 
 ## Active Calculations
 
@@ -88,8 +88,8 @@ KPI_K2_SUMMARY duration_sec=4.770 max_scar_weight=1.200000 best_uplift=3.000000
 | 00-04 | Cross-compile Genesis binary | DONE → REVISED. genesis_cli was wrong target (`fp-shapematch` retraction filed); io_cli/snic_rust is correct. Host SHA `7abbf04a6656ef9f70d713e2fd8df1dafbb392a36ef75e6e8d74ea844922ac57`; on-device SHA matches. |
 | 00-05 | Phone-side harness scripts | DONE (6 files, ~960 lines incl. patches; pipeline-loop semantics replacing genesis_cli --test-battery; parent-affinity workaround for core_ctl pause-flapping) |
 | 00-06 | Deploy to RM10 + on-device hash gate | DONE. snic_rust + CONFIG.json + 6 scripts deployed at /data/local/tmp/genesis/; on-device sha256sum matches host SHA exactly; smoke tests pass on cpu0 single-core, on auto cores 6-instance batch (BITDET_AUTO test 18/18 PASS). |
-| 00-07 | First chain cell BITDET | DONE. BITDET_01 (10×6=60), BITDET_02 (50×6=300), BITDET_03 (200×6=1200) all PASS. unique_canonical_sha_count=1 per cell; all 1560 verify.json hashes = 97bd7d… exactly. |
-| 00-08 | Autonomous chain master + watcher | DONE. Chain master pid=15215 running genesis_chain_v1.sh (nohup); master_watcher.sh pid=28431 polling 30s; cells in flight: BITDET_5K, BITDET_50K, BITDET_500K (~3 hr wall total). dm3_runner (pid 28095) untouched on cpu7. |
+| 00-07 | First chain cell BITDET | DONE. BITDET_01 (10×6=60), BITDET_02 (50×6=300), BITDET_03 (200×6=1200), and BITDET_5K (5000×6=30000) all PASS. unique_canonical_sha_count=1 per cell; all 31,560 verify.json hashes = 97bd7d… exactly. |
+| 00-08 | Autonomous chain master + watcher | DONE. Phase 0 autonomous chain completed through BITDET_5K; BITDET_50K/500K were operator-trimmed to prioritize K2 science cells. dm3_runner sibling lane untouched on cpu7. |
 
 ## Open Questions
 
@@ -148,8 +148,8 @@ None yet.
 
 ### Blockers/Concerns
 
-- RM10 thermal margin (cpu6) requires fan + Game Zone on; operator handles physical setup
-- RM10 device offline (2026-04-28): 'adb devices' returns empty list. Handover (2026-04-27) claimed online; state has changed. Plans 00-06 (deploy), 00-07 (BITDET launch), 00-08 (autonomous chain confirm) BLOCKED on device reconnect. All host-side plans 00-01..00-05 complete. No retry attempted to avoid adb-spam (collision-discipline).
+- Phase 3 prep receipts are still live on RM10; do not modify `harness/phone/cells.txt`, signal the phone chain, or claim those receipts until pulled.
+- Z2-asymmetric observable for the D6-vs-C3 symmetry comparison is not designed yet; comparison #4 remains PENDING.
 
 ## Retractions
 
@@ -159,17 +159,10 @@ None yet.
 ## Session Continuity
 
 **Last session:** 2026-04-28
-**Stopped at:** Phase 0 host-side complete; plan 00-06 (deploy to RM10) blocked on device reconnect (`adb devices` empty as of session-end). Awaiting operator: reconnect RM10 USB to Mac OR confirm device location/state. On reconnect, deploy is ~10 minutes; chain launch + watcher is another ~15 minutes; first BITDET cell completes in ~30 minutes after launch.
+**Stopped at:** Phase 2/2.5 proof surface in repo; Phase 3 prep chain live on RM10; GitHub review surface being prepared from `inspection-2026-04-28`.
 **Resume file:** —
 **Next-action checklist on resume:**
-1. `adb devices` → confirm RM10 (`FY25013101C8`) returns
-2. `adb -s FY25013101C8 shell pidof dm3_runner` → confirm dm3 lane state (any PID expected; Genesis namespace is independent at `/data/local/tmp/genesis/`)
-3. `adb -s FY25013101C8 shell mkdir -p /data/local/tmp/genesis/{harness,cells,logs,inputs}`
-4. `adb -s FY25013101C8 push <binary>/genesis_cli /data/local/tmp/genesis/genesis_runner`
-5. `adb -s FY25013101C8 shell sha256sum /data/local/tmp/genesis/genesis_runner` → must equal `879ac7212a19c8d43309db4f56a52373a4739d0394fa1b9b9ba1b60c105bd4de`
-6. `adb -s FY25013101C8 push harness/phone/*.sh /data/local/tmp/genesis/harness/`
-7. `adb -s FY25013101C8 shell chmod +x /data/local/tmp/genesis/genesis_runner /data/local/tmp/genesis/harness/*.sh`
-8. Write `genesis_meta.txt` to `/data/local/tmp/genesis/`
-9. Smoke test: `adb shell taskset 0x01 /data/local/tmp/genesis/genesis_runner --test-battery 1`
-10. Author `harness/cells.txt` manifest with `BITDET_01 --test-battery 10`
-11. Launch chain via resume_chain.sh; launch watcher; advise operator (fridge/fan/Game Zone/unplug)
+1. Let the Phase 3 prep chain complete; do not touch the running RM10 process tree.
+2. Pull Phase 3 prep receipts into `proofs/artifacts/cells/` after chain-operator confirmation.
+3. Regenerate `sigma_curve_full.tsv` / figure if the new receipts alter the plotted surface.
+4. Append a follow-up commit; keep retractions additive if any cell fails.

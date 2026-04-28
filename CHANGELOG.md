@@ -16,7 +16,7 @@ All research-significant changes are recorded here. This is a research repositor
 - Authored 6 harness scripts (`run_genesis_cell.sh`, `launch_genesis_batch.sh`, `thermal_coordinator.sh`, `genesis_chain_v1.sh`, `master_watcher.sh`, `resume_chain.sh`; ~960 lines total, busybox-sh portable).
 - Hardware envelope characterised: parent-affinity mask `7F`; per-instance `--core auto`; cpu7 reserved for sibling `dm3_runner` lane; 70 °C thermal ceiling.
 - Substrate identity settled (from `substrate-reconstruction-2026-04-26` lane): T(3,21) torus link, D₆ symmetry, 285 vertices, 567 edges, 48 D₆ orbits, Q-Pythagorean number field.
-- Long-running BITDET cells (5 K, 50 K, 500 K iter) launched autonomously; receipts pending on RM10 reconnect.
+- BITDET_5K receipts pulled and verified: 30,000 additional `verify.json` hashes, all source-canonical. BITDET_50K/500K were operator-trimmed in favor of K2 science cells; no claim is made from discarded partials.
 
 ### Phase 1 — K2 port (commit `c43a402`)
 
@@ -28,17 +28,23 @@ All research-significant changes are recorded here. This is a research repositor
 - Cross-compiled Phase 1 `snic_rust`; host SHA `e21208a69064a11677cb700e3b68c0fba3aab1e08ed784f71d8e954a523e5ff1`.
 - Curious-number finding pre-registered for Phase 2: Genesis K2 at `--steps 30` yields uniform |scar| = 1.2 across all 567 edges + perfect recall (avg_recall_err = 0.0) + best_uplift = 3.0. Mathematical origin: rank-1 effect of disjoint Bhupura(282) + Lotus(3) outer products. Possible degenerate K2 dynamics; Phase 2 sweep will test whether value is constant (degenerate) or varies (real substrate effect).
 
-### Phase 2 — Autonomous K2 sweep (in progress on RM10)
+### Phase 2 — Autonomous K2 sweep (complete)
 
-- K2 sweep over `--steps ∈ {20, 28, 29, …, 56}` running autonomously on RM10 via `genesis_chain_v1.sh`; receipts will land in `cells/K2_SWEEP_S*/` on next RM10 reconnect.
-- Four pre-registered cross-lane comparisons pending: cycle-7, s50-cliff, σ″-curve diff, D₆-vs-C₃ symmetry.
-- **Receipts not yet pulled.** Verdicts for this phase are UNTESTED until receipts are available.
+- K2 sweep over `--steps ∈ {20, 28, 29, …, 56}` completed on RM10 via `genesis_chain_v1.sh`: 30 K2_SWEEP cells, all PASS, all `unique_canonical_sha_count = 1`.
+- Cycle probe completed: 9 cells at multiples of 6/7/8, all PASS. S6=4.0 and S8=3.5 exposed a low-step pre-convergence transient; S12+ returned 3.0.
+- σ″ curve is flat at `best_uplift = 3.000000` across [S20, S56]. K2_S49/K2_S50/K2_S51 all return 3.0, so Genesis does not reproduce dm3's exact-zero s50 cliff.
+- Three pre-registered comparisons now have receipt-backed verdicts: cycle-7 attribution = AUGMENTATION-ATTRIBUTED; s50-cliff attribution = CONFIRMED; σ″-curve shape diff = CONFIRMED. D6-vs-C3 symmetry remains PENDING pending a Z2-asymmetric observable.
 
-### Phase 3 — Synthesis (pending)
+### Phase 2.5 — Pre-convergence sweep and K2 BITDET extension (complete)
 
-- Cross-lane synthesis against pre-registered comparisons.
-- Final report.
-- Not started.
+- PRECONV sweep completed for S1..S5 and sparse S9..S25: S1=5.5, S2=6.5 peak, S3=4.0, S4=3.5, S5/S6=4.0, S8/S9=3.5, S10+=3.0.
+- BITDET_K2_S6, BITDET_K2_S30, and BITDET_K2_S56 completed with `unique_canonical_sha_count = 1`, extending K2-task determinism at transient and steady-state points.
+- `proofs/artifacts/sigma_curve_full.tsv`, `proofs/artifacts/figures/sigma_curve.png`, and `proofs/artifacts/figures/sigma_curve_summary.txt` added for repo-orchestrator inspection.
+
+### Phase 3 prep — Live RM10 chain (in progress)
+
+- Live manifest extends cross-time K2 evidence at S1..S9 plus S30/S56. Receipts will be pulled and appended by the chain-operator agent after completion.
+- Final synthesis report remains pending.
 
 ---
 
@@ -48,18 +54,17 @@ The following categories of work are active, open, or blocked. This section carr
 
 ### Infrastructure / unblocked
 
-- Phase 2 K2 sweep receipts: pending RM10 reconnect. No engineering blocker; device-availability only.
+- Phase 3 prep receipts: pending live RM10 chain completion and pull by the chain-operator agent.
 - `genesis_meta.txt` deploy convention: 5-line shell snippet to write `build_hash` + `target_triple` at adb-push time; not yet authored as a script.
 
 ### Blocked on external input
 
-- RM10 device offline as of 2026-04-28: `adb devices` returns empty. Reconnect required before Phase 2 receipt pull.
 - Cross-lane D₆-vs-C₃ symmetry comparison: `dm3_runner` source recovery (separate `Zer0pa/DM3` workstream) must reach substrate characterisation before this comparison can be resolved.
 
 ### Open scientific questions
 
-- Genesis K2 degenerate dynamics: whether uniform |scar| = 1.2 is a property of the D₆/D₃-orbit pattern choice or a property of the substrate itself. Phase 2 sweep over `--steps` range is the primary discriminant; alternative orbit picks are a secondary test if sweep shows constant behaviour.
-- Cycle-7 Lomb-Scargle CI width: at N = 3 per step over a 30-point range, 95% CI may not cleanly separate period 7 from 6 or 8. Pre-registered disambiguator (`test-cycle7-disambiguator`) may be the load-bearing test.
+- Genesis K2 flat steady-state: whether uniform |scar| = 1.2 is a property of the D6/D3-orbit pattern choice or a property of the substrate itself. Alternative orbit picks are the next discriminator.
+- Z2-asymmetric observable design for the remaining D6-vs-C3 symmetry comparison.
 
 ### Deferred
 

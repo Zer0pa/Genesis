@@ -1,72 +1,38 @@
-# Genesis chain manifest — Phase 1+ science cells (snic_rust k2-scars task)
+# Genesis chain manifest — Phase 3 prep (post-Phase-2.5 cross-time evidence at scale)
 # Format: <CELL_ID> [--task TASK] [--steps N] [--test-battery N] [--instances N]
-# One cell per non-empty non-comment line.
 #
 # COMPLETED Phase 0 BITDET (in cells/, will be SKIPped on idempotent re-read):
-#   BITDET_01 (10 iters), BITDET_02 (50), BITDET_03 (200), BITDET_5K (5000)
-#   = 35260 cross-checked verify.json hashes, all = 97bd7d... (canonical match)
+#   BITDET_01..03 + BITDET_5K — 31 560 cross-checked verify.json hashes.
 #
-# RETIRED (operator-approved trim, 2026-04-28):
-#   BITDET_50K, BITDET_500K — marginal scientific value over BITDET_5K
-#   evidence; replaced by Phase 1+ science cells below.
+# COMPLETED Phase 2 K2_SWEEP (steps 20, 28..56) + CYCLE PROBE (×7, ×6, ×8) — 39 cells, all PASS.
+#   Result: σ″ FLAT at best_uplift = 3.000000 across [S20, S56]; transient at low S.
 #
-# Phase 2 PRD §3 K2_SWEEP — operator's primary science scope.
-# `--task k2-scars` invokes io_cli's K2 protocol on the 285v Genesis substrate
-# (Hebbian scars over 47-D6-orbits Bhupura + 3-vertex waist Lotus pattern,
-# consensus dynamics with alpha=164/165, --steps controls iteration count).
-# Each cell: 6 instances x N=3 iters = 18 cross-checked k2_summary.json hashes.
-# PASS = all 18 byte-identical (K2 task BITDET property).
-# Best_uplift extracted from KPI_K2_SUMMARY for sigma''-curve construction.
+# COMPLETED Phase 2.5 PRECONV_SWEEP (S1..S5, S9..S25 sparse) + BITDET_K2_S6/S30/S56 — 17 cells, all PASS.
+#   New finding: rich pre-convergence transient at low steps.
+#     S1=5.5, S2=6.5 (peak), S3=4.0, S4=3.5, S5=4.0, S6=4.0,
+#     S7=3.0, S8=3.5, S9=3.5, S10+=3.0 (steady state).
+#   Cross-time invariance (BITDET_K2): unique_canonical_sha=1 across 100/60/30 iters per instance.
 #
-# K2_SWEEP per PRD §3: --steps in {20, 28..56}
+# Phase 3 prep — extend cross-time evidence at scale:
+#   1. Confirm transient peak (S1..S9) is bit-deterministic across 100 cross-replicates per step.
+#      → 9 cells × 100 iters × 6 instances = 5 400 K2 hashes per step value, 48 600 total.
+#   2. Multiply BITDET_K2 at canonical region (S30 N=200, S56 N=50) for stronger
+#      cross-time evidence at the σ″-flat region.
 #
-K2_S20 --task k2-scars --steps 20 --instances 6 --test-battery 3
-K2_S28 --task k2-scars --steps 28 --instances 6 --test-battery 3
-K2_S29 --task k2-scars --steps 29 --instances 6 --test-battery 3
-K2_S30 --task k2-scars --steps 30 --instances 6 --test-battery 3
-K2_S31 --task k2-scars --steps 31 --instances 6 --test-battery 3
-K2_S32 --task k2-scars --steps 32 --instances 6 --test-battery 3
-K2_S33 --task k2-scars --steps 33 --instances 6 --test-battery 3
-K2_S34 --task k2-scars --steps 34 --instances 6 --test-battery 3
-K2_S35 --task k2-scars --steps 35 --instances 6 --test-battery 3
-K2_S36 --task k2-scars --steps 36 --instances 6 --test-battery 3
-K2_S37 --task k2-scars --steps 37 --instances 6 --test-battery 3
-K2_S38 --task k2-scars --steps 38 --instances 6 --test-battery 3
-K2_S39 --task k2-scars --steps 39 --instances 6 --test-battery 3
-K2_S40 --task k2-scars --steps 40 --instances 6 --test-battery 3
-K2_S41 --task k2-scars --steps 41 --instances 6 --test-battery 3
-K2_S42 --task k2-scars --steps 42 --instances 6 --test-battery 3
-K2_S43 --task k2-scars --steps 43 --instances 6 --test-battery 3
-K2_S44 --task k2-scars --steps 44 --instances 6 --test-battery 3
-K2_S45 --task k2-scars --steps 45 --instances 6 --test-battery 3
-K2_S46 --task k2-scars --steps 46 --instances 6 --test-battery 3
-K2_S47 --task k2-scars --steps 47 --instances 6 --test-battery 3
-K2_S48 --task k2-scars --steps 48 --instances 6 --test-battery 3
-K2_S49 --task k2-scars --steps 49 --instances 6 --test-battery 3
-K2_S50 --task k2-scars --steps 50 --instances 6 --test-battery 3
-K2_S51 --task k2-scars --steps 51 --instances 6 --test-battery 3
-K2_S52 --task k2-scars --steps 52 --instances 6 --test-battery 3
-K2_S53 --task k2-scars --steps 53 --instances 6 --test-battery 3
-K2_S54 --task k2-scars --steps 54 --instances 6 --test-battery 3
-K2_S55 --task k2-scars --steps 55 --instances 6 --test-battery 3
-K2_S56 --task k2-scars --steps 56 --instances 6 --test-battery 3
+BITDET_K2_S1_BIG  --task k2-scars --steps 1  --instances 6 --test-battery 100
+BITDET_K2_S2_BIG  --task k2-scars --steps 2  --instances 6 --test-battery 100
+BITDET_K2_S3_BIG  --task k2-scars --steps 3  --instances 6 --test-battery 100
+BITDET_K2_S4_BIG  --task k2-scars --steps 4  --instances 6 --test-battery 100
+BITDET_K2_S5_BIG  --task k2-scars --steps 5  --instances 6 --test-battery 100
+BITDET_K2_S6_BIG  --task k2-scars --steps 6  --instances 6 --test-battery 100
+BITDET_K2_S7_BIG  --task k2-scars --steps 7  --instances 6 --test-battery 100
+BITDET_K2_S8_BIG  --task k2-scars --steps 8  --instances 6 --test-battery 100
+BITDET_K2_S9_BIG  --task k2-scars --steps 9  --instances 6 --test-battery 100
+BITDET_K2_S30_BIG --task k2-scars --steps 30 --instances 6 --test-battery 200
+BITDET_K2_S56_BIG --task k2-scars --steps 56 --instances 6 --test-battery 50
 #
-# CYCLE PROBE per PRD §3 (cycle-7 attribution test):
-# Multiples of 7 are the prime hypothesis (T(3,21)'s 7 twists).
-# Multiples of 6 and 8 are disambiguators (rule out adjacent periods).
-#
-K2_CYC7_S7  --task k2-scars --steps 7  --instances 6 --test-battery 3
-K2_CYC7_S14 --task k2-scars --steps 14 --instances 6 --test-battery 3
-K2_CYC7_S21 --task k2-scars --steps 21 --instances 6 --test-battery 3
-K2_CYC6_S6  --task k2-scars --steps 6  --instances 6 --test-battery 3
-K2_CYC6_S12 --task k2-scars --steps 12 --instances 6 --test-battery 3
-K2_CYC6_S18 --task k2-scars --steps 18 --instances 6 --test-battery 3
-K2_CYC6_S24 --task k2-scars --steps 24 --instances 6 --test-battery 3
-K2_CYC8_S8  --task k2-scars --steps 8  --instances 6 --test-battery 3
-K2_CYC8_S16 --task k2-scars --steps 16 --instances 6 --test-battery 3
-#
-# DEFERRED (require host-side prep beyond current K2 port):
-#   PARITY    — needs M1 host run to compare canonical_sha
-#   SYMMETRY  — needs D6 Z2-mirror probe observable design
-#   CROSSBUILD — needs CONFIG variants with `turns` knob varied
-#   DISCONT   — only if K2_SWEEP shows a cliff/sharp drop
+# DEFERRED to host-side / future phases:
+#   - Cross-platform parity at K2 task level (M1 vs RM10): host work.
+#   - SYMMETRY cell: needs Z2-asymmetric observable design (Phase 3 prep host-side).
+#   - Alternative pattern K2 (distinct size-6 orbits as Bhupura/Lotus): source recompile.
+#   - Source recovery for dm3_runner: separate workstream.

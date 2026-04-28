@@ -10,7 +10,7 @@
 
 Four pre-registered claims against the `dm3_runner` binary's signature observables. Specifically, dm3_runner (the sibling lane — 380-vertex, C₃ symmetry, source unrecovered) exhibits: a period-~7 oscillation in its K2 dynamics, an exact zero ("cliff") at `--steps=50`, a trimodal sawtooth σ″-curve, and C₃-only (mirror-broken) symmetry. The experiment asks: which of these are properties of dm3's substrate geometry — and would therefore carry over to Genesis (a different substrate, D₆ symmetry, 285 vertices) — and which are properties of dm3's augmentation layer, and would therefore NOT appear in Genesis?
 
-The four pre-registered comparisons are: cycle-7 attribution, s50-cliff attribution, σ″-curve shape diff, and D₆-vs-C₃ symmetry. Each yields either SUBSTRATE_ATTRIBUTED or AUGMENTATION_ATTRIBUTED (or INCONCLUSIVE) when Phase 2 receipts arrive. Both positive and negative outcomes are equally valued scientifically. Source: [`project_contract.json`](../project_contract.json) §claims, [`README.md`](../README.md) §"The Falsification Surface".
+The four pre-registered comparisons are: cycle-7 attribution, s50-cliff attribution, σ″-curve shape diff, and D₆-vs-C₃ symmetry. Phase 2 receipts now settle the first three under the D3 pattern choice; the D₆-vs-C₃ symmetry comparison remains PENDING until the Z₂-asymmetric observable exists. Both positive and negative outcomes are equally valued scientifically. Source: [`project_contract.json`](../project_contract.json) §claims, [`README.md`](../README.md) §"The Falsification Surface".
 
 ### How does this differ from dm3_runner?
 
@@ -78,13 +78,13 @@ Reproducible builds (in the Debian/NixOS sense) means: the same source + same bu
 
 Because `best_uplift = 3.000000` + uniform `|scar| = 1.2` across all 567 edges + `avg_recall_err = 0.0` at `--steps 30` is structurally suspicious: it could be a real substrate effect (D₆ symmetry making K2 trivially recoverable) or a degenerate pattern-choice artifact (the Bhupura/Lotus orbit structure producing a rank-1 scar matrix whose outer-product entries are all identical in magnitude). Perfect recall at this step count does not appear in dm3's receipts. Phase 2 K2_SWEEP over the full step range tests whether the value varies (real dynamics) or stays constant (degenerate). Calling it "curious" is not hedging; it is naming the hypothesis that is tested. Source: [`.gpd/STATE.md`](../.gpd/STATE.md) §"Curious-numbers finding", [`CHANGELOG.md`](../CHANGELOG.md) §Phase 1.
 
-### What would a flat σ″-curve at 3.0 across all steps prove?
+### What did the flat σ″-curve at 3.0 prove?
 
-If Phase 2 K2_SWEEP returns `best_uplift = 3.000000` at every step in `{20, 28..56}` — completely flat — the most likely interpretation is degenerate K2 dynamics: the Bhupura/Lotus pattern choice produces a rank-1 scar matrix that makes every step trivially recoverable, regardless of actual graph dynamics. This would mean: (a) the σ″-curve comparison #3 is inconclusive for substrate-attribution purposes because the Genesis curve is structurally degenerate; (b) alternative D₆ orbit picks become the next investigation (pre-registered in [`README.md`](../README.md) §"Upcoming Workstreams"). A flat result is not a failure of the experiment — it answers the D3 orbit-choice question and redirects to the next test.
+Phase 2 K2_SWEEP returned `best_uplift = 3.000000` at every steady-state step in `{20, 28..56}`. That settles three comparisons under the D3 pattern choice: Genesis does not show dm3's cycle-7 sawtooth, does not cliff at s50, and has a structurally different σ″ curve from dm3. The interpretation is still bounded: the flat curve may be a real D6-substrate-easy behavior or a rank-1 artifact of the Bhupura/Lotus pattern choice. Phase 2.5 matters because it shows the system is not a toy constant: low steps have a real transient, peaking at S2 = 6.5 and settling by S10.
 
-### What would a varied σ″-curve over --steps prove?
+### What would a varied σ″-curve over --steps prove in future work?
 
-If Phase 2 K2_SWEEP returns `best_uplift` values that vary across step counts — even partially — the degenerate interpretation is ruled out and the dynamics are real. The sweep then yields data to assess comparisons #1 (cycle period), #2 (s50-cliff), and #3 (σ″-curve shape diff). A varied curve that cycles near period 7 with no cliff at s50 would constitute SUBSTRATE_ATTRIBUTED for cycle-7 and AUGMENTATION_ATTRIBUTED for s50-cliff. A varied curve with a different dominant period would falsify cycle-7 attribution. Source: [`project_contract.json`](../project_contract.json) §acceptance_tests.
+If a future alternative-pattern K2 sweep returns `best_uplift` values that vary across step counts, the D3-specific flatness does not generalize. The new curve would then yield a fresh comparison surface for period, s50 cliff behavior, and σ″ shape under that pattern family. Source: [`project_contract.json`](../project_contract.json) §acceptance_tests.
 
 ### Why these specific four comparisons?
 
@@ -154,9 +154,9 @@ DM3 RRL v1.0 is a separately-licensed product (the `dm3_runner` execution enviro
 
 ## About Phase 2 and Phase 3 Schedule
 
-### When will the K2_SWEEP results be available?
+### Are the K2_SWEEP results available?
 
-Phase 2 K2_SWEEP is running autonomously on RM10 via `genesis_chain_v1.sh`. The chain covers `--steps ∈ {20, 28..56}`, N=3 per step, 90 total invocations across cpu0–cpu5. Results are available on RM10 reconnect: `adb pull /data/local/tmp/genesis/cells/ proofs/artifacts/` takes approximately 15 minutes after confirming chain completion via `adb shell cat /data/local/tmp/genesis/logs/master.log | tail -20`. The current blocker is device connectivity (RM10 offline as of 2026-04-28). Wall-clock estimate once reconnected: chain completion is pending; receipt pull and Phase 3 synthesis are half-day to one day of work. Source: [`CHANGELOG.md`](../CHANGELOG.md) §Phase 2, [`.gpd/STATE.md`](../.gpd/STATE.md) §Blockers.
+Yes. Phase 2 K2_SWEEP and CYCLE-probe receipts are in [`proofs/artifacts/cells/`](../proofs/artifacts/cells/), with 39 Phase 2 cells all PASS. Phase 2.5 adds 17 more cells for pre-convergence and K2 BITDET extension, also all PASS. The full aggregated curve is [`proofs/artifacts/sigma_curve_full.tsv`](../proofs/artifacts/sigma_curve_full.tsv), and the headline figure is [`proofs/artifacts/figures/sigma_curve.png`](../proofs/artifacts/figures/sigma_curve.png). A separate Phase 3 prep chain is live on RM10 and will append more receipts after completion.
 
 ### What happens if Phase 2 produces a flat σ″-curve at 3.0?
 
@@ -164,8 +164,8 @@ The degenerate interpretation is confirmed: the D3 Bhupura/Lotus orbit choice cr
 
 ### What happens if Phase 2 produces a varied σ″-curve?
 
-Phase 2 receipts feed directly into Phase 3 synthesis. The Lomb-Scargle periodogram on the 30-point step series (steps 20, 28–56) yields a dominant period with 95% CI for comparison #1. The value at `--steps=50` relative to adjacent steps is the direct test for comparison #2. The numerical diff table (Genesis best_uplift − dm3 fixture) at each step is the comparison #3 deliverable. The Z₂-projection observable (pre-registration required before the SYMMETRY cell runs) is comparison #4. All four verdicts are rendered in the final report at `reports/GENESIS_FINAL_REPORT_<DATE>.md`. Source: [`project_contract.json`](../project_contract.json) §acceptance_tests, [`README.md`](../README.md) §"The Falsification Surface".
+Phase 2/2.5 receipts feed directly into Phase 3 synthesis. The 30-point steady-state series (steps 20, 28–56) is flat at 3.0, the value at `--steps=50` matches its neighbors, and the numerical diff table (Genesis best_uplift − dm3 fixture) supplies comparison #3. The Z₂-projection observable (pre-registration required before the SYMMETRY cell runs) is comparison #4 and remains pending. Source: [`project_contract.json`](../project_contract.json) §acceptance_tests, [`README.md`](../README.md) §"The Falsification Surface".
 
 ### What is "Phase 3 synthesis" specifically?
 
-Phase 3 takes the Phase 2 K2_SWEEP receipts (and CYCLE, DISCONT, SYMMETRY cells if run) and produces: (a) a complete σ″-curve table for Genesis with mean ± 95% CI per step; (b) a diff table (Genesis − dm3 fixture) per step; (c) a Lomb-Scargle periodogram with verdict on cycle-7 attribution; (d) a cliff-presence verdict at s50; (e) a symmetry-observable verdict (D6_OBSERVABLE / SYMMETRY_ALSO_BROKEN / INCONCLUSIVE). These four verdicts are the Genesis Comparative Experiment's final outputs. The synthesis also includes a RESISTANCE.md compliance audit (all 7 forbidden proxies rejected), an IS-NOT section per Zer0pa convention, and operator action items for follow-on workstreams. Source: [`project_contract.json`](../project_contract.json) §deliv-final-report, [`README.md`](../README.md) §"Upcoming Workstreams".
+Phase 3 takes the Phase 2/2.5 K2 receipts plus Phase 3 prep receipts when pulled and produces: (a) a complete σ″-curve table for Genesis; (b) a diff table (Genesis − dm3 fixture) per step; (c) a verdict on cycle-7 attribution; (d) a cliff-presence verdict at s50; (e) a symmetry-observable plan or verdict once the Z2-asymmetric observable exists. The synthesis also includes a RESISTANCE.md compliance audit, an IS-NOT section per Zer0pa convention, and operator action items for follow-on workstreams. Source: [`project_contract.json`](../project_contract.json) §deliv-final-report, [`README.md`](../README.md) §"Upcoming Workstreams".

@@ -1,0 +1,31 @@
+{
+  "canonical_sha": "153fd3f008eacc2b1debe50a29a5382cd4c731382a281e69ddcf0296bccfb294",
+  "receipt_sha": "db99af7d836f1e7af1e3202b4713f47e1fe6da6144fb777c4aa6350e159277dc",
+  "env_pre": {
+    "timestamp_utc": "20260428T010358Z",
+    "thermal_zone0_c": "46.700",
+    "binary_sha256": "e21208a69064a11677cb700e3b68c0fba3aab1e08ed784f71d8e954a523e5ff1",
+    "taskset_mask": ""
+  },
+  "env_post": {
+    "timestamp_utc": "20260428T010507Z",
+    "thermal_zone0_c": "46.700",
+    "run_status": 0,
+    "verdict": "PASS"
+  },
+  "task": "k2-scars",
+  "steps": 47,
+  "best_uplift": "3.000000",
+  "max_scar_weight": "1.200000",
+  "timestamp_utc": "20260428T010358Z",
+  "cell": "K2_S47",
+  "instance": 2,
+  "test_id": "chain",
+  "binary_sha256": "e21208a69064a11677cb700e3b68c0fba3aab1e08ed784f71d8e954a523e5ff1",
+  "taskset_mask": "",
+  "genesis_meta": {
+    "build_hash": "e21208a69064a11677cb700e3b68c0fba3aab1e08ed784f71d8e954a523e5ff1",
+    "target_triple": "aarch64-linux-android",
+    "expected_sha": ""
+  }
+}

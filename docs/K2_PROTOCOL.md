@@ -1,6 +1,6 @@
 # K2 — Scar-Formation + Recall Protocol
 
-**Status:** Phase 1 host-side implementation landed (commit `c43a402`); Phase 2 RM10 sweep in flight; Phase 3 synthesis pending.
+**Status:** Phase 1 host-side implementation landed (commit `c43a402`); Phase 2/2.5 RM10 receipts are in-repo; Phase 3 prep is live on RM10; Phase 3 synthesis pending.
 **Source of truth:** [`crates/io_cli/src/k2_scars.rs`](../../recovery/Zer0paMk1-Genesis-Organism-Executable-Application-27-Oct-2025/00_GENESIS_ORGANISM/snic_workspace_a83f/crates/io_cli/src/k2_scars.rs) (506 lines) + [`main.rs`](../../recovery/Zer0paMk1-Genesis-Organism-Executable-Application-27-Oct-2025/00_GENESIS_ORGANISM/snic_workspace_a83f/crates/io_cli/src/main.rs) K2Scars dispatch (lines 37–63, 222–268). Cross-lane comparison anchor: [`dm3_parallel/binaries/sample_full_run_s30.log`](../../dm3_parallel/binaries/sample_full_run_s30.log).
 **Lane:** Genesis (285v, D₆) — see [`LANE_DISTINCTION.md`](../LANE_DISTINCTION.md). Comparisons against `dm3_runner` (380v, C₃, source-unrecovered) are explicitly cross-lane.
 
@@ -295,7 +295,7 @@ The Genesis K2_SWEEP cell sweeps `--steps ∈ {20, 28, 29, …, 56}` (30 step va
 
 The `--test-battery N` flag (inherited from `genesis_cli`'s outer harness wrapping; for `snic_rust` the equivalent is the harness-driven pipeline-loop semantics in [`harness/phone/run_genesis_cell.sh`](../harness/phone/run_genesis_cell.sh)) runs the full K2 protocol `N` times. Each iter emits the same stdout KPI lines and produces the same `k2_summary.json`. Cross-iter byte-identity check: all `N` iters, on the same instance with the same `cfg_hash`, must produce identical `k2_summary.json` SHA-256.
 
-This is **K2 task BITDET**: bit-determinism at the K2 task level, distinct from the canonical-pipeline BITDET tested in Phase 0 on `verify.json` / `solve_h2.json`. M1 host two-run BITDET confirmed at `k2_summary.json` SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`. RM10-side K2 BITDET is being confirmed live in Phase 2 cells K2_S20 and K2_S28 (per [`.gpd/STATE.md`](../.gpd/STATE.md) live observations).
+This is **K2 task BITDET**: bit-determinism at the K2 task level, distinct from the canonical-pipeline BITDET tested in Phase 0 on `verify.json` / `solve_h2.json`. M1 host two-run BITDET confirmed at `k2_summary.json` SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`. RM10-side K2 BITDET is confirmed per-cell across all Phase 2/2.5 K2 receipts in [`proofs/artifacts/cells/`](../proofs/artifacts/cells/).
 
 ---
 
@@ -325,7 +325,7 @@ The protocol is deterministic at every step:
 | Aggregation | BigRational subtraction and max |
 | Output formatting | f64 only for stdout `printf`; not for any value entering JSON math fields (those are formatted from `Rat`) |
 
-Verified property: M1 host two-run check produces byte-identical `k2_summary.json` (SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`). RM10 K2 task BITDET confirmed for cells K2_S20 and K2_S28 (live observation, full-cell receipts pending pull on phone reconnect).
+Verified property: M1 host two-run check produces byte-identical `k2_summary.json` (SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`). RM10 K2 task BITDET is confirmed per-cell across all 56 Phase 2/2.5 K2-task cells in `proofs/artifacts/cells/`, each with `unique_canonical_sha_count = 1`.
 
 ---
 
@@ -335,10 +335,10 @@ The four pre-registered comparisons are formal claims in [`project_contract.json
 
 | # | Comparison | dm3 anchor | Genesis hypothesis | Falsification criterion | Current verdict |
 |---|---|---|---|---|---|
-| 1 | **Cycle-7 attribution** (`claim-cycle7-attribution`) | dm3 σ″ peaks every ~7 steps (s33, s41, s49, s56; Δ = 8) | Genesis K2 σ″ has dominant period 7 if substrate-attributed (T(3,21) seven full twists in `(σ₁σ₂)²¹` carry into K2 dynamics) | Lomb-Scargle 95% CI on 30-point series includes 7 AND excludes 6 and 8; OR cycle-disambiguator sweep shows lowest within-set σ at multiples of 7 | **PENDING** — Phase 2 K2_SWEEP receipts pending; cycle-disambiguator load-bearing if Lomb-Scargle CI is wide |
-| 2 | **s50-cliff attribution** (`claim-s50cliff-augmentation`) | dm3 `best_uplift = 0.000000` at exactly s50 (geometry-independent across SriYantra and RandomAdj per dm3 G.2 cfg-A) | Genesis does NOT cliff at s50 if augmentation-attributed (operator's positive prediction) | `best_uplift @ s50` differs from neighboring (s49, s51) by < 5%; OR `best_uplift @ s50 > 0.000100` | **EARLY-SIGNAL** — Genesis K2 host @ `--steps 30` returns `best_uplift = 3.0`; if constant across the full sweep, no cliff at s50 (degenerate-K2 scenario); confirmation pending Phase 2 |
-| 3 | **σ″-curve shape diff** (`claim-sigma-curve-diff`) | dm3 trimodal sawtooth with peaks/drops as listed above | Genesis σ″ curve is numerically distinct from dm3's per-step values; the diff `(Genesis − dm3)` is reported per step with 95% CI | Per-step diff table emitted with all 30 step values; SIGNIFICANT_DIFF flag where 95% CI does not overlap dm3 fixture | **EARLY-SIGNAL** — Genesis K2 host produces flat `best_uplift = 3.0` if Phase 1 finding holds across sweep; dm3 is varied; structurally differs |
-| 4 | **D₆-vs-C₃ symmetry** (`claim-symmetry-D6vsC3`) | dm3 has C₃ rotational symmetry (no Z₂ mirror); Genesis substrate has D₆ = S₃ × Z₂ | Genesis observable sensitive to a Z₂-asymmetric mode preserves symmetry where dm3 breaks it (structural evidence for augmentation-as-symmetry-breaker) | Z₂-projection magnitude on Genesis < ε vs > ε on dm3; ε pre-registered before SYMMETRY cell | **PENDING** — Phase 2 SYMMETRY cell requires explicit Z₂-asymmetric observable design; not yet implemented |
+| 1 | **Cycle-7 attribution** (`claim-cycle7-attribution`) | dm3 σ″ peaks every ~7 steps (s33, s41, s49, s56; Δ = 8) | Genesis K2 σ″ has dominant period 7 if substrate-attributed (T(3,21) seven full twists in `(σ₁σ₂)²¹` carry into K2 dynamics) | Lomb-Scargle 95% CI on 30-point series includes 7 AND excludes 6 and 8; OR cycle-disambiguator sweep shows lowest within-set σ at multiples of 7 | **AUGMENTATION-ATTRIBUTED** — Genesis is flat at 3.0 across [S20, S56]; cycle-probe cells at S12+ are all 3.0 |
+| 2 | **s50-cliff attribution** (`claim-s50cliff-augmentation`) | dm3 `best_uplift = 0.000000` at exactly s50 (geometry-independent across SriYantra and RandomAdj per dm3 G.2 cfg-A) | Genesis does NOT cliff at s50 if augmentation-attributed (operator's positive prediction) | `best_uplift @ s50` differs from neighboring (s49, s51) by < 5%; OR `best_uplift @ s50 > 0.000100` | **CONFIRMED** — Genesis K2 has S49=S50=S51=3.000000; no s50 cliff |
+| 3 | **σ″-curve shape diff** (`claim-sigma-curve-diff`) | dm3 trimodal sawtooth with peaks/drops as listed above | Genesis σ″ curve is numerically distinct from dm3's per-step values; the diff `(Genesis − dm3)` is reported per step with 95% CI | Per-step diff table emitted with all 30 step values; SIGNIFICANT_DIFF flag where 95% CI does not overlap dm3 fixture | **CONFIRMED** — Genesis is flat at 3.0 in the steady-state range; dm3 is varied and cliffs at s50 |
+| 4 | **D₆-vs-C₃ symmetry** (`claim-symmetry-D6vsC3`) | dm3 has C₃ rotational symmetry (no Z₂ mirror); Genesis substrate has D₆ = S₃ × Z₂ | Genesis observable sensitive to a Z₂-asymmetric mode preserves symmetry where dm3 breaks it (structural evidence for augmentation-as-symmetry-breaker) | Z₂-projection magnitude on Genesis < ε vs > ε on dm3; ε pre-registered before SYMMETRY cell | **PENDING** — requires explicit Z₂-asymmetric observable design; not yet implemented |
 
 Cross-lane framing reminder ([`LANE_DISTINCTION.md`](../LANE_DISTINCTION.md)): comparisons #1–#4 are explicit cross-lane comparisons, justified because the operator-pre-registered hypotheses are about whether dm3's signature observables travel from a 380v C₃ substrate to a 285v D₆ substrate via algorithm class (substrate-attributed) or stay home (augmentation-attributed). They are not naïve observable equality tests.
 
@@ -348,14 +348,13 @@ Cross-lane framing reminder ([`LANE_DISTINCTION.md`](../LANE_DISTINCTION.md)): c
 
 The Phase 1 host-side K2 run at `--steps 30` with the operator-approved D3 pattern choice yielded `best_uplift = 3.000000` and `max_scar_weight = 1.200000` (uniform across all 567 edges). These are mathematically exact under the rank-1 outer-product structure of disjoint indicator patterns; the dynamics with strong attractor recovers the patterns perfectly.
 
-The open question this raises: **is the Genesis substrate "trivially recoverable" under K2 invocation with the D3 pattern choice (degenerate dynamics → flat σ″ curve at 3.0 across all `--steps`), or does the recovery degrade at certain step counts (richer σ″ curve)?** Phase 2 K2_SWEEP discriminates. Live Phase 2 observations as of session-end:
+The open question this raised was: **is the Genesis substrate "trivially recoverable" under K2 invocation with the D3 pattern choice (degenerate dynamics -> flat σ″ curve at 3.0 across all steady-state `--steps`), or does the recovery degrade at certain step counts (richer σ″ curve)?** Phase 2/2.5 answers this as: steady-state D3 is flat, but low-step D3 is dynamic.
 
-- K2_S20: PASS, `best_uplift = 3.000000`, K2 task BITDET (18 byte-identical `k2_summary.json` hashes per cell) confirmed.
-- K2_S28: PASS, `best_uplift = 3.000000`, K2 task BITDET confirmed.
+Observed receipts:
+- S20 and S28..S56: all `best_uplift = 3.000000`.
+- S1=5.5, S2=6.5, S3=4.0, S4=3.5, S5/S6=4.0, S8/S9=3.5, S10+=3.0.
 
-If `best_uplift` remains constant at 3.0 across the full 30-cell sweep, the Genesis K2 dynamics under the D3 pattern choice is degenerate in the sense that it has no cycle, no cliff, and no curve shape — and answers all four pre-registered comparisons with one structural signature (Genesis K2 has flat σ″ at 3.0; dm3 is trimodal at peaks 1.7–2.0; structurally differs). The substrate-attribution reading would then be: dm3's σ″ phenomena live in the augmentation layer, not the substrate.
-
-If `best_uplift` varies with `--steps`, the Genesis K2 dynamics under D3 has real structure and the cycle-7 / s50-cliff / σ″-shape verdicts depend on the specifics. Either outcome is publishable.
+The substrate-attribution reading under the D3 pattern choice is therefore bounded: dm3's σ″ sawtooth and exact s50 cliff do not carry to Genesis, but the flat Genesis curve may still be caused by D3 pattern algebra rather than by substrate alone.
 
 Alternative pattern choices (e.g., picking two distinct size-6 orbits as Bhupura/Lotus, both small and sparse, with non-rank-1 outer products) would produce richer scar matrices and likely richer dynamics. These alternative choices are pre-registered as `Research-Deferred — Investigation Underway` in [README §Upcoming Workstreams](../README.md#upcoming-workstreams) and are conditional on the Phase 2 outcome above.
 

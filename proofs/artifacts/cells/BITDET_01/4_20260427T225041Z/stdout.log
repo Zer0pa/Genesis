@@ -1,0 +1,1250 @@
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=1 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=2 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=3 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=4 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=5 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=6 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=7 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=8 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=9 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
+ORIENTATION_STDOUT build-2d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+EPOCH_STDOUT lift-3d OK cfg=4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480
+GATES_STDOUT delta_e_monotone=true jac_bound_ok=true mode_lock_pass=true
+GATES_STDOUT verify gates_ok=true dep_cert=true gc_invariants=true lift=true stab=true cad_sos=true
+{
+  "cfg_hash": "4544801db82a9f80f3746df55e3d117626a2ad73987c8dab49bd96a69f8d3480",
+  "gate_summary": {
+    "cad_sos_present": true,
+    "dep_cert_present": true,
+    "egraph_proof_valid": true,
+    "gates_ok": true,
+    "gc_invariants_pass": true,
+    "lift_pass": true,
+    "stab_pass": true
+  },
+  "sidecars": {
+    "A_egraph": {
+      "note": "demo equality",
+      "same_class": true
+    },
+    "B_bareiss": {
+      "G": {
+        "det": 6,
+        "g00": 2,
+        "g01": 0,
+        "g11": 3
+      },
+      "certificate": "rank(A)=2 via det(A^T A)!=0 (fraction-free integer arithmetic)",
+      "rank": 2,
+      "selected_normals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "C_gc": {
+      "collinear_triplets": 60,
+      "concurrency_points_ge3": [
+        {
+          "degree": 3,
+          "x": "0",
+          "y": "0"
+        }
+      ],
+      "lines_with_ge3_points": 3,
+      "max_concurrency_degree": 3,
+      "n_lines_unique": 111,
+      "n_vertices": 18,
+      "pass": true
+    },
+    "D_cad_sos": {
+      "checks": {
+        "first_failure": null,
+        "helix_step": {
+          "count": 15,
+          "failures": 0
+        },
+        "pitch": "1/1",
+        "quaternion_unit": {
+          "count": 18,
+          "failures": 0
+        },
+        "rotation_identity": true,
+        "rotation_parameter": "1/2",
+        "rotor_parameter": "1/3",
+        "rotor_step": {
+          "count": 15,
+          "failures": 0
+        }
+      },
+      "pass": true
+    },
+    "LIFT": {
+      "checks": [
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "1/1",
+          "strand": 0
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "4/1",
+          "strand": 1
+        },
+        {
+          "ok_quaternion": true,
+          "ok_radius": true,
+          "ok_step": true,
+          "pass": true,
+          "radius_sq": "9/1",
+          "strand": 2
+        }
+      ],
+      "pass": true,
+      "pitch": "1/1",
+      "rot": {
+        "cos": "3/5",
+        "sin": "4/5"
+      }
+    },
+    "STAB": {
+      "available": true,
+      "delta_e_monotone": true,
+      "jac_spectral_bound_ok": true,
+      "mode_lock_pass": true
+    }
+  },
+  "timestamp": "DETERMINISTIC_BUILD"
+}
+iter=10 verify=97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89 solve_h2=62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780 lift_3d=8ebbff8e44f48da58dbba98a479c6886aac3101e0a2828abee6cbdef36f3db59 yantra_2d=a50adc6343bfc0f39dd67f790e8744335bc8bcd001f11e2c7acda25286428f90
