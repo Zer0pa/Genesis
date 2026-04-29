@@ -1,0 +1,2100 @@
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.251 evals_per_sec=7.976
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.365 evals_per_sec=5.480
+KPI_K2_SUMMARY duration_sec=0.632 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=1 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.254 evals_per_sec=7.889
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.336 evals_per_sec=5.948
+KPI_K2_SUMMARY duration_sec=0.602 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=2 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.923
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.324 evals_per_sec=6.170
+KPI_K2_SUMMARY duration_sec=0.589 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=3 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=8.012
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.325 evals_per_sec=6.154
+KPI_K2_SUMMARY duration_sec=0.587 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=4 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.265 evals_per_sec=7.557
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.323 evals_per_sec=6.193
+KPI_K2_SUMMARY duration_sec=0.602 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=5 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.261 evals_per_sec=7.670
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.289 evals_per_sec=6.931
+KPI_K2_SUMMARY duration_sec=0.561 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=6 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.320 evals_per_sec=6.244
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.357 evals_per_sec=5.599
+KPI_K2_SUMMARY duration_sec=0.692 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=7 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.931
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.285 evals_per_sec=7.010
+KPI_K2_SUMMARY duration_sec=0.548 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=8 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.268 evals_per_sec=7.469
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.292 evals_per_sec=6.853
+KPI_K2_SUMMARY duration_sec=0.570 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=9 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.262 evals_per_sec=7.623
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.302 evals_per_sec=6.612
+KPI_K2_SUMMARY duration_sec=0.576 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=10 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.260 evals_per_sec=7.703
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.317 evals_per_sec=6.305
+KPI_K2_SUMMARY duration_sec=0.588 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=11 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.274 evals_per_sec=7.287
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.338 evals_per_sec=5.915
+KPI_K2_SUMMARY duration_sec=0.625 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=12 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.258 evals_per_sec=7.765
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.280 evals_per_sec=7.136
+KPI_K2_SUMMARY duration_sec=0.548 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=13 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=8.001
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.290 evals_per_sec=6.896
+KPI_K2_SUMMARY duration_sec=0.551 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=14 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.924
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.274 evals_per_sec=7.290
+KPI_K2_SUMMARY duration_sec=0.537 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=15 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.267 evals_per_sec=7.481
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.303 evals_per_sec=6.595
+KPI_K2_SUMMARY duration_sec=0.582 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=16 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.256 evals_per_sec=7.800
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.359 evals_per_sec=5.569
+KPI_K2_SUMMARY duration_sec=0.628 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=17 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.925
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.346 evals_per_sec=5.788
+KPI_K2_SUMMARY duration_sec=0.609 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=18 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.897
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.336 evals_per_sec=5.958
+KPI_K2_SUMMARY duration_sec=0.599 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=19 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.932
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.291 evals_per_sec=6.881
+KPI_K2_SUMMARY duration_sec=0.553 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=20 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.257 evals_per_sec=7.770
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.339 evals_per_sec=5.900
+KPI_K2_SUMMARY duration_sec=0.607 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=21 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.259 evals_per_sec=7.712
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.289 evals_per_sec=6.924
+KPI_K2_SUMMARY duration_sec=0.560 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=22 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.260 evals_per_sec=7.681
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.290 evals_per_sec=6.886
+KPI_K2_SUMMARY duration_sec=0.562 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=23 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.260 evals_per_sec=7.699
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.288 evals_per_sec=6.956
+KPI_K2_SUMMARY duration_sec=0.560 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=24 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.248 evals_per_sec=8.050
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.265 evals_per_sec=7.543
+KPI_K2_SUMMARY duration_sec=0.524 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=25 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.249 evals_per_sec=8.017
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.269 evals_per_sec=7.438
+KPI_K2_SUMMARY duration_sec=0.529 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=26 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.248 evals_per_sec=8.058
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.294 evals_per_sec=6.814
+KPI_K2_SUMMARY duration_sec=0.554 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=27 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.271 evals_per_sec=7.378
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.364 evals_per_sec=5.490
+KPI_K2_SUMMARY duration_sec=0.646 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=28 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.249 evals_per_sec=8.027
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.348 evals_per_sec=5.747
+KPI_K2_SUMMARY duration_sec=0.610 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=29 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.255 evals_per_sec=7.833
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.338 evals_per_sec=5.920
+KPI_K2_SUMMARY duration_sec=0.604 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=30 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.256 evals_per_sec=7.807
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.343 evals_per_sec=5.839
+KPI_K2_SUMMARY duration_sec=0.609 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=31 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.251 evals_per_sec=7.970
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.350 evals_per_sec=5.711
+KPI_K2_SUMMARY duration_sec=0.612 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=32 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.273 evals_per_sec=7.326
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.326 evals_per_sec=6.133
+KPI_K2_SUMMARY duration_sec=0.612 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=33 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.269 evals_per_sec=7.433
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.355 evals_per_sec=5.632
+KPI_K2_SUMMARY duration_sec=0.635 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=34 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.258 evals_per_sec=7.740
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.272 evals_per_sec=7.347
+KPI_K2_SUMMARY duration_sec=0.541 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=35 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.257 evals_per_sec=7.787
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.274 evals_per_sec=7.288
+KPI_K2_SUMMARY duration_sec=0.542 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=36 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.259 evals_per_sec=7.721
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.324 evals_per_sec=6.174
+KPI_K2_SUMMARY duration_sec=0.594 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=37 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.258 evals_per_sec=7.767
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.322 evals_per_sec=6.218
+KPI_K2_SUMMARY duration_sec=0.590 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=38 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.258 evals_per_sec=7.742
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.370 evals_per_sec=5.405
+KPI_K2_SUMMARY duration_sec=0.639 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=39 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.279 evals_per_sec=7.163
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.338 evals_per_sec=5.925
+KPI_K2_SUMMARY duration_sec=0.632 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=40 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=8.009
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.305 evals_per_sec=6.562
+KPI_K2_SUMMARY duration_sec=0.565 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=41 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=8.002
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.300 evals_per_sec=6.669
+KPI_K2_SUMMARY duration_sec=0.560 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=42 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.267 evals_per_sec=7.492
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.377 evals_per_sec=5.310
+KPI_K2_SUMMARY duration_sec=0.659 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=43 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.263 evals_per_sec=7.609
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.378 evals_per_sec=5.291
+KPI_K2_SUMMARY duration_sec=0.656 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=44 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.259 evals_per_sec=7.715
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.291 evals_per_sec=6.877
+KPI_K2_SUMMARY duration_sec=0.561 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=45 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.269 evals_per_sec=7.435
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.291 evals_per_sec=6.882
+KPI_K2_SUMMARY duration_sec=0.570 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=46 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.896
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.285 evals_per_sec=7.026
+KPI_K2_SUMMARY duration_sec=0.549 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=47 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.261 evals_per_sec=7.652
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.285 evals_per_sec=7.018
+KPI_K2_SUMMARY duration_sec=0.559 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=48 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.290 evals_per_sec=6.904
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.284 evals_per_sec=7.034
+KPI_K2_SUMMARY duration_sec=0.588 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=49 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.251 evals_per_sec=7.959
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.281 evals_per_sec=7.116
+KPI_K2_SUMMARY duration_sec=0.544 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=50 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.319 evals_per_sec=6.268
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.378 evals_per_sec=5.290
+KPI_K2_SUMMARY duration_sec=0.714 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=51 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.927
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.270 evals_per_sec=7.410
+KPI_K2_SUMMARY duration_sec=0.533 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=52 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.251 evals_per_sec=7.975
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.275 evals_per_sec=7.275
+KPI_K2_SUMMARY duration_sec=0.536 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=53 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.255 evals_per_sec=7.857
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.294 evals_per_sec=6.810
+KPI_K2_SUMMARY duration_sec=0.559 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=54 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.261 evals_per_sec=7.676
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.344 evals_per_sec=5.817
+KPI_K2_SUMMARY duration_sec=0.617 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=55 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.322 evals_per_sec=6.202
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.363 evals_per_sec=5.507
+KPI_K2_SUMMARY duration_sec=0.701 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=56 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.316 evals_per_sec=6.336
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.369 evals_per_sec=5.419
+KPI_K2_SUMMARY duration_sec=0.700 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=57 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.894
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.280 evals_per_sec=7.141
+KPI_K2_SUMMARY duration_sec=0.545 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=58 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.254 evals_per_sec=7.879
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.282 evals_per_sec=7.098
+KPI_K2_SUMMARY duration_sec=0.547 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=59 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.921
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.283 evals_per_sec=7.078
+KPI_K2_SUMMARY duration_sec=0.546 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=60 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.254 evals_per_sec=7.886
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.281 evals_per_sec=7.118
+KPI_K2_SUMMARY duration_sec=0.546 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=61 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.264 evals_per_sec=7.590
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.380 evals_per_sec=5.264
+KPI_K2_SUMMARY duration_sec=0.660 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=62 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.260 evals_per_sec=7.703
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.339 evals_per_sec=5.902
+KPI_K2_SUMMARY duration_sec=0.611 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=63 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.237 evals_per_sec=8.422
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.286 evals_per_sec=6.999
+KPI_K2_SUMMARY duration_sec=0.537 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=64 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.290 evals_per_sec=6.887
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.370 evals_per_sec=5.403
+KPI_K2_SUMMARY duration_sec=0.672 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=65 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.907
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.266 evals_per_sec=7.514
+KPI_K2_SUMMARY duration_sec=0.530 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=66 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.928
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.269 evals_per_sec=7.428
+KPI_K2_SUMMARY duration_sec=0.532 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=67 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.254 evals_per_sec=7.865
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.347 evals_per_sec=5.756
+KPI_K2_SUMMARY duration_sec=0.614 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=68 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.267 evals_per_sec=7.502
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.285 evals_per_sec=7.029
+KPI_K2_SUMMARY duration_sec=0.562 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=69 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.269 evals_per_sec=7.431
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.283 evals_per_sec=7.074
+KPI_K2_SUMMARY duration_sec=0.563 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=70 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.266 evals_per_sec=7.514
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.314 evals_per_sec=6.364
+KPI_K2_SUMMARY duration_sec=0.592 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=71 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.891
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.292 evals_per_sec=6.859
+KPI_K2_SUMMARY duration_sec=0.556 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=72 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.906
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.287 evals_per_sec=6.975
+KPI_K2_SUMMARY duration_sec=0.550 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=73 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.934
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.309 evals_per_sec=6.475
+KPI_K2_SUMMARY duration_sec=0.571 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=74 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.255 evals_per_sec=7.857
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.270 evals_per_sec=7.402
+KPI_K2_SUMMARY duration_sec=0.535 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=75 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.254 evals_per_sec=7.881
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.268 evals_per_sec=7.449
+KPI_K2_SUMMARY duration_sec=0.533 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=76 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.249 evals_per_sec=8.018
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.278 evals_per_sec=7.193
+KPI_K2_SUMMARY duration_sec=0.538 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=77 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=8.013
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.312 evals_per_sec=6.400
+KPI_K2_SUMMARY duration_sec=0.577 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=78 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=7.994
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.297 evals_per_sec=6.732
+KPI_K2_SUMMARY duration_sec=0.558 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=79 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.913
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.288 evals_per_sec=6.938
+KPI_K2_SUMMARY duration_sec=0.552 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=80 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.944
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.293 evals_per_sec=6.834
+KPI_K2_SUMMARY duration_sec=0.555 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=81 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=8.011
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.306 evals_per_sec=6.530
+KPI_K2_SUMMARY duration_sec=0.566 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=82 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=8.005
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.325 evals_per_sec=6.155
+KPI_K2_SUMMARY duration_sec=0.585 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=83 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=8.015
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.327 evals_per_sec=6.108
+KPI_K2_SUMMARY duration_sec=0.588 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=84 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.249 evals_per_sec=8.038
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.279 evals_per_sec=7.179
+KPI_K2_SUMMARY duration_sec=0.538 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=85 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=8.012
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.269 evals_per_sec=7.443
+KPI_K2_SUMMARY duration_sec=0.529 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=86 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.918
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.352 evals_per_sec=5.678
+KPI_K2_SUMMARY duration_sec=0.616 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=87 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.256 evals_per_sec=7.825
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.276 evals_per_sec=7.248
+KPI_K2_SUMMARY duration_sec=0.543 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=88 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.250 evals_per_sec=7.989
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.269 evals_per_sec=7.433
+KPI_K2_SUMMARY duration_sec=0.530 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=89 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.259 evals_per_sec=7.720
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.343 evals_per_sec=5.825
+KPI_K2_SUMMARY duration_sec=0.613 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=90 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.258 evals_per_sec=7.750
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.268 evals_per_sec=7.474
+KPI_K2_SUMMARY duration_sec=0.537 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=91 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.252 evals_per_sec=7.942
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.264 evals_per_sec=7.562
+KPI_K2_SUMMARY duration_sec=0.527 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=92 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.256 evals_per_sec=7.808
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.265 evals_per_sec=7.535
+KPI_K2_SUMMARY duration_sec=0.532 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=93 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.262 evals_per_sec=7.642
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.272 evals_per_sec=7.346
+KPI_K2_SUMMARY duration_sec=0.545 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=94 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.254 evals_per_sec=7.863
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.269 evals_per_sec=7.448
+KPI_K2_SUMMARY duration_sec=0.533 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=95 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.915
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.270 evals_per_sec=7.406
+KPI_K2_SUMMARY duration_sec=0.533 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=96 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.277 evals_per_sec=7.220
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.268 evals_per_sec=7.453
+KPI_K2_SUMMARY duration_sec=0.556 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=97 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.256 evals_per_sec=7.809
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.273 evals_per_sec=7.329
+KPI_K2_SUMMARY duration_sec=0.540 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=98 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.258 evals_per_sec=7.738
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.286 evals_per_sec=6.984
+KPI_K2_SUMMARY duration_sec=0.556 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=99 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
+KPI_K2_SCAR_WEIGHTS lessons=0 max_abs_delta=0.000000000e0 mean_abs_delta=0.000000000e0 changed_edges=0 total_edges=567
+Lessons: 0, Max Scar Weight: 0.000000000e0
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 3.000000
+KPI_K2 lesson=0 noise=0.100 avg_recall_err=3.000000 baseline_recall_err=3.000000 uplift=0.000000 scar_max=0.000000
+    Pattern Bhupura: Recall Error = 3.000000
+    Pattern Lotus: Recall Error = 5.000000
+KPI_K2 lesson=0 noise=0.200 avg_recall_err=4.000000 baseline_recall_err=4.000000 uplift=0.000000 scar_max=0.000000
+KPI_K2_LESSON lessons=0 eta=0.2000 duration_sec=0.253 evals_per_sec=7.897
+KPI_K2_SCAR_WEIGHTS lessons=3 max_abs_delta=1.200000000e0 mean_abs_delta=1.200000000e0 changed_edges=567 total_edges=567
+Lessons: 3, Max Scar Weight: 1.200000000e0
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.100 avg_recall_err=0.000000 baseline_recall_err=3.000000 uplift=3.000000 scar_max=1.200000
+    Pattern Bhupura: Recall Error = 0.000000
+    Pattern Lotus: Recall Error = 0.000000
+KPI_K2 lesson=3 noise=0.200 avg_recall_err=0.000000 baseline_recall_err=4.000000 uplift=4.000000 scar_max=1.200000
+KPI_K2_LESSON lessons=3 eta=0.2000 duration_sec=0.267 evals_per_sec=7.479
+KPI_K2_SUMMARY duration_sec=0.531 max_scar_weight=1.200000 best_uplift=4.000000
+[K2] Written: artifacts/k2_summary.json
+iter=100 k2_summary=6f20355d4b8ca9f9d4727a36ea74245891a73a3097b7811552be5ad0a2c5a2d9
