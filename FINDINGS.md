@@ -4,19 +4,20 @@
 
 ---
 
-## Current Status (as of 2026-04-28, post-Phase-2.5)
+## Current Status (as of 2026-04-29, Phase 3 prep at-scale transient + K2-task parity)
 
-Phase 0 is complete on RM10. Phase 1 K2 port complete on M1 host and deployed to RM10. **Phase 2 K2_SWEEP + CYCLE-PROBE and Phase 2.5 PRECONV/BITDET_K2 chains have run end-to-end on RM10 (60 cells, all PASS, all `unique_canonical_sha_count=1`)**. Receipts are in [`proofs/artifacts/cells/`](proofs/artifacts/cells/); σ″-curve aggregation is in [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv) with figure summary in [`proofs/artifacts/figures/`](proofs/artifacts/figures/).
+Phase 0 is complete on RM10. Phase 1 K2 port complete on M1 host and deployed to RM10. **Phase 2 K2_SWEEP + CYCLE-PROBE and Phase 2.5 PRECONV/BITDET_K2 chains have run end-to-end on RM10 (60 cells, all PASS, all `unique_canonical_sha_count=1`)**. Phase 3 prep has now landed 10 BIG cells in-repo: `BITDET_K2_S1_BIG`..`S9_BIG` at 600 K2 invocations per step and `BITDET_K2_S30_BIG` at 1,200 K2 invocations, all PASS with `unique_canonical_sha_count=1`. Receipts are in [`proofs/artifacts/cells/`](proofs/artifacts/cells/); σ″-curve aggregation is in [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv) with figure summary in [`proofs/artifacts/figures/`](proofs/artifacts/figures/).
 
 **Phase 2 result: σ″-curve is FLAT at `best_uplift = 3.000000` across all 30 steps in {20, 28..56}**. **Phase 2.5 result: the pre-convergence transient is non-trivial, peaking at S2 = 6.5 and settling to 3.0 by S10.** Three of the four pre-registered comparisons now have receipt-backed verdicts against the dm3 sample; the explicit D6-vs-C3 symmetry observable remains pending.
 
-A Phase 3 prep chain is running now on RM10 to extend cross-time K2-task BITDET at S1..S9 plus S30/S56. Those receipts are intentionally not in this commit; they will be appended by the chain-operator agent after completion.
+The remaining Phase 3 prep chain is running on RM10 only for `BITDET_K2_S56_BIG`. That final steady-state receipt is intentionally not claimed here; it will be appended by the chain-operator agent after completion and pull.
 
 Pre-registered comparisons:
 - `claim-cycle7-attribution` — **AUGMENTATION-ATTRIBUTED** (Genesis K2 has no period structure; flat σ″ across {20, 28..56}; cycle-7/6/8 disambiguator ≥ S12 all = 3.0).
 - `claim-s50cliff-augmentation` — **CONFIRMED** (operator's positive prediction: Genesis does NOT cliff at s50; K2_S50 = 3.000000 same as K2_S49 / K2_S51).
 - `claim-sigma-curve-diff` — **CONFIRMED** (Genesis flat at 3.0 across [20, 28..56]; dm3 trimodal sawtooth varies 1.16–1.97 over same range; structurally differs).
 - `claim-symmetry-D6vsC3` — **PENDING** (no Z₂-asymmetric observable yet implemented; deferred to Phase 3 prep).
+- `claim-parity-K2-task` — **CONFIRMED at S30** (RM10 `BITDET_K2_S30_BIG` reproduces the same `k2_summary.json` SHA `0b5442f9…` as the M1 host Phase 1 BITDET run).
 
 ---
 
@@ -92,7 +93,7 @@ Two consecutive `k2-scars --steps 30` runs on the M1 host produce byte-identical
 SHA-256: 0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372
 ```
 
-This establishes K2 task BITDET at the host level. Cross-platform parity at the K2-task level (M1 vs RM10 byte-comparison of `k2_summary.json`) is `Active Engineering` per [README §Upcoming Workstreams](README.md).
+This establishes K2 task BITDET at the host level. `BITDET_K2_S30_BIG` on RM10 now reproduces the same `k2_summary.json` SHA byte-for-byte, confirming K2-task cross-platform parity at `--steps 30`. Broader step-coverage remains `Active Engineering` per [README §Upcoming Workstreams](README.md).
 
 ### Cross-compile to RM10
 
@@ -203,7 +204,28 @@ Phase 2.5 adds 14 PRECONV cells and 3 BITDET_K2 cells:
 | PRECONV sparse fill | 9 | S9=3.5; S10, S11, S13, S15, S17, S19, S22, S25 all 3.0 |
 | BITDET_K2 | 3 | S6, S30, S56 all PASS with `unique_canonical_sha_count = 1` |
 
-Together with Phase 2, the in-repo proof surface is now **60 cells, all PASS**. The full table is [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv); the headline figure is [`proofs/artifacts/figures/sigma_curve.png`](proofs/artifacts/figures/sigma_curve.png).
+Together with Phase 2, the Phase 0/2/2.5 in-repo proof surface is **60 cells, all PASS**. The full table is [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv); the headline figure is [`proofs/artifacts/figures/sigma_curve.png`](proofs/artifacts/figures/sigma_curve.png).
+
+---
+
+## Phase 3 Prep — At-Scale Transient BITDET (Partial)
+
+Phase 3 prep reruns the transient region at higher cross-replicate scale and adds a larger steady-state S30 parity anchor:
+
+| Cell | --steps | Instances | Iters per instance | Total K2 invocations | best_uplift | max_scar | Verdict |
+|---|---:|---:|---:|---:|---:|---:|---|
+| BITDET_K2_S1_BIG | 1 | 6 | 100 | 600 | 5.500000 | 1.200000 | PASS, `unique_canonical_sha_count = 1` |
+| BITDET_K2_S2_BIG | 2 | 6 | 100 | 600 | 6.500000 | 1.200000 | PASS, `unique_canonical_sha_count = 1` |
+| BITDET_K2_S3_BIG | 3 | 6 | 100 | 600 | 4.000000 | 1.200000 | PASS, `unique_canonical_sha_count = 1` |
+| BITDET_K2_S4_BIG | 4 | 6 | 100 | 600 | 3.500000 | 1.200000 | PASS, `unique_canonical_sha_count = 1` |
+| BITDET_K2_S5_BIG | 5 | 6 | 100 | 600 | 4.000000 | 1.200000 | PASS, `unique_canonical_sha_count = 1` |
+| BITDET_K2_S6_BIG | 6 | 6 | 100 | 600 | 4.000000 | 1.200000 | PASS, `unique_canonical_sha_count = 1` |
+| BITDET_K2_S7_BIG | 7 | 6 | 100 | 600 | 3.000000 | 1.200000 | PASS, `unique_canonical_sha_count = 1` |
+| BITDET_K2_S8_BIG | 8 | 6 | 100 | 600 | 3.500000 | 1.200000 | PASS, `unique_canonical_sha_count = 1` |
+| BITDET_K2_S9_BIG | 9 | 6 | 100 | 600 | 3.500000 | 1.200000 | PASS, `unique_canonical_sha_count = 1` |
+| BITDET_K2_S30_BIG | 30 | 6 | 200 | 1 200 | 3.000000 | 1.200000 | PASS, `unique_canonical_sha_count = 1`; SHA = `0b5442f9…` |
+
+This confirms the entire S1..S9 transient structure from Phase 2.5 at 600x K2-task replicate scale per step, and confirms K2-task M1↔RM10 parity at S30. It does not change the three settled comparison verdicts and does not resolve D6-vs-C3 symmetry. `BITDET_K2_S56_BIG` remains chain-operator scope.
 
 ---
 
@@ -222,7 +244,8 @@ The σ″-curve shape determines all four pre-registered comparison outcomes —
 - **Hardware/thermal/time invariance at small-to-moderate scale.** 31,560 cross-replicate canonical-hash matches across BITDET_01 (60 runs), BITDET_02 (300 runs), BITDET_03 (1,200 runs), BITDET_5K (30,000 runs); zero divergence; `unique_canonical_sha_count = 1` per cell. Operating envelope: 44–60 C thermal range; dynamic CPU subset under `core_ctl`.
 - **All 7 internal verification gates pass** on every Phase 0 invocation.
 - **K2 task BITDET on M1 host.** Two-run identity at `k2_summary.json = 0b5442f9…`.
-- **K2 task BITDET on RM10 (per-cell).** All 56 K2-task receipt cells in Phase 2/2.5 have `unique_canonical_sha_count = 1`.
+- **K2 task BITDET on RM10 (per-cell).** All 56 K2-task receipt cells in Phase 2/2.5 have `unique_canonical_sha_count = 1`; Phase 3 prep extends this with 6,600 additional byte-identical K2 invocations across `BITDET_K2_S1_BIG`..`S9_BIG` and `S30_BIG`.
+- **K2-task cross-platform parity at S30.** The M1 host `k2_summary.json` SHA `0b5442f9…` from Phase 1 is reproduced byte-for-byte by RM10 `BITDET_K2_S30_BIG`.
 - **Phase 1 K2 implementation source-clean.** All math via BigRational; no f32/f64 in math path; workspace `#![deny(warnings)]`; POLICY_CHECK pass; cross-compile clean to RM10.
 
 ## What's Settled by Phase 2/2.5
@@ -233,10 +256,10 @@ The σ″-curve shape determines all four pre-registered comparison outcomes —
 
 ## What's Pending
 
-- **Phase 3 prep receipts.** Chain running autonomously on RM10; pull and append after completion.
+- **Remaining Phase 3 prep receipt.** `S1_BIG`..`S9_BIG` and `S30_BIG` are in-repo; chain continues autonomously on RM10 only for `S56_BIG`. Pull and append after completion.
 - **Phase 3 synthesis.** Final report with acceptance-test results, four pre-registered comparison verdicts, and follow-on workstream decisions.
 - **Phase 4+ alternative-pattern K2.** Conditional on Phase 2 confirming the degeneracy reading: pre-registered alternative orbit pairings (e.g., partitioning the 47 size-6 orbits differently, or using non-disjoint pattern supports) become the second-pass design.
-- **Cross-platform parity at K2-task level.** M1 vs RM10 explicit byte-comparison of `k2_summary.json`.
+- **Cross-platform parity at K2-task level beyond S30.** M1 vs RM10 explicit byte-comparison of `k2_summary.json` at additional step values.
 - **Z₂-asymmetric observable for the SYMMETRY pre-registered comparison.** Not yet designed; required before Phase 2 SYMMETRY cell can run.
 
 ---
@@ -262,7 +285,7 @@ The proof-surface-driven wedge: Genesis demonstrates that **pure-rational determ
 
 For the Zer0pa portfolio: this validates the discipline (rational arithmetic + POLICY_CHECK + canonical-hash gates) as a viable route to deterministic-by-construction computation. Each portfolio lane that adopts the discipline inherits the property. Each lane's mathematical content (whatever the substrate) becomes the IP — the encoding becomes a proof artifact.
 
-This is "always-in-beta" per the Zer0pa Live Project Ethos: Phase 0 ships as a determinism reference; Phase 2/2.5 ships the first comparative σ″ verdicts; future phases (Phase 3 prep receipts, alternative patterns, K2 task BITDET at scale, K2 cross-platform parity, Z₂-asymmetric SYMMETRY observable) extend the proof surface.
+This is "always-in-beta" per the Zer0pa Live Project Ethos: Phase 0 ships as a determinism reference; Phase 2/2.5 ships the first comparative σ″ verdicts; Phase 3 prep now establishes the at-scale transient proof surface through S9 and K2-task parity at S30; future phases (remaining Phase 3 prep receipt, alternative patterns, broader K2-task parity coverage, Z₂-asymmetric SYMMETRY observable) extend the proof surface.
 
 The honest framing: Genesis is **one research artifact in the Zer0pa portfolio**, not a productized service or a unified platform. The four pre-registered comparisons are scoped to the Genesis lane; cross-lane editorializing about portfolio significance is downstream work, out of scope here per [`LANE_DISTINCTION.md`](LANE_DISTINCTION.md).
 
@@ -272,7 +295,7 @@ The honest framing: Genesis is **one research artifact in the Zer0pa portfolio**
 
 Any single receipt with `canonical_sha != 97bd7d…` (Phase 0) breaks the determinism claim — not just for that cell but as a whole. Aggregate across the chain: any cell with `unique_canonical_sha_count > 1` is a substantive finding to interrogate; any cell with `verdict != PASS` halts the chain pending operator-visible disposition (per the chain harness's stop-on-out-of-family-mismatch protocol — see [`harness/host/HASH_GATE_DISPOSITION.md`](harness/host/HASH_GATE_DISPOSITION.md)).
 
-Phase 2/2.5 K2 task BITDET: any single iter of any single instance producing `k2_summary.json` SHA different from the others within the same cell breaks K2 task BITDET. Phase 0 has zero such breaches in 31,560 settled hashes. Phase 2/2.5 has zero such breaches across 56 K2-task receipt cells.
+Phase 2/2.5 K2 task BITDET: any single iter of any single instance producing `k2_summary.json` SHA different from the others within the same cell breaks K2 task BITDET. Phase 0 has zero such breaches in 31,560 settled hashes. Phase 2/2.5 has zero such breaches across 56 K2-task receipt cells; Phase 3 prep has zero such breaches across 6,600 additional K2 invocations now in-repo.
 
 The in-flight Phase 3 prep chain extends the K2 proof surface; if it returns a divergent hash on receipt pull, K2 task BITDET is partially falsified at the affected step/scale and a substantive finding is filed.
 
@@ -292,9 +315,8 @@ Either outcome is publishable. The falsification surface is well-defined per acc
 
 In order of decision-relevance:
 
-1. **Phase 3 prep BITDET_K2_S1..S9_BIG** — do 100 iters × 6 instances per step preserve `unique_canonical_sha_count = 1` across the transient peak region?
-2. **Phase 3 prep BITDET_K2_S30_BIG and S56_BIG** — do the canonical steady-state points preserve K2 byte-identity at higher cross-time scale?
-3. **K2 task cross-platform parity (M1 vs RM10)** — byte-compare `k2_summary.json` SHAs at matching `--steps` values. (Extends `claim-parity` to the K2 task level.)
+1. **Phase 3 prep BITDET_K2_S56_BIG** — does the far-end steady-state point preserve `unique_canonical_sha_count = 1` at higher cross-time scale?
+2. **K2 task cross-platform parity beyond S30 (M1 vs RM10)** — byte-compare `k2_summary.json` SHAs at matching additional `--steps` values. (Extends `claim-parity` beyond the confirmed S30 anchor.)
 4. **Z2-asymmetric SYMMETRY observable** — design and pre-register before any cell; comparison #4 remains PENDING until this is run.
 
-On phone reconnect, append the Phase 3 prep receipts and update the authority packet. Do not rewrite existing PASS receipts; retractions stay additive.
+On phone reconnect, append the remaining Phase 3 prep receipt and update the authority packet. Do not rewrite existing PASS receipts; retractions stay additive.

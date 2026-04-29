@@ -1,7 +1,7 @@
 # Auditor Playbook — Genesis Comparative
 
-**Version:** 2026-04-28  
-**Branch:** `inspection-2026-04-28` (inspection head carries Phase 2/2.5 receipts and σ″ figure)
+**Version:** 2026-04-29
+**Branch:** `phase-3-prep-receipts-2026-04-29` (current review head carries Phase 2/2.5 receipts, partial Phase 3 prep BIG receipts, and updated σ″ figure)
 **Audience:** external auditor, investor diligence, scientific advisor, repo orchestrator  
 **Goal:** shortest honest path to verifying the central claims in under 30 minutes
 
@@ -16,7 +16,8 @@ Each item is a specific, falsifiable claim traceable to a source artifact.
 - Cross-platform parity: M1 host (`aarch64-apple-darwin`) and RM10 (`aarch64-linux-android`) builds of `snic_rust` produce the same canonical hashes byte-exact.
 - 31,560 cross-replicate canonical-hash matches across Phase 0 BITDET cells (BITDET_01: 60 invocations; BITDET_02: 300; BITDET_03: 1,200; BITDET_5K: 30,000) with zero divergences and `unique_canonical_sha_count = 1` per cell.
 - K2 task BITDET on M1 host: two consecutive `k2-scars --steps 30` runs produce byte-identical `k2_summary.json` SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`.
-- K2 task BITDET on phone: 56 Phase 2/2.5 K2-task cells all PASS with `unique_canonical_sha_count = 1` per cell.
+- K2 task BITDET on phone: 56 Phase 2/2.5 K2-task cells plus 10 Phase 3 prep BIG cells currently in-repo all PASS with `unique_canonical_sha_count = 1` per cell.
+- K2-task cross-platform parity at S30: M1 host and RM10 both produce `k2_summary.json` SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`.
 - σ″ curve: Genesis is flat at `best_uplift = 3.000000` across S20 and S28..S56, with pre-convergence transient peak at S2 = 6.5 and settlement to 3.0 by S10.
 - Substrate identity (T(3,21) torus link, D₆ symmetry, 285 vertices, Q-Pythagorean) is settled per `substrate-reconstruction-2026-04-26` (separate authority; not re-derived here).
 
@@ -28,7 +29,7 @@ Source for all items above: [`proofs/manifests/CURRENT_AUTHORITY_PACKET.md`](pro
 
 | Step | Action | Time | What it verifies |
 |---|---|---|---|
-| 1 | Clone upstream source, build, run pipeline on your hardware | 10 min | Determinism claim — your platform, your build |
+| 1 | Clone upstream source, build, run pipeline and K2 S30 on your hardware | 10 min | Determinism claim and K2-task parity anchor — your platform, your build |
 | 2 | Inspect source-hardcoded canonical hash constants | 5 min | Source-canonical match — the reference isn't derived from one platform's run |
 | 3 | Read receipt files in `proofs/artifacts/` and run cross-replicate SHA verification | 15 min | Cross-replicate evidence from the chain run |
 
@@ -51,9 +52,13 @@ cargo build --release -p io_cli
 ./target/release/snic_rust solve-h2 --config configs/CONFIG.json
 ./target/release/snic_rust verify   --config configs/CONFIG.json
 
-# Verify canonical hashes
+# Verify canonical pipeline hashes
 sha256sum artifacts/verify.json
 sha256sum artifacts/solve_h2.json
+
+# Verify K2-task parity anchor at S30
+./target/release/snic_rust k2-scars --config configs/CONFIG.json --steps 30
+sha256sum artifacts/k2_summary.json
 ```
 
 **Expected output:**
@@ -61,9 +66,10 @@ sha256sum artifacts/solve_h2.json
 ```
 97bd7d121e03e7c35505bd889f85630d6f8d78abbdc6fad1c5654d6743b9ba89  artifacts/verify.json
 62897b8c26de3af1a78433807c5607fb8c82f061d1457e9c43e2aa5d35fe7780  artifacts/solve_h2.json
+0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372  artifacts/k2_summary.json
 ```
 
-**If your hashes match:** you have verified the determinism claim on your hardware. The substrate's deterministic computation is not a Zer0pa-internal fact; it is a property of the source code that any platform can reproduce independently.
+**If your hashes match:** you have verified both the canonical-pipeline determinism claim and the K2-task parity anchor on your hardware. The substrate's deterministic computation is not a Zer0pa-internal fact; it is a property of the source code that any platform can reproduce independently.
 
 **If your hashes do NOT match:** this is itself a substantive finding. File a falsification claim per [§ How to File a Falsification Claim](#how-to-file-a-falsification-claim). The most likely causes are: (a) `cargo` built against a different upstream commit than the workspace seal `a83f39e6…`; (b) the `configs/CONFIG.json` differs from the one committed in this repo at `inputs/substrate_285v.json` / `configs/CONFIG.json`. Check both before concluding.
 
@@ -93,7 +99,7 @@ These are the source author's reproducibility reference points, committed in the
 
 ## Step 3 — Verify Cross-Replicate Evidence (15 min)
 
-The current inspection branch includes 60 receipt cells under `proofs/artifacts/cells/`:
+The current review branch includes 70 receipt cells under `proofs/artifacts/cells/`:
 
 ```bash
 cd /path/to/genesis_comparative
@@ -111,13 +117,13 @@ find proofs/artifacts/cells -name "outcome.json" \
   | xargs -I{} jq -r 'select(.metrics.unique_canonical_sha_count != 1) | .cell' {}
 ```
 
-**Expected:** 60 `outcome.json` files, 60 PASS verdicts, and the final command emits no rows. Every `outcome.json` has `"verdict": "PASS"`, `"failures": 0`, and `"unique_canonical_sha_count": 1`.
+**Expected:** 70 `outcome.json` files, 70 PASS verdicts, and the final command emits no rows. Every `outcome.json` has `"verdict": "PASS"`, `"failures": 0`, and `"unique_canonical_sha_count": 1`.
 
 **If `unique_canonical_sha_count` per cell is consistently 1:** cross-replicate determinism is established at the cell level. Do not require one aggregate hash across all cells: K2 cells at different step values legitimately produce different `k2_summary.json` hashes.
 
 **If multiple unique hashes appear:** this is a divergence. File a falsification claim with the full cell and instance identifiers of the divergent pair.
 
-**Note on Phase 2 K2 cells:** K2 cells (`K2_S*`) use `k2_summary.json` as the canonical artifact instead of `verify.json`. The same audit applies — `unique_canonical_sha_count` per cell must equal 1, and the K2 hash `0b5442f9…` (or the Phase 2 equivalent) must be byte-identical across all instances within a cell. The cross-replicate audit command works identically for K2 cells because the harness writes `canonical_stdout.sha256` for every invocation regardless of task type.
+**Note on K2 cells:** K2 cells (`K2_S*`, `PRECONV_*`, `BITDET_K2_*`) use `k2_summary.json` as the canonical artifact instead of `verify.json`. The same audit applies — `unique_canonical_sha_count` per cell must equal 1. `BITDET_K2_S30_BIG` additionally anchors cross-platform K2-task parity: all six RM10 receipts carry `canonical_sha = 0b5442f9…`, matching the host-side Step 1 run exactly. The cross-replicate audit command works identically for K2 cells because the harness writes `canonical_stdout.sha256` for every invocation regardless of task type.
 
 ---
 
@@ -125,7 +131,7 @@ find proofs/artifacts/cells -name "outcome.json" \
 
 - Determinism property holds on **your hardware** (Step 1 reproduction). The claim is not taken on trust from Zer0pa's lab; you reproduce it from source.
 - The substrate's reference hashes are **source-encoded**, not derived from any single platform run (Step 2 source inspection). They existed in the genesis source before the comparative experiment ran.
-- **Cross-replicate determinism** in the chain run: all 31,560 Phase 0 invocations produced the same canonical output, independently of which of cpu0–cpu5 ran them and at what thermal state (Step 3 receipt aggregation).
+- **Cross-replicate determinism** in the chain run: all 31,560 Phase 0 invocations and all currently landed K2 receipt cells produced per-cell byte-identical canonical output, independently of which of cpu0–cpu5 ran them and at what thermal state (Step 3 receipt aggregation).
 
 ---
 
@@ -148,7 +154,7 @@ find proofs/artifacts/cells -name "outcome.json" \
 4. Include: platform string, expected hash, observed hash, and any diff between your `artifacts/` and the canonical reference.
 5. Email architects@zer0pa.ai with the issue link.
 
-Falsification is welcomed. SAL v7.0 §4.7 prohibits removing adverse test results to flatter the proof surface. Every such report is processed and documented; if confirmed, it becomes a retraction entry in [`.gpd/STATE.md`](.gpd/STATE.md).
+Falsification is welcomed. The current Genesis-DM3 RRL v1.0 and the project discipline prohibit removing adverse test results to flatter the proof surface. Every such report is processed and documented; if confirmed, it becomes a retraction entry in [`.gpd/STATE.md`](.gpd/STATE.md).
 
 ---
 
@@ -170,7 +176,7 @@ A: This repo (`genesis_comparative`) is the *experimental scaffolding*: the RESI
 
 **Q: Why is this an INTERNAL repo if the claim is reproducibility-by-anyone?**
 
-A: Currently INTERNAL on the Zer0pa org as a live review window during active RM10 execution. The substrate source repo is separately managed. Auditors with repo access granted for diligence purposes can inspect everything in this repo at the branch `inspection-2026-04-28`.
+A: Currently INTERNAL on the Zer0pa org as a live review window during active RM10 execution. The substrate source repo is separately managed. Auditors with repo access granted for diligence purposes can inspect everything in this repo at the branch `phase-3-prep-receipts-2026-04-29`.
 
 **Q: How do I know the receipts in `proofs/artifacts/` are not fabricated?**
 
