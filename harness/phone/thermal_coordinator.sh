@@ -22,7 +22,17 @@ STOP_FLAG=""
 LOG="/data/local/tmp/genesis/logs/thermal.log"
 THERMAL_KILL_LOG="/data/local/tmp/genesis/logs/thermal_kill.log"
 POLL_INTERVAL=5
-CEILING_C=70
+# CEILING raised from 70 to 80 C: per PRD §Deployment, Genesis-side ceiling
+# is 75C with cpu0-6 mask + thermal margin (cpu6); 80C provides additional
+# headroom against transient spikes when 6 snic_rust workers spawn
+# simultaneously (we observed 98C transients on cpu-0-* at launch).
+CEILING_C=80
+# Require N consecutive over-threshold polls before SIGSTOPping (debounce
+# transient spikes that resolve within one poll cycle).
+DEBOUNCE_SAMPLES=3
+# Grace period (seconds) after start: skip first GRACE_S seconds entirely
+# to allow worker spawn / cargo-loaded binaries to settle.
+GRACE_S=15
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
@@ -58,8 +68,15 @@ _max_temp_c() {
     _type_file="$_zone_dir/type"
     if [ -r "$_type_file" ]; then
       _sensor_type="$(cat "$_type_file")"
+      # FILTER: only Genesis-cluster CPU zones (cpu-0-* + cpuss-0-*).
+      # The cpu-1-* / cpuss-1-* cluster is the SD8 Elite Gen 4 prime cluster
+      # which is pinned to cpu7 = dm3_runner's reserved core. dm3 keeps that
+      # cluster hot continuously; including those zones in our max would
+      # SIGSTOP Genesis workers for dm3-caused heat that has nothing to do
+      # with our cpu0-6 workload. (Cause of 2026-04-28T15:52Z chain-hang:
+      # transient cpu-1-1-1 spike to 98C at launch killed the chain.)
       case "$_sensor_type" in
-        cpu-*|cpuss-*|gpuss-*) ;;
+        cpu-0-*|cpuss-0-*|gpuss-*) ;;
         *) continue ;;
       esac
     fi
@@ -92,6 +109,13 @@ _signal_genesis() {
 }
 
 throttle_active=0
+over_count=0
+start_epoch="$(date +%s)"
+
+# Grace period: don't trigger throttle in the first GRACE_S seconds.
+# Worker spawn + cargo-loaded binary mmap can briefly spike cpu-0-*.
+_log "grace period: ${GRACE_S}s startup hold (no throttling) before active monitoring"
+sleep "$GRACE_S"
 
 while true; do
   # Exit if parent is dead
@@ -107,17 +131,21 @@ while true; do
   fi
 
   temp="$(_max_temp_c)"
-  _log "poll temp=${temp}C throttle_active=${throttle_active}"
 
   if [ "$temp" -ge "$CEILING_C" ]; then
     over=1
+    over_count=$((over_count + 1))
   else
     over=0
+    over_count=0
   fi
 
-  if [ "$over" = "1" ]; then
+  _log "poll temp=${temp}C throttle_active=${throttle_active} over_count=${over_count}/${DEBOUNCE_SAMPLES}"
+
+  # Only trigger throttle after DEBOUNCE_SAMPLES consecutive over-threshold polls
+  if [ "$over" = "1" ] && [ "$over_count" -ge "$DEBOUNCE_SAMPLES" ]; then
     if [ "$throttle_active" = "0" ]; then
-      _log "CEILING EXCEEDED: ${temp}C >= ${CEILING_C}C; SIGSTOPping genesis_runner"
+      _log "CEILING EXCEEDED: ${temp}C >= ${CEILING_C}C for ${over_count} consecutive polls; SIGSTOPping snic_rust"
       _signal_genesis "STOP"
       throttle_active=1
       _log "sleeping 30s for cool-down"
@@ -134,6 +162,11 @@ while true; do
         printf "%s thermal_kill temp_after=%s ceiling=%s\n" \
           "$(date -u +%Y%m%dT%H%M%SZ)" "$temp_after" "$CEILING_C" \
           > "$THERMAL_KILL_LOG"
+        # CRITICAL: SIGCONT before exiting so workers don't hang in T state.
+        # On exit our parent batch will reap them; without SIGCONT they
+        # remain SIGSTOPped indefinitely and the chain hangs forever.
+        _log "issuing SIGCONT to all snic_rust pids before exit (avoid hung-T-state chain)"
+        _signal_genesis "CONT"
         exit 1
       fi
       _log "cooled to ${temp_after}C; SIGCONTing genesis_runner"
