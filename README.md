@@ -4,19 +4,19 @@
 
 ---
 
-Most computation runs on IEEE-754 floats and asks how to bound the error. Genesis asks the inverse: pick a settled algebraic substrate (a 285-vertex graph with full automorphism group `D_6 = S_3 × Z_2`, topology `T(3,21)` torus link on `T²`, number field `Q` over Pythagorean rationals — no floats in the math path) and measure whether non-trivial dynamics on it are byte-identically reproducible across hardware, thermal conditions, time, and re-execution. The current proof surface is **31,560/31,560 cross-replicate `verify.json` SHA-256 hashes byte-identical to the source-hardcoded canonical `97bd7d…`** on commodity Android (RM10, aarch64), zero divergence across four BITDET cells (10+50+200+5000 iters × 6 cores). Phase 2 + 2.5 add 56 K2-task cells, all PASS with `unique_canonical_sha_count = 1`, and the aggregated σ″ curve is flat at `best_uplift = 3.000000` across `[S20, S56]` with a real pre-convergence transient peaking at `S2 = 6.5`. Three of the four pre-registered comparisons against the parked `dm3_runner` lane now have receipt-backed verdicts — cycle-7 AUGMENTATION-ATTRIBUTED, s50-cliff CONFIRMED (Genesis does not cliff), σ″-curve shape diff CONFIRMED — and the fourth (D₆-vs-C₃ symmetry) remains PENDING until a Z₂-asymmetric observable is designed and pre-registered. The pattern-degenerate alternative reading for the flat σ″ remains explicitly preserved in `project_contract.json` `uncertainty_markers`. Both outcomes — confirmation and falsification — are publishable; that posture is the whole point.
+Most computation runs on IEEE-754 floats and asks how to bound the error. Genesis asks the inverse: pick a settled algebraic substrate (a 285-vertex graph with full automorphism group `D_6 = S_3 × Z_2`, topology `T(3,21)` torus link on `T²`, number field `Q` over Pythagorean rationals — no floats in the math path) and measure whether non-trivial dynamics on it are byte-identically reproducible across hardware, thermal conditions, time, and re-execution. The current proof surface is **31,560/31,560 cross-replicate `verify.json` SHA-256 hashes byte-identical to the source-hardcoded canonical `97bd7d…`** on commodity Android (RM10, aarch64), zero divergence across four BITDET cells (10+50+200+5000 iters × 6 cores). Phase 2 + 2.5 add 56 K2-task cells, all PASS with `unique_canonical_sha_count = 1`, and the aggregated σ″ curve is flat at `best_uplift = 3.000000` across `[S20, S56]` with a real pre-convergence transient peaking at `S2 = 6.5`. Phase 3 prep has started landing that transient at larger scale: `BITDET_K2_S1_BIG` adds 600 cross-replicate `k2_summary.json` hashes at `--steps 1`, all byte-identical, confirming `best_uplift = 5.500000` at S1. Three of the four pre-registered comparisons against the parked `dm3_runner` lane now have receipt-backed verdicts — cycle-7 AUGMENTATION-ATTRIBUTED, s50-cliff CONFIRMED (Genesis does not cliff), σ″-curve shape diff CONFIRMED — and the fourth (D₆-vs-C₃ symmetry) remains PENDING until a Z₂-asymmetric observable is designed and pre-registered. The pattern-degenerate alternative reading for the flat σ″ remains explicitly preserved in `project_contract.json` `uncertainty_markers`. Both outcomes — confirmation and falsification — are publishable; that posture is the whole point.
 
 ---
 
 ## What This Is
 
-Genesis is a research artifact: a pure-rational deterministic dynamical system on a settled mathematical substrate, exercised on commodity hardware to ask whether **non-trivial computation can be byte-identically reproducible across hardware, thermal conditions, time, and re-execution**. The current RM10 (Android, aarch64) proof surface contains **31,560/31,560 Phase 0 `verify.json` SHA-256 hashes byte-identical to the source-hardcoded canonical `97bd7d…`** across four BITDET cells (10×6, 50×6, 200×6, 5000×6 invocations on cpu0–cpu5). Cross-platform parity is established at the canonical-pipeline level: `solve_h2.json = 62897b…` matches byte-exact between the M1 host build and the RM10 cross-compiled build of the standalone `snic_rust` pipeline. Phase 2 and 2.5 add 56 K2-task cells, all PASS with `unique_canonical_sha_count = 1`, and the aggregated σ″ curve in [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv).
+Genesis is a research artifact: a pure-rational deterministic dynamical system on a settled mathematical substrate, exercised on commodity hardware to ask whether **non-trivial computation can be byte-identically reproducible across hardware, thermal conditions, time, and re-execution**. The current RM10 (Android, aarch64) proof surface contains **31,560/31,560 Phase 0 `verify.json` SHA-256 hashes byte-identical to the source-hardcoded canonical `97bd7d…`** across four BITDET cells (10×6, 50×6, 200×6, 5000×6 invocations on cpu0–cpu5). Cross-platform parity is established at the canonical-pipeline level: `solve_h2.json = 62897b…` matches byte-exact between the M1 host build and the RM10 cross-compiled build of the standalone `snic_rust` pipeline. Phase 2 and 2.5 add 56 K2-task cells, all PASS with `unique_canonical_sha_count = 1`, and the aggregated σ″ curve in [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv). Phase 3 prep currently contributes one BIG cell in-repo (`BITDET_K2_S1_BIG`: 6 instances × 100 iters = 600 byte-identical K2 invocations); the remaining S2..S9/S30/S56_BIG cells are still chain-operator scope.
 
-Genesis IS: a deterministic Rust pipeline (`build-2d → lift-3d → solve-h2 → verify`) over `Q` (rationals; no floats in the math path), driven by a sealed [`configs/CONFIG.json`](inputs/substrate_285v.json), running standalone on Android with no host scripting, no `cargo`, no source tree on device. Genesis IS NOT: a codec, a productized service, a unified platform, or a portfolio-wide architecture. The `genesis_comparative` workstream is one research artifact in the Zer0pa portfolio under SAL v7.0; it scopes to the four pre-registered comparisons enumerated in §"The Falsification Surface" below and nothing more.
+Genesis IS: a deterministic Rust pipeline (`build-2d → lift-3d → solve-h2 → verify`) over `Q` (rationals; no floats in the math path), driven by a sealed [`configs/CONFIG.json`](inputs/substrate_285v.json), running standalone on Android with no host scripting, no `cargo`, no source tree on device. Genesis IS NOT: a codec, a productized service, a unified platform, or a portfolio-wide architecture. The `genesis_comparative` workstream is one research artifact in the Zer0pa portfolio under `LicenseRef-Zer0pa-GDM3-RRL-1.0`; it scopes to the four pre-registered comparisons enumerated in §"The Falsification Surface" below and nothing more.
 
-**Honest blocker:** the experiment is live, not frozen. Phase 0, Phase 1, Phase 2, and Phase 2.5 receipts are in the repo; Phase 3 prep is running on RM10 to extend cross-time K2 evidence at S1..S9 plus S30/S56. Three of the four pre-registered comparisons now have receipt-backed verdicts; the D6-vs-C3 symmetry comparison remains PENDING because the Z2-asymmetric observable has not yet been implemented. Treat the repo as a live window into the work, with future receipts appended rather than rewritten.
+**Honest blocker:** the experiment is live, not frozen. Phase 0, Phase 1, Phase 2, Phase 2.5, and the first Phase 3 prep BIG receipt are in the repo; the remaining Phase 3 prep cells continue on RM10 to extend cross-time K2 evidence at S2..S9 plus S30/S56. Three of the four pre-registered comparisons now have receipt-backed verdicts; the D6-vs-C3 symmetry comparison remains PENDING because the Z2-asymmetric observable has not yet been implemented. Treat the repo as a live window into the work, with future receipts appended rather than rewritten.
 
-Category: research artifact in the Zer0pa portfolio under SAL v7.0 (`LicenseRef-Zer0pa-SAL-7.0`); settled-substrate dynamics on a 285-vertex graph; comparative methodology against a sibling lane (`dm3_runner`, parked, source-unrecovered) — see [`LANE_DISTINCTION.md`](LANE_DISTINCTION.md).
+Category: research artifact in the Zer0pa portfolio under `LicenseRef-Zer0pa-GDM3-RRL-1.0`; settled-substrate dynamics on a 285-vertex graph; comparative methodology against a sibling lane (`dm3_runner`, parked, source-unrecovered) — see [`LANE_DISTINCTION.md`](LANE_DISTINCTION.md).
 
 ---
 
@@ -79,7 +79,7 @@ Genesis and DM3 are two graphs related by one discrete arithmetic step on the sa
 
 ## Proof Anchors
 
-Every path below resolves in this repository at the time of writing. Receipt authority for the current inspection branch lives under `proofs/`; Phase 3 prep receipts will append to this surface when the live RM10 chain completes.
+Every path below resolves in this repository at the time of writing. Receipt authority for the current branch lives under `proofs/`; the first Phase 3 prep receipt is included, and the remaining Phase 3 prep receipts will append to this surface when the live RM10 chain completes.
 
 | Path | What it carries |
 |---|---|
@@ -94,11 +94,11 @@ Every path below resolves in this repository at the time of writing. Receipt aut
 | [`harness/phone/`](harness/phone/) | Six-script chain harness: `run_genesis_cell.sh`, `launch_genesis_batch.sh`, `thermal_coordinator.sh`, `genesis_chain_v1.sh`, `master_watcher.sh`, `resume_chain.sh` |
 | [`harness/host/HASH_GATE_DISPOSITION.md`](harness/host/HASH_GATE_DISPOSITION.md) | D1 BENIGN diagnosis for M1 verify.json `e894…` vs source-hardcoded `97bd7d…`; halt-on-out-of-family-mismatch protocol |
 | [`proofs/manifests/CURRENT_AUTHORITY_PACKET.md`](proofs/manifests/CURRENT_AUTHORITY_PACKET.md) | Current authority packet for the inspection branch: substrate, hashes, receipt counts, verdicts, and live open items |
-| [`proofs/artifacts/cells/`](proofs/artifacts/cells/) | 60 RM10 cells, all PASS, all `unique_canonical_sha_count = 1` |
+| [`proofs/artifacts/cells/`](proofs/artifacts/cells/) | 61 RM10 cells in-repo: 60 Phase 0/2/2.5 cells plus `BITDET_K2_S1_BIG`, all PASS, all `unique_canonical_sha_count = 1` |
 | [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv) | 61-line aggregated Phase 2 + 2.5 σ″ curve table |
 | [`proofs/artifacts/figures/sigma_curve.png`](proofs/artifacts/figures/sigma_curve.png) | Two-panel headline figure for the Genesis σ″ curve and dm3 comparison anchors |
 | [`proofs/artifacts/figures/dm3_vs_genesis_fiber_promotion.png`](proofs/artifacts/figures/dm3_vs_genesis_fiber_promotion.png) | Cross-lane geometry comparison: the K_3 → K_4 fiber promotion in six panels (full columns, single-station insets, arithmetic). Caption + falsification path at the adjacent `.txt`. |
-| [`LICENSE`](LICENSE) | Zer0pa Source-Available License v7.0 canonical text |
+| [`LICENSE`](LICENSE) | Zer0pa Genesis-DM3 Research and Receipt License v1.0 canonical text |
 | [`CITATION.cff`](CITATION.cff) | Machine-readable citation metadata |
 
 External references that anchor the substrate identity (read-only authority):
@@ -146,7 +146,7 @@ The hash-gate must match before any cell of substantive work runs. Halt and cons
 ```
 genesis_comparative/
 ├── README.md                              this file
-├── LICENSE                                SAL v7.0 canonical text
+├── LICENSE                                Genesis-DM3 RRL v1.0 canonical text
 ├── CITATION.cff                           machine-readable citation
 ├── REPRODUCIBILITY.md                     reproduction recipe (full)
 ├── SECURITY.md                            vulnerability reporting
@@ -173,7 +173,7 @@ genesis_comparative/
 │   └── phone/
 │       ├── run_genesis_cell.sh            per-invocation harness
 │       ├── launch_genesis_batch.sh        N parallel invocations, cpu0–5 mask
-│       ├── thermal_coordinator.sh         70°C ceiling, SIGSTOP/SIGCONT
+│       ├── thermal_coordinator.sh         80°C Genesis-zone ceiling, debounce, SIGSTOP/SIGCONT
 │       ├── genesis_chain_v1.sh            resume-safe master orchestrator
 │       ├── master_watcher.sh              watchdog, 30s poll
 │       ├── resume_chain.sh                idempotent re-launch
@@ -200,7 +200,7 @@ Surfaces:
 
 This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
 
-- **Phase 3 prep receipts pull** — `Active Engineering`. The live RM10 manifest extends cross-time evidence for S1..S9 and S30/S56. Do not touch the phone chain; pull and commit receipts after the chain operator confirms completion.
+- **Remaining Phase 3 prep receipts pull** — `Active Engineering`. `BITDET_K2_S1_BIG` is in-repo; the live RM10 manifest continues cross-time evidence for S2..S9 and S30/S56. Do not touch the phone chain; pull and commit receipts after the chain operator confirms completion.
 - **Phase 3 synthesis and final report** — `Active Engineering`. Renders the four pre-registered comparison verdicts with acceptance-test evidence; final report at `reports/GENESIS_FINAL_REPORT_<DATE>.md`; Genesis-side appendix with σ″-curve diff vs dm3, cycle-period verdict, cliff-presence verdict, symmetry-test verdict — no cross-lane editorial in the appendix itself.
 - **Cross-platform parity at K2-task level** — `Active Engineering`. Current parity is established at the canonical-pipeline level (`solve_h2.json`); extending to byte-identity for `k2_summary.json` between M1 host and RM10 remains a small host-side comparison task.
 - **Z2-asymmetric SYMMETRY observable** — `Research-Deferred — Investigation Underway`. Comparison #4 remains PENDING until the observable is designed, pre-registered, and run with a Monte Carlo baseline.
@@ -224,7 +224,7 @@ The work is governed by:
 
 ## License
 
-[`LicenseRef-Zer0pa-SAL-7.0`](LICENSE). Source-available; commercial terms are portfolio-wide and live in the license. Genesis sits under SAL v7.0 like the rest of Zer0pa-org work; DM3 RRL v1.0 is a separately-licensed product and does not govern Genesis.
+[`LicenseRef-Zer0pa-GDM3-RRL-1.0`](LICENSE). Genesis is covered by the Zer0pa Genesis-DM3 Research and Receipt License v1.0 together with the sibling DM3 artefact. The license preserves lane distinction and receipts-first discipline; it does not assert a unified platform or generalised cross-artefact computation.
 
 ---
 

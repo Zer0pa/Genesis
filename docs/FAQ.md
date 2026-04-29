@@ -24,7 +24,7 @@ Three primary audiences: (1) a scientific peer who wants to run the experiment t
 
 ### What is the relationship to ZPE and the Zer0pa portfolio?
 
-Genesis is a research artifact in the Zer0pa portfolio under SAL v7.0. It is not a ZPE codec (ZPE is a family of encoding products for specific signal domains). Genesis is methodology research: can a deterministic pure-rational dynamical system on a settled substrate serve as a rigorous comparative instrument for isolating substrate-attribution from augmentation-attribution in the dm3 dynamics? It uses the same license, the same falsification discipline, and the same proof-artifact conventions as ZPE lanes, but it does not belong to the encoding product family. It is scoped to four pre-registered comparisons and does not expand beyond that scope without a new operator-visible decision.
+Genesis is a research artifact in the Zer0pa portfolio under `LicenseRef-Zer0pa-GDM3-RRL-1.0`. It is not a ZPE codec (ZPE is a family of encoding products for specific signal domains). Genesis is methodology research: can a deterministic pure-rational dynamical system on a settled substrate serve as a rigorous comparative instrument for isolating substrate-attribution from augmentation-attribution in the dm3 dynamics? It uses the same falsification discipline and proof-artifact conventions as ZPE lanes, but it does not belong to the encoding product family. It is scoped to four pre-registered comparisons and does not expand beyond that scope without a new operator-visible decision.
 
 ---
 
@@ -134,21 +134,21 @@ The genesis source workspace (`Zer0pa/Zer0pamk1-Genesis-Organism-Executable-Appl
 
 ## About License and Commercial Use
 
-### What does SAL v7.0 allow and prohibit?
+### What does the Genesis-DM3 RRL v1.0 allow and prohibit?
 
-SAL v7.0 grants: free use for research, education, open-source projects, and commercial entities below the Revenue Threshold (USD $100M annual gross revenue). It permits inspection, modification, redistribution (under the same terms), and academic publication (with attribution). It prohibits: offering the software as a Hosted or Managed Service without a Commercial License (regardless of fee status), and combining Novel Contribution implementations with license terms less restrictive than SAL v7.0. Source: [`LICENSE`](../LICENSE) §§4.1–4.2.
+The Zer0pa Genesis-DM3 Research and Receipt License v1.0 grants use, research/evaluation/benchmarking, canonical redistribution of the artefact bundle, citation/reference, derivative analysis, and internal modification for research, subject to its restrictions. It requires receipt-chain integrity and scientific-framing discipline, preserves lane distinction between DM3 and Genesis, and requires a Commercial License for above-threshold commercial use, hosted/managed-service use, and other restricted uses. Source: [`LICENSE`](../LICENSE) §§4–7.
 
 ### Is this code usable in a commercial product?
 
-Yes, for entities whose annual gross revenue is below USD $100M. Above that threshold, a separate Commercial License is required before Production Use. Research use, internal evaluation, and academic benchmarking do not require a Commercial License regardless of organization size. Contact: architects@zer0pa.ai. Source: [`LICENSE`](../LICENSE) §4.2.
+Yes, within the license grant and restrictions, for entities whose aggregate gross revenue is below USD $100M. Above that threshold, further commercial use requires a separate Commercial License. Hosted or managed-service use also requires a Commercial License regardless of revenue. Research use, internal evaluation, and academic benchmarking remain within the research grant. Contact: architects@zer0pa.ai. Source: [`LICENSE`](../LICENSE) §§4–6 and §14.
 
 ### What is the $100M revenue threshold?
 
-The Revenue Threshold is the boundary below which the SAL v7.0 free-use grant applies. It is measured against the user's Annual Gross Revenue (total revenue, not profit, not revenue attributable to this product specifically). An entity above the threshold that has not obtained a Commercial License is in breach of §4.2 if it has Production Use. The threshold is stated to provide a clear bright line — not to capture small commercial uses. Source: [`LICENSE`](../LICENSE) §1 "Revenue Threshold" definition.
+The Revenue Threshold is the boundary below which revenue-gated commercial use remains inside the license grant. It is USD $100M in aggregate gross revenue for an entity and its affiliates over the trailing twelve-month period. Above that threshold, further commercial use requires a Commercial License; hosted-service restrictions apply separately. Source: [`LICENSE`](../LICENSE) §§1 and 5.
 
-### Why is Genesis under SAL v7.0 instead of DM3 RRL v1.0?
+### Why are Genesis and DM3 under one RRL?
 
-DM3 RRL v1.0 is a separately-licensed product (the `dm3_runner` execution environment / binary platform). Genesis is a research artifact in the Zer0pa portfolio — it shares the Zer0pa license family (SAL v7.0). The separation reflects the lane distinction: Genesis is open-sourced Rust code with a settled substrate identity; dm3_runner is a closed binary whose source is unrecovered. They are governed under different licenses because they are different products. Source: [`README.md`](../README.md) §License, [`LANE_DISTINCTION.md`](../LANE_DISTINCTION.md).
+The Genesis-DM3 RRL covers both artefacts because they evolve together under a receipts-first discipline and one licensor, while preserving their independence. The license explicitly says the artefacts are siblings, not one unified architecture; a DM3 receipt is not a Genesis receipt, and vice versa. Source: [`LICENSE`](../LICENSE) §§3.4 and 7, [`README.md`](../README.md) §License, [`LANE_DISTINCTION.md`](../LANE_DISTINCTION.md).
 
 ---
 
@@ -156,11 +156,11 @@ DM3 RRL v1.0 is a separately-licensed product (the `dm3_runner` execution enviro
 
 ### Are the K2_SWEEP results available?
 
-Yes. Phase 2 K2_SWEEP and CYCLE-probe receipts are in [`proofs/artifacts/cells/`](../proofs/artifacts/cells/), with 39 Phase 2 cells all PASS. Phase 2.5 adds 17 more cells for pre-convergence and K2 BITDET extension, also all PASS. The full aggregated curve is [`proofs/artifacts/sigma_curve_full.tsv`](../proofs/artifacts/sigma_curve_full.tsv), and the headline figure is [`proofs/artifacts/figures/sigma_curve.png`](../proofs/artifacts/figures/sigma_curve.png). A separate Phase 3 prep chain is live on RM10 and will append more receipts after completion.
+Yes. Phase 2 K2_SWEEP and CYCLE-probe receipts are in [`proofs/artifacts/cells/`](../proofs/artifacts/cells/), with 39 Phase 2 cells all PASS. Phase 2.5 adds 17 more cells for pre-convergence and K2 BITDET extension, also all PASS. The full aggregated curve is [`proofs/artifacts/sigma_curve_full.tsv`](../proofs/artifacts/sigma_curve_full.tsv), and the headline figure is [`proofs/artifacts/figures/sigma_curve.png`](../proofs/artifacts/figures/sigma_curve.png). Phase 3 prep has started landing larger-scale transient receipts: `BITDET_K2_S1_BIG` is PASS at 600/600 K2 invocations, with the remaining BIG cells still chain-operator scope.
 
 ### What happens if Phase 2 produces a flat σ″-curve at 3.0?
 
-The degenerate interpretation is confirmed: the D3 Bhupura/Lotus orbit choice creates a rank-1 scar matrix and trivially-recoverable dynamics at every step count. This is not a null result for the experiment — it is an answer to the D3 question. The verdict would be: comparison #3 σ″-curve is INCONCLUSIVE (degenerate input, not informative about substrate dynamics), and the pre-registered next step (alternative D₆ orbit picks for the K2 patterns) becomes the active investigation. The four pre-registered comparisons would require a second-pass K2 run with non-degenerate patterns before verdicts can be rendered. Source: [`README.md`](../README.md) §"Upcoming Workstreams", [`project_contract.json`](../project_contract.json) §uncertainty_markers.
+The steady-state D3-pattern σ″ curve is flat at 3.0, so the cross-lane shape comparison is settled as CONFIRMED: Genesis does not reproduce dm3's trimodal sawtooth or exact-zero s50 cliff under the operator-approved D3 pattern choice. This is not a null result. Phase 2.5 shows a real pre-convergence transient (S1=5.5, S2=6.5 peak, settling by S10), and Phase 3 prep is verifying that transient at larger replicate scale. Alternative D₆ orbit picks remain the discriminator for substrate-easy versus pattern-degenerate readings. Source: [`README.md`](../README.md) §"Upcoming Workstreams", [`project_contract.json`](../project_contract.json) §uncertainty_markers.
 
 ### What happens if Phase 2 produces a varied σ″-curve?
 

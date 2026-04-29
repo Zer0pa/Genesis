@@ -145,5 +145,5 @@ Every iteration of every instance produces byte-identical `verify.json` (Phase 0
 - **Device:** RedMagic 10 Pro (Snapdragon 8 Elite Gen 4; `FY25013101C8`)
 - **CPU affinity:** parent-affinity mask `7F` (cpu0–6); per-instance `--core auto` (Qualcomm `core_ctl` quirk mitigation — transient pause-flapping on cluster cpu0–5 causes SIGSTOP/SIGCONT cascades without parent-affinity guard)
 - **cpu7 reservation:** hard-blocked (`0x80` mask excluded) — reserved for sibling `dm3_runner` lane
-- **Thermal ceiling:** 70 °C (`thermal_coordinator.sh` polls at 5 s; issues SIGSTOP above ceiling, SIGCONT once cool)
+- **Thermal ceiling:** 80 °C on Genesis-relevant zones only (`cpu-0-*`, `cpuss-0-*`, `gpuss-*`; `thermal_coordinator.sh` polls at 5 s, requires 3 consecutive over-threshold polls, issues SIGSTOP above ceiling, and SIGCONT once cool or before thermal-kill exit)
 - **Sibling-lane check:** `adb shell pidof dm3_runner` before every deploy; never signal, kill, or alter any `dm3_runner` or `cells/G*/` artifact

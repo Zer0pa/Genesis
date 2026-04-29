@@ -4,15 +4,16 @@
 # Adapted from dm3_parallel/scripts/thermal_coordinator.sh
 # POSIX-portable; busybox sh; no bash-isms.
 #
-# Threshold: 70C ceiling (PRD §Deployment).
-# At 75C or above with cpu0-6 mask, scale is operator-controlled;
-# this script enforces the 70C hard ceiling per PRD.
+# Threshold: 80C Genesis-zone ceiling (PRD §Deployment 75C + headroom).
+# Only cpu-0-* / cpuss-0-* / gpuss-* thermal zones are counted; dm3's
+# cpu-1-* / cpuss-1-* prime cluster is intentionally excluded.
 #
 # On exceedance:
-#   1. SIGSTOP all genesis_runner PIDs
+#   1. SIGSTOP all snic_rust PIDs
 #   2. Sleep 30s (cool-down)
 #   3. SIGCONT
-#   4. If still over 70C after resume: write thermal_kill.log and exit 1
+#   4. If still over threshold after resume: SIGCONT, write
+#      thermal_kill.log, and exit 1
 #
 # Lifetime: exits when parent PID dies or stop-flag file appears.
 set -eu
@@ -169,7 +170,7 @@ while true; do
         _signal_genesis "CONT"
         exit 1
       fi
-      _log "cooled to ${temp_after}C; SIGCONTing genesis_runner"
+      _log "cooled to ${temp_after}C; SIGCONTing snic_rust"
       _signal_genesis "CONT"
       throttle_active=0
     fi
