@@ -1,8 +1,8 @@
 # Current Authority Packet
 
-**Authority commit:** `6df9a4b` (Phase 3 prep proof-bearing commit before front-door refresh)
+**Authority commit:** `86db7a5` (Phase 3 prep proof-bearing commit before front-door refresh)
 **Date:** 2026-04-29
-**Status:** live authority — Phase 2/2.5 receipts in-repo; first Phase 3 prep BIG receipt in-repo; remaining Phase 3 prep chain running on RM10
+**Status:** live authority — Phase 2/2.5 receipts in-repo; 10 of 12 Phase 3 prep BIG receipts in-repo; `BITDET_K2_S56_BIG` still running on RM10
 
 ---
 
@@ -56,12 +56,13 @@ These are source-hardcoded (`CANONICAL_VERIFY_HASH`, `CANONICAL_SOLVE_HASH` in `
 | Phase 2 CYCLE-probe | 9 cells at multiples of 6/7/8 | PASS; S6=4.0, S8=3.5, S12+ = 3.0 |
 | Phase 2.5 PRECONV | 14 cells: S1..S5, S9, S10, S11, S13, S15, S17, S19, S22, S25 | PASS; transient peak S2 = 6.5; settled by S10 |
 | Phase 2.5 BITDET_K2 | S6, S30, S56 | PASS, `unique_canonical_sha_count = 1` per cell |
-| Phase 3 prep partial | `BITDET_K2_S1_BIG`: 6 instances × 100 iters = 600 K2 invocations at S1 | PASS, `unique_canonical_sha_count = 1`; `best_uplift = 5.500000`, `max_scar = 1.200000` |
-| Total in-repo cells | `proofs/artifacts/cells/` = 61 cells | 61 PASS / 0 FAIL |
-| Aggregated curve | `proofs/artifacts/sigma_curve_full.tsv` | 61-line table including header |
+| Phase 3 prep transient-at-scale | `BITDET_K2_S1_BIG`..`S9_BIG`: 9 cells × 600 K2 invocations | PASS, `unique_canonical_sha_count = 1`; deterministic transient = `5.5, 6.5, 4.0, 3.5, 4.0, 4.0, 3.0, 3.5, 3.5` |
+| Phase 3 prep steady-state-at-scale | `BITDET_K2_S30_BIG`: 6 instances × 200 iters = 1,200 K2 invocations at S30 | PASS, `unique_canonical_sha_count = 1`; `best_uplift = 3.000000`; SHA = `0b5442f9…` |
+| Total in-repo cells | `proofs/artifacts/cells/` = 70 cells | 70 PASS / 0 FAIL |
+| Aggregated curve | `proofs/artifacts/sigma_curve_full.tsv` | 71-line table including header |
 | Figure | `proofs/artifacts/figures/sigma_curve.png` | 2-panel headline figure |
 
-The remaining Phase 3 prep chain is live on RM10. Its manifest extends cross-time K2 evidence for S2..S9 and S30/S56; receipts will be appended in a follow-up commit after chain completion and pull.
+The remaining Phase 3 prep chain is live on RM10 only for `BITDET_K2_S56_BIG`. That receipt will be appended in a follow-up commit after chain completion and pull.
 
 ---
 
@@ -69,8 +70,8 @@ The remaining Phase 3 prep chain is live on RM10. Its manifest extends cross-tim
 
 | ID | Claim | Status |
 |----|-------|--------|
-| BITDET | Every iteration of every instance produces byte-identical `verify.json` (Phase 0) or `k2_summary.json` (Phase 1+) within each cell — `unique_canonical_sha_count = 1` per cell | PASS — 31,560 Phase 0 hashes plus 56 Phase 2/2.5 K2-task cells plus `BITDET_K2_S1_BIG` (600 K2 invocations), all per-cell unique count = 1 |
-| PARITY | Cross-platform (M1 host ↔ RM10 aarch64-android) produces identical canonical output given identical binary and config | PASS at canonical-pipeline level — `solve_h2.json = 62897b…`; on-device `verify.json = 97bd7d…` matches source-canonical exactly. K2-task parity remains Active Engineering |
+| BITDET | Every iteration of every instance produces byte-identical `verify.json` (Phase 0) or `k2_summary.json` (Phase 1+) within each cell — `unique_canonical_sha_count = 1` per cell | PASS — 31,560 Phase 0 hashes plus 56 Phase 2/2.5 K2-task cells plus 6,600 Phase 3 prep K2 invocations now in-repo, all per-cell unique count = 1 |
+| PARITY | Cross-platform (M1 host ↔ RM10 aarch64-android) produces identical canonical output given identical binary and config | PASS at canonical-pipeline level — `solve_h2.json = 62897b…`; on-device `verify.json = 97bd7d…` matches source-canonical exactly. K2-task parity is CONFIRMED at S30 via `k2_summary.json = 0b5442f9…`; broader step coverage remains Active Engineering |
 | CYCLE7 | Genesis K2 dynamics exhibit a period-7 cycle observable (pre-registered cross-lane comparison) | AUGMENTATION-ATTRIBUTED — no period-7 structure in Genesis steady-state K2; S20/S28..S56 all 3.0 and cycle probes S12+ all 3.0 |
 | S50-CLIFF | Genesis K2 shows a discontinuity or cliff at step 50 analogous to dm3_runner's s50 observable (pre-registered cross-lane comparison) | CONFIRMED negative — Genesis does NOT cliff at S50; S49/S50/S51 all 3.0 |
 | SIGMA-CURVE | Genesis σ″ curve differs from dm3_runner's trimodal sawtooth (pre-registered cross-lane comparison) | CONFIRMED — Genesis flat at 3.0 across [S20,S56]; dm3 sawtooth/cliff fixture differs |

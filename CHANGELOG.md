@@ -6,17 +6,19 @@ All research-significant changes are recorded here. This is a research repositor
 
 ## [0.1.1] — 2026-04-29
 
-### Phase 3 prep — Partial receipts and operational fix
+### Phase 3 prep — At-scale transient receipts, parity, and operational fix
 
 - Rebased the Phase 3 prep receipts branch onto current `main`, preserving the computation-portfolio stakes paragraph, DM3 sibling-lane figure, and Genesis-DM3 RRL v1.0 license work already landed after PR #1.
 - Fixed `harness/phone/thermal_coordinator.sh` after the live RM10 chain exposed a real hang condition: previous thermal-zone matching included dm3's cpu7/prime-cluster sensors (`cpu-1-*` / `cpuss-1-*`), so dm3-caused heat could SIGSTOP Genesis workers. The filter now counts only Genesis-relevant `cpu-0-*`, `cpuss-0-*`, and `gpuss-*` zones.
 - Raised the Genesis-side thermal ceiling from 70 C to 80 C, added 3-poll debounce, added 15 s startup grace, and SIGCONT on thermal-kill exit to prevent workers remaining stuck in T state.
-- Landed `BITDET_K2_S1_BIG`: 6 instances × 100 iters = 600 K2 invocations at `--steps 1`, all byte-identical (`unique_canonical_sha_count = 1`), `best_uplift = 5.500000`, `max_scar = 1.200000`.
-- Remaining Phase 3 prep cells S2..S9_BIG plus S30_BIG/S56_BIG remain chain-operator scope and will be appended after completion/pull.
+- Landed `BITDET_K2_S1_BIG`..`S9_BIG`: 9 cells × 600 K2 invocations each, all byte-identical (`unique_canonical_sha_count = 1`) with deterministic transient structure `5.5, 6.5, 4.0, 3.5, 4.0, 4.0, 3.0, 3.5, 3.5`.
+- Landed `BITDET_K2_S30_BIG`: 6 instances × 200 iters = 1,200 K2 invocations at `--steps 30`, all byte-identical, `best_uplift = 3.000000`, `max_scar = 1.200000`.
+- K2-task cross-platform parity now confirmed at S30: RM10 `BITDET_K2_S30_BIG` reproduces the same `k2_summary.json` SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372` as the M1 host Phase 1 BITDET run.
+- Remaining Phase 3 prep receipt `BITDET_K2_S56_BIG` remains chain-operator scope and will be appended after completion/pull.
 
 ### Front-door alignment
 
-- Updated README/FINDINGS/authority/reproduction docs to reflect the first Phase 3 prep receipt without changing the settled comparison verdicts.
+- Updated README/FINDINGS/authority/auditor docs to reflect 70 PASS cells, at-scale S1..S9/S30 evidence, and K2-task parity confirmed at S30 without changing the settled comparison verdicts.
 - Updated license references to `LicenseRef-Zer0pa-GDM3-RRL-1.0` after the repository license switched to Zer0pa Genesis-DM3 Research and Receipt License v1.0.
 
 ---
@@ -71,7 +73,7 @@ The following categories of work are active, open, or blocked. This section carr
 
 ### Infrastructure / unblocked
 
-- Remaining Phase 3 prep receipts: S1_BIG is in-repo; S2..S9_BIG plus S30_BIG/S56_BIG pending live RM10 chain completion and pull by the chain-operator agent.
+- Remaining Phase 3 prep receipt: `S56_BIG` pending live RM10 chain completion and pull by the chain-operator agent.
 - `genesis_meta.txt` deploy convention: 5-line shell snippet to write `build_hash` + `target_triple` at adb-push time; not yet authored as a script.
 
 ### Blocked on external input
