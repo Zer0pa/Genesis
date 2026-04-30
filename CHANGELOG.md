@@ -21,6 +21,20 @@ All research-significant changes are recorded here. This is a research repositor
 - Updated README/FINDINGS/authority/auditor docs to reflect 70 PASS cells, at-scale S1..S9/S30 evidence, and K2-task parity confirmed at S30 without changing the settled comparison verdicts.
 - Updated license references to `LicenseRef-Zer0pa-GDM3-RRL-1.0` after the repository license switched to Zer0pa Genesis-DM3 Research and Receipt License v1.0.
 
+## [0.1.2] — 2026-04-30
+
+### Phase 3 prep — Complete receipt surface + parity-sweep launch
+
+- Landed `BITDET_K2_S56_BIG`: 6 instances × 50 iters = 300 K2 invocations at `--steps 56`, all byte-identical, `best_uplift = 3.000000`, `max_scar = 1.200000`, SHA `fccbdf3d776c1a77dd5e50486e9ddfb427bf11840b082cebbfa9115aa300e60d`.
+- Phase 3 prep BIG program now complete in-repo: `BITDET_K2_S1_BIG`..`S9_BIG`, `S30_BIG`, `S56_BIG` = 6,900 additional byte-identical `k2_summary.json` hashes across the transient and steady-state regions.
+- Strengthened the operational determinism claim: `BITDET_K2_S56_BIG` preserved `unique_canonical_sha_count = 1` across repeated thermal-cycle SIGSTOP/SIGCONT events at the heaviest steady-state point.
+- Launched parity-sweep extension and landed `BITDET_K2_S20_PARITY`: 6 instances × 50 iters = 300 K2 invocations at `--steps 20`, all byte-identical, SHA `74fa0b8a7082b76370db8cf05f0baf520534e5def11edfccd698f26ad914e432`.
+- Preserved honest scope on K2-task parity: still `CONFIRMED at S30`; S20 now has an RM10-side target SHA in-repo for the next host-side comparison, while broader multi-step coverage remains active engineering.
+
+### Front-door alignment
+
+- Updated README/FINDINGS/authority/auditor docs to reflect 72 PASS cells, complete Phase 3 prep BIG coverage through S56, the landed S20 parity receipt, and the live parity-sweep follow-on scope without changing the settled scientific verdicts.
+
 ---
 
 ## [0.1.0] — 2026-04-28
