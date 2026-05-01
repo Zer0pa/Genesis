@@ -1,8 +1,8 @@
 # Current Authority Packet
 
-**Authority commit:** `10e8b5b` (Phase 3 prep complete + parity-sweep extension launch)
-**Date:** 2026-04-30
-**Status:** live authority — Phase 2/2.5 receipts in-repo; full current Phase 3 prep at-scale receipt surface in-repo (11 BIG cells + `BITDET_K2_S20_PARITY`); broader parity sweep remains live-manifest scope
+**Authority commit:** `phase-3-prep-receipts-2026-04-29` HEAD — Phase 3 prep complete + parity-sweep complete
+**Date:** 2026-05-01
+**Status:** backend chain CLOSED — Phase 0, Phase 2, Phase 2.5, Phase 3 prep BIG, and Phase 3 parity-sweep extension all complete and in-repo. 74 cells / 74 PASS / `unique_canonical_sha_count = 1` per cell. RM10 chain master exited cleanly (`genesis_chain_v1 finished all manifest cells`); phone is being released to other experiments. Phase 3 synthesis and the analytic D6-vs-C3 disposition are landed in `reports/GENESIS_FINAL_REPORT_2026-05-01.md`.
 
 ---
 
@@ -59,12 +59,12 @@ These are source-hardcoded (`CANONICAL_VERIFY_HASH`, `CANONICAL_SOLVE_HASH` in `
 | Phase 3 prep transient-at-scale | `BITDET_K2_S1_BIG`..`S9_BIG`: 9 cells × 600 K2 invocations | PASS, `unique_canonical_sha_count = 1`; deterministic transient = `5.5, 6.5, 4.0, 3.5, 4.0, 4.0, 3.0, 3.5, 3.5` |
 | Phase 3 prep steady-state-at-scale | `BITDET_K2_S30_BIG`: 6 instances × 200 iters = 1,200 K2 invocations at S30 | PASS, `unique_canonical_sha_count = 1`; `best_uplift = 3.000000`; SHA = `0b5442f9…` |
 | Phase 3 prep far-end steady-state-at-scale | `BITDET_K2_S56_BIG`: 6 instances × 50 iters = 300 K2 invocations at S56 | PASS, `unique_canonical_sha_count = 1`; `best_uplift = 3.000000`; SHA = `fccbdf3d…` |
-| Phase 3 parity-sweep start | `BITDET_K2_S20_PARITY`: 6 instances × 50 iters = 300 K2 invocations at S20 | PASS, `unique_canonical_sha_count = 1`; `best_uplift = 3.000000`; SHA = `74fa0b8a…` |
-| Total in-repo cells | `proofs/artifacts/cells/` = 72 cells | 72 PASS / 0 FAIL |
-| Aggregated curve | `proofs/artifacts/sigma_curve_full.tsv` | 73-line table including header |
+| Phase 3 parity-sweep | `BITDET_K2_S20_PARITY` (S20, 300 K2 invocations) + `BITDET_K2_S40_PARITY` (S40, 300 K2 invocations) + `BITDET_K2_S50_PARITY` (S50, 300 K2 invocations) | PASS, `unique_canonical_sha_count = 1` per cell; `best_uplift = 3.000000` per cell; SHAs `74fa0b8a…` (S20), `38be38e2…` (S40), `f5cd3876…` (S50) — three RM10-side host-comparison anchors |
+| Total in-repo cells | `proofs/artifacts/cells/` = 74 cells | 74 PASS / 0 FAIL |
+| Aggregated curve | `proofs/artifacts/sigma_curve_full.tsv` | 75-line table including header |
 | Figure | `proofs/artifacts/figures/sigma_curve.png` | 2-panel headline figure |
 
-The remaining live chain scope has moved from Phase 3 prep BIG receipts to parity-sweep extension receipts beyond S20. Those broader parity receipts will append in follow-up commits after chain completion and pull.
+Backend chain is closed; no further phone-side scope is queued. The three RM10 parity anchors at S20/S40/S50 are now committed targets for any future host-side M1 byte-comparison (host-only work; does not require phone time).
 
 ---
 
@@ -72,12 +72,12 @@ The remaining live chain scope has moved from Phase 3 prep BIG receipts to parit
 
 | ID | Claim | Status |
 |----|-------|--------|
-| BITDET | Every iteration of every instance produces byte-identical `verify.json` (Phase 0) or `k2_summary.json` (Phase 1+) within each cell — `unique_canonical_sha_count = 1` per cell | PASS — 31,560 Phase 0 hashes plus 56 Phase 2/2.5 K2-task cells plus 6,900 Phase 3 prep BIG K2 invocations plus 300 S20 parity-sweep K2 invocations now in-repo, all per-cell unique count = 1 |
-| PARITY | Cross-platform (M1 host ↔ RM10 aarch64-android) produces identical canonical output given identical binary and config | PASS at canonical-pipeline level — `solve_h2.json = 62897b…`; on-device `verify.json = 97bd7d…` matches source-canonical exactly. K2-task parity is CONFIRMED at S30 via `k2_summary.json = 0b5442f9…`; S20 target SHA `74fa0b8a…` is now in-repo for the next host-side byte comparison; broader step coverage remains Active Engineering |
+| BITDET | Every iteration of every instance produces byte-identical `verify.json` (Phase 0) or `k2_summary.json` (Phase 1+) within each cell — `unique_canonical_sha_count = 1` per cell | PASS — 31,560 Phase 0 hashes plus 56 Phase 2/2.5 K2-task cells plus 6,900 Phase 3 prep BIG K2 invocations plus 900 parity-sweep K2 invocations (S20+S40+S50) now in-repo, all per-cell unique count = 1 |
+| PARITY | Cross-platform (M1 host ↔ RM10 aarch64-android) produces identical canonical output given identical binary and config | PASS at canonical-pipeline level — `solve_h2.json = 62897b…`; on-device `verify.json = 97bd7d…` matches source-canonical exactly. K2-task parity CONFIRMED at S30 via `k2_summary.json = 0b5442f9…`. RM10 parity targets now in-repo at S20 (`74fa0b8a…`), S40 (`38be38e2…`), S50 (`f5cd3876…`); host-side byte comparison at these step values is the remaining widen-coverage work — host-only, no phone time required |
 | CYCLE7 | Genesis K2 dynamics exhibit a period-7 cycle observable (pre-registered cross-lane comparison) | AUGMENTATION-ATTRIBUTED — no period-7 structure in Genesis steady-state K2; S20/S28..S56 all 3.0 and cycle probes S12+ all 3.0 |
 | S50-CLIFF | Genesis K2 shows a discontinuity or cliff at step 50 analogous to dm3_runner's s50 observable (pre-registered cross-lane comparison) | CONFIRMED negative — Genesis does NOT cliff at S50; S49/S50/S51 all 3.0 |
 | SIGMA-CURVE | Genesis σ″ curve differs from dm3_runner's trimodal sawtooth (pre-registered cross-lane comparison) | CONFIRMED — Genesis flat at 3.0 across [S20,S56]; dm3 sawtooth/cliff fixture differs |
-| D6-VS-C3 | Genesis D6 symmetry produces structurally distinct K2 dynamics from dm3_runner C3 symmetry (pre-registered cross-lane comparison) | PENDING — Z2-asymmetric observable not yet implemented |
+| D6-VS-C3 | Genesis D6 symmetry produces structurally distinct K2 dynamics from dm3_runner C3 symmetry (pre-registered cross-lane comparison) | PENDING — analytic disposition landed in `reports/GENESIS_FINAL_REPORT_2026-05-01.md` §"Comparison #4". Direct numerical Z₂-projection observable would require a Z₂-asymmetric pattern (a new chain run); the operator-approved D3 pattern map is exactly Z₂-invariant by construction so cannot break Z₂ symmetry. Disposition: STRUCTURAL INCLUSION CONFIRMED (D₆ ⊃ C₃ by construction; flat σ″ + no s50 cliff are numerical signatures consistent with higher symmetry); NUMERICAL Z₂-PROJECTION DEFERRED to v2.0 alternative-pattern work, no phone-side scope queued |
 
 ---
 

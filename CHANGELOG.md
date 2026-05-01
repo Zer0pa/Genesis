@@ -4,6 +4,24 @@ All research-significant changes are recorded here. This is a research repositor
 
 ---
 
+## [1.0.0] — 2026-05-01
+
+### v1.0 closure — Backend chain CLOSED; phone released
+
+- Pulled `BITDET_K2_S40_PARITY` and `BITDET_K2_S50_PARITY` from RM10 — the two remaining parity-sweep extension cells. Both PASS, `unique_canonical_sha_count = 1`, 6 instances × 50 iters = 300 K2 invocations per cell. SHAs `38be38e2…` (S40, matches handover-expected) and `f5cd3876…` (S50, new — wasn't recorded at handover time). Brings the in-repo receipt surface to 74 cells / 74 PASS / 0 divergences.
+- Phase 3 parity-sweep extension is now COMPLETE in-repo: three RM10-side comparison anchors at S20 / S40 / S50 ready for any future host-side widen-coverage byte-comparison (host-only; no chain reactivation required).
+- Aggregated curve [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv) extended to 75 lines (1 header + 74 cell rows).
+- Authored [`reports/GENESIS_FINAL_REPORT_2026-05-01.md`](reports/GENESIS_FINAL_REPORT_2026-05-01.md) — the v1.0 final synthesis. Renders the four pre-registered comparison verdicts with receipt evidence (Comparisons #1–#3 settle empirically; Comparison #4 lands as analytic disposition: structural inclusion D₆ ⊃ C₃ confirmed, D3 pattern map proven exactly Z₂-invariant by construction, numerical Z₂-projection observable deferred to v2.0 because it requires a Z₂-asymmetric pattern, i.e. a new chain run). Determinism scorecard, settled / pending / falsification path, and v2.0 outlook included.
+- Curated the 10-doc reviewer pack and merged overlapping documents:
+  - `docs/CHAIN.md` folded into `docs/ARCHITECTURE.md` as a new "Operations Manual" section. Architecture and operations now under one document.
+  - `docs/FAQ.md` folded into `AUDITOR_PLAYBOOK.md` as a new "Frequently Asked Questions" section. Audit Q&A and reviewer FAQ under one document.
+  - `FINDINGS.md` folded into `reports/GENESIS_FINAL_REPORT_2026-05-01.md` (the new report supersedes FINDINGS as the live source of truth).
+- Updated `CURRENT_AUTHORITY_PACKET.md`, `proofs/artifacts/README.md`, `README.md`, `AUDITOR_PLAYBOOK.md` to reflect the 74-cell count, the closed-backend posture, the host-side-only remaining work, and the v2.0 outlook for Comparison #4 + alternative-pattern K2.
+- Updated three pre-registered claim verdicts from "PENDING" to settled in authority artifacts. Comparison #4 verdict updated to STRUCTURAL INCLUSION CONFIRMED + NUMERICAL Z₂-PROJECTION DEFERRED with explicit pointer to the analytic disposition in the final report.
+- Phone released for other experiments (per operator directive). v2.0 reactivation is a separate operator-visible decision; this repo at the v1.0 closure commit is the canonical reviewer surface.
+
+---
+
 ## [0.1.1] — 2026-04-29
 
 ### Phase 3 prep — At-scale transient receipts, parity, and operational fix

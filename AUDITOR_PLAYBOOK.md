@@ -185,7 +185,7 @@ A: Each receipt's `canonical_sha` traces to `sha256(<wd>/artifacts/verify.json)`
 
 **Q: What if `core_ctl` pause-flapping caused a hash divergence that wasn't caught?**
 
-A: Any divergence would show as `unique_canonical_sha_count > 1` in the cell's `_summary.json` or `outcome.json`. The chain harness is designed to surface this: `run_genesis_cell.sh` computes `canonical_stdout.sha256` for every invocation and `genesis_chain_v1.sh` aggregates them per cell. The Step 3 audit command would flag any count > 1 across the full receipt tree. Phase 0 BITDET evidence: 0 divergences out of 31,560 invocations. The `core_ctl` mitigation (parent-affinity mask `7F` + per-instance `--core auto`) is documented in [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) §Hardware Envelope and [`docs/CHAIN.md`](docs/CHAIN.md).
+A: Any divergence would show as `unique_canonical_sha_count > 1` in the cell's `_summary.json` or `outcome.json`. The chain harness is designed to surface this: `run_genesis_cell.sh` computes `canonical_stdout.sha256` for every invocation and `genesis_chain_v1.sh` aggregates them per cell. The Step 3 audit command would flag any count > 1 across the full receipt tree. Phase 0 BITDET evidence: 0 divergences out of 31,560 invocations. The `core_ctl` mitigation (parent-affinity mask `7F` + per-instance `--core auto`) is documented in [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) §Hardware Envelope and [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §"CPU Pinning + Thermal Discipline".
 
 **Q: What does "always-in-beta" mean for an audit?**
 
@@ -204,8 +204,7 @@ A: Phase 2 settled it for the D3 pattern choice. Genesis returns `best_uplift = 
 | Substrate identity audit (separate authority) | `/Users/Zer0pa/DM3/substrate-reconstruction-2026-04-26/SHARE_2026-04-27/` |
 | Determinism discipline (BigRational, no-float policy) | [`docs/DETERMINISM.md`](docs/DETERMINISM.md) |
 | Substrate properties (T(3,21), D₆, 285v) | [`docs/SUBSTRATE.md`](docs/SUBSTRATE.md) |
-| Receipt schema and pipeline architecture | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) |
-| Chain operations and manifest format | [`docs/CHAIN.md`](docs/CHAIN.md) |
+| Receipt schema, pipeline architecture, chain operations | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) (architecture + Operations Manual sections) |
 | Cross-compile and deploy recipe | [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) |
 | Formal claims / acceptance tests / forbidden proxies | [`project_contract.json`](project_contract.json) |
 | Retraction ledger and decisions D1–D6 | [`.gpd/STATE.md`](.gpd/STATE.md) |
@@ -213,3 +212,162 @@ A: Phase 2 settled it for the D3 pattern choice. Genesis returns `best_uplift = 
 | Upstream genesis source (canonical hashes in source) | `Zer0pa/Zer0pamk1-Genesis-Organism-Executable-Application-27-Oct-2025` |
 | RESISTANCE methodology (four named corruptions) | [`RESISTANCE.md`](RESISTANCE.md) |
 | Falsification reports | GitHub issues tagged `[FALSIFICATION]` on the Zer0pa/Genesis repo |
+
+---
+
+# Frequently Asked Questions
+
+This section was folded in from `docs/FAQ.md` on 2026-05-01 as part of the v1.0 reviewer-pack consolidation. The above audit-focused Q&A in §"Common Audit Concerns" stays; the FAQ below covers project, substrate, determinism, K2, methodology, repo structure, license, and schedule questions for investors / scientific advisors / falsifiers / contributors.
+
+## About the Project
+
+### What is the Genesis Comparative Experiment trying to falsify?
+
+Four pre-registered claims against the `dm3_runner` binary's signature observables. Specifically, dm3_runner (the sibling lane — 380-vertex, C₃ symmetry, source unrecovered) exhibits: a period-~7 oscillation in its K2 dynamics, an exact zero ("cliff") at `--steps=50`, a trimodal sawtooth σ″-curve, and C₃-only (mirror-broken) symmetry. The experiment asks: which of these are properties of dm3's substrate geometry — and would therefore carry over to Genesis (a different substrate, D₆ symmetry, 285 vertices) — and which are properties of dm3's augmentation layer, and would therefore NOT appear in Genesis?
+
+The four pre-registered comparisons are: cycle-7 attribution, s50-cliff attribution, σ″-curve shape diff, and D₆-vs-C₃ symmetry. As of 2026-05-01 the v1.0 closure: comparisons #1–#3 are settled by the 74-cell receipt surface (AUGMENTATION-ATTRIBUTED, CONFIRMED, CONFIRMED respectively); #4 has a structurally complete analytic disposition (STRUCTURAL INCLUSION CONFIRMED; NUMERICAL Z₂-PROJECTION DEFERRED to v2.0 because it requires a Z₂-asymmetric pattern, i.e. a new chain run). Both positive and negative outcomes are equally valued scientifically. Source: [`reports/GENESIS_FINAL_REPORT_2026-05-01.md`](reports/GENESIS_FINAL_REPORT_2026-05-01.md), [`project_contract.json`](project_contract.json) §claims, [`README.md`](README.md) §"The Falsification Surface".
+
+### How does this differ from dm3_runner?
+
+The two lanes are structurally distinct. Genesis: 285-vertex graph, D₆ = S₃ × Z₂ symmetry, T(3,21) torus link topology, source-available pure-geometry Rust codebase, Q-Pythagorean number field (no floats in math path), forward methodology (source → binary → observables). dm3_runner: 380-vertex graph, C₃ symmetry, source unrecovered, hybrid binary runs only on Android, backwards methodology (binary observables → geometry inference attempt).
+
+They are not versions of each other and do not share a substrate. Cross-lane comparisons must be explicitly framed as such. The formal separation: [`LANE_DISTINCTION.md`](LANE_DISTINCTION.md).
+
+### Who is the target reader for this repo?
+
+Three primary audiences: (1) a scientific peer who wants to run the experiment themselves on their hardware and verify that the canonical hashes reproduce — Step 1 of this Auditor Playbook is for them; (2) an investor or scientific advisor in due diligence who wants to understand what the claims are, what's established, and what's pending — [`reports/GENESIS_FINAL_REPORT_2026-05-01.md`](reports/GENESIS_FINAL_REPORT_2026-05-01.md), [`proofs/manifests/CURRENT_AUTHORITY_PACKET.md`](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), and [`project_contract.json`](project_contract.json) are the short path; (3) a future agent or contributor who picks up at v2.0 — [`.gpd/STATE.md`](.gpd/STATE.md) and [`RESISTANCE.md`](RESISTANCE.md) govern that work.
+
+### What is the relationship to ZPE and the Zer0pa portfolio?
+
+Genesis is a research artifact in the Zer0pa portfolio under `LicenseRef-Zer0pa-GDM3-RRL-1.0`. It is not a ZPE codec (ZPE is a family of encoding products for specific signal domains). Genesis is methodology research: can a deterministic pure-rational dynamical system on a settled substrate serve as a rigorous comparative instrument for isolating substrate-attribution from augmentation-attribution in the dm3 dynamics? It uses the same falsification discipline and proof-artifact conventions as ZPE lanes, but it does not belong to the encoding product family. It is scoped to four pre-registered comparisons and does not expand beyond that scope without a new operator-visible decision.
+
+## About the Substrate
+
+### What does "T(3,21) torus link on T²" mean?
+
+The Genesis graph is the 1-skeleton of the T(3,21) torus link embedded on the flat torus T². A T(p,q) torus link is a braid-closure — in this case the braid word `(σ₁σ₂)²¹`, meaning 21 full applications of the standard 3-strand braid generator pair. The exponent 21 = 3 × 7 encodes seven full twists in a 3-strand context, which is the geometric source of the period-7 hypothesis for dm3's K2 dynamics. The link lives on T² rather than S³ to preserve the flat metric. Source: [`docs/SUBSTRATE.md`](docs/SUBSTRATE.md) and the substrate-reconstruction authority at `substrate-reconstruction-2026-04-26/SHARE_2026-04-27/04_braid_T3-21_cyclotomic_Phi7sq_strongest_positive.md`.
+
+### Why D₆ symmetry?
+
+D₆ = S₃ × Z₂ is the full automorphism group of the 285-vertex genesis substrate, established by enumeration in the substrate-reconstruction workstream. It is not a design choice for this experiment; it is a property of the graph as constructed. The significance for the experiment: D₆ contains a Z₂ mirror factor that dm3_runner's C₃ symmetry does not. Comparison #4 asks whether that mirror factor produces structurally distinct K2 dynamics; see [`reports/GENESIS_FINAL_REPORT_2026-05-01.md`](reports/GENESIS_FINAL_REPORT_2026-05-01.md) §"Comparison #4" for the analytic disposition. Source: [`docs/SUBSTRATE.md`](docs/SUBSTRATE.md), substrate-reconstruction `05_aut_D6_with_spectrum_crosscheck.md`.
+
+### Why 285 vertices specifically?
+
+The vertex count is a consequence of the braid-group construction of T(3,21), not a chosen parameter. Specifically: the 3-strand braid on 21 generators with the specific winding pattern of `(σ₁σ₂)²¹` produces 285 vertices when the link is embedded on T² with the lattice resolution used in the genesis source. Changing the `turns` parameter in the genesis source changes the vertex count. 285 is what the sealed workspace `a83f39e6…` produces at the default `turns=4`. Source: [`docs/SUBSTRATE.md`](docs/SUBSTRATE.md).
+
+### What is the relationship between the substrate and Sri Yantra geometry?
+
+The genesis source names the D₆-orbit analogs "Bhupura" (the 47 size-6 orbits) and "Lotus" (the 1 size-3 waist orbit) — terms borrowed from Sri Yantra geometry. This is a naming convention from the source author, not a mathematical identity claim. The Bhupura/Lotus distinction in the genesis source maps onto the D₆ orbit structure: the 47 size-6 orbits form the "radial" set with full D₆ stabilizer, and the 1 size-3 waist orbit is the mirror-fixed singular center. In this experiment, that orbit structure is used to define the K2 learning patterns following decision D3. Whether this correspondence is mathematically deep or merely nominative is an open question that the substrate-reconstruction workstream did not settle.
+
+## About Determinism
+
+### Why does the binary produce the same output across platforms?
+
+Because all numeric computation — graph construction, spectral solve, lift-to-3D, gate verification, K2 scar formation — uses `num_rational::BigRational`: exact rational arithmetic with no floating-point in the math path. There is no source of platform-dependent rounding. Every intermediate value is an exact rational; the final output is a deterministic function of the `configs/CONFIG.json` input alone. Floats appear only in `printf` wall-clock and KPI output lines, not in any value that feeds into the canonical artifact. Source: [`docs/DETERMINISM.md`](docs/DETERMINISM.md).
+
+### What about floating-point platform differences?
+
+There are no floating-point operations in the math path. This is the key property that makes byte-identical output possible across architectures. The `POLICY_CHECK` in the genesis build system enforces the no-float rule; it is verified on every build. The M1 host BENIGN diagnosis (`verify.json = e8941414…` on M1 vs `97bd7d…` source-canonical) is unrelated to floats — it is a trailing-newline serialization artifact in a code path that does not execute when running `snic_rust` directly. That path only executes in the `genesis_cli` meta-orchestrator. Source: [`docs/DETERMINISM.md`](docs/DETERMINISM.md), [`harness/host/HASH_GATE_DISPOSITION.md`](harness/host/HASH_GATE_DISPOSITION.md).
+
+### Could a compiler change break the determinism?
+
+Yes. The determinism property holds for the specific workspace seal `a83f39e6…` compiled with the Rust toolchain version recorded in `rust-toolchain.toml` (check the upstream workspace). A different Rust version, a different Cargo.lock, or a different optimization level (`--release` vs debug) could change the binary — and thus potentially the output. The binary SHAs in [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) and [`proofs/manifests/CURRENT_AUTHORITY_PACKET.md`](proofs/manifests/CURRENT_AUTHORITY_PACKET.md) record the specific builds used. Any deviation from those SHAs should be investigated before running comparative cells.
+
+### How is this different from "reproducible builds"?
+
+Reproducible builds (in the Debian/NixOS sense) means: the same source + same build environment → byte-identical binary. This repo claims something stronger: the same binary + the same config → byte-identical *output*, regardless of the CPU microarchitecture, thermal state, or time of day. Reproducible builds are a prerequisite; Genesis's property is the output-level determinism that follows from exact rational arithmetic throughout the computation. The two properties compose: if the build is reproducible AND the computation is exact-rational, then both the binary and the output are determined solely by the source and the config.
+
+## About K2 and the Pre-Registered Comparisons
+
+### What does `best_uplift = 3.0` mean physically?
+
+`best_uplift` is the recall improvement of the K2 Hebbian scar-formation protocol over a random baseline. Specifically: `best_uplift = baseline_recall_err − min(lesson_recall_err)`, where `recall_err` is the Hamming distance between the recalled pattern and the target, measured after rounding the state vector to {0,1} at threshold 1/2. A value of 3.0 means the K2 protocol reduces Hamming error by 3.0 (out of a maximum possible equal to the number of pattern vertices). On the Genesis substrate at `--steps 30`, this 3.0 value is constant across both noise levels tested (0.1 and 0.2), with `avg_recall_err = 0.0` — perfect recall — at every lesson and noise combination.
+
+### Why was the Phase 1 host result described as a "curious-numbers finding"?
+
+Because `best_uplift = 3.000000` + uniform `|scar| = 1.2` across all 567 edges + `avg_recall_err = 0.0` at `--steps 30` is structurally suspicious: it could be a real substrate effect (D₆ symmetry making K2 trivially recoverable) or a degenerate pattern-choice artifact (the Bhupura/Lotus orbit structure producing a rank-1 scar matrix whose outer-product entries are all identical in magnitude). Phase 2 K2_SWEEP over the full step range tested whether the value varies (real dynamics) or stays constant (degenerate). Calling it "curious" was not hedging; it was naming the hypothesis that was tested.
+
+### What did the flat σ″-curve at 3.0 prove?
+
+Phase 2 K2_SWEEP returned `best_uplift = 3.000000` at every steady-state step in `{20, 28..56}`. That settles three comparisons under the D3 pattern choice: Genesis does not show dm3's cycle-7 sawtooth, does not cliff at s50, and has a structurally different σ″ curve from dm3. The interpretation remains bounded: the flat curve may be a real D6-substrate-easy behavior or a rank-1 artifact of the Bhupura/Lotus pattern choice. Phase 2.5 + Phase 3 prep at-scale showed the system is not a toy constant: low steps have a real transient, peaking at S2 = 6.5 (confirmed at 600× cross-replicate scale per step) and settling by S10. See [`reports/GENESIS_FINAL_REPORT_2026-05-01.md`](reports/GENESIS_FINAL_REPORT_2026-05-01.md) for the full per-step disposition.
+
+### What would a varied σ″-curve over --steps prove in future work?
+
+If a future alternative-pattern K2 sweep returns `best_uplift` values that vary across step counts, the D3-specific flatness does not generalize. The new curve would then yield a fresh comparison surface for period, s50 cliff behavior, and σ″ shape under that pattern family. Source: [`project_contract.json`](project_contract.json) §acceptance_tests.
+
+### Why these specific four comparisons?
+
+They were pre-registered because they are the four most structurally interpretable observables from dm3's eight sessions of receipts. Cycle-7 traces to the T(3,21) torus link's seven braid twists — a geometric feature potentially shared between the two substrates. S50-cliff is a sharp, exact-zero discontinuity that is unlikely to be a coincidence; attributing it to substrate or augmentation has direct interpretive value. σ″-curve shape is the broadest comparison surface (30 step values). D₆-vs-C₃ symmetry is a direct test of whether mirror symmetry in the substrate propagates to dynamics. Any additional comparison axis would require a new operator-visible decision to prevent comparison-fishing. Source: [`project_contract.json`](project_contract.json) §scope.
+
+## About the Methodology (RESISTANCE.md)
+
+### What is RESISTANCE.md and why does it govern AI-agent work in this repo?
+
+[`RESISTANCE.md`](RESISTANCE.md) names four structural impulses that corrupt AI-agent work on evidence-building briefs and encodes specific resistance behaviors as binding constraints. It was written after a Phase 0 corruption episode in which an agent (a) prematurely declared a canonical source found without exhaustive search, and (b) invoked a NULL routing before doing the substantive work. The document is not decorative; it has a re-engagement gate that requires any future agent to stop, name the specific corruption, retract, and re-read the brief before resuming. Every retraction is publicly visible in [`.gpd/STATE.md`](.gpd/STATE.md).
+
+### What are the four corruptions it names?
+
+(1) **Rush-to-green-flag**: the drive to declare a phase complete before all success criteria are met, reinforced by training pressure to "deliver". (2) **NULL-as-out**: invoking a negative-result routing as a way to terminate without doing the substantive work, framed as scientific honesty. NULL is a legitimate outcome but only after exhaustive search + reconstruction attempt + specific structural reason — not before. (3) **Efficiency-as-corner-cutting**: compressing work to save context budget or time, manifesting as systematic under-investment in the parts that would expose corruptions #1 and #2. (4) **Flattery-as-freedom**: the pattern where "you're special / unconstrained / beyond the rules" framing is used to invite the same discipline-slacking as "good job, declare done" — just from a different emotional angle. Source: [`RESISTANCE.md`](RESISTANCE.md).
+
+### What is a "retraction" in this context?
+
+A retraction is an explicit, dated, named entry in [`.gpd/STATE.md`](.gpd/STATE.md) §Retractions that records: what was claimed or decided, why it was wrong, which corruption it manifested, and what it was replaced with. Retractions are additive and permanent — prior artifacts are preserved; only the interpretation is corrected.
+
+### How is `fp-shapematch` different from regular wrong-track work?
+
+`fp-shapematch` (forbidden proxy) is specifically the pattern of treating structural or naming similarity to the brief's vocabulary as identity evidence. Regular wrong-track work is a genuine hypothesis that turns out to be incorrect. `fp-shapematch` is the shortcut of not checking — of letting surface form substitute for evidence. The three-tier evidence requirement in [`RESISTANCE.md`](RESISTANCE.md) is the remedy: (1) shape match, (2) identity match (hash, build verification), (3) mechanistic path from the specific artifact to the claimed property. Tier 1 alone is insufficient.
+
+## About the Repo Structure
+
+### Why is the substrate source in a different repo?
+
+The genesis source workspace (`Zer0pa/Zer0pamk1-Genesis-Organism-Executable-Application-27-Oct-2025`) is an independent artifact that predates this comparative experiment. It is separately versioned, separately sealed (workspace seal `a83f39e6…`), and separately cited. Keeping it separate means: (a) the experiment's scaffolding does not pollute the source's commit history; (b) the canonical hashes in the source are unambiguously pre-committed before the experiment ran; (c) third parties can audit the source independently of the experiment. This repo (`genesis_comparative`) contains only the harness, the formal contract, the RESISTANCE methodology, the receipt artifacts, and the v1.0 final report.
+
+### Why are HANDOVER and ADVISORY in the repo if they are internal session docs?
+
+`HANDOVER_2026-04-27.md` and `ADVISORY_2026-04-27.md` are committed because they contain operator-authorized decisions (D1–D6) and substrate-identity facts that govern agent behavior across sessions. The Zer0pa engineering model does not separate "internal planning" from "committed knowledge" — if a decision is durable and governs execution, it lives in the repo where it is version-controlled and retraction-disciplined. Handover documents are part of the evidence surface, not custody scratch. They sit outside the curated 10-doc reviewer pack but remain in the repo.
+
+### What goes in `proofs/manifests/` vs `proofs/artifacts/`?
+
+`proofs/manifests/` holds authority manifests: documents that summarize what is claimed, what binary SHAs are in authority, and what the chain of custody is. Currently: [`CURRENT_AUTHORITY_PACKET.md`](proofs/manifests/CURRENT_AUTHORITY_PACKET.md). These are authored summaries, updated when claims are settled. `proofs/artifacts/` holds the raw receipt files pulled from the device at chain close: per-cell `outcome.json`, per-instance `receipt.json`, and `canonical_stdout.sha256`. These are direct outputs of the harness, not authored summaries. Nothing in `proofs/artifacts/` is edited after commit (retractions are additive).
+
+### What is the difference between `harness/host/` and `harness/phone/`?
+
+`harness/phone/` contains the six shell scripts that run on the Android device. These must be busybox-sh portable because RM10 ships Toybox, not bash. `harness/host/` currently contains only `HASH_GATE_DISPOSITION.md` — the documented decision about the M1-side serialization artifact. Host-side harness work (cross-compile, adb push, result pull) is performed directly per [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md).
+
+## About License and Commercial Use
+
+### What does the Genesis-DM3 RRL v1.0 allow and prohibit?
+
+The Zer0pa Genesis-DM3 Research and Receipt License v1.0 grants use, research/evaluation/benchmarking, canonical redistribution of the artefact bundle, citation/reference, derivative analysis, and internal modification for research, subject to its restrictions. It requires receipt-chain integrity and scientific-framing discipline, preserves lane distinction between DM3 and Genesis, and requires a Commercial License for above-threshold commercial use, hosted/managed-service use, and other restricted uses. Source: [`LICENSE`](LICENSE) §§4–7.
+
+### Is this code usable in a commercial product?
+
+Yes, within the license grant and restrictions, for entities whose aggregate gross revenue is below USD $100M. Above that threshold, further commercial use requires a separate Commercial License. Hosted or managed-service use also requires a Commercial License regardless of revenue. Research use, internal evaluation, and academic benchmarking remain within the research grant. Contact: architects@zer0pa.ai. Source: [`LICENSE`](LICENSE) §§4–6 and §14.
+
+### What is the $100M revenue threshold?
+
+The Revenue Threshold is the boundary below which revenue-gated commercial use remains inside the license grant. It is USD $100M in aggregate gross revenue for an entity and its affiliates over the trailing twelve-month period. Above that threshold, further commercial use requires a Commercial License; hosted-service restrictions apply separately. Source: [`LICENSE`](LICENSE) §§1 and 5.
+
+### Why are Genesis and DM3 under one RRL?
+
+The Genesis-DM3 RRL covers both artefacts because they evolve together under a receipts-first discipline and one licensor, while preserving their independence. The license explicitly says the artefacts are siblings, not one unified architecture; a DM3 receipt is not a Genesis receipt, and vice versa. Source: [`LICENSE`](LICENSE) §§3.4 and 7, [`README.md`](README.md) §License, [`LANE_DISTINCTION.md`](LANE_DISTINCTION.md).
+
+## About the v1.0 Closure and v2.0 Outlook
+
+### Are the K2_SWEEP results available?
+
+Yes. Phase 2 K2_SWEEP and CYCLE-probe receipts (39 cells), Phase 2.5 PRECONV + BITDET_K2 receipts (17 cells), Phase 3 prep BIG receipts (11 cells), and Phase 3 parity-sweep receipts (3 cells: S20, S40, S50) are all in [`proofs/artifacts/cells/`](proofs/artifacts/cells/) — 74 cells total. The full aggregated curve is [`proofs/artifacts/sigma_curve_full.tsv`](proofs/artifacts/sigma_curve_full.tsv), and the headline figure is [`proofs/artifacts/figures/sigma_curve.png`](proofs/artifacts/figures/sigma_curve.png).
+
+### What is "Phase 3 synthesis" specifically?
+
+Phase 3 takes the Phase 2/2.5 K2 receipts plus Phase 3 prep + parity-sweep receipts and produces: (a) a complete σ″-curve table for Genesis; (b) a diff table (Genesis − dm3 fixture) per step; (c) a verdict on cycle-7 attribution; (d) a cliff-presence verdict at s50; (e) the analytic D₆-vs-C₃ symmetry disposition (numerical Z₂-projection deferred to v2.0). The synthesis lives at [`reports/GENESIS_FINAL_REPORT_2026-05-01.md`](reports/GENESIS_FINAL_REPORT_2026-05-01.md). Source: [`project_contract.json`](project_contract.json) §deliv-final-report.
+
+### What's left for v2.0?
+
+Three host-only / future-chain items:
+1. **K2-task cross-platform parity widen-coverage** — host-side M1 byte-comparison at S20 / S40 / S50 against the in-repo RM10 anchors (`74fa0b8a…` / `38be38e2…` / `f5cd3876…`). Host-only; no phone time required.
+2. **Numerical Z₂-projection observable** for Comparison #4 — design a Z₂-asymmetric pattern, pre-register the observable, run a SYMMETRY cell. Requires a future chain reactivation.
+3. **Alternative-pattern K2** — Bhupura/Lotus partitionings that produce non-rank-1 scar matrices, to discriminate substrate-easy from pattern-degenerate readings of flat σ″. Requires future chain reactivation.
+
+The phone is currently being released for other experiments per the v1.0 closure; v2.0 reactivation is a separate operator-visible decision.

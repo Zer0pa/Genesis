@@ -1,4 +1,8 @@
-# Genesis Comparative — Architecture
+# Genesis Comparative — Architecture and Operations
+
+This document covers both the architectural model (Layers 1/2/3 — computation, orchestration, evidence) and the chain operations manual (manifest format, adding cells, launching/stopping, recovery). The architecture half explains the moving parts; the operations half tells you how to use them. The earlier `docs/CHAIN.md` was folded into the operations half on 2026-05-01 as part of the v1.0 reviewer-pack consolidation.
+
+---
 
 ## Three Layers
 
@@ -261,3 +265,225 @@ The sibling document [SUBSTRATE.md](SUBSTRATE.md) (authored separately) document
 5. Relaunch `master_watcher.sh` with the new master PID.
 
 Cells with existing `outcome.json` are SKIPped by the new master. Only cells added to the manifest (or cells whose `outcome.json` was manually removed) will run.
+
+---
+
+# Operations Manual
+
+The remainder of this document is the chain-operator's reference: manifest format, cell/task procedures, launching, stopping, monitoring, pulling, recovery, hardware extension, and out-of-scope items. As of 2026-05-01 the v1.0 backend chain is closed; this section is preserved for v2.0 reactivation and for auditor reference.
+
+---
+
+## Manifest Format (cells.txt)
+
+Source: [`harness/phone/cells.txt`](../harness/phone/cells.txt)
+
+One cell per non-blank non-comment line. Comments begin with `#`. Blank lines are ignored.
+
+**Format:**
+
+```
+<CELL_ID> [--task TASK] [--steps N] [--test-battery N] [--instances N]
+```
+
+**Defaults if flags are omitted:**
+- `--instances 6` (cpu0–cpu5 fan-out via parent-affinity mask `7F`)
+- `--test-battery 10` for Phase 0 (vanilla pipeline); `3` for Phase 1+ K2 cells (set explicitly in manifest)
+- `--task` absent → Phase 0 pipeline mode (`build-2d → lift-3d → solve-h2 → verify`)
+- `--steps` required when `--task` is set; absent → Phase 0 (no steps parameter)
+
+**Examples from the historical manifest:**
+
+```
+# Phase 1+ K2_SWEEP cells
+K2_S20 --task k2-scars --steps 20 --instances 6 --test-battery 3
+K2_S30 --task k2-scars --steps 30 --instances 6 --test-battery 3
+K2_S50 --task k2-scars --steps 50 --instances 6 --test-battery 3
+
+# Cycle-7 disambiguation probe (multiples of 7)
+K2_CYC7_S7  --task k2-scars --steps 7  --instances 6 --test-battery 3
+K2_CYC7_S14 --task k2-scars --steps 14 --instances 6 --test-battery 3
+```
+
+The `CELL_ID` must be unique. It becomes the directory name under `cells/`. The manifest is read top-to-bottom; cells run in manifest order.
+
+---
+
+## Adding a New Cell
+
+1. Edit `harness/phone/cells.txt` on the host — append one line with a unique `CELL_ID` and the appropriate flags.
+2. Push the updated manifest to the phone:
+   ```bash
+   adb -s FY25013101C8 push harness/phone/cells.txt \
+     /data/local/tmp/genesis/harness/cells.txt
+   ```
+3. The running chain reads the manifest once at startup. To pick up the new cell without waiting for the current chain to finish, kill the master and let the watcher restart it (see §Stopping the Chain Cleanly and §Launching the Chain). The new master reads the updated manifest; cells with existing `outcome.json` are SKIPped immediately.
+
+**Idempotency guarantee:** a cell is SKIPped if and only if `cells/<CELL_ID>/outcome.json` exists. Appending a new `CELL_ID` that has never run is safe; removing a cell from the manifest does not delete its receipts on the phone.
+
+---
+
+## Adding a New Task Subcommand
+
+New task subcommands must be implemented in the upstream Genesis source workspace, not in the `genesis_comparative` repository.
+
+1. In `crates/io_cli/src/main.rs` (upstream source): add a `Cmd::<NewTask>` variant to the `enum Cmd` and a dispatch arm in `fn main()`. Create the module at `crates/io_cli/src/<new_task>.rs`. All numeric work must use `num_rational::BigRational`; floats only for `printf` output. The workspace `#![deny(warnings)]` is enforced.
+2. Cross-compile for aarch64-linux-android (NDK env-var route; see [`REPRODUCIBILITY.md`](../REPRODUCIBILITY.md) §Cross-compile recipe).
+3. Capture the new binary SHA-256 with `sha256sum target/aarch64-linux-android/release/snic_rust`.
+4. Push to phone and update `genesis_meta.txt` with the new build hash.
+5. Run a BITDET cell for the new task before any science cells, to confirm determinism.
+6. Update the manifest with science cells using `--task <new-task>`.
+
+The harness dispatches the `--task` value directly as the `snic_rust` subcommand. Any subcommand that is not one of `{k2-scars}` and that does not read `--substrate` and `--steps` will need a patch to `run_genesis_cell.sh`'s Phase 1+ execution path.
+
+---
+
+## Launching the Chain
+
+Full deploy sequence is in [`REPRODUCIBILITY.md`](../REPRODUCIBILITY.md). To re-launch an already-deployed chain after a stop:
+
+```bash
+# 1. Sibling-lane check (must pass before any Genesis operation)
+adb -s FY25013101C8 shell pidof dm3_runner    # note PID; do not signal it
+
+# 2. Launch master via resume_chain.sh (idempotent; no-op if master already alive)
+adb -s FY25013101C8 shell \
+  "cd /data/local/tmp/genesis && \
+   nohup harness/resume_chain.sh >> logs/resume.log 2>&1 &"
+
+# 3. Get the new master PID
+MASTER_PID=$(adb -s FY25013101C8 shell cat /data/local/tmp/genesis/logs/master.pid | tr -d '\r\n')
+
+# 4. Launch watcher for the new master
+adb -s FY25013101C8 shell \
+  "cd /data/local/tmp/genesis && \
+   nohup harness/master_watcher.sh --master-pid $MASTER_PID \
+     >> logs/watcher.log 2>&1 &"
+```
+
+After launch: enable game-cooling mode on the phone, point a fan at it, and optionally place it in a refrigerator for thermal headroom. The chain runs fully autonomously after this point; ADB can be disconnected.
+
+---
+
+## Stopping the Chain Cleanly
+
+Kill in this order to avoid race conditions:
+
+```bash
+# 1. Kill watcher first (prevent auto-restart of master after you kill it)
+WATCHER_PID=$(adb -s FY25013101C8 shell pgrep -f master_watcher.sh | tr -d '\r\n')
+adb -s FY25013101C8 shell kill "$WATCHER_PID" 2>/dev/null || true
+
+# 2. Kill master
+MASTER_PID=$(adb -s FY25013101C8 shell cat /data/local/tmp/genesis/logs/master.pid | tr -d '\r\n')
+adb -s FY25013101C8 shell kill "$MASTER_PID" 2>/dev/null || true
+
+# 3. Kill any in-flight batch, thermal coordinator, and run_genesis_cell instances
+adb -s FY25013101C8 shell "pkill -f launch_genesis_batch.sh; \
+  pkill -f thermal_coordinator.sh; \
+  pkill -f run_genesis_cell.sh; \
+  pkill -f snic_rust" 2>/dev/null || true
+```
+
+**To preserve in-flight cell progress:** wait for the current cell's `outcome.json` to appear before killing.
+
+Killing the chain mid-cell loses that cell's `outcome.json` (in-flight instances do not write receipts on SIGKILL). The cell will re-run from scratch on next master start.
+
+---
+
+## Reading Chain Progress
+
+```bash
+# See which cells have completed
+adb -s FY25013101C8 shell ls /data/local/tmp/genesis/cells/
+
+# Tail chain log live
+adb -s FY25013101C8 shell "tail -f /data/local/tmp/genesis/logs/chain.log"
+
+# Read a cell's verdict
+adb -s FY25013101C8 shell cat /data/local/tmp/genesis/cells/K2_S30/outcome.json
+
+# Extract KPI summaries for a cell
+adb -s FY25013101C8 shell \
+  "grep KPI_K2_SUMMARY /data/local/tmp/genesis/cells/K2_S30/*/stdout.log"
+
+# Read cell-level summary
+adb -s FY25013101C8 shell cat /data/local/tmp/genesis/cells/K2_S30/_summary.json
+```
+
+---
+
+## Pulling Receipts
+
+Pull all cell directories from device to host:
+
+```bash
+adb -s FY25013101C8 pull \
+  /data/local/tmp/genesis/cells/ \
+  proofs/artifacts/
+```
+
+After pull, verify receipt integrity and produce a verdict roll-up:
+
+```bash
+cd proofs/artifacts
+find . -name "outcome.json" \
+  | xargs -I{} sh -c 'jq -r ".cell + \" \" + .verdict" "{}"'
+
+# Determinism verdict across all cells (all should be 1)
+find . -name "_summary.json" \
+  | xargs -I{} sh -c 'jq -r ".cell + \" sha_count=\" + (.unique_canonical_sha_count|tostring)" "{}"'
+```
+
+Before commit, strip the heavyweight `wd/` working directories from each per-instance dir — only `receipt.json`, `canonical_stdout.sha256`, `artifact_hashes.json`, `stdout.log` are committed (the receipts are self-certifying via `receipt_sha`; the `wd/` content is reproducible from the binary + config).
+
+---
+
+## Recovering from a Stuck State
+
+```bash
+# Master dead, watcher dead, no auto-recovery
+adb -s FY25013101C8 shell \
+  "cd /data/local/tmp/genesis && \
+   nohup harness/resume_chain.sh >> logs/resume.log 2>&1 &"
+
+# Cell stuck in-progress (no outcome.json, instances all dead)
+adb -s FY25013101C8 shell rm -rf /data/local/tmp/genesis/cells/<STUCK_CELL>/
+
+# ADB hung
+adb kill-server && adb start-server
+
+# thermal_kill.log present (chain killed a cell for thermal)
+adb -s FY25013101C8 shell cat /data/local/tmp/genesis/logs/thermal_kill.log
+adb -s FY25013101C8 shell rm /data/local/tmp/genesis/cells/<CELL>/outcome.json
+adb -s FY25013101C8 shell rm /data/local/tmp/genesis/logs/thermal_kill.log
+```
+
+The chain runs fully autonomously on-device. ADB disconnect does not affect chain progress; receipts persist on phone and pull on reconnect.
+
+---
+
+## Extending to More Cores or Different Hardware
+
+**cpu7 hard-block:** Mask `0x80` (cpu7) is permanently reserved for the sibling dm3_runner lane. Genesis never uses it.
+
+**To repurpose cpu6 (currently the thermal-margin core):** edit `PARENT_AFFINITY_MASK` in `launch_genesis_batch.sh` and increase `--instances` to 7 in the manifest. Requires operator-visible decision; thermal validation of 7-core sustained load is a prerequisite.
+
+**To run on a different aarch64-android phone:**
+1. Confirm `taskset` accepts bare-hex masks (Toybox format). Some devices require `--cpu-list`.
+2. Identify cluster topology and any sibling workload PIDs.
+3. Rebuild `snic_rust` targeting the device's Android API level.
+4. Update `PARENT_AFFINITY_MASK` and `DEFAULT_MASKS` in `launch_genesis_batch.sh`.
+5. Update `thermal_coordinator.sh` sensor filter for the device's thermal-zone naming convention.
+6. Run a BITDET cell (`--test-battery 10`) before any science cells to confirm byte-determinism on the new device.
+
+---
+
+## What's Out of Scope (for the v1.0 chain)
+
+- **K2-task cross-platform parity beyond S30 (host-side)** — RM10 anchors at S20 / S40 / S50 are now in-repo; host-side byte comparison at those step values is a small host-only task. Not yet automated.
+- **Source recovery for dm3_runner** — separate workstream.
+- **Multi-device chain orchestration** — one phone at a time. The chain has no inter-device coordination.
+- **`SYMMETRY` cell with Z₂-asymmetric pattern** — listed as DEFERRED. Requires operator-visible decision plus a Z₂-asymmetric pattern design before adding to manifest.
+- **`DISCONT` cell** — only triggered if K2_SWEEP shows a cliff. Phase 2 settled this question (no Genesis cliff at S50). Not in the manifest.
+- **HF dataset push** (`Zer0pa/DM3-artifacts`, `genesis/` subdir) — manual after chain close per PRD §Receipts.
