@@ -98,7 +98,7 @@ Genesis and DM3 are two graphs related by one discrete arithmetic step on the sa
 
 ## Proof Anchors
 
-Every path below resolves in this repository at the time of writing. Receipt authority for the current branch lives under `proofs/`; the full current Phase 3 prep at-scale surface is now included: 11 BIG receipts together with the first parity-sweep receipt at S20.
+Every path below resolves in this repository at the time of writing. Receipt authority for the current branch lives under `proofs/`; the full current Phase 3 prep at-scale surface is now included: 11 BIG receipts together with the complete parity-sweep extension at S20, S40, and S50.
 
 | Path | What it carries |
 |---|---|

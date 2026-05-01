@@ -1,6 +1,6 @@
 # Current Authority Packet
 
-**Authority commit:** `phase-3-prep-receipts-2026-04-29` HEAD — Phase 3 prep complete + parity-sweep complete
+**Authority commit:** `da7890e` (tag `v1.0.0`) — v1.0 closure merge to `main`
 **Date:** 2026-05-01
 **Status:** backend chain CLOSED — Phase 0, Phase 2, Phase 2.5, Phase 3 prep BIG, and Phase 3 parity-sweep extension all complete and in-repo. 74 cells / 74 PASS / `unique_canonical_sha_count = 1` per cell. RM10 chain master exited cleanly (`genesis_chain_v1 finished all manifest cells`); phone is being released to other experiments. Phase 3 synthesis and the analytic D6-vs-C3 disposition are landed in `reports/GENESIS_FINAL_REPORT_2026-05-01.md`.
 
