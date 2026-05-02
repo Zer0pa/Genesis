@@ -1,7 +1,7 @@
 # Genesis Comparative Experiment — Final Report v1.0
 
 **Date:** 2026-05-01
-**Branch:** `phase-3-prep-receipts-2026-04-29` (final commit covers Phase 3 prep complete + parity-sweep complete)
+**Branch:** `main` (tag `v1.0.0`; merged from `phase-3-prep-receipts-2026-04-29`)
 **Status:** backend chain CLOSED; phone released for other experiments; reviewers operate against this repo as the canonical surface.
 **Authority:** [`proofs/manifests/CURRENT_AUTHORITY_PACKET.md`](../proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [`proofs/artifacts/cells/`](../proofs/artifacts/cells/), [`proofs/artifacts/sigma_curve_full.tsv`](../proofs/artifacts/sigma_curve_full.tsv), [`project_contract.json`](../project_contract.json).
 

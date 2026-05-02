@@ -1,7 +1,7 @@
 # Auditor Playbook — Genesis Comparative
 
-**Version:** 2026-04-30
-**Branch:** `phase-3-prep-receipts-2026-04-29` (current review head carries Phase 2/2.5 receipts, complete Phase 3 prep BIG receipts, the first parity-sweep receipt, and updated σ″ surface)
+**Version:** 2026-05-02
+**Branch:** `main` (tag `v1.0.0`; backend chain closed; canonical internal review surface)
 **Audience:** external auditor, investor diligence, scientific advisor, repo orchestrator  
 **Goal:** shortest honest path to verifying the central claims in under 30 minutes
 
@@ -16,9 +16,9 @@ Each item is a specific, falsifiable claim traceable to a source artifact.
 - Cross-platform parity: M1 host (`aarch64-apple-darwin`) and RM10 (`aarch64-linux-android`) builds of `snic_rust` produce the same canonical hashes byte-exact.
 - 31,560 cross-replicate canonical-hash matches across Phase 0 BITDET cells (BITDET_01: 60 invocations; BITDET_02: 300; BITDET_03: 1,200; BITDET_5K: 30,000) with zero divergences and `unique_canonical_sha_count = 1` per cell.
 - K2 task BITDET on M1 host: two consecutive `k2-scars --steps 30` runs produce byte-identical `k2_summary.json` SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`.
-- K2 task BITDET on phone: 56 Phase 2/2.5 K2-task cells plus 11 Phase 3 prep BIG cells plus the landed `BITDET_K2_S20_PARITY` cell currently in-repo all PASS with `unique_canonical_sha_count = 1` per cell.
+- K2 task BITDET on phone: 56 Phase 2/2.5 K2-task cells plus 11 Phase 3 prep BIG cells plus 3 landed parity-sweep cells (`BITDET_K2_S20_PARITY`, `S40_PARITY`, `S50_PARITY`) currently in-repo all PASS with `unique_canonical_sha_count = 1` per cell.
 - K2-task cross-platform parity at S30: M1 host and RM10 both produce `k2_summary.json` SHA `0b5442f9825427c5f457b79ef23afd606d3b219c773d3d8877aca633ca92a372`.
-- Next K2-task parity anchor in-repo: RM10 `BITDET_K2_S20_PARITY` produces `k2_summary.json` SHA `74fa0b8a7082b76370db8cf05f0baf520534e5def11edfccd698f26ad914e432`; host-side byte comparison at `--steps 20` is the next audit extension.
+- RM10 parity anchors now in-repo beyond S30: `S20 = 74fa0b8a7082b76370db8cf05f0baf520534e5def11edfccd698f26ad914e432`, `S40 = 38be38e28653af6b2d1bac6bc5caf3d9f05a01a0f4d03dc149f7a68d498ea42b`, `S50 = f5cd3876868ec1b2a40a6dcd6b6e40914813f6992f2f067e9cd65beb5ce81960`; host-side byte comparison at matching `--steps` values is the remaining widen-coverage audit extension.
 - σ″ curve: Genesis is flat at `best_uplift = 3.000000` across S20 and S28..S56, with pre-convergence transient peak at S2 = 6.5 and settlement to 3.0 by S10.
 - Substrate identity (T(3,21) torus link, D₆ symmetry, 285 vertices, Q-Pythagorean) is settled per `substrate-reconstruction-2026-04-26` (separate authority; not re-derived here).
 
@@ -100,7 +100,7 @@ These are the source author's reproducibility reference points, committed in the
 
 ## Step 3 — Verify Cross-Replicate Evidence (15 min)
 
-The current review branch includes 72 receipt cells under `proofs/artifacts/cells/`:
+The canonical `main` surface includes 74 receipt cells under `proofs/artifacts/cells/`:
 
 ```bash
 cd /path/to/genesis_comparative
@@ -118,13 +118,13 @@ find proofs/artifacts/cells -name "outcome.json" \
   | xargs -I{} jq -r 'select(.metrics.unique_canonical_sha_count != 1) | .cell' {}
 ```
 
-**Expected:** 72 `outcome.json` files, 72 PASS verdicts, and the final command emits no rows. Every `outcome.json` has `"verdict": "PASS"`, `"failures": 0`, and `"unique_canonical_sha_count": 1`.
+**Expected:** 74 `outcome.json` files, 74 PASS verdicts, and the final command emits no rows. Every `outcome.json` has `"verdict": "PASS"`, `"failures": 0`, and `"unique_canonical_sha_count": 1`.
 
 **If `unique_canonical_sha_count` per cell is consistently 1:** cross-replicate determinism is established at the cell level. Do not require one aggregate hash across all cells: K2 cells at different step values legitimately produce different `k2_summary.json` hashes.
 
 **If multiple unique hashes appear:** this is a divergence. File a falsification claim with the full cell and instance identifiers of the divergent pair.
 
-**Note on K2 cells:** K2 cells (`K2_S*`, `PRECONV_*`, `BITDET_K2_*`) use `k2_summary.json` as the canonical artifact instead of `verify.json`. The same audit applies — `unique_canonical_sha_count` per cell must equal 1. `BITDET_K2_S30_BIG` additionally anchors cross-platform K2-task parity: all six RM10 receipts carry `canonical_sha = 0b5442f9…`, matching the host-side Step 1 run exactly. `BITDET_K2_S20_PARITY` adds the next RM10-side comparison target at `canonical_sha = 74fa0b8a…`. The cross-replicate audit command works identically for K2 cells because the harness writes `canonical_stdout.sha256` for every invocation regardless of task type.
+**Note on K2 cells:** K2 cells (`K2_S*`, `PRECONV_*`, `BITDET_K2_*`) use `k2_summary.json` as the canonical artifact instead of `verify.json`. The same audit applies — `unique_canonical_sha_count` per cell must equal 1. `BITDET_K2_S30_BIG` additionally anchors cross-platform K2-task parity: all six RM10 receipts carry `canonical_sha = 0b5442f9…`, matching the host-side Step 1 run exactly. The parity-sweep extension adds RM10-side comparison targets at `S20 = 74fa0b8a…`, `S40 = 38be38e2…`, and `S50 = f5cd3876…`. The cross-replicate audit command works identically for K2 cells because the harness writes `canonical_stdout.sha256` for every invocation regardless of task type.
 
 ---
 
@@ -140,7 +140,7 @@ find proofs/artifacts/cells -name "outcome.json" \
 
 - Whether the substrate is the *intended* mathematical object the source author had in mind. Settling that requires the `substrate-reconstruction-2026-04-26` proof tree, which is a separate authority at `SHARE_2026-04-27/`. This experiment treats the substrate as a settled anchor and does not re-derive it.
 - Whether the K2 protocol implementation in `crates/io_cli/src/k2_scars.rs` is the *correct* reading of the dm3 K2 algorithm. The dm3_runner source is unrecovered; the Genesis K2 port is from-scratch on the Genesis substrate per decision D2.
-- Whether the D6-vs-C3 comparison is resolved. It remains PENDING until a Z2-asymmetric observable is designed, pre-registered, and run.
+- Whether the D6-vs-C3 comparison has a direct numerical Z2-projection measurement. The v1.0 surface includes the analytic disposition in [`reports/GENESIS_FINAL_REPORT_2026-05-01.md`](reports/GENESIS_FINAL_REPORT_2026-05-01.md): structural inclusion is confirmed, while the direct numerical Z2-projection observable is deferred to v2.0 because it requires a new Z2-asymmetric pattern and a new chain run.
 - **Long-horizon determinism.** Current evidence spans hours to days. Long-duration thermal drift, silicon aging, or firmware updates are untested surfaces.
 - **Determinism against adversarial source modification.** This audit verifies the pipeline runs deterministically given the source as committed. Intentional tampering with the source is not a defended surface — it is the canonical falsification path.
 - **Commercial readiness.** This is a research artifact. No productization verdict is made here.
@@ -177,7 +177,7 @@ A: This repo (`genesis_comparative`) is the *experimental scaffolding*: the RESI
 
 **Q: Why is this an INTERNAL repo if the claim is reproducibility-by-anyone?**
 
-A: Currently INTERNAL on the Zer0pa org as a live review window during active RM10 execution. The substrate source repo is separately managed. Auditors with repo access granted for diligence purposes can inspect everything in this repo at the branch `phase-3-prep-receipts-2026-04-29`.
+A: It remains INTERNAL on the Zer0pa org. The substrate source repo is separately managed. Auditors with repo access granted for diligence purposes should inspect `main` at tag `v1.0.0`, which is the canonical internal review surface after backend-chain closure.
 
 **Q: How do I know the receipts in `proofs/artifacts/` are not fabricated?**
 
